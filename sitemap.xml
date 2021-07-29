@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xluu233.github.io/about/index.html</loc>
+    
+    <lastmod>2021-07-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xluu233.github.io/tags/index.html</loc>
     
     <lastmod>2021-07-28</lastmod>
@@ -23,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://xluu233.github.io/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://xluu233.github.io/cn/%E5%86%99%E4%B8%80%E4%B8%AAMVVM%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%B0%81%E8%A3%85/</loc>
     
-    <lastmod>2020-04-16</lastmod>
+    <lastmod>2021-07-27</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xluu233.github.io/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://xluu233.github.io/cn/test/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -40,13 +47,6 @@
     <loc>https://xluu233.github.io/archive/index.html</loc>
     
     <lastmod>2017-03-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xluu233.github.io/about/index.html</loc>
-    
-    <lastmod>2016-04-20</lastmod>
     
   </url>
   
@@ -66,10 +66,24 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://xluu233.github.io/tags/MVVM/</loc>
+    <lastmod>2021-07-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://xluu233.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2021-07-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xluu233.github.io/categories/Android/</loc>
     <lastmod>2021-07-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

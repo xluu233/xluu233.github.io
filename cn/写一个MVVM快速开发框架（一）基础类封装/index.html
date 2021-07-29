@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://xluu233.github.io/cn/写一个MVVM快速开发框架（一）基础类封装/">
+  <title>
+    
+      写一个MVVM快速开发框架（一）基础类封装 - either thin | or die
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">xlu1997</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#MVVM" title="MVVM">MVVM</a>
+              
+            </div>
+            <h1>写一个MVVM快速开发框架（一）基础类封装</h1>
+            <h2 class="subheading">A succinct hexo theme...</h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2021-07-28
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">9</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b762fb3da304c9ba68d8b9f0f245ff5~tplv-k3u1fbpfcp-watermark.image" alt="9d36439ff61d483990226070e4d1ef19_tplv-k3u1fbpfcp-watermark.jpg"></p>
+<p>DEMO地址在最后，求个Star😘 如有问题请指出</p>
+<h2 id="前言">前言</h2>
+<p>最近想要将老项目用MVVM模式去重构，原来的App采用MVP+MVVM的混合模式，老项目嘛大家都懂，最开始用MVP，后来慢慢改成MVVM，但是又没完全重构，所以整个项目看起来乱糟糟的，每次新加功能的时候写的那叫一个难受。</p>
+<h3 id="工欲善其事必先利其器">工欲善其事必先利其器</h3>
+<p>用MVVM+Jetpack组件的优点就不用我说了，写过的人肯定都说爽，此次就是想要重新整理下一些基础开发工具，<strong>封装一个自己用的顺手的MVVM模式快速开发框架。</strong><br>
+一是平常用来写测试，二是以便在需要的时候快速投入使用。</p>
+<h3 id="明确思路">明确思路</h3>
+<p>写之前需要明确好自己的思路，自己需要用的东西，是否熟悉，Jetpcak有很多组件，我们平常开发中不太可能全部用到，有需要的时候再加上也不迟。比如：</p>
+<ul>
+<li>App架构是采用<code>单activity+多fragment</code>架构，还是采用传统的多activty模式。</li>
+<li>比如是否需要<code>组件化</code>开发，如果项目不大或者是单人开发，可以不需要组件化。</li>
+<li>比如选择databinding还是viewbidning</li>
+<li>比如选择<code>LiveData</code> or <code>Flow</code> or <code>Rx</code></li>
+<li>…</li>
+</ul>
+<blockquote>
+<p>动手之前先想好你需要什么，有些可能不太成熟的框架可以尝鲜，但是投入使用需要谨慎考虑，不然后期的维护可能体验到什么是一把辛酸泪…</p>
+</blockquote>
+<h3 id="步入正题：基础Activity封装">步入正题：基础Activity封装</h3>
+<p><strong>最基础的BaseActivity():</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span></span>(<span class="meta">@LayoutRes</span> <span class="keyword">private</span> <span class="keyword">val</span> layout: <span class="built_in">Int</span> ?= <span class="literal">null</span>) : AppCompatActivity() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        layout?.let &#123;</span><br><span class="line">            setContentView(it)</span><br><span class="line">        &#125;</span><br><span class="line">        initData(savedInstanceState)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">abstract</span> <span class="function"><span class="keyword">fun</span> <span class="title">initData</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?=<span class="literal">null</span>)</span></span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我这里选择直接传入layout id进行布局绑定，尽量简洁明了</p>
+<p><strong>对DataBindingBaseActivity封装：</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">DataBindingBaseActivity</span>&lt;<span class="type">T : ViewDataBinding</span>&gt;</span>(<span class="meta">@LayoutRes</span> <span class="keyword">private</span> <span class="keyword">val</span> layout: <span class="built_in">Int</span>) : BaseActivity() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> _mBinding: T ?= <span class="literal">null</span></span><br><span class="line">    <span class="keyword">val</span> mBinding <span class="keyword">get</span>() = _mBinding!!</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        _mBinding = DataBindingUtil.setContentView(<span class="keyword">this</span>, layout)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDestroy</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy()</span><br><span class="line">        _mBinding?.unbind()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>DataBindingBaseActivity 继承 BaseActivity，开放mBinding给子类使用。</p>
+<h4 id="使用ViewBinding">使用ViewBinding</h4>
+<blockquote>
+<p>并不是所有人都喜欢DataBinding，但是一定所有人都喜欢ViewBinding(我猜的哈哈哈)，平常我用到viewBinding比较多，dataBinding只会在少数几个页面用到，之前一直是直接创建binding，导致模板代码非常多。</p>
+</blockquote>
+<p>先列出参考博客：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6960914424865488932">https://juejin.cn/post/6960914424865488932</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/hi-dhl/Binding">https://github.com/hi-dhl/Binding</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kirich1409/ViewBindingPropertyDelegate">https://github.com/kirich1409/ViewBindingPropertyDelegate</a></li>
+</ol>
+<p>之前使用findViewById()，后来使用butterKnife，在后来使用kotlin直接使用控件id，说实话我挺讨厌直接使用控件id的，所幸这种方式在之后也会被抛弃。</p>
+<p>怎样使用viewbinding在这里就不做介绍了，现在有大佬发现了使用反射或委托去创建viewBinding，请参考<a target="_blank" rel="noopener" href="https://juejin.cn/post/6960914424865488932">链接一</a>，也有现成的库去使用，参考<a target="_blank" rel="noopener" href="https://github.com/kirich1409/ViewBindingPropertyDelegate">链接二</a> <a target="_blank" rel="noopener" href="https://github.com/kirich1409/ViewBindingPropertyDelegate">链接三</a>其覆盖了activity,fragment,dialog,adapter等多种使用场景。</p>
+<p>因为viewbinding的创建已经非常简单了，所以我不再将其封装在BaseActivity中，最终activity使用如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">BaseActivity</span></span>(R.layout.activity_main)&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> binding <span class="keyword">by</span> viewBinding(ActivityMainBinding::bind)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> viewmodel <span class="keyword">by</span> viewModels&lt;CommonViewModel&gt;()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">initData</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此处viewmode创建方法见：<a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/architecture/viewmodel?hl=zh-cn">官网</a></p>
+<h3 id="基础Fragment封装">基础Fragment封装</h3>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseFragment</span></span>(<span class="meta">@LayoutRes</span> <span class="keyword">private</span> <span class="keyword">val</span> layout: <span class="built_in">Int</span>, <span class="keyword">private</span> <span class="keyword">val</span> lazyInit:<span class="built_in">Boolean</span> = <span class="literal">false</span>) : Fragment(layout) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> TAG <span class="keyword">by</span> lazy &#123;</span><br><span class="line">        <span class="keyword">this</span>.javaClass.name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> isLoaded = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">lateinit</span> <span class="keyword">var</span> mContext: Context</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onAttach</span><span class="params">(context: <span class="type">Context</span>)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onAttach(context)</span><br><span class="line">        mContext = context</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onViewCreated</span><span class="params">(view: <span class="type">View</span>, savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onViewCreated(view, savedInstanceState)</span><br><span class="line">        <span class="keyword">if</span> (!lazyInit)&#123;</span><br><span class="line">            initData()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onResume</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onResume()</span><br><span class="line">        <span class="comment">//Fragment是否可见</span></span><br><span class="line">        <span class="keyword">if</span> (!isLoaded &amp;&amp; !isHidden &amp;&amp; lazyInit) &#123;</span><br><span class="line">            initData()</span><br><span class="line">            isLoaded = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="function"><span class="keyword">fun</span> <span class="title">initData</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * fragment跳转，防止重复点击崩溃</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">navigate</span><span class="params">(destination: <span class="type">Int</span>, bundle: <span class="type">Bundle</span> ?= <span class="literal">null</span>)</span></span> = NavHostFragment.findNavController(<span class="keyword">this</span>).apply &#123;</span><br><span class="line">        currentDestination?.getAction(destination)?.let &#123;</span><br><span class="line">            navigate(destination,bundle)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDestroyView</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroyView()</span><br><span class="line">        isLoaded = <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我个人倾向使用<code>单activity+多fragment</code>架构，使用<code>Navigation</code>作为导航，基本能应对大部分场景。<code>navigate()</code>方法是为了防止重复点击崩溃。<code>lazyInit</code>参数代表是否延迟加载</p>
+<h3 id="DataBindingBaseFragment">DataBindingBaseFragment</h3>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">DataBindingBaseFragment</span>&lt;<span class="type">T : ViewDataBinding</span>&gt;</span>(<span class="meta">@LayoutRes</span> <span class="keyword">private</span> <span class="keyword">val</span> layout: <span class="built_in">Int</span>,lazyInit:<span class="built_in">Boolean</span> = <span class="literal">false</span>) : BaseFragment(layout = layout,lazyInit = lazyInit) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> _mBinding: T? = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">val</span> mBinding <span class="keyword">get</span>() = _mBinding!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreateView</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        inflater: <span class="type">LayoutInflater</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        container: <span class="type">ViewGroup</span>?,</span></span></span><br><span class="line"><span class="function"><span class="params">        savedInstanceState: <span class="type">Bundle</span>?</span></span></span><br><span class="line"><span class="function"><span class="params">    )</span></span>: View? &#123;</span><br><span class="line">        _mBinding = DataBindingUtil.inflate(inflater, layout, container, <span class="literal">false</span>)</span><br><span class="line">        <span class="keyword">return</span> mBinding.root</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onViewCreated</span><span class="params">(view: <span class="type">View</span>, savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onViewCreated(view, savedInstanceState)</span><br><span class="line">        <span class="comment">//LiveData needs the lifecycle owner</span></span><br><span class="line">        mBinding.lifecycleOwner = requireActivity()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDestroyView</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroyView()</span><br><span class="line">        _mBinding?.unbind()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>mBinding.lifecycleOwner = requireActivity() 是databinding配合LiveData使用时需要的</p>
+</blockquote>
+<p><strong>使用：</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataBindingFragment</span> : <span class="type">DataBindingBaseFragment</span>&lt;<span class="type">FragmentDatabindBinding</span>&gt;</span>(R.layout.fragment_databind) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> viewmodel <span class="keyword">by</span> activityViewModels&lt;DataBindViewModel&gt;()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">initData</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="comment">//不要忘了赋值</span></span><br><span class="line">        mBinding.viewmodel = viewmodel</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="网络框架封装">网络框架封装</h3>
+<p>我的想法是使用 <code>协程</code> + <code>ViewModel</code> + <code>Repository</code>去做网络请求，返回结果使用<code>LiveData</code>保存在<code>ViewModel</code>中</p>
+<ul>
+<li>Reporisitory的职责就是数据处理，包括本地数据和网络数据</li>
+<li>ViewModel的职责就是连接UI和数据</li>
+<li>LiveData可以进行数据的观察</li>
+</ul>
+<p>我们接口返回数据的基础类：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApiResponse</span>&lt;<span class="type">T</span>&gt; : <span class="type">Serializable &#123;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> code : <span class="built_in">Int</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">data</span> : T ?= <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> message : Any ?= <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> state : NetState = NetState.STATE_UNSTART</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> error : String = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 如果服务端data肯定不为null，直接将data返回。</span></span><br><span class="line"><span class="comment">     * 假如data为null证明服务端出错,这种错误已经产生并且不可逆，反射生成空对象</span></span><br><span class="line"><span class="comment">     * 客户端只需保证不闪退并给予提示即可</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">data</span><span class="params">()</span></span>: T? &#123;</span><br><span class="line">        <span class="keyword">when</span> (code) &#123;</span><br><span class="line">            <span class="comment">//请求成功</span></span><br><span class="line">            <span class="number">0</span>, <span class="number">200</span> -&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="literal">null</span>==<span class="keyword">data</span>)&#123;</span><br><span class="line">                    <span class="keyword">data</span> = Any::<span class="keyword">class</span>.java.newInstance() <span class="keyword">as</span> T</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">data</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> ApiException(message <span class="keyword">as</span> String, code)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>一般接口返回的就是<code>code</code> <code>data</code> <code>message</code>，如果有其他的可以自行更改，其中state是状态类，如下：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">enum class NetState &#123;</span><br><span class="line">    STATE_UNSTART,<span class="regexp">//</span>未知</span><br><span class="line">    STATE_LOADING,<span class="regexp">//</span>加载中</span><br><span class="line">    STATE_SUCCESS,<span class="regexp">//</span>成功</span><br><span class="line">    STATE_EMPTY,<span class="regexp">//</span>数据为null</span><br><span class="line">    STATE_FAILED,<span class="regexp">//</span>接口请求成功但是服务器返回error</span><br><span class="line">    STATE_ERROR<span class="regexp">//</span>请求失败</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ApiException是自定义的异常抛出类：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">ApiException</span>(<span class="symbol">val</span> <span class="symbol">errorMessage: <span class="symbol">String</span>, <span class="symbol">val</span></span> <span class="symbol">errorCode: <span class="symbol">Int</span></span>) : <span class="symbol">Throwable</span>()</span><br></pre></td></tr></table></figure>
+<p>定义接口：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Api</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GET(<span class="meta-string">&quot;banner/json&quot;</span>)</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">loadProjectTree</span><span class="params">()</span></span>: ApiResponse&lt;List&lt;BannerData&gt;&gt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建RetrofitFactory：</p>
+<figure class="highlight roboconf"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">object RetrofitFactory &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">private val okHttpClientBuilder</span>: OkHttpClient<span class="variable">.Builder</span> by lazy &#123;</span><br><span class="line">        OkHttpClient<span class="variable">.Builder</span>()</span><br><span class="line">            <span class="variable">.readTimeout</span>(</span><br><span class="line">                10000,</span><br><span class="line">                TimeUnit<span class="variable">.MILLISECONDS</span></span><br><span class="line">            )</span><br><span class="line">            <span class="variable">.connectTimeout</span>(</span><br><span class="line">                10000,</span><br><span class="line">                TimeUnit<span class="variable">.MILLISECONDS</span></span><br><span class="line">            )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    fun factory(): Retrofit &#123;</span><br><span class="line">        val okHttpClient = okHttpClientBuilder<span class="variable">.build</span>()</span><br><span class="line">        val retrofit = Retrofit<span class="variable">.Builder</span>()</span><br><span class="line">                <span class="variable">.client</span>(okHttpClient)</span><br><span class="line">                <span class="variable">.addConverterFactory</span>(GsonConverterFactory<span class="variable">.create</span>())</span><br><span class="line">                <span class="variable">.baseUrl</span>(&quot;https://www<span class="variable">.wanandroid</span><span class="variable">.com</span>/&quot;)</span><br><span class="line">                <span class="variable">.build</span>()</span><br><span class="line">        return retrofit</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建Retrofit管理类：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">object</span> RetrofitManager &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用于存储ApiService</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> map = mutableMapOf&lt;Class&lt;*&gt;, Any&gt;()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> retrofit <span class="keyword">by</span> lazy &#123;</span><br><span class="line">        RetrofitFactory.factory()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//动态指定域名</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T : Any&gt;</span> <span class="title">getApiService</span><span class="params">(apiClass: <span class="type">Class</span>&lt;<span class="type">T</span>&gt;)</span></span>: T &#123;</span><br><span class="line">        <span class="keyword">return</span> getService(apiClass)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取ApiService单例对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T : Any&gt;</span> <span class="title">getService</span><span class="params">(apiClass: <span class="type">Class</span>&lt;<span class="type">T</span>&gt;)</span></span>: T&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">if</span> (map[apiClass] == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">val</span> t = retrofit.create(apiClass)</span><br><span class="line">            <span class="keyword">if</span> (map[apiClass] == <span class="literal">null</span>) &#123;</span><br><span class="line">                map[apiClass] = t</span><br><span class="line">            &#125;</span><br><span class="line">            t</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map[apiClass] <span class="keyword">as</span> T</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Repo中的调用：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommonRepo</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> mService: Api = RetrofitManager.getApiService(Api::<span class="keyword">class</span>.java)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">laod</span><span class="params">()</span></span> = mService.loadProjectTree()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以使用将网络请求封装在BaseRepo中：</p>
+<ol>
+<li>修改API接口中的方法，使用suspend修饰</li>
+</ol>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Api</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GET(<span class="meta-string">&quot;banner/json&quot;</span>)</span></span><br><span class="line">    <span class="keyword">suspend</span> <span class="function"><span class="keyword">fun</span> <span class="title">loadProjectTree</span><span class="params">()</span></span>: ApiResponse&lt;List&lt;BannerData&gt;&gt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.BaseRepo中需传入协程，在viewmodel中创建repo的时候最好使用<code>viewModelScope</code></p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseRepository</span></span>(<span class="keyword">private</span> <span class="keyword">val</span> coroutineScope: CoroutineScope) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">launch</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            block : <span class="type">suspend</span> () -&gt; <span class="type">ApiResponse</span>&lt;<span class="type">T</span>&gt;,</span></span></span><br><span class="line"><span class="function"><span class="params">            success: <span class="type">suspend</span> (<span class="type">ApiResponse</span>&lt;<span class="type">T</span>&gt;) -&gt; <span class="type">Unit</span></span></span></span><br><span class="line"><span class="function"><span class="params">    )</span></span>&#123;</span><br><span class="line">        coroutineScope.launch(Dispatchers.IO)&#123;</span><br><span class="line">            <span class="keyword">var</span> baseResp = ApiResponse&lt;T&gt;()</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                baseResp.state = NetState.STATE_LOADING</span><br><span class="line">                <span class="comment">//开始请求数据</span></span><br><span class="line">                <span class="keyword">val</span> invoke = block.invoke()</span><br><span class="line">                <span class="comment">//将结果复制给baseResp</span></span><br><span class="line">                baseResp = invoke</span><br><span class="line">                <span class="keyword">when</span>(baseResp.code)&#123;</span><br><span class="line">                    <span class="number">0</span>,<span class="number">200</span> -&gt; &#123;</span><br><span class="line">                        <span class="comment">//请求成功，判断数据是否为空</span></span><br><span class="line">                        <span class="keyword">if</span> (baseResp.<span class="keyword">data</span> == <span class="literal">null</span> || baseResp.<span class="keyword">data</span> <span class="keyword">is</span> List&lt;*&gt; &amp;&amp; (baseResp.<span class="keyword">data</span> <span class="keyword">as</span> List&lt;*&gt;).size == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="comment">//<span class="doctag">TODO:</span> 数据为空,结构变化时需要修改判空条件</span></span><br><span class="line">                            baseResp.state = NetState.STATE_EMPTY</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="comment">//请求成功并且数据为空的情况下，为STATE_SUCCESS</span></span><br><span class="line">                            baseResp.state = NetState.STATE_SUCCESS</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="number">400</span>,<span class="number">401</span> -&gt; &#123;</span><br><span class="line">                        baseResp.state = NetState.STATE_FAILED</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">catch</span> (e:Exception)&#123;</span><br><span class="line">                baseResp.state = NetState.STATE_ERROR</span><br><span class="line">                e.printStackTrace()</span><br><span class="line">            &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">                success(baseResp)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过NetState设置请求状态</li>
+<li>block代表一个返回ApiResponse<T>的suspend方法</li>
+<li>success代表返回一个ApiResponse<T>类型的对象</li>
+</ul>
+<p><strong>Repo中调用调用</strong>：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">laod</span><span class="params">(resultLiveData: <span class="type">MutableLiveData</span>&lt;<span class="type">ApiResponse</span>&lt;<span class="type">List</span>&lt;<span class="type">BannerData</span>&gt;&gt;&gt;)</span></span>&#123;</span><br><span class="line">    launch(</span><br><span class="line">        block = &#123;</span><br><span class="line">            mService.loadProjectTree()</span><br><span class="line">        &#125;,</span><br><span class="line">        success = &#123;</span><br><span class="line">            resultLiveData.postValue(it)</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你觉得MutableLiveData&lt;ApiResponse<T>&gt;看起来头疼，可以再进行一次封装：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">ResultLiveData</span>&lt;<span class="symbol">T</span>&gt; : <span class="symbol">MutableLiveData</span>&lt;<span class="symbol">ApiResponse</span>&lt;<span class="symbol">T</span>&gt;&gt;() &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="最终网络请求完整流程：">最终网络请求完整流程：</h4>
+<p>viewModel:</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommonViewModel</span> : <span class="type">ViewModel</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> repo <span class="keyword">by</span> lazy &#123; CommonRepo(viewModelScope) &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> liveData = ResultLiveData&lt;List&lt;BannerData&gt;&gt;()</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">load</span><span class="params">()</span></span>&#123;</span><br><span class="line">        repo.laod(liveData)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>repo：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="constructor">CommonRepo(<span class="params">scope</span>: CoroutineScope)</span> : <span class="constructor">BaseRepository(<span class="params">scope</span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> var mService: Api = <span class="module-access"><span class="module"><span class="identifier">RetrofitManager</span>.</span></span>get<span class="constructor">ApiService(Api::<span class="params">class</span>.<span class="params">java</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">fun</span> laod(resultLiveData: ResultLiveData&lt;List&lt;BannerData&gt;&gt;)&#123;</span><br><span class="line">        launch(</span><br><span class="line">            block = &#123;</span><br><span class="line">                mService.load<span class="constructor">ProjectTree()</span></span><br><span class="line">            &#125;,</span><br><span class="line">            success = &#123;</span><br><span class="line">                resultLiveData.post<span class="constructor">Value(<span class="params">it</span>)</span></span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>UI：</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">commonViewModel</span><span class="selector-class">.load</span>()</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">commonViewModel</span><span class="selector-class">.liveData</span><span class="selector-class">.observe</span>(viewLifecycleOwner, Observer &#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="最后附上Demo地址">最后附上<a target="_blank" rel="noopener" href="https://github.com/xluu233/mvvm_develop">Demo地址</a></h3>
+<p><strong>下一篇：进行组件化改造</strong></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/test/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">工欲善其事必先利其器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%98%8E%E7%A1%AE%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">明确思路</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%AD%A5%E5%85%A5%E6%AD%A3%E9%A2%98%EF%BC%9A%E5%9F%BA%E7%A1%80Activity%E5%B0%81%E8%A3%85"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">步入正题：基础Activity封装</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8ViewBinding"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">使用ViewBinding</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E7%A1%80Fragment%E5%B0%81%E8%A3%85"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">基础Fragment封装</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DataBindingBaseFragment"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">DataBindingBaseFragment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6%E5%B0%81%E8%A3%85"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">网络框架封装</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%9C%80%E7%BB%88%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">最终网络请求完整流程：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9C%80%E5%90%8E%E9%99%84%E4%B8%8ADemo%E5%9C%B0%E5%9D%80"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">最后附上Demo地址</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#MVVM" title="MVVM">MVVM</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/xluu233">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          卢小胖
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://xluu233.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
