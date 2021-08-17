@@ -134,10 +134,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://xluu233.github.io/categories/">
+  <link rel="canonical" href="https://xluu233.github.io/tags/Navigation/">
   <title>
     
-      Categories - 卢小胖的开发日志
+      卢小胖的开发日志
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -343,19 +343,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/home.jpg');
-      --intro-header-background-image-url-post: url('img/categories.jpg');
-      --intro-header-background-image-url-page: url('/img/categories.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/archive.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('img/categories.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/categories.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/archive.jpg');
     }
 
     header.intro-header {
        /*page*/
         background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/categories.jpg'); */
+        /* background-image: url('/img/archive.jpg'); */
       
     }
 
@@ -374,9 +374,9 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
           <div class="site-heading">
-            <h1>Categories</h1>
+            <h1>BugMaker</h1>
             <!--<hr class="small">-->
-            <span class="subheading">这里是分类</span>
+            <span class="subheading">Create bugs to solve problems</span>
           </div>
           
         </div>
@@ -420,105 +420,130 @@
 		<!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <!-- 分类页面 -->
+    
+    <!-- NO SIDEBAR -->
+    <!-- Post Container -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+      <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
       
 
-      <!-- 标签云 -->
-      <div id='tag_cloud' class="tags">
-        
-        <a href="#Android" title="Android" rel="4">Android</a>
-        
-      </div>
-
-      <!-- 标签列表 -->
+      <!-- 归档列表 -->
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="Android">
-          <span class="tag-text">Android</span>
+        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+          <span class="tag-text">2021</span>
         </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/写一个MVVM快速开发框架（一）基础类封装/">
-            <h2 class="post-title">
-              写一个MVVM快速开发框架（一）基础类封装
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/写一个MVVM快速开发框架（二）组件化改造/">
-            <h2 class="post-title">
-              写一个MVVM快速开发框架（二）组件化改造
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              A succinct hexo theme...
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/封装一个好看的吐司框架/">
-            <h2 class="post-title">
-              封装一个好看的吐司框架
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/谈一谈“单Activity-多Fragment”模式/">
-            <h2 class="post-title">
-              MVVM(三) 谈一谈“单Activity+多Fragment”模式
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
+        <ul>
+          
+          <li>
+            08-14
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/谈一谈“单Activity-多Fragment”模式/" style="color: #0085a1">
+              <span>
+                MVVM(三) 谈一谈“单Activity+多Fragment”模式
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            08-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/封装一个好看的吐司框架/" style="color: #0085a1">
+              <span>
+                封装一个好看的吐司框架
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            08-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/写一个MVVM快速开发框架（二）组件化改造/" style="color: #0085a1">
+              <span>
+                写一个MVVM快速开发框架（二）组件化改造
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            07-28
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/写一个MVVM快速开发框架（一）基础类封装/" style="color: #0085a1">
+              <span>
+                写一个MVVM快速开发框架（一）基础类封装
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
       </div>
       
+    </div>
+  </div>
+</div>
+
 
     </div>
+    <!-- Sidebar Container -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+
+      <!-- Featured Tags -->
+      
+      <section>
+        <!-- no hr -->
+        <h5><a href="/tags/">特色标签</a></h5>
+        <div class="tags">
+          
+          
+          <a href="/tags/#MVVM" title="MVVM" rel="3">MVVM</a>
+          
+          
+          
+          <a href="/tags/#网络框架" title="网络框架" rel="1">网络框架</a>
+          
+          
+          
+          <a href="/tags/#组件化" title="组件化" rel="1">组件化</a>
+          
+          
+          
+          <a href="/tags/#Toast" title="Toast" rel="1">Toast</a>
+          
+          
+          
+          <a href="/tags/#Lottie" title="Lottie" rel="1">Lottie</a>
+          
+          
+          
+          <a href="/tags/#Navigation" title="Navigation" rel="1">Navigation</a>
+          
+          
+        </div>
+      </section>
+      
+
+      <!-- Friends Blog -->
+      
+    </div>
+    
   </div>
 </div>
 
