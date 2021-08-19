@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xluu233.github.io/cn/%E8%87%AA%E5%AE%9A%E4%B9%89Navigation%E5%8A%A8%E7%94%BB/</loc>
+    
+    <lastmod>2021-08-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xluu233.github.io/cn/%E8%B0%88%E4%B8%80%E8%B0%88%E2%80%9C%E5%8D%95Activity-%E5%A4%9AFragment%E2%80%9D%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2021-08-13</lastmod>
@@ -67,7 +74,7 @@
 
   <url>
     <loc>https://xluu233.github.io/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,42 +82,49 @@
   
   <url>
     <loc>https://xluu233.github.io/tags/MVVM/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Toast/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Lottie/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Navigation/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xluu233.github.io/tags/%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -119,7 +133,7 @@
   
   <url>
     <loc>https://xluu233.github.io/categories/Android/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
