@@ -134,10 +134,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://xluu233.github.io/cn/自定义Navigation动画/">
+  <link rel="canonical" href="https://xluu233.github.io/tags/Room/">
   <title>
     
-      一点也不炫酷的Navigation动画 - 卢小胖的开发日志
+      卢小胖的开发日志
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -343,19 +343,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/home.jpg');
-      --intro-header-background-image-url-post: url('/img/common_back.jpg');
-      --intro-header-background-image-url-page: url('//img/common_back.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/archive.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/common_back.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/common_back.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/archive.jpg');
     }
 
     header.intro-header {
-       /*post*/
-        background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/common_back.jpg'); */
+       /*page*/
+        background-image: var(--intro-header-background-image-url-page);
+        /* background-image: url('/img/archive.jpg'); */
       
     }
 
@@ -373,44 +373,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#Navigation" title="Navigation">Navigation</a>
-              
-              <a class="tag" href="/tags/#动画" title="动画">动画</a>
-              
-            </div>
-            <h1>一点也不炫酷的Navigation动画</h1>
-            <h2 class="subheading"></h2>
-            <span class="meta">
-              Posted by 卢小胖 on
-              2021-08-19
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">841</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- WordCount end -->
-            
-            
-            <!-- 不蒜子统计 start -->
-            <span class="meta" id="busuanzi_container_page_pv">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            
-
-
+          <div class="site-heading">
+            <h1>BugMaker</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">Create bugs to solve problems</span>
           </div>
           
         </div>
@@ -451,292 +417,173 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+		<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
+    <!-- NO SIDEBAR -->
+    <!-- Post Container -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-        <blockquote>
-<p>在上一篇中我们说到了使用Navigation导航Fragment，介绍了Navigation的基本使用，然后突然想到做一些Fragment的跳转动画，所以产生了一些内容哈哈哈</p>
-</blockquote>
-<h3 id="Navigation中使用动画">Navigation中使用动画</h3>
-<p>通常我们设置一个跳转action是酱紫的：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;action</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/action_scale1&quot;</span></span><br><span class="line">    app:<span class="attribute">destination</span>=<span class="string">&quot;@id/fragmentTwo&quot;</span></span><br><span class="line">    app:<span class="attribute">enterAnim</span>=<span class="string">&quot;@anim/scale_in_right&quot;</span></span><br><span class="line">    app:<span class="attribute">exitAnim</span>=<span class="string">&quot;@anim/scale_out_left&quot;</span></span><br><span class="line">    app:<span class="attribute">popExitAnim</span>=<span class="string">&quot;@anim/scale_out_right&quot;</span></span><br><span class="line">    app:<span class="attribute">popEnterAnim</span>=<span class="string">&quot;@anim/scale_in_left&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
-<p>可以点击Fragment,通过傍边的小箭头设置：</p>
-<div align=center>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3abb6419b9d942a38867e4fe3fd24247~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<p>其中可以设置目的地，动画，返回地址：</p>
-<div align=center>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7707704d6b574a088c6d8537170cb824~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<p>设置动画需要在res目录下新建anim文件夹，保存动画xml文件：</p>
-<div align=center>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/32f8963fd8ee44aeb43c7a1d8c3b71af~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<p><strong>关于几个参数的介绍：</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>app:enterAnim</td>
-<td>目标Fragment进场动画</td>
-</tr>
-<tr>
-<td>app:exitAnim</td>
-<td>原Fragment退出动画</td>
-</tr>
-<tr>
-<td>app:popExitAnim</td>
-<td>返回时，原Fragment退出动画</td>
-</tr>
-<tr>
-<td>app:popEnterAnim</td>
-<td>返回Fragment进场动画</td>
-</tr>
-</tbody>
-</table>
-<h3 id="动画属性说明">动画属性说明</h3>
-<blockquote>
-<p>这里使用的是补间动画，就是显示样式看起来改变了，其实view的实际位置是没有变化的：</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:duration</span>=<span class="string">&quot;4000&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:fillAfter</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:fillBefore</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:interpolator</span>=<span class="string">&quot;@[package:]anim/interpolator_resource&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatMode</span>=<span class="string">&quot;restart | reverse&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatCount</span> = <span class="string">“0”</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shareInterpolator</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:startOffset</span>=<span class="string">&quot;float&quot;</span>&gt;</span></span><br><span class="line">    &lt;alpha</span><br><span class="line">        android:fromAlpha=&quot;float&quot;</span><br><span class="line">        android:toAlpha=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;scale</span><br><span class="line">        android:fromXScale=&quot;float&quot;</span><br><span class="line">        android:fromYScale=&quot;float&quot;</span><br><span class="line">        android:pivotX=&quot;float&quot;</span><br><span class="line">        android:pivotY=&quot;float&quot;</span><br><span class="line">        android:toXScale=&quot;float&quot;</span><br><span class="line">        android:toYScale=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;rotate</span><br><span class="line">        android:fromDegrees=&quot;float&quot;</span><br><span class="line">        android:pivotX=&quot;float&quot;</span><br><span class="line">        android:pivotY=&quot;float&quot;</span><br><span class="line">        android:toDegrees=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;translate</span><br><span class="line">        android:fromXDelta=&quot;float&quot;</span><br><span class="line">        android:fromYDelta=&quot;float&quot;</span><br><span class="line">        android:toXDelta=&quot;float&quot;</span><br><span class="line">        android:toYDelta=&quot;float&quot; /&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>常用的属性：</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>alpha</td>
-<td>透明度设置效果</td>
-</tr>
-<tr>
-<td>scale</td>
-<td>大小缩放效果</td>
-</tr>
-<tr>
-<td>rotate</td>
-<td>旋转效果</td>
-</tr>
-<tr>
-<td>translate</td>
-<td>位移效果</td>
-</tr>
-</tbody>
-</table>
-<p>常用设置：</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>android:duration</td>
-<td>动画时长</td>
-</tr>
-<tr>
-<td>fromXX</td>
-<td>开始状态</td>
-</tr>
-<tr>
-<td>toXX</td>
-<td>结束状态</td>
-</tr>
-</tbody>
-</table>
-<p>具体的参数太多了，可以参考：<br>
-<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1aabbd498262">https://www.jianshu.com/p/1aabbd498262</a><br>
-<a target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/android-animation/1.html">https://wiki.jikexueyuan.com/project/android-animation/1.html</a></p>
-<blockquote>
-<p>接下来我们自己定义一些跳转动画，为了让大家看清楚，时间设置的会长一点，实际使用建议设置短一点，这样看起来干净利落。我一般将经场动画设置为400ms，出场动画设置为250ms</p>
-</blockquote>
-<h3 id="样式总结">样式总结</h3>
-<h4 id="渐入渐出样式">渐入渐出样式</h4>
-<p>AS提供了一些默认的动画，是<strong>渐入渐出样式</strong>：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;action</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/action_default&quot;</span></span><br><span class="line">    app:<span class="attribute">destination</span>=<span class="string">&quot;@id/fragmentTwo&quot;</span></span><br><span class="line">    app:<span class="attribute">enterAnim</span>=<span class="string">&quot;@anim/nav_default_enter_anim&quot;</span></span><br><span class="line">    app:<span class="attribute">exitAnim</span>=<span class="string">&quot;@anim/nav_default_exit_anim&quot;</span></span><br><span class="line">    app:<span class="attribute">popEnterAnim</span>=<span class="string">&quot;@anim/nav_default_pop_enter_anim&quot;</span></span><br><span class="line">    app:<span class="attribute">popExitAnim</span>=<span class="string">&quot;@anim/nav_default_pop_exit_anim&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
-<div align=center>
-<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/926b6bb68ac34aae9fd33a9893d1320a~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<h4 id="平移样式">平移样式</h4>
-<p>自定义<strong>平移样式</strong>，主要是设置X轴偏移：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;translate</span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;400&quot;</span></span><br><span class="line">    android:<span class="attribute">fromXDelta</span>=<span class="string">&quot;100%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">toYDelta</span>=<span class="string">&quot;0%&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
-<div align=center>
-<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ea36f93c9e04411a9e3af78d0e08cae4~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<h4 id="缩放样式1">缩放样式1</h4>
-<p>自定义<strong>缩放样式</strong>，translate配合scale使用：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;translate</span><br><span class="line">    android:<span class="attribute">fromXDelta</span>=<span class="string">&quot;-100%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">toYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;300&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;scale</span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;300&quot;</span></span><br><span class="line">    android:<span class="attribute">fromXScale</span>=<span class="string">&quot;0.5&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYScale</span>=<span class="string">&quot;0.5&quot;</span></span><br><span class="line">    android:<span class="attribute">pivotX</span>=<span class="string">&quot;50%&quot;</span></span><br><span class="line">    android:<span class="attribute">pivotY</span>=<span class="string">&quot;50%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXScale</span>=<span class="string">&quot;1&quot;</span></span><br><span class="line">    android:<span class="attribute">toYScale</span>=<span class="string">&quot;1&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
-<div align=center>
-<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1cbf1e1b723f49a6b2d4c5f127719b64~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<h4 id="缩放样式2">缩放样式2</h4>
-<div align=center>
-<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/de757b12bf44479ea6f0c436d595d076~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<h4 id="缩放样式3">缩放样式3</h4>
-<div align=center>
-<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8686378e93d434a801369d231030841~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<h4 id="从下往上出现">从下往上出现</h4>
-<div align=center>
-<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/21a76122402345ceb7b4ac32f27e051d~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<h4 id="旋转">旋转</h4>
-<p>如果你想玩点花的，还可以这样子：</p>
-<div align=center>
-<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f564688d3be442148f7fd3145742ea5c~tplv-k3u1fbpfcp-watermark.image"/>
-</div>
-<hr>
-<p><strong>最后附上代码：</strong><br>
-<a target="_blank" rel="noopener" href="https://github.com/xluu233/NavigationAnim">https://github.com/xluu233/NavigationAnim</a></p>
-<p><em>卑微Androider在线求个Star</em>😅</p>
-<p><strong>相关阅读：</strong><br>
-<a target="_blank" rel="noopener" href="https://juejin.cn/post/6996164509534519333">封装一个好看的吐司工具</a></p>
+      <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
+      
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
+      <!-- 归档列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+          <span class="tag-text">2021</span>
+        </span>
+        <ul>
           
-          <li class="previous">
-            <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/" data-toggle="tooltip" data-placement="top" title="写一个MVVM快速开发框架（四）优雅的数据处理和事件通信">&larr; Previous Post</a>
+          <li>
+            08-26
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/" style="color: #0085a1">
+              <span>
+                写一个MVVM快速开发框架（四）优雅的数据处理和事件通信
+                
+                -- cn
+                
+              </span>
+            </a>
           </li>
           
+          <li>
+            08-19
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/自定义Navigation动画/" style="color: #0085a1">
+              <span>
+                一点也不炫酷的Navigation动画
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
           
-          <li class="next">
-            <a href="/cn/谈一谈“单Activity-多Fragment”模式/" data-toggle="tooltip" data-placement="top" title="MVVM(三) 谈一谈“单Activity+多Fragment”模式">Next Post &rarr;</a>
+          <li>
+            08-14
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/谈一谈“单Activity-多Fragment”模式/" style="color: #0085a1">
+              <span>
+                MVVM(三) 谈一谈“单Activity+多Fragment”模式
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            08-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/封装一个好看的吐司框架/" style="color: #0085a1">
+              <span>
+                封装一个好看的吐司框架
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            08-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/写一个MVVM快速开发框架（二）组件化改造/" style="color: #0085a1">
+              <span>
+                写一个MVVM快速开发框架（二）组件化改造
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            07-28
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/写一个MVVM快速开发框架（一）基础类封装/" style="color: #0085a1">
+              <span>
+                写一个MVVM快速开发框架（一）基础类封装
+                
+                -- cn
+                
+              </span>
+            </a>
           </li>
           
         </ul>
-
-        
-
-        
-        <hr>
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-
-<!-- 2. gitment comment -->
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
-
       </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">目录</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Navigation%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8A%A8%E7%94%BB"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Navigation中使用动画</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A8%E7%94%BB%E5%B1%9E%E6%80%A7%E8%AF%B4%E6%98%8E"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">动画属性说明</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A0%B7%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">样式总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%B8%90%E5%85%A5%E6%B8%90%E5%87%BA%E6%A0%B7%E5%BC%8F"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">渐入渐出样式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%B9%B3%E7%A7%BB%E6%A0%B7%E5%BC%8F"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">平移样式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BC%A9%E6%94%BE%E6%A0%B7%E5%BC%8F1"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">缩放样式1</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BC%A9%E6%94%BE%E6%A0%B7%E5%BC%8F2"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">缩放样式2</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BC%A9%E6%94%BE%E6%A0%B7%E5%BC%8F3"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">缩放样式3</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BB%8E%E4%B8%8B%E5%BE%80%E4%B8%8A%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">从下往上出现</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-nav-number">3.7.</span> <span class="toc-nav-text">旋转</span></a></li></ol></li></ol>
-        
-        </div>
-      </aside>
-    
-
-
-
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">特色标签</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#Navigation" title="Navigation">Navigation</a>
-            
-            <a class="tag" href="/tags/#动画" title="动画">动画</a>
-            
-          </div>
-        </section>
-        
-
-        <!-- Friends Blog -->
-        
-      </div>
+      
     </div>
   </div>
-</article>
+</div>
 
 
+    </div>
+    <!-- Sidebar Container -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
 
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
+      <!-- Featured Tags -->
+      
+      <section>
+        <!-- no hr -->
+        <h5><a href="/tags/">特色标签</a></h5>
+        <div class="tags">
+          
+          
+          <a href="/tags/#MVVM" title="MVVM" rel="4">MVVM</a>
+          
+          
+          
+          <a href="/tags/#网络框架" title="网络框架" rel="1">网络框架</a>
+          
+          
+          
+          <a href="/tags/#组件化" title="组件化" rel="1">组件化</a>
+          
+          
+          
+          <a href="/tags/#Toast" title="Toast" rel="1">Toast</a>
+          
+          
+          
+          <a href="/tags/#Lottie" title="Lottie" rel="1">Lottie</a>
+          
+          
+          
+          <a href="/tags/#Navigation" title="Navigation" rel="2">Navigation</a>
+          
+          
+          
+          <a href="/tags/#动画" title="动画" rel="1">动画</a>
+          
+          
+          
+          <a href="/tags/#LiveData" title="LiveData" rel="1">LiveData</a>
+          
+          
+          
+          <a href="/tags/#Room" title="Room" rel="1">Room</a>
+          
+          
+        </div>
+      </section>
+      
 
-<!-- anchorjs end -->
-
+      <!-- Friends Blog -->
+      
+    </div>
+    
+  </div>
+</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
