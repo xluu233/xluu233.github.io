@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xluu233.github.io/undefined/%E5%86%99%E4%B8%80%E4%B8%AAMVVM%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6%EF%BC%88%E5%9B%9B%EF%BC%89%E4%BC%98%E9%9B%85%E7%9A%84%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%92%8C%E4%BA%8B%E4%BB%B6%E9%80%9A%E4%BF%A1/</loc>
+    
+    <lastmod>2021-08-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xluu233.github.io/cn/%E8%87%AA%E5%AE%9A%E4%B9%89Navigation%E5%8A%A8%E7%94%BB/</loc>
     
     <lastmod>2021-08-18</lastmod>
@@ -74,7 +81,7 @@
 
   <url>
     <loc>https://xluu233.github.io/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,49 +89,49 @@
   
   <url>
     <loc>https://xluu233.github.io/tags/MVVM/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Toast/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Lottie/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Navigation/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E5%8A%A8%E7%94%BB/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -133,7 +140,7 @@
   
   <url>
     <loc>https://xluu233.github.io/categories/Android/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

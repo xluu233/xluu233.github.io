@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="bugmaker,xlu233,Android"/>
+  <link rel="shortcut icon" href="/img/icon.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://xluu233.github.io/undefined/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/">
+  <title>
+    
+      卢小胖的开发日志
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">BugMaker</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/home.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/archive.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/archive.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1></h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2021-08-26
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">13</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <hr>
+<p>title: 写一个MVVM快速开发框架（四）优雅的数据处理和事件通信<br>catalog: true<br>date: 2021-08-26<br>lang: cn<br>header-img: /img/common_back.jpg<br>tags:</p>
+<ul>
+<li>MVVM</li>
+<li>LiveData</li>
+<li>Room<br>categories:</li>
+<li>Android</li>
+</ul>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前的文章介绍了网络封装、组件化、基础工具等，有兴趣的可以查看：</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6989918599007698957">写一个MVVM快速开发框架（一）基础类封装</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6995082240287850527">写一个MVVM快速开发框架（二）组件化改造 </a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6996983931987836941">写一个MVVM快速开发框架（三）单Activity+多Fragment模式</a></p>
+<p>还有一些关于UI的基础工具：</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6996164509534519333">封装一个好看的吐司工具</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6998067266365423646">一点也不炫酷的Navigation动画</a></p>
+<blockquote>
+<p>不知道从什么说起，就记录一些关于数据的那些事吧，与数据打交道是我们工作中最常见的事情。</p>
+</blockquote>
+<p>这里主要介绍了一些开发中与数据有关工具，大家可以自己动手实践，也可以查看<a target="_blank" rel="noopener" href="https://github.com/xluu233/mvvm_develop"><code>mvvm_develop</code></a></p>
+<ul>
+<li>事件通信工具</li>
+<li>key-value存储工具</li>
+<li>数据库</li>
+<li>网络缓存实现</li>
+</ul>
+<h2 id="事件通信总线"><a href="#事件通信总线" class="headerlink" title="事件通信总线"></a>事件通信总线</h2><blockquote>
+<p>为什么要从事件通信说起？最开始的mvc模式开发，数据与UI混杂在一起，数据库和网络请求这些都乱糟糟的，自从EventBus出现之后，给Android开发带来不一样的思路，采用观察者/订阅者模式来处理数据通信。</p>
+</blockquote>
+<p><strong>历史中的事件通信框架：</strong></p>
+<h4 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h4><p>Android事件发布/订阅框架，通过解耦发布者和订阅者简化Android事件传递，这里的事件可以理解为消息。事件传递既可以用于Android四大组件间通讯，也可以用于异步线程和主线程间通讯等。</p>
+<h4 id="RxBus"><a href="#RxBus" class="headerlink" title="RxBus"></a>RxBus</h4><p>收益与RxJava强大的异步处理能力，我们可以轻易生成一个观察者模式的事件通信框架。也是我之前项目中用到最多的。</p>
+<h4 id="LiveData"><a href="#LiveData" class="headerlink" title="LiveData"></a>LiveData</h4><p>LiveData不是为了事件通信而生的，但是其天生的属性（可观察属性和生命周期监听属性）我们很难不利用，同样其配合viewModel+Lifecycle似乎是我们mvvm模式下的不二之选。</p>
+<blockquote>
+<p>至于三者之间的优缺点，参考：<a target="_blank" rel="noopener" href="https://tech.meituan.com/2018/07/26/android-livedatabus.html">https://tech.meituan.com/2018/07/26/android-livedatabus.html</a></p>
+</blockquote>
+<h2 id="使用LiveData封装一个事件通信工具"><a href="#使用LiveData封装一个事件通信工具" class="headerlink" title="使用LiveData封装一个事件通信工具"></a>使用LiveData封装一个事件通信工具</h2><p>LiveData天生具有生命周期监听和可观察属性，只需要10行核心代码就可以完成：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">object</span> LiveDataBus&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> bus: MutableMap&lt;String, MutableLiveData&lt;Any&gt;&gt; = HashMap()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">getChannel</span><span class="params">(target: <span class="type">String</span>, type: <span class="type">Class</span>&lt;<span class="type">T</span>&gt;)</span></span>: MutableLiveData&lt;T&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (!bus.containsKey(target)) &#123;</span><br><span class="line">            bus[target] = MutableLiveData()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> bus[target] <span class="keyword">as</span> MutableLiveData&lt;T&gt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>发布消息：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">LiveDataBus</span>.</span></span>getChannel&lt;String&gt;(<span class="string">&quot;test&quot;</span>).post<span class="constructor">Value(<span class="string">&quot;hahahah&quot;</span>)</span></span><br></pre></td></tr></table></figure>
+<p>观察消息：</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">LiveDataBus.getChannel<span class="params">&lt;String&gt;</span>(<span class="string">&quot;test&quot;</span>).observe(viewLifecycleOwner,<span class="class">Observer </span>&#123;</span><br><span class="line">    xLog.d(it)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我们只是创建了一个Map管理LiveData，至此一个跨组件的事件通信组件就完事了，是不是很简单！🤣</p>
+<p>但是其还有一些缺点，比如先发布消息，后创建的订阅者依旧能收到消息，以及重复收到消息等，是不是头疼😎</p>
+<p>我们可以自定义LiveData实现黏性事件和重复性事件的管理。<br>这里可以参考大佬们的代码，具体代码也就一个类：  <a target="_blank" rel="noopener" href="https://github.com/fmtjava/LiveDataBus/blob/master/LiveDataBus/src/main/java/com/fmt/livedatabus/LiveDataBus.kt">https://github.com/fmtjava/LiveDataBus/blob/master/LiveDataBus/src/main/java/com/fmt/livedatabus/LiveDataBus.kt</a></p>
+<h2 id="优雅的数据处理"><a href="#优雅的数据处理" class="headerlink" title="优雅的数据处理"></a>优雅的数据处理</h2><p>我们看一下Google推荐的<a target="_blank" rel="noopener" href="https://developer.android.com/jetpack/guide">应用架构指南</a>：</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aec218f1b78a43d5ba591fbedb5fbb68~tplv-k3u1fbpfcp-watermark.image" alt="final-architecture.png"></p>
+<p>整个架构无非就是围绕<code>数据</code>和<code>View</code>去构建，想要优雅的处理数据，我们需要关注几个点：</p>
+<ul>
+<li>小数据，key-value存储</li>
+<li>大数据，数据库存储</li>
+<li>离线缓存与网络请求数据协同</li>
+<li>数据依赖注入</li>
+<li>数据与View的绑定</li>
+</ul>
+<p>以及其他：</p>
+<ul>
+<li>文件管理</li>
+</ul>
+<blockquote>
+<p>我们接下来一步一步探索吧</p>
+</blockquote>
+<h2 id="Key-Value存储"><a href="#Key-Value存储" class="headerlink" title="Key-Value存储"></a>Key-Value存储</h2><p>我们一般用这种方式存储一些临时数据和配置文件，以键值对为存储方式。</p>
+<p>Google提供的有SharedPreferences，sp是我们常用的了，sp缺点很多：性能差、线程不安全，所以有了MMKV的替代方案。</p>
+<p>目前我经常使用的就是mmkv的方案，这个网上也有很多介绍的了，<a target="_blank" rel="noopener" href="https://github.com/Tencent/MMKV/wiki/android_tutorial_cn">官方文档</a>对其原理和使用介绍的非常清除，我们只需要封装一下就可以愉快的使用了。</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> android.app.Application</span><br><span class="line"><span class="keyword">import</span> android.os.Parcelable</span><br><span class="line"><span class="keyword">import</span> com.tencent.mmkv.MMKV</span><br><span class="line"><span class="keyword">import</span> java.util.*</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> mmkvUtils</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> mmkv存储工具类，参考：https://github.com/Tencent/MMKV/wiki/android_tutorial_cn</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> AlexLu_1406496344<span class="doctag">@qq</span>.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2020/12/14 16:06</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">MMKV_TYPE</span></span>&#123;</span><br><span class="line">    USER,</span><br><span class="line">    APP</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MMKVUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="meta">@JvmField</span></span><br><span class="line">        <span class="keyword">val</span> instance = MMKVUtil()</span><br><span class="line"></span><br><span class="line">        <span class="comment">//对于app和用户可以设置不同的mmkv</span></span><br><span class="line">        <span class="meta">@Volatile</span></span><br><span class="line">        <span class="keyword">var</span> mmkv: MMKV ?= <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//用户相关</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">val</span> userMMKV <span class="keyword">by</span> lazy &#123;</span><br><span class="line">            MMKV.mmkvWithID(<span class="string">&quot;user&quot;</span>,MMKV.MULTI_PROCESS_MODE)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//app配置相关</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">val</span> appMMKV <span class="keyword">by</span> lazy &#123;</span><br><span class="line">            MMKV.mmkvWithID(<span class="string">&quot;app&quot;</span>,MMKV.MULTI_PROCESS_MODE)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化</span></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">init</span><span class="params">(app:<span class="type">Application</span>)</span></span>&#123;</span><br><span class="line">            MMKV.initialize(app)</span><br><span class="line">            mmkv = appMMKV</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Synchronized</span></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">get</span><span class="params">(type: <span class="type">MMKV_TYPE</span>)</span></span>:MMKVUtil = instance.apply&#123;</span><br><span class="line">            mmkv = <span class="keyword">when</span>(type)&#123;</span><br><span class="line">                MMKV_TYPE.USER -&gt; &#123;</span><br><span class="line">                    userMMKV</span><br><span class="line">                &#125;</span><br><span class="line">                MMKV_TYPE.APP -&gt; &#123;</span><br><span class="line">                    appMMKV</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*-------------Encode----------*/</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">encode</span><span class="params">(key: <span class="type">String</span>, value: <span class="type">Any</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">when</span> (value) &#123;</span><br><span class="line">            <span class="keyword">is</span> String -&gt; mmkv?.encode(key, value)</span><br><span class="line">            <span class="keyword">is</span> <span class="built_in">Float</span> -&gt; mmkv?.encode(key, value)</span><br><span class="line">            <span class="keyword">is</span> <span class="built_in">Boolean</span> -&gt; mmkv?.encode(key, value)</span><br><span class="line">            <span class="keyword">is</span> <span class="built_in">Int</span> -&gt; mmkv?.encode(key, value)</span><br><span class="line">            <span class="keyword">is</span> <span class="built_in">Long</span> -&gt; mmkv?.encode(key, value)</span><br><span class="line">            <span class="keyword">is</span> <span class="built_in">Double</span> -&gt; mmkv?.encode(key, value)</span><br><span class="line">            <span class="keyword">is</span> ByteArray -&gt; mmkv?.encode(key, value)</span><br><span class="line">            <span class="keyword">is</span> <span class="built_in">Nothing</span> -&gt; <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T : Parcelable&gt;</span> <span class="title">encode</span><span class="params">(key: <span class="type">String</span>, t: <span class="type">T</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(t == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        mmkv?.encode(key, t)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">encode</span><span class="params">(key: <span class="type">String</span>, sets: <span class="type">Set</span>&lt;<span class="type">String</span>&gt;?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(sets ==<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        mmkv?.encode(key, sets)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*------------Decode-----------*/</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeInt</span><span class="params">(key: <span class="type">String</span>)</span></span>: <span class="built_in">Int</span>? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeInt(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeString</span><span class="params">(key: <span class="type">String</span>)</span></span>: String?&#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeString(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeDouble</span><span class="params">(key: <span class="type">String</span>)</span></span>: <span class="built_in">Double</span>? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeDouble(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeLong</span><span class="params">(key: <span class="type">String</span>)</span></span>: <span class="built_in">Long</span>? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeLong(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeBoolean</span><span class="params">(key: <span class="type">String</span>)</span></span>: <span class="built_in">Boolean</span>? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeBool(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeFloat</span><span class="params">(key: <span class="type">String</span>)</span></span>: <span class="built_in">Float</span>? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeFloat(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeByteArray</span><span class="params">(key: <span class="type">String</span>)</span></span>: ByteArray? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeBytes(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T : Parcelable&gt;</span> <span class="title">decodeParcelable</span><span class="params">(key: <span class="type">String</span>, tClass: <span class="type">Class</span>&lt;<span class="type">T</span>&gt;)</span></span>: T? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeParcelable(key, tClass)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">decodeStringSet</span><span class="params">(key: <span class="type">String</span>)</span></span>: Set&lt;String&gt;? &#123;</span><br><span class="line">        <span class="keyword">return</span> mmkv?.decodeStringSet(key, Collections.emptySet())</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*------------Delete-----------*/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除key</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">removeKey</span><span class="params">(key: <span class="type">String</span>)</span></span> &#123;</span><br><span class="line">        mmkv?.removeValueForKey(key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除所有</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">clearAll</span><span class="params">()</span></span> &#123;</span><br><span class="line">        mmkv?.clearAll()</span><br><span class="line">        mmkv = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的点：对于app参数和用户参数应该使用不同的mmkv文件，这里通过类型MMKV_TYPE设置，你也可以自行修改</p>
+</blockquote>
+<p><strong>使用步骤:</strong>  </p>
+<ol>
+<li>application中初始化：</li>
+</ol>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">MMKVUtil.<span class="keyword">init</span>(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>写入</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">写入app mmkv文件</span><br><span class="line">MMKVUtil.<span class="keyword">get</span>(MMKV_TYPE.APP).encode(key,&quot;this is mmkv_app params&quot;)</span><br><span class="line"></span><br><span class="line">写入<span class="keyword">user</span> mmkv文件</span><br><span class="line">MMKVUtil.<span class="keyword">get</span>(MMKV_TYPE.<span class="keyword">USER</span>).encode(key,&quot;this is mmkv_user params&quot;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>读取：</li>
+</ol>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">MMKVUtil</span>.</span></span>get(MMKV_TYPE.APP).decode<span class="constructor">String(<span class="params">key</span>)</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>删除：</li>
+</ol>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">全部删除：</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">MMKVUtil</span>.</span></span>get(MMKV_TYPE.USER).clear<span class="constructor">All()</span></span><br><span class="line"></span><br><span class="line">删除一个key:</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">MMKVUtil</span>.</span></span>get(MMKV_TYPE.APP).remove<span class="constructor">Key(<span class="params">key</span>)</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据库："><a href="#数据库：" class="headerlink" title="数据库："></a>数据库：</h2><blockquote>
+<p>很早之前的SQLite异常难用，之后Google推出了Room，Room是jetpcak组件最早的其中之一，其本身是对SQLite的一些封装，能够使我们更流畅的增删改查</p>
+</blockquote>
+<h3 id="快速了解Room"><a href="#快速了解Room" class="headerlink" title="快速了解Room"></a>快速了解Room</h3><p>Room架构图:<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7a60a6fd0284afcb48feca1ba4b51c1~tplv-k3u1fbpfcp-zoom-1.image" alt="image"></p>
+<p><strong>其使用方法也很简单，主要是三步：</strong></p>
+<ul>
+<li>给Bean类添加<code>@Entity</code>注解，生成表文件</li>
+<li>通过<code>@Dao</code>注解设置数据获取接口</li>
+<li>通过<code>@DataBase</code>注解生成数据库类</li>
+</ul>
+<blockquote>
+<p>对于单一module,我们只需创建一个数据库即可，通过单例创建避免消耗过多资源：<br><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Database(entities = Test::class,version = 1)</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Database</span> : <span class="type">RoomDatabase</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">val</span> dbName = <span class="string">&quot;Home.db&quot;</span></span><br><span class="line">        <span class="meta">@Volatile</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">var</span> INSTANCE: Database? = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">getInstance</span><span class="params">()</span></span>: Database = INSTANCE ?: synchronized(<span class="keyword">this</span>) &#123;</span><br><span class="line">            buildDatabase().also &#123; INSTANCE = it &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">buildDatabase</span><span class="params">()</span></span> =</span><br><span class="line">            Room.databaseBuilder(</span><br><span class="line">                BaseApp.getContext(),</span><br><span class="line">                Database::<span class="keyword">class</span>.java, dbName)</span><br><span class="line">                .addMigrations(MIGRATION_1_2)</span><br><span class="line">                .build()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>关于具体的使用方法请参考：</strong>  </p>
+<p>Room官方文档：<br><a target="_blank" rel="noopener" href="https://developer.android.com/jetpack/androidx/releases/room?hl=zh-cn">https://developer.android.com/jetpack/androidx/releases/room?hl=zh-cn</a>  </p>
+<p>Room Demo:<br><a target="_blank" rel="noopener" href="https://github.com/android/architecture-components-samples">https://github.com/android/architecture-components-samples</a></p>
+<p>Android Jetpack ROOM数据库用法介绍：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903903020974093#heading-12">https://juejin.cn/post/6844903903020974093#heading-12</a></p>
+<h3 id="踩坑指南："><a href="#踩坑指南：" class="headerlink" title="踩坑指南："></a>踩坑指南：</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">Cannot figure <span class="keyword">out</span> how <span class="keyword">to</span> save this field <span class="keyword">into</span> <span class="keyword">database</span>. You can consider adding a <span class="keyword">type</span> converter <span class="keyword">for</span> it.</span><br></pre></td></tr></table></figure>
+<p>room不能一张表中的字段不能直接保存数据，可以通过gson转String再存储，或者创建多个表格通过关键字连接<br>参考： <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903790793981959">https://juejin.cn/post/6844903790793981959</a></p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">Room cannot verify <span class="keyword">the</span> data integrity. Looks like you&#x27;ve changed schema <span class="keyword">but</span> forgot <span class="keyword">to</span> update <span class="keyword">the</span> <span class="built_in">version</span> <span class="built_in">number</span>. You can simply fix this <span class="keyword">by</span> increasing <span class="keyword">the</span> <span class="built_in">version</span> <span class="built_in">number</span>.</span><br></pre></td></tr></table></figure>
+<p>数据库升级问题，参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fae0245cf384">https://www.jianshu.com/p/fae0245cf384</a></p>
+<h3 id="数据库调试："><a href="#数据库调试：" class="headerlink" title="数据库调试："></a>数据库调试：</h3><p>高版本的AndroidStudio可以直接通过<code>App Inspection</code>查看，如下：</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91830b3e6d31497ab450329315333d0c~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p>或者直接通过<code>File Explorer</code>文件管理器导出.db数据库文件，其路径为：/data/data/com.example.package/databases</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3eef2de8a5cd42bcbd02c824068bddcd~tplv-k3u1fbpfcp-watermark.image" alt="QQ截图20210825101656.png"></p>
+<h2 id="网络请求缓存"><a href="#网络请求缓存" class="headerlink" title="网络请求缓存"></a>网络请求缓存</h2><blockquote>
+<p>我查看了下手机上目前大部分APP都没有很好的缓存策略，对于有些APP确实没必要缓存，但是对于<code>掘金APP</code>首页全是文章博客，浏览体验要求比较高的app竟然没有很好的缓存策略，断网的情况下基本就是显示<code>网络错误</code>，<code>沸点</code>的缓存是还是很久很久以前的数据。</p>
+</blockquote>
+<p>目前网上关于网络缓存的介绍都是在<code>HttpClient</code>中添加自定义<code>Interceptor</code>,如下：</p>
+<ol>
+<li>设置一个缓存文件：<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">//添加Cache拦截器，有网时添加到缓存中，无网时取出缓存</span></span><br><span class="line">var file: File = <span class="constructor">File(FileUtil.<span class="params">getAppCachePath</span>()</span>)</span><br><span class="line">var cache = <span class="constructor">Cache(<span class="params">file</span>, 1024 <span class="operator">*</span> 1024 <span class="operator">*</span> 100)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">val</span> okHttpClientBuilder: OkHttpClient.Builder by <span class="keyword">lazy</span> &#123;</span><br><span class="line">    OkHttpClient.<span class="constructor">Builder()</span></span><br><span class="line">        .connect<span class="constructor">Timeout(10, TimeUnit.SECONDS)</span></span><br><span class="line">        .write<span class="constructor">Timeout(10, TimeUnit.SECONDS)</span></span><br><span class="line">        .read<span class="constructor">Timeout(10, TimeUnit.SECONDS)</span></span><br><span class="line">        .retry<span class="constructor">OnConnectionFailure(<span class="params">true</span>)</span></span><br><span class="line">        .cache(cache)</span><br><span class="line">        .add<span class="constructor">Interceptor(<span class="params">getLogInterceptor</span>()</span>)</span><br><span class="line">        .add<span class="constructor">Interceptor(<span class="params">getCacheInterceptor</span>()</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>自定义<code>CacheInterceptor</code>：<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置缓存</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">fun</span> get<span class="constructor">CacheInterceptor()</span>:Interceptor = Interceptor &#123; chain -&gt;</span><br><span class="line">    var request = chain.request<span class="literal">()</span></span><br><span class="line">    <span class="comment">//当没有网络时</span></span><br><span class="line">    <span class="keyword">if</span> (!is<span class="constructor">NetworkConnected()</span>) &#123;</span><br><span class="line">        request = request.<span class="keyword">new</span><span class="constructor">Builder()</span> <span class="comment">//CacheControl.FORCE_CACHE; //仅仅使用缓存</span></span><br><span class="line">            <span class="comment">//CacheControl.FORCE_NETWORK;// 仅仅使用网络</span></span><br><span class="line">            .cache<span class="constructor">Control(CacheControl.FORCE_CACHE)</span></span><br><span class="line">            .build<span class="literal">()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> proceed = chain.proceed(request)</span><br><span class="line">    <span class="keyword">if</span> (is<span class="constructor">NetworkConnected()</span>) &#123;</span><br><span class="line">        <span class="comment">//有网络时</span></span><br><span class="line">        proceed.<span class="keyword">new</span><span class="constructor">Builder()</span> <span class="comment">//清除头信息</span></span><br><span class="line">            .header(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;public, max-age=&quot;</span> + <span class="number">60</span>)</span><br><span class="line">            .remove<span class="constructor">Header(<span class="string">&quot;Progma&quot;</span>)</span></span><br><span class="line">            .build<span class="literal">()</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//没网络时</span></span><br><span class="line">        <span class="keyword">val</span> maxTime = <span class="number">4</span><span class="operator"> * </span><span class="number">24</span><span class="operator"> * </span><span class="number">60</span><span class="operator"> * </span><span class="number">60</span> <span class="comment">//离线缓存时间：4周</span></span><br><span class="line">        proceed.<span class="keyword">new</span><span class="constructor">Builder()</span></span><br><span class="line">            .header(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;public, only-if-cached, max-stale=$maxTime&quot;</span>)</span><br><span class="line">            .remove<span class="constructor">Header(<span class="string">&quot;Progma&quot;</span>)</span></span><br><span class="line">            .build<span class="literal">()</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 网络状态判断</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">fun</span> is<span class="constructor">NetworkConnected()</span>: Boolean &#123;</span><br><span class="line">    <span class="keyword">val</span> mConnectivityManager = <span class="module-access"><span class="module"><span class="identifier">BaseApp</span>.</span></span>get<span class="constructor">Context()</span>.get<span class="constructor">SystemService(Context.CONNECTIVITY_SERVICE)</span> <span class="keyword">as</span> ConnectivityManager</span><br><span class="line">    <span class="keyword">val</span> mNetworkInfo = mConnectivityManager.activeNetworkInfo</span><br><span class="line">    <span class="keyword">if</span> (mNetworkInfo != null) &#123;</span><br><span class="line">        return mNetworkInfo.isAvailable</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>这种方法只能缓存GET请求，因为GET一般用来获取数据，其他涉及加密和操作的没有必要缓存</p>
+</blockquote>
+<p>我的想法是通过数据库缓存，网络请求的时候自动缓存返回成功的数据，再次请求失败的时候返回上一次请求成功的数据，简单的实现就是手动判断接口请求状态来返回数据：<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">val</span> homeDao = <span class="module-access"><span class="module"><span class="identifier">HomeDatabase</span>.</span></span>get<span class="constructor">Instance()</span>.home<span class="constructor">Dao()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ROOM数据库与网络请求结合使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">fun</span> get<span class="constructor">HomeArticle(<span class="params">page</span>:Int,<span class="params">resultLiveData</span>: ResultLiveData&lt;Article&gt;)</span>&#123;</span><br><span class="line">    launch(</span><br><span class="line">        block = &#123;</span><br><span class="line">            mService.get<span class="constructor">HomeArticle(<span class="params">page</span>)</span></span><br><span class="line">        &#125;,</span><br><span class="line">        response = &#123;</span><br><span class="line">            <span class="keyword">if</span> (it.state<span class="operator"> == </span>NetState.STATE_SUCCESS)&#123;</span><br><span class="line">                <span class="comment">//数据存入数据库</span></span><br><span class="line">                it.data?.<span class="keyword">let</span> &#123; article -&gt;</span><br><span class="line">                    homeDao.apply &#123;</span><br><span class="line">                        <span class="comment">//删除上一次数据</span></span><br><span class="line">                        delete<span class="constructor">All()</span></span><br><span class="line">                        <span class="comment">//插入新的数据</span></span><br><span class="line">                        insert(article)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (it.state<span class="operator"> == </span>NetState.STATE_ERROR)&#123;</span><br><span class="line">                <span class="comment">//从数据库读取上一次数据</span></span><br><span class="line">                it.data = homeDao.get<span class="constructor">AllData()</span><span class="literal">[<span class="number">0</span>]</span></span><br><span class="line">            &#125;</span><br><span class="line">            resultLiveData.post<span class="constructor">Value(<span class="params">it</span>)</span></span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里关于网络请求的封装请查看第一篇文章：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6989918599007698957">写一个MVVM快速开发框架（一）基础类封装</a></p>
+</blockquote>
+<p>但是这样子每一个请求都需要手动设置，而且会涉及不同的数据结构，确实很麻烦。</p>
+<p><strong>思路一：将返回数据转为json统一保存</strong></p>
+<p>一般返回数据都有一层包装，如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApiResponse</span>&lt;<span class="type">T</span>&gt; : <span class="type">Serializable &#123;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> code : <span class="built_in">Int</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">data</span> : T ?= <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> message : Any ?= <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> state : NetState = NetState.STATE_UNSTART</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> error : String = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> json = <span class="constructor">Gson()</span>.<span class="keyword">to</span><span class="constructor">Json(<span class="params">response</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> response = <span class="constructor">Gson()</span>.from<span class="constructor">Json(<span class="params">json</span>,ApiResponse&lt;Article&gt;()</span>.javaClass)</span><br></pre></td></tr></table></figure>
+<p>因为这里用到了泛型，如果直接用Gson解析会得到如下报错：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">java<span class="selector-class">.lang</span><span class="selector-class">.ClassCastException</span>: com<span class="selector-class">.google</span><span class="selector-class">.gson</span><span class="selector-class">.internal</span><span class="selector-class">.LinkedTreeMap</span> cannot be cast to com<span class="selector-class">.xlu</span><span class="selector-class">.module_tab1</span><span class="selector-class">.bean</span>.Article</span><br></pre></td></tr></table></figure>
+<p>正确姿势如下：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> <span class="keyword">type</span>: Type = <span class="keyword">object</span> : TypeToken&lt;ApiResponse&lt;Article&gt;&gt;<span class="literal">()</span> &#123;&#125;.<span class="keyword">type</span></span><br><span class="line"><span class="keyword">val</span> response: ApiResponse&lt;Article&gt; = <span class="constructor">Gson()</span>.from<span class="constructor">Json(<span class="params">json</span>, <span class="params">type</span>)</span></span><br></pre></td></tr></table></figure>
+<p>我们在Base模块中创建一个基础数据库，创建NetCacheDao用来专门存储网络缓存：<br><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="variable">@Entity</span>(tableName = <span class="string">&quot;NetCache&quot;</span>)</span><br><span class="line">data class NetCache(</span><br><span class="line"></span><br><span class="line">    <span class="variable">@PrimaryKey</span></span><br><span class="line">    val <span class="attribute">md</span>:String,</span><br><span class="line"></span><br><span class="line">    val <span class="attribute">response</span>:String</span><br><span class="line">)</span><br></pre></td></tr></table></figure><br><code>md</code>代表网络请求地址的md5值，<code>response</code>代表网络返回数据转json的数据</p>
+<p>所以最后代码如下：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">fun</span> test<span class="literal">()</span>&#123;</span><br><span class="line">        launch(</span><br><span class="line">            block = &#123;</span><br><span class="line">                mService.get<span class="constructor">HomeArticle(1)</span></span><br><span class="line">            &#125;,</span><br><span class="line">            response = &#123;</span><br><span class="line">                <span class="keyword">val</span> md = <span class="string">&quot;test&quot;</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">when</span>(it.state)&#123;</span><br><span class="line">                    NetState.STATE_SUCCESS -&gt; &#123;</span><br><span class="line">                        <span class="keyword">val</span> json = <span class="constructor">Gson()</span>.<span class="keyword">to</span><span class="constructor">Json(<span class="params">it</span>.<span class="params">data</span>()</span>)</span><br><span class="line">                        <span class="keyword">val</span> netCache = <span class="constructor">NetCache(<span class="params">md</span>,<span class="params">json</span>)</span></span><br><span class="line">                        cacheDao.insert(netCache)</span><br><span class="line">                    &#125;</span><br><span class="line">                    NetState.STATE_FAILED,NetState.STATE_ERROR -&gt; &#123;</span><br><span class="line">                        <span class="keyword">val</span> netCache = cacheDao.query(md)</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">val</span> <span class="keyword">type</span>: Type = <span class="keyword">object</span> : TypeToken&lt;Article&gt;<span class="literal">()</span> &#123;&#125;.<span class="keyword">type</span></span><br><span class="line">                        it.data = <span class="constructor">Gson()</span>.from<span class="constructor">Json(<span class="params">netCache</span>.<span class="params">response</span>, <span class="params">type</span>)</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>虽说完成了网络数据缓存的任务，但总感觉不太完美，如果大家有好的思路可以提出来。</p>
+</blockquote>
+<hr>
+<p>最后附上<a target="_blank" rel="noopener" href="https://github.com/xluu233/mvvm_develop">mvvm_develop</a>项目地址，文章代码略有缺失，完整请查看demo,项目整体还在完善中，欢迎大佬们指点。<em>卑微Androider在线求个Star</em>😅</p>
+<blockquote>
+<p>欢迎大家点赞关注和提出问题，个人博客：<a href="https://xluu233.github.io/">BugMaker</a></p>
+</blockquote>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/自定义Navigation动画/" data-toggle="tooltip" data-placement="top" title="一点也不炫酷的Navigation动画">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/xluu233">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          卢小胖
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://xluu233.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
