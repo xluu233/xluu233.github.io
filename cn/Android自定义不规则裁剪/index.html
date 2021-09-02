@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="bugmaker,xlu233,Android"/>
+  <link rel="shortcut icon" href="/img/icon.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://xluu233.github.io/cn/Android自定义不规则裁剪/">
+  <title>
+    
+      Android自定义不规则裁剪 - 卢小胖的开发日志
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">BugMaker</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/home.jpg');
+      --intro-header-background-image-url-post: url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: url('//img/common_back.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/common_back.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/common_back.jpg'); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#自定义View" title="自定义View">自定义View</a>
+              
+              <a class="tag" href="/tags/#不规则裁剪" title="不规则裁剪">不规则裁剪</a>
+              
+            </div>
+            <h1>Android自定义不规则裁剪</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2021-02-20
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">18</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p>需求：实现一个不规则裁剪View,以前的实现方式不太优雅，和布局嵌套在一起耦合性太高，所以想将裁剪框和图片封装在一个View中。</p>
+</blockquote>
+<h5 id="实现效果如下"><a href="#实现效果如下" class="headerlink" title="实现效果如下"></a>实现效果如下</h5><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/92e55452d64b444681badfe86661bb5e~tplv-k3u1fbpfcp-zoom-1.image" alt="demo"></p>
+<blockquote>
+<p>直接将代码，不多BB</p>
+</blockquote>
+<h5 id="具体请看Git-demo-欢迎Star，fork"><a href="#具体请看Git-demo-欢迎Star，fork" class="headerlink" title="具体请看Git demo,欢迎Star，fork"></a>具体请看<a target="_blank" rel="noopener" href="https://github.com/IMAlex233/CropImage">Git demo</a>,欢迎Star，fork</h5><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">package com.xlu.cropimage;</span><br><span class="line"></span><br><span class="line">import android.content.Context;</span><br><span class="line">import android.content.res.TypedArray;</span><br><span class="line">import android.graphics.Bitmap;</span><br><span class="line">import android.graphics.BitmapShader;</span><br><span class="line">import android.graphics.Canvas;</span><br><span class="line">import android.graphics.Color;</span><br><span class="line">import android.graphics.Matrix;</span><br><span class="line">import android.graphics.Paint;</span><br><span class="line">import android.graphics.Path;</span><br><span class="line">import android.graphics.Point;</span><br><span class="line">import android.graphics.PorterDuff;</span><br><span class="line">import android.graphics.PorterDuffXfermode;</span><br><span class="line">import android.graphics.Rect;</span><br><span class="line">import android.graphics.Shader;</span><br><span class="line">import android.graphics.Xfermode;</span><br><span class="line">import android.graphics.drawable.BitmapDrawable;</span><br><span class="line">import android.graphics.drawable.Drawable;</span><br><span class="line">import android.graphics.drawable.ShapeDrawable;</span><br><span class="line">import android.graphics.drawable.shapes.OvalShape;</span><br><span class="line">import android.util.AttributeSet;</span><br><span class="line">import android.util.Log;</span><br><span class="line">import android.view.MotionEvent;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public <span class="keyword">class</span> CropImageView extends androidx.appcompat.widget.AppCompatImageView &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> static final String TAG = <span class="string">&quot;CropImageView&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">float</span> TOUCH_POINT_CATCH_DISTANCE = <span class="number">15</span>; <span class="comment">//dp，触摸点捕捉到锚点的最小距离</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">float</span> POINT_RADIUS = <span class="number">10</span>; <span class="comment">// dp，锚点绘制半径</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">float</span> MAGNIFIER_CROSS_LINE_WIDTH = <span class="number">1.0</span>f; <span class="comment">//dp，放大镜十字宽度</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">float</span> MAGNIFIER_CROSS_LINE_LENGTH = <span class="number">5</span>; <span class="comment">//dp， 放大镜十字长度</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">float</span> MAGNIFIER_BORDER_WIDTH = <span class="number">1</span>; <span class="comment">//dp，放大镜边框宽度</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">int</span> DEFAULT_LINE_COLOR = <span class="number">0xFF43CAD5</span>;<span class="comment">//线条颜色</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">float</span> DEFAULT_LINE_WIDTH = <span class="number">1</span>; <span class="comment">//dp</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">int</span> DEFAULT_MASK_ALPHA = <span class="number">80</span>; <span class="comment">// 0 - 255</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">int</span> DEFAULT_MAGNIFIER_CROSS_COLOR = <span class="number">0x51FF2D55</span>;</span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">float</span> DEFAULT_GUIDE_LINE_WIDTH = <span class="number">0.3</span>f;<span class="comment">//dp</span></span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">int</span> DEFAULT_GUIDE_LINE_COLOR = Color.WHITE;</span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">int</span> DEFAULT_POINT_FILL_COLOR = Color.WHITE;</span><br><span class="line">    <span class="keyword">private</span> static final <span class="built_in">int</span> DEFAULT_POINT_FILL_ALPHA = <span class="number">180</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Paint mPointPaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mPointFillPaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mLinePaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mMaskPaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mGuideLinePaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mMagnifierPaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mMagnifierCrossPaint;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> mScaleX, mScaleY; <span class="comment">// 显示的图片与实际图片缩放比</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span> mActWidth, mActHeight, mActLeft, mActTop; <span class="comment">//实际显示图片的位置</span></span><br><span class="line">    <span class="keyword">private</span> Point mDraggingPoint = null;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> mDensity;</span><br><span class="line">    <span class="keyword">private</span> ShapeDrawable mMagnifierDrawable;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span><span class="literal">[]</span> mMatrixValue = <span class="keyword">new</span> <span class="built_in">float</span><span class="literal">[<span class="number">9</span>]</span>;</span><br><span class="line">    <span class="keyword">private</span> Xfermode mMaskXfermode = <span class="keyword">new</span> <span class="constructor">PorterDuffXfermode(PorterDuff.Mode.DST_OUT)</span>;</span><br><span class="line">    <span class="keyword">private</span> Path mPointLinePath = <span class="keyword">new</span> <span class="constructor">Path()</span>;</span><br><span class="line">    <span class="keyword">private</span> Matrix mMagnifierMatrix = <span class="keyword">new</span> <span class="constructor">Matrix()</span>;</span><br><span class="line"></span><br><span class="line">    Point<span class="literal">[]</span> mCropPoints; <span class="comment">// 裁剪区域, 0-&gt;LeftTop, 1-&gt;RightTop， 2-&gt;RightBottom, 3-&gt;LeftBottom</span></span><br><span class="line">    Point<span class="literal">[]</span> mEdgeMidPoints; <span class="comment">//边中点</span></span><br><span class="line">    <span class="built_in">float</span> mLineWidth; <span class="comment">// 选区线的宽度</span></span><br><span class="line">    <span class="built_in">int</span> mPointColor; <span class="comment">//锚点颜色</span></span><br><span class="line">    <span class="built_in">float</span> mPointWidth; <span class="comment">//锚点宽度</span></span><br><span class="line">    <span class="built_in">float</span> mGuideLineWidth; <span class="comment">// 辅助线宽度</span></span><br><span class="line">    <span class="built_in">int</span> mPointFillColor = DEFAULT_POINT_FILL_COLOR; <span class="comment">// 锚点内部填充颜色</span></span><br><span class="line">    <span class="built_in">int</span> mPointFillAlpha = DEFAULT_POINT_FILL_ALPHA; <span class="comment">// 锚点填充颜色透明度</span></span><br><span class="line">    <span class="built_in">int</span> mLineColor = DEFAULT_LINE_COLOR; <span class="comment">// 选区线的颜色</span></span><br><span class="line">    <span class="built_in">int</span> mMagnifierCrossColor = DEFAULT_MAGNIFIER_CROSS_COLOR; <span class="comment">// 放大镜十字颜色</span></span><br><span class="line">    <span class="built_in">int</span> mGuideLineColor = DEFAULT_GUIDE_LINE_COLOR; <span class="comment">// 辅助线颜色</span></span><br><span class="line">    <span class="built_in">int</span> mMaskAlpha = DEFAULT_MASK_ALPHA; <span class="comment">//0 - 255, 蒙版透明度</span></span><br><span class="line">    boolean mShowGuideLine = <span class="literal">true</span>; <span class="comment">// 是否显示辅助线</span></span><br><span class="line">    boolean mShowMagnifier = <span class="literal">true</span>;<span class="comment">// 是否显示放大镜</span></span><br><span class="line">    boolean mShowEdgeMidPoint = <span class="literal">true</span>;<span class="comment">//是否显示边中点</span></span><br><span class="line"></span><br><span class="line">    boolean mDragLimit = <span class="literal">true</span>;<span class="comment">// 是否限制锚点拖动范围为凸四边形</span></span><br><span class="line"></span><br><span class="line">    enum DragPointType&#123;</span><br><span class="line">        LEFT_TOP,</span><br><span class="line">        RIGHT_TOP,</span><br><span class="line">        RIGHT_BOTTOM,</span><br><span class="line">        LEFT_BOTTOM,</span><br><span class="line">        TOP,</span><br><span class="line">        RIGHT,</span><br><span class="line">        BOTTOM,</span><br><span class="line">        LEFT;</span><br><span class="line"></span><br><span class="line">        public static boolean is<span class="constructor">EdgePoint(DragPointType <span class="params">type</span>)</span>&#123;</span><br><span class="line">            return <span class="keyword">type</span><span class="operator"> == </span>TOP<span class="operator"> || </span><span class="keyword">type</span><span class="operator"> == </span>RIGHT<span class="operator"> || </span><span class="keyword">type</span><span class="operator"> == </span>BOTTOM<span class="operator"> || </span><span class="keyword">type</span><span class="operator"> == </span>LEFT;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> final static <span class="built_in">int</span> P_LT = <span class="number">0</span>, P_RT = <span class="number">1</span>, P_RB = <span class="number">2</span>, P_LB = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    public <span class="constructor">CropImageView(Context <span class="params">context</span>)</span> &#123;</span><br><span class="line">        this(context, null);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public <span class="constructor">CropImageView(Context <span class="params">context</span>, AttributeSet <span class="params">attrs</span>)</span> &#123;</span><br><span class="line">        this(context, attrs, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public <span class="constructor">CropImageView(Context <span class="params">context</span>, AttributeSet <span class="params">attrs</span>, <span class="params">int</span> <span class="params">defStyleAttr</span>)</span> &#123;</span><br><span class="line">        super(context, attrs, defStyleAttr);</span><br><span class="line">        ScaleType scaleType = get<span class="constructor">ScaleType()</span>;</span><br><span class="line">        <span class="keyword">if</span> (scaleType<span class="operator"> == </span>ScaleType.FIT_END<span class="operator"> || </span>scaleType<span class="operator"> == </span>ScaleType.FIT_START<span class="operator"> || </span>scaleType<span class="operator"> == </span>ScaleType.MATRIX) &#123;</span><br><span class="line">            throw <span class="keyword">new</span> <span class="constructor">RuntimeException(<span class="string">&quot;Image in CropImageView must be in center&quot;</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        mDensity = get<span class="constructor">Resources()</span>.get<span class="constructor">DisplayMetrics()</span>.density;</span><br><span class="line">        init<span class="constructor">Attrs(<span class="params">context</span>, <span class="params">attrs</span>)</span>;</span><br><span class="line">        init<span class="constructor">Paints()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> void init<span class="constructor">Attrs(Context <span class="params">context</span>, AttributeSet <span class="params">attrs</span>)</span> &#123;</span><br><span class="line">        mMaskAlpha = <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>min(<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>max(<span class="number">0</span>, DEFAULT_MASK_ALPHA), <span class="number">255</span>);</span><br><span class="line">        mLineColor = DEFAULT_LINE_COLOR;</span><br><span class="line">        mLineWidth = dp2px(DEFAULT_LINE_WIDTH);</span><br><span class="line">        mPointColor = DEFAULT_LINE_COLOR;</span><br><span class="line">        mPointWidth =  dp2px(DEFAULT_LINE_WIDTH);</span><br><span class="line">        mMagnifierCrossColor = DEFAULT_MAGNIFIER_CROSS_COLOR;</span><br><span class="line">        mGuideLineWidth =  dp2px(DEFAULT_GUIDE_LINE_WIDTH);</span><br><span class="line">        mGuideLineColor = DEFAULT_GUIDE_LINE_COLOR;</span><br><span class="line">        mPointFillColor = DEFAULT_POINT_FILL_COLOR;</span><br><span class="line">        mPointFillAlpha = <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>min(<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>max(<span class="number">0</span>, DEFAULT_POINT_FILL_ALPHA), <span class="number">255</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置选区</span></span><br><span class="line"><span class="comment">     * @param cropPoints 选区顶点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">CropPoints(Point[] <span class="params">cropPoints</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (get<span class="constructor">Drawable()</span><span class="operator"> == </span>null) &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">Log</span>.</span></span>w(TAG, <span class="string">&quot;should call after set drawable&quot;</span>);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!check<span class="constructor">Points(<span class="params">cropPoints</span>)</span>) &#123;</span><br><span class="line">            set<span class="constructor">FullImgCrop()</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            this.mCropPoints = cropPoints;</span><br><span class="line">            invalidate<span class="literal">()</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void set<span class="constructor">EdgeMidPoints()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mEdgeMidPoints<span class="operator"> == </span>null)&#123;</span><br><span class="line">            mEdgeMidPoints = <span class="keyword">new</span> Point<span class="literal">[<span class="number">4</span>]</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; mEdgeMidPoints.length; i++)&#123;</span><br><span class="line">                mEdgeMidPoints<span class="literal">[<span class="identifier">i</span>]</span> = <span class="keyword">new</span> <span class="constructor">Point()</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span> len = mCropPoints.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            mEdgeMidPoints<span class="literal">[<span class="identifier">i</span>]</span>.set(mCropPoints<span class="literal">[<span class="identifier">i</span>]</span>.x + (mCropPoints<span class="literal">[(<span class="identifier">i</span>+<span class="number">1</span>)%<span class="identifier">len</span>]</span>.x - mCropPoints<span class="literal">[<span class="identifier">i</span>]</span>.x)/<span class="number">2</span>,</span><br><span class="line">                                    mCropPoints<span class="literal">[<span class="identifier">i</span>]</span>.y + (mCropPoints<span class="literal">[(<span class="identifier">i</span>+<span class="number">1</span>)%<span class="identifier">len</span>]</span>.y - mCropPoints<span class="literal">[<span class="identifier">i</span>]</span>.y)/<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置选区为包裹全图</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">FullImgCrop()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (get<span class="constructor">Drawable()</span><span class="operator"> == </span>null) &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">Log</span>.</span></span>w(TAG, <span class="string">&quot;should call after set drawable&quot;</span>);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.mCropPoints = get<span class="constructor">FullImgCropPoints()</span>;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void set<span class="constructor">ImageBitmap(Bitmap <span class="params">bm</span>)</span> &#123;</span><br><span class="line">        super.set<span class="constructor">ImageBitmap(<span class="params">bm</span>)</span>;</span><br><span class="line">        mMagnifierDrawable = null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置待裁剪图片并显示</span></span><br><span class="line"><span class="comment">     * @param bmp 待裁剪图片</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">ImageToCrop(Bitmap <span class="params">bmp</span>)</span> &#123;</span><br><span class="line">        set<span class="constructor">ImageBitmap(<span class="params">bmp</span>)</span>;</span><br><span class="line">        set<span class="constructor">CropPoints(<span class="params">null</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取选区</span></span><br><span class="line"><span class="comment">     * @return 选区顶点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public Point<span class="literal">[]</span> get<span class="constructor">CropPoints()</span> &#123;</span><br><span class="line">        return mCropPoints;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置锚点填充颜色</span></span><br><span class="line"><span class="comment">     * @param pointFillColor 颜色</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">PointFillColor(<span class="params">int</span> <span class="params">pointFillColor</span>)</span> &#123;</span><br><span class="line">        this.mPointFillColor = pointFillColor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置锚点填充颜色透明度</span></span><br><span class="line"><span class="comment">     * @param pointFillAlpha 透明度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">PointFillAlpha(<span class="params">int</span> <span class="params">pointFillAlpha</span>)</span> &#123;</span><br><span class="line">        this.mPointFillAlpha = pointFillAlpha;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 蒙版透明度</span></span><br><span class="line"><span class="comment">     * @param maskAlpha 透明度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">MaskAlpha(<span class="params">int</span> <span class="params">maskAlpha</span>)</span> &#123;</span><br><span class="line">        maskAlpha = <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>min(<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>max(<span class="number">0</span>, maskAlpha), <span class="number">255</span>);</span><br><span class="line">        this.mMaskAlpha = maskAlpha;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否显示辅助线</span></span><br><span class="line"><span class="comment">     * @param showGuideLine 是否</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">ShowGuideLine(<span class="params">boolean</span> <span class="params">showGuideLine</span>)</span> &#123;</span><br><span class="line">        this.mShowGuideLine = showGuideLine;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  设置辅助线颜色</span></span><br><span class="line"><span class="comment">     * @param guideLineColor 颜色</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">GuideLineColor(<span class="params">int</span> <span class="params">guideLineColor</span>)</span> &#123;</span><br><span class="line">        this.mGuideLineColor = guideLineColor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置辅助线宽度</span></span><br><span class="line"><span class="comment">     * @param guideLineWidth 宽度 px</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">GuideLineWidth(<span class="params">float</span> <span class="params">guideLineWidth</span>)</span> &#123;</span><br><span class="line">        this.mGuideLineWidth = guideLineWidth;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置选区线的颜色</span></span><br><span class="line"><span class="comment">     * @param lineColor 颜色</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">LineColor(<span class="params">int</span> <span class="params">lineColor</span>)</span> &#123;</span><br><span class="line">        this.mLineColor = lineColor;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置放大镜准心颜色</span></span><br><span class="line"><span class="comment">     * @param magnifierCrossColor 准心颜色</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">MagnifierCrossColor(<span class="params">int</span> <span class="params">magnifierCrossColor</span>)</span> &#123;</span><br><span class="line">        this.mMagnifierCrossColor = magnifierCrossColor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置选区线宽度</span></span><br><span class="line"><span class="comment">     * @param lineWidth 线宽度，px</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">LineWidth(<span class="params">int</span> <span class="params">lineWidth</span>)</span> &#123;</span><br><span class="line">        this.mLineWidth = lineWidth;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void set<span class="constructor">PointColor(<span class="params">int</span> <span class="params">pointColor</span>)</span> &#123;</span><br><span class="line">        this.mPointColor = pointColor;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void set<span class="constructor">PointWidth(<span class="params">float</span> <span class="params">pointWidth</span>)</span> &#123;</span><br><span class="line">        this.mPointWidth = pointWidth;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置是否显示放大镜</span></span><br><span class="line"><span class="comment">     * @param showMagnifier 是否</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">ShowMagnifier(<span class="params">boolean</span> <span class="params">showMagnifier</span>)</span> &#123;</span><br><span class="line">        this.mShowMagnifier = showMagnifier;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置是否限制拖动为凸四边形</span></span><br><span class="line"><span class="comment">     * @param dragLimit 是否</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public void set<span class="constructor">DragLimit(<span class="params">boolean</span> <span class="params">dragLimit</span>)</span> &#123;</span><br><span class="line">        this.mDragLimit = dragLimit;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 选区是否为凸四边形</span></span><br><span class="line"><span class="comment">     * @return true：凸四边形</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public boolean can<span class="constructor">RightCrop()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!check<span class="constructor">Points(<span class="params">mCropPoints</span>)</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Point lt = mCropPoints<span class="literal">[<span class="number">0</span>]</span>;</span><br><span class="line">        Point rt = mCropPoints<span class="literal">[<span class="number">1</span>]</span>;</span><br><span class="line">        Point rb = mCropPoints<span class="literal">[<span class="number">2</span>]</span>;</span><br><span class="line">        Point lb = mCropPoints<span class="literal">[<span class="number">3</span>]</span>;</span><br><span class="line">        return (point<span class="constructor">SideLine(<span class="params">lt</span>, <span class="params">rb</span>, <span class="params">lb</span>)</span><span class="operator"> * </span>point<span class="constructor">SideLine(<span class="params">lt</span>, <span class="params">rb</span>, <span class="params">rt</span>)</span> &lt; <span class="number">0</span>)<span class="operator"> &amp;&amp; </span>(point<span class="constructor">SideLine(<span class="params">lb</span>, <span class="params">rt</span>, <span class="params">lt</span>)</span><span class="operator"> * </span>point<span class="constructor">SideLine(<span class="params">lb</span>, <span class="params">rt</span>, <span class="params">rb</span>)</span> &lt; <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public boolean check<span class="constructor">Points(Point[] <span class="params">points</span>)</span> &#123;</span><br><span class="line">        return points != null<span class="operator"> &amp;&amp; </span>points.length<span class="operator"> == </span><span class="number">4</span></span><br><span class="line"><span class="operator">                &amp;&amp; </span>points<span class="literal">[<span class="number">0</span>]</span> != null<span class="operator"> &amp;&amp; </span>points<span class="literal">[<span class="number">1</span>]</span> != null<span class="operator"> &amp;&amp; </span>points<span class="literal">[<span class="number">2</span>]</span> != null<span class="operator"> &amp;&amp; </span>points<span class="literal">[<span class="number">3</span>]</span> != null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> long point<span class="constructor">SideLine(Point <span class="params">lineP1</span>, Point <span class="params">lineP2</span>, Point <span class="params">point</span>)</span> &#123;</span><br><span class="line">        return point<span class="constructor">SideLine(<span class="params">lineP1</span>, <span class="params">lineP2</span>, <span class="params">point</span>.<span class="params">x</span>, <span class="params">point</span>.<span class="params">y</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> long point<span class="constructor">SideLine(Point <span class="params">lineP1</span>, Point <span class="params">lineP2</span>, <span class="params">int</span> <span class="params">x</span>, <span class="params">int</span> <span class="params">y</span>)</span> &#123;</span><br><span class="line">        long x1 = lineP1.x;</span><br><span class="line">        long y1 = lineP1.y;</span><br><span class="line">        long x2 = lineP2.x;</span><br><span class="line">        long y2 = lineP2.y;</span><br><span class="line">        return (x - x1)*(y2 - y1) - (y - y1)*(x2 - x1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Bitmap get<span class="constructor">Bitmap()</span> &#123;</span><br><span class="line">        Bitmap bmp = null;</span><br><span class="line">        Drawable drawable = get<span class="constructor">Drawable()</span>;</span><br><span class="line">        <span class="keyword">if</span> (drawable instanceof BitmapDrawable) &#123;</span><br><span class="line">            bmp = ((BitmapDrawable)drawable).get<span class="constructor">Bitmap()</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return bmp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> void init<span class="constructor">Paints()</span> &#123;</span><br><span class="line">        mPointPaint = <span class="keyword">new</span> <span class="constructor">Paint(Paint.ANTI_ALIAS_FLAG)</span>;</span><br><span class="line">        mPointPaint.set<span class="constructor">Color(<span class="params">mPointColor</span>)</span>;</span><br><span class="line">        mPointPaint.set<span class="constructor">StrokeWidth(<span class="params">mPointWidth</span>)</span>;</span><br><span class="line">        mPointPaint.set<span class="constructor">Style(Paint.Style.STROKE)</span>;</span><br><span class="line"></span><br><span class="line">        mPointFillPaint = <span class="keyword">new</span> <span class="constructor">Paint(Paint.ANTI_ALIAS_FLAG)</span>;</span><br><span class="line">        mPointFillPaint.set<span class="constructor">Color(<span class="params">mPointFillColor</span>)</span>;</span><br><span class="line">        mPointFillPaint.set<span class="constructor">Style(Paint.Style.FILL)</span>;</span><br><span class="line">        mPointFillPaint.set<span class="constructor">Alpha(<span class="params">mPointFillAlpha</span>)</span>;</span><br><span class="line"></span><br><span class="line">        mLinePaint = <span class="keyword">new</span> <span class="constructor">Paint(Paint.ANTI_ALIAS_FLAG)</span>;</span><br><span class="line">        <span class="comment">//mLinePaint.setColor(mLineColor);</span></span><br><span class="line">        mLinePaint.set<span class="constructor">Color(<span class="params">mPointColor</span>)</span>;</span><br><span class="line">        mLinePaint.set<span class="constructor">StrokeWidth(<span class="params">mLineWidth</span>)</span>;</span><br><span class="line">        mLinePaint.set<span class="constructor">Style(Paint.Style.STROKE)</span>;</span><br><span class="line"></span><br><span class="line">        mMaskPaint = <span class="keyword">new</span> <span class="constructor">Paint(Paint.ANTI_ALIAS_FLAG)</span>;</span><br><span class="line">        mMaskPaint.set<span class="constructor">Color(Color.BLACK)</span>;</span><br><span class="line">        mMaskPaint.set<span class="constructor">Style(Paint.Style.FILL)</span>;</span><br><span class="line"></span><br><span class="line">        mGuideLinePaint = <span class="keyword">new</span> <span class="constructor">Paint(Paint.ANTI_ALIAS_FLAG)</span>;</span><br><span class="line">        mGuideLinePaint.set<span class="constructor">Color(<span class="params">mGuideLineColor</span>)</span>;</span><br><span class="line">        mGuideLinePaint.set<span class="constructor">Style(Paint.Style.FILL)</span>;</span><br><span class="line">        mGuideLinePaint.set<span class="constructor">StrokeWidth(<span class="params">mGuideLineWidth</span>)</span>;</span><br><span class="line"></span><br><span class="line">        mMagnifierPaint = <span class="keyword">new</span> <span class="constructor">Paint(Paint.ANTI_ALIAS_FLAG)</span>;</span><br><span class="line">        mMagnifierPaint.set<span class="constructor">Color(Color.WHITE)</span>;</span><br><span class="line">        mMagnifierPaint.set<span class="constructor">Style(Paint.Style.FILL)</span>;</span><br><span class="line"></span><br><span class="line">        mMagnifierCrossPaint = <span class="keyword">new</span> <span class="constructor">Paint(Paint.ANTI_ALIAS_FLAG)</span>;</span><br><span class="line">        mMagnifierCrossPaint.set<span class="constructor">Color(<span class="params">mMagnifierCrossColor</span>)</span>;</span><br><span class="line">        mMagnifierCrossPaint.set<span class="constructor">Style(Paint.Style.FILL)</span>;</span><br><span class="line">        mMagnifierCrossPaint.set<span class="constructor">StrokeWidth(<span class="params">dp2px</span>(MAGNIFIER_CROSS_LINE_WIDTH)</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> void init<span class="constructor">Magnifier()</span> &#123;</span><br><span class="line">        Bitmap bitmap = <span class="module-access"><span class="module"><span class="identifier">Bitmap</span>.</span></span>create<span class="constructor">Bitmap(<span class="params">getWidth</span>()</span>, get<span class="constructor">Height()</span>, Bitmap.Config.RGB_565);</span><br><span class="line">        Canvas canvas = <span class="keyword">new</span> <span class="constructor">Canvas(<span class="params">bitmap</span>)</span>;</span><br><span class="line">        canvas.draw<span class="constructor">Color(Color.BLACK)</span>;</span><br><span class="line">        canvas.draw<span class="constructor">Bitmap(<span class="params">getBitmap</span>()</span>, null, <span class="keyword">new</span> <span class="constructor">Rect(<span class="params">mActLeft</span>, <span class="params">mActTop</span>, <span class="params">mActWidth</span> + <span class="params">mActLeft</span>, <span class="params">mActHeight</span> + <span class="params">mActTop</span>)</span>, null);</span><br><span class="line">        canvas.save<span class="literal">()</span>;</span><br><span class="line">        BitmapShader magnifierShader = <span class="keyword">new</span> <span class="constructor">BitmapShader(<span class="params">bitmap</span>, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)</span>;</span><br><span class="line">        mMagnifierDrawable = <span class="keyword">new</span> <span class="constructor">ShapeDrawable(<span class="params">new</span> OvalShape()</span>);</span><br><span class="line">        mMagnifierDrawable.get<span class="constructor">Paint()</span>.set<span class="constructor">Shader(<span class="params">magnifierShader</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void on<span class="constructor">Draw(Canvas <span class="params">canvas</span>)</span> &#123;</span><br><span class="line">        super.on<span class="constructor">Draw(<span class="params">canvas</span>)</span>;</span><br><span class="line">        <span class="comment">//初始化图片位置信息</span></span><br><span class="line">        get<span class="constructor">DrawablePosition()</span>;</span><br><span class="line">        <span class="comment">//开始绘制选区</span></span><br><span class="line">        on<span class="constructor">DrawCropPoint(<span class="params">canvas</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void on<span class="constructor">DrawCropPoint(Canvas <span class="params">canvas</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//绘制蒙版</span></span><br><span class="line">        on<span class="constructor">DrawMask(<span class="params">canvas</span>)</span>;</span><br><span class="line">        <span class="comment">//绘制辅助线</span></span><br><span class="line">        on<span class="constructor">DrawGuideLine(<span class="params">canvas</span>)</span>;</span><br><span class="line">        <span class="comment">//绘制选区线</span></span><br><span class="line">        on<span class="constructor">DrawLines(<span class="params">canvas</span>)</span>;</span><br><span class="line">        <span class="comment">//绘制锚点</span></span><br><span class="line">        on<span class="constructor">DrawPoints(<span class="params">canvas</span>)</span>;</span><br><span class="line">        <span class="comment">//绘制放大镜</span></span><br><span class="line">        on<span class="constructor">DrawMagnifier(<span class="params">canvas</span>)</span>;</span><br><span class="line"><span class="comment">//        onDrawCusMagnifier(canvas);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void on<span class="constructor">DrawCusMagnifier(Canvas <span class="params">canvas</span>)</span>&#123;</span><br><span class="line">        DragPointType pointType = get<span class="constructor">PointType(<span class="params">mDraggingPoint</span>)</span>;</span><br><span class="line">        <span class="keyword">if</span> (pointType<span class="operator"> == </span>null<span class="operator"> || </span><span class="module-access"><span class="module"><span class="identifier">DragPointType</span>.</span></span>is<span class="constructor">EdgePoint(<span class="params">pointType</span>)</span>)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mShowMagnifier<span class="operator"> &amp;&amp; </span>mDraggingPoint != null) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mMagnifierDrawable<span class="operator"> == </span>null) &#123;</span><br><span class="line">                init<span class="constructor">Magnifier()</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">float</span> draggingX = get<span class="constructor">ViewPointX(<span class="params">mDraggingPoint</span>)</span>;</span><br><span class="line">            <span class="built_in">float</span> draggingY = get<span class="constructor">ViewPointY(<span class="params">mDraggingPoint</span>)</span>;</span><br><span class="line">            <span class="built_in">float</span> radius = get<span class="constructor">Width()</span><span class="operator"> / </span><span class="number">8</span>;</span><br><span class="line">            <span class="built_in">float</span> cx = radius; <span class="comment">//圆心x坐标</span></span><br><span class="line">            <span class="built_in">int</span> lineOffset = (<span class="built_in">int</span>) dp2px(MAGNIFIER_BORDER_WIDTH);</span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> &lt;= mDraggingPoint.x<span class="operator"> &amp;&amp; </span>mDraggingPoint.x &lt; get<span class="constructor">Drawable()</span>.get<span class="constructor">IntrinsicWidth()</span><span class="operator"> / </span><span class="number">2</span>)&#123; <span class="comment">//拉伸点在左侧时，放大镜显示在右侧</span></span><br><span class="line">                mMagnifierDrawable.set<span class="constructor">Bounds(<span class="params">getWidth</span>()</span> - (<span class="built_in">int</span>)radius<span class="operator"> * </span><span class="number">2</span> + lineOffset, lineOffset, get<span class="constructor">Width()</span> - lineOffset, (<span class="built_in">int</span>)radius<span class="operator"> * </span><span class="number">2</span> - lineOffset);</span><br><span class="line">                cx = get<span class="constructor">Width()</span> - radius;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                mMagnifierDrawable.set<span class="constructor">Bounds(<span class="params">lineOffset</span>, <span class="params">lineOffset</span>, (<span class="params">int</span>)</span>radius<span class="operator"> * </span><span class="number">2</span> - lineOffset, (<span class="built_in">int</span>)radius<span class="operator"> * </span><span class="number">2</span> - lineOffset);</span><br><span class="line">            &#125;</span><br><span class="line">            canvas.draw<span class="constructor">Circle(<span class="params">cx</span>, <span class="params">radius</span>, <span class="params">radius</span>, <span class="params">mMagnifierPaint</span>)</span>;</span><br><span class="line">            mMagnifierMatrix.set<span class="constructor">Translate(<span class="params">radius</span> - <span class="params">draggingX</span>, <span class="params">radius</span> - <span class="params">draggingY</span>)</span>;</span><br><span class="line">            mMagnifierDrawable.get<span class="constructor">Paint()</span>.get<span class="constructor">Shader()</span>.set<span class="constructor">LocalMatrix(<span class="params">mMagnifierMatrix</span>)</span>;</span><br><span class="line">            mMagnifierDrawable.draw(canvas);</span><br><span class="line">            <span class="comment">//放大镜锚点</span></span><br><span class="line">            canvas.draw<span class="constructor">Circle(<span class="params">cx</span>, <span class="params">radius</span>, <span class="params">dp2px</span>(POINT_RADIUS)</span>, mPointFillPaint);</span><br><span class="line">            canvas.draw<span class="constructor">Circle(<span class="params">cx</span>, <span class="params">radius</span>, <span class="params">dp2px</span>(POINT_RADIUS)</span>, mPointPaint);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void on<span class="constructor">DrawMagnifier(Canvas <span class="params">canvas</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (mShowMagnifier<span class="operator"> &amp;&amp; </span>mDraggingPoint != null) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mMagnifierDrawable<span class="operator"> == </span>null) &#123;</span><br><span class="line">                init<span class="constructor">Magnifier()</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">float</span> draggingX = get<span class="constructor">ViewPointX(<span class="params">mDraggingPoint</span>)</span>;</span><br><span class="line">            <span class="built_in">float</span> draggingY = get<span class="constructor">ViewPointY(<span class="params">mDraggingPoint</span>)</span>;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">float</span> radius = get<span class="constructor">Width()</span><span class="operator"> / </span><span class="number">8</span>;</span><br><span class="line">            <span class="built_in">float</span> cx = radius;</span><br><span class="line">            <span class="built_in">int</span> lineOffset = (<span class="built_in">int</span>) dp2px(MAGNIFIER_BORDER_WIDTH);</span><br><span class="line">            mMagnifierDrawable.set<span class="constructor">Bounds(<span class="params">lineOffset</span>, <span class="params">lineOffset</span>, (<span class="params">int</span>)</span>radius<span class="operator"> * </span><span class="number">2</span> - lineOffset, (<span class="built_in">int</span>)radius<span class="operator"> * </span><span class="number">2</span> - lineOffset);</span><br><span class="line">            double pointsDistance = get<span class="constructor">PointsDistance(<span class="params">draggingX</span>, <span class="params">draggingY</span>, 0, 0)</span>;</span><br><span class="line">            <span class="keyword">if</span> (pointsDistance &lt; (radius<span class="operator"> * </span><span class="number">2.5</span>)) &#123;</span><br><span class="line">                mMagnifierDrawable.set<span class="constructor">Bounds(<span class="params">getWidth</span>()</span> - (<span class="built_in">int</span>)radius<span class="operator"> * </span><span class="number">2</span> + lineOffset, lineOffset, get<span class="constructor">Width()</span> - lineOffset, (<span class="built_in">int</span>)radius<span class="operator"> * </span><span class="number">2</span> - lineOffset);</span><br><span class="line">                cx = get<span class="constructor">Width()</span> - radius;</span><br><span class="line">            &#125;</span><br><span class="line">            canvas.draw<span class="constructor">Circle(<span class="params">cx</span>, <span class="params">radius</span>, <span class="params">radius</span>, <span class="params">mMagnifierPaint</span>)</span>;</span><br><span class="line">            mMagnifierMatrix.set<span class="constructor">Translate(<span class="params">radius</span> - <span class="params">draggingX</span>, <span class="params">radius</span> - <span class="params">draggingY</span>)</span>;</span><br><span class="line">            mMagnifierDrawable.get<span class="constructor">Paint()</span>.get<span class="constructor">Shader()</span>.set<span class="constructor">LocalMatrix(<span class="params">mMagnifierMatrix</span>)</span>;</span><br><span class="line">            mMagnifierDrawable.draw(canvas);</span><br><span class="line">            <span class="built_in">float</span> crossLength = dp2px(MAGNIFIER_CROSS_LINE_LENGTH);</span><br><span class="line">            canvas.draw<span class="constructor">Line(<span class="params">cx</span>, <span class="params">radius</span> - <span class="params">crossLength</span>, <span class="params">cx</span>, <span class="params">radius</span> + <span class="params">crossLength</span>, <span class="params">mMagnifierCrossPaint</span>)</span>;</span><br><span class="line">            canvas.draw<span class="constructor">Line(<span class="params">cx</span> - <span class="params">crossLength</span>, <span class="params">radius</span>, <span class="params">cx</span> + <span class="params">crossLength</span>, <span class="params">radius</span>, <span class="params">mMagnifierCrossPaint</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void on<span class="constructor">DrawGuideLine(Canvas <span class="params">canvas</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!mShowGuideLine) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span> widthStep = mActWidth<span class="operator"> / </span><span class="number">3</span>;</span><br><span class="line">        <span class="built_in">int</span> heightStep = mActHeight<span class="operator"> / </span><span class="number">3</span>;</span><br><span class="line">        canvas.draw<span class="constructor">Line(<span class="params">mActLeft</span> + <span class="params">widthStep</span>, <span class="params">mActTop</span>, <span class="params">mActLeft</span> + <span class="params">widthStep</span>, <span class="params">mActTop</span> + <span class="params">mActHeight</span>, <span class="params">mGuideLinePaint</span>)</span>;</span><br><span class="line">        canvas.draw<span class="constructor">Line(<span class="params">mActLeft</span> + <span class="params">widthStep</span> <span class="operator">*</span> 2, <span class="params">mActTop</span>, <span class="params">mActLeft</span> + <span class="params">widthStep</span> <span class="operator">*</span> 2, <span class="params">mActTop</span> + <span class="params">mActHeight</span>, <span class="params">mGuideLinePaint</span>)</span>;</span><br><span class="line">        canvas.draw<span class="constructor">Line(<span class="params">mActLeft</span>, <span class="params">mActTop</span> + <span class="params">heightStep</span>, <span class="params">mActLeft</span> + <span class="params">mActWidth</span>, <span class="params">mActTop</span> + <span class="params">heightStep</span>, <span class="params">mGuideLinePaint</span>)</span>;</span><br><span class="line">        canvas.draw<span class="constructor">Line(<span class="params">mActLeft</span>, <span class="params">mActTop</span> + <span class="params">heightStep</span> <span class="operator">*</span> 2, <span class="params">mActLeft</span> + <span class="params">mActWidth</span>, <span class="params">mActTop</span> + <span class="params">heightStep</span> <span class="operator">*</span> 2, <span class="params">mGuideLinePaint</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void on<span class="constructor">DrawMask(Canvas <span class="params">canvas</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (mMaskAlpha &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        Path path = reset<span class="constructor">PointPath()</span>;</span><br><span class="line">        <span class="keyword">if</span> (path != null) &#123;</span><br><span class="line">            <span class="built_in">int</span> sc = canvas.save<span class="constructor">Layer(<span class="params">mActLeft</span>, <span class="params">mActTop</span>, <span class="params">mActLeft</span> + <span class="params">mActWidth</span>, <span class="params">mActTop</span> + <span class="params">mActHeight</span>, <span class="params">mMaskPaint</span>, Canvas.ALL_SAVE_FLAG)</span>;</span><br><span class="line">            mMaskPaint.set<span class="constructor">Alpha(<span class="params">mMaskAlpha</span>)</span>;</span><br><span class="line">            canvas.draw<span class="constructor">Rect(<span class="params">mActLeft</span>, <span class="params">mActTop</span>, <span class="params">mActLeft</span> + <span class="params">mActWidth</span>, <span class="params">mActTop</span> + <span class="params">mActHeight</span>, <span class="params">mMaskPaint</span>)</span>;</span><br><span class="line">            mMaskPaint.set<span class="constructor">Xfermode(<span class="params">mMaskXfermode</span>)</span>;</span><br><span class="line">            mMaskPaint.set<span class="constructor">Alpha(255)</span>;</span><br><span class="line">            canvas.draw<span class="constructor">Path(<span class="params">path</span>, <span class="params">mMaskPaint</span>)</span>;</span><br><span class="line">            mMaskPaint.set<span class="constructor">Xfermode(<span class="params">null</span>)</span>;</span><br><span class="line">            canvas.restore<span class="constructor">ToCount(<span class="params">sc</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Path reset<span class="constructor">PointPath()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!check<span class="constructor">Points(<span class="params">mCropPoints</span>)</span>) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        mPointLinePath.reset<span class="literal">()</span>;</span><br><span class="line">        Point lt = mCropPoints<span class="literal">[<span class="number">0</span>]</span>;</span><br><span class="line">        Point rt = mCropPoints<span class="literal">[<span class="number">1</span>]</span>;</span><br><span class="line">        Point rb = mCropPoints<span class="literal">[<span class="number">2</span>]</span>;</span><br><span class="line">        Point lb = mCropPoints<span class="literal">[<span class="number">3</span>]</span>;</span><br><span class="line">        mPointLinePath.move<span class="constructor">To(<span class="params">getViewPointX</span>(<span class="params">lt</span>)</span>,get<span class="constructor">ViewPointY(<span class="params">lt</span>)</span>);</span><br><span class="line">        mPointLinePath.line<span class="constructor">To(<span class="params">getViewPointX</span>(<span class="params">rt</span>)</span>,get<span class="constructor">ViewPointY(<span class="params">rt</span>)</span>);</span><br><span class="line">        mPointLinePath.line<span class="constructor">To(<span class="params">getViewPointX</span>(<span class="params">rb</span>)</span>,get<span class="constructor">ViewPointY(<span class="params">rb</span>)</span>);</span><br><span class="line">        mPointLinePath.line<span class="constructor">To(<span class="params">getViewPointX</span>(<span class="params">lb</span>)</span>,get<span class="constructor">ViewPointY(<span class="params">lb</span>)</span>);</span><br><span class="line">        mPointLinePath.close<span class="literal">()</span>;</span><br><span class="line">        return mPointLinePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> void get<span class="constructor">DrawablePosition()</span> &#123;</span><br><span class="line">        Drawable drawable = get<span class="constructor">Drawable()</span>;</span><br><span class="line">        <span class="keyword">if</span> (drawable != null) &#123;</span><br><span class="line">            get<span class="constructor">ImageMatrix()</span>.get<span class="constructor">Values(<span class="params">mMatrixValue</span>)</span>;</span><br><span class="line">            mScaleX = mMatrixValue<span class="literal">[M<span class="identifier">atrix</span>.MSCALE<span class="identifier">_X</span>]</span>;</span><br><span class="line">            mScaleY = mMatrixValue<span class="literal">[M<span class="identifier">atrix</span>.MSCALE<span class="identifier">_Y</span>]</span>;</span><br><span class="line">            <span class="built_in">int</span> origW = drawable.get<span class="constructor">IntrinsicWidth()</span>;</span><br><span class="line">            <span class="built_in">int</span> origH = drawable.get<span class="constructor">IntrinsicHeight()</span>;</span><br><span class="line">            mActWidth = <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>round(origW<span class="operator"> * </span>mScaleX);</span><br><span class="line">            mActHeight = <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>round(origH<span class="operator"> * </span>mScaleY);</span><br><span class="line">            mActLeft = (get<span class="constructor">Width()</span> - mActWidth)<span class="operator"> / </span><span class="number">2</span>;</span><br><span class="line">            mActTop = (get<span class="constructor">Height()</span> - mActHeight)<span class="operator"> / </span><span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void on<span class="constructor">DrawLines(Canvas <span class="params">canvas</span>)</span> &#123;</span><br><span class="line">        Path path = reset<span class="constructor">PointPath()</span>;</span><br><span class="line">        <span class="keyword">if</span> (path != null) &#123;</span><br><span class="line">            canvas.draw<span class="constructor">Path(<span class="params">path</span>, <span class="params">mLinePaint</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void on<span class="constructor">DrawPoints(Canvas <span class="params">canvas</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!check<span class="constructor">Points(<span class="params">mCropPoints</span>)</span>) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (Point point : mCropPoints) &#123;</span><br><span class="line">            canvas.draw<span class="constructor">Circle(<span class="params">getViewPointX</span>(<span class="params">point</span>)</span>, get<span class="constructor">ViewPointY(<span class="params">point</span>)</span>, dp2px(POINT_RADIUS), mPointFillPaint);</span><br><span class="line">            canvas.draw<span class="constructor">Circle(<span class="params">getViewPointX</span>(<span class="params">point</span>)</span>, get<span class="constructor">ViewPointY(<span class="params">point</span>)</span>, dp2px(POINT_RADIUS), mPointPaint);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mShowEdgeMidPoint) &#123;</span><br><span class="line">            set<span class="constructor">EdgeMidPoints()</span>;</span><br><span class="line">            <span class="comment">//中间锚点</span></span><br><span class="line">            <span class="keyword">for</span> (Point point : mEdgeMidPoints)&#123;</span><br><span class="line">                canvas.draw<span class="constructor">Circle(<span class="params">getViewPointX</span>(<span class="params">point</span>)</span>, get<span class="constructor">ViewPointY(<span class="params">point</span>)</span>, dp2px(POINT_RADIUS), mPointFillPaint);</span><br><span class="line">                canvas.draw<span class="constructor">Circle(<span class="params">getViewPointX</span>(<span class="params">point</span>)</span>, get<span class="constructor">ViewPointY(<span class="params">point</span>)</span>, dp2px(POINT_RADIUS), mPointPaint);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean on<span class="constructor">TouchEvent(MotionEvent <span class="params">event</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">int</span> action = event.get<span class="constructor">Action()</span>;</span><br><span class="line">        boolean handle = <span class="literal">true</span>;</span><br><span class="line">        switch (action) &#123;</span><br><span class="line">            case MotionEvent.ACTION_DOWN:</span><br><span class="line">                mDraggingPoint = get<span class="constructor">NearbyPoint(<span class="params">event</span>)</span>;</span><br><span class="line">                <span class="keyword">if</span> (mDraggingPoint<span class="operator"> == </span>null) &#123;</span><br><span class="line">                    handle = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                break;</span><br><span class="line">            case MotionEvent.ACTION_MOVE:</span><br><span class="line">                <span class="keyword">to</span><span class="constructor">ImagePointSize(<span class="params">mDraggingPoint</span>, <span class="params">event</span>)</span>;</span><br><span class="line">                break;</span><br><span class="line">            case MotionEvent.ACTION_UP:</span><br><span class="line">                mDraggingPoint = null;</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">        invalidate<span class="literal">()</span>;</span><br><span class="line">        return handle<span class="operator"> || </span>super.on<span class="constructor">TouchEvent(<span class="params">event</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Point get<span class="constructor">NearbyPoint(MotionEvent <span class="params">event</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (check<span class="constructor">Points(<span class="params">mCropPoints</span>)</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Point p : mCropPoints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (is<span class="constructor">TouchPoint(<span class="params">p</span>, <span class="params">event</span>)</span>) return p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (check<span class="constructor">Points(<span class="params">mEdgeMidPoints</span>)</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Point p : mEdgeMidPoints)&#123;</span><br><span class="line">                <span class="keyword">if</span> (is<span class="constructor">TouchPoint(<span class="params">p</span>, <span class="params">event</span>)</span>) return p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> boolean is<span class="constructor">TouchPoint(Point <span class="params">p</span>, MotionEvent <span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">float</span> x = event.get<span class="constructor">X()</span>;</span><br><span class="line">        <span class="built_in">float</span> y = event.get<span class="constructor">Y()</span>;</span><br><span class="line">        <span class="built_in">float</span> px = get<span class="constructor">ViewPointX(<span class="params">p</span>)</span>;</span><br><span class="line">        <span class="built_in">float</span> py = get<span class="constructor">ViewPointY(<span class="params">p</span>)</span>;</span><br><span class="line">        double distance =  <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>sqrt(<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>pow(x - px, <span class="number">2</span>) + <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>pow(y - py, <span class="number">2</span>));</span><br><span class="line">        <span class="keyword">if</span> (distance &lt; dp2px(TOUCH_POINT_CATCH_DISTANCE)) &#123;</span><br><span class="line">            return <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> void <span class="keyword">to</span><span class="constructor">ImagePointSize(Point <span class="params">dragPoint</span>, MotionEvent <span class="params">event</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (dragPoint<span class="operator"> == </span>null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        DragPointType pointType = get<span class="constructor">PointType(<span class="params">dragPoint</span>)</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">int</span> x = (<span class="built_in">int</span>) ((<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>min(<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>max(event.get<span class="constructor">X()</span>, mActLeft), mActLeft + mActWidth) - mActLeft)<span class="operator"> / </span>mScaleX);</span><br><span class="line">        <span class="built_in">int</span> y = (<span class="built_in">int</span>) ((<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>min(<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>max(event.get<span class="constructor">Y()</span>, mActTop), mActTop + mActHeight) - mActTop)<span class="operator"> / </span>mScaleY);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mDragLimit<span class="operator"> &amp;&amp; </span>pointType != null) &#123;</span><br><span class="line">            switch (pointType) &#123;</span><br><span class="line">                case LEFT_TOP:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveLeftTop(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                case RIGHT_TOP:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveRightTop(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                case RIGHT_BOTTOM:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveRightBottom(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                case LEFT_BOTTOM:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveLeftBottom(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                case TOP:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveLeftTop(<span class="params">x</span>, <span class="params">y</span>)</span><span class="operator"> || </span>!can<span class="constructor">MoveRightTop(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                case RIGHT:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveRightTop(<span class="params">x</span>, <span class="params">y</span>)</span><span class="operator"> || </span>!can<span class="constructor">MoveRightBottom(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                case BOTTOM:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveLeftBottom(<span class="params">x</span>, <span class="params">y</span>)</span><span class="operator"> || </span>!can<span class="constructor">MoveRightBottom(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                case LEFT:</span><br><span class="line">                    <span class="keyword">if</span> (!can<span class="constructor">MoveLeftBottom(<span class="params">x</span>, <span class="params">y</span>)</span><span class="operator"> || </span>!can<span class="constructor">MoveLeftTop(<span class="params">x</span>, <span class="params">y</span>)</span>) return;</span><br><span class="line">                    break;</span><br><span class="line">                default:</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="module-access"><span class="module"><span class="identifier">DragPointType</span>.</span></span>is<span class="constructor">EdgePoint(<span class="params">pointType</span>)</span>)&#123;</span><br><span class="line">            <span class="built_in">int</span> xoff = x - dragPoint.x;</span><br><span class="line">            <span class="built_in">int</span> yoff = y - dragPoint.y;</span><br><span class="line">            move<span class="constructor">Edge(<span class="params">pointType</span>, <span class="params">xoff</span>, <span class="params">yoff</span>)</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dragPoint.y = y;</span><br><span class="line">            dragPoint.x = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> void move<span class="constructor">Edge(DragPointType <span class="params">type</span>, <span class="params">int</span> <span class="params">xoff</span>, <span class="params">int</span> <span class="params">yoff</span>)</span>&#123;</span><br><span class="line">        switch (<span class="keyword">type</span>)&#123;</span><br><span class="line">            case TOP:</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_LT], 0, <span class="params">yoff</span>)</span>;</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_RT], 0, <span class="params">yoff</span>)</span>;</span><br><span class="line">                break;</span><br><span class="line">            case RIGHT:</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_RT], <span class="params">xoff</span>, 0)</span>;</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_RB], <span class="params">xoff</span>, 0)</span>;</span><br><span class="line">                break;</span><br><span class="line">            case BOTTOM:</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_LB], 0, <span class="params">yoff</span>)</span>;</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_RB], 0, <span class="params">yoff</span>)</span>;</span><br><span class="line">                break;</span><br><span class="line">            case LEFT:</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_LT], <span class="params">xoff</span>, 0)</span>;</span><br><span class="line">                move<span class="constructor">Point(<span class="params">mCropPoints</span>[P_LB], <span class="params">xoff</span>, 0)</span>;</span><br><span class="line">                break;</span><br><span class="line">                default: break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> void move<span class="constructor">Point(Point <span class="params">point</span>, <span class="params">int</span> <span class="params">xoff</span>, <span class="params">int</span> <span class="params">yoff</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="operator"> == </span>null) return;</span><br><span class="line">        <span class="built_in">int</span> x = point.x + xoff;</span><br><span class="line">        <span class="built_in">int</span> y = point.y + yoff;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span><span class="operator"> || </span>x &gt; get<span class="constructor">Drawable()</span>.get<span class="constructor">IntrinsicWidth()</span>) return;</span><br><span class="line">        <span class="keyword">if</span> (y &lt; <span class="number">0</span><span class="operator"> || </span>y &gt; get<span class="constructor">Drawable()</span>.get<span class="constructor">IntrinsicHeight()</span>) return;</span><br><span class="line">        point.x = x;</span><br><span class="line">        point.y = y;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> boolean can<span class="constructor">MoveLeftTop(<span class="params">int</span> <span class="params">x</span>, <span class="params">int</span> <span class="params">y</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_LB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_RB])</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_RB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_RB], <span class="params">mCropPoints</span>[P_LB])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_RB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_RB], <span class="params">mCropPoints</span>[P_RT])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> boolean can<span class="constructor">MoveRightTop(<span class="params">int</span> <span class="params">x</span>, <span class="params">int</span> <span class="params">y</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RB], <span class="params">mCropPoints</span>[P_LB])</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_LB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_RB])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_RB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_RB], <span class="params">mCropPoints</span>[P_LT])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> boolean can<span class="constructor">MoveRightBottom(<span class="params">int</span> <span class="params">x</span>, <span class="params">int</span> <span class="params">y</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_LB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_LT])</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RT], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_LB])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_LB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_LB], <span class="params">mCropPoints</span>[P_RT])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> boolean can<span class="constructor">MoveLeftBottom(<span class="params">int</span> <span class="params">x</span>, <span class="params">int</span> <span class="params">y</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RB], <span class="params">mCropPoints</span>[P_RT])</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RT], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_LT], <span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_RB])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_RB], <span class="params">x</span>, <span class="params">y</span>)</span></span><br><span class="line"><span class="operator">                * </span>point<span class="constructor">SideLine(<span class="params">mCropPoints</span>[P_RT], <span class="params">mCropPoints</span>[P_RB], <span class="params">mCropPoints</span>[P_LT])</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            return <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DragPointType get<span class="constructor">PointType(Point <span class="params">dragPoint</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (dragPoint<span class="operator"> == </span>null) return null;</span><br><span class="line"></span><br><span class="line">        DragPointType <span class="keyword">type</span>;</span><br><span class="line">        <span class="keyword">if</span> (check<span class="constructor">Points(<span class="params">mCropPoints</span>)</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; mCropPoints.length; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dragPoint<span class="operator"> == </span>mCropPoints<span class="literal">[<span class="identifier">i</span>]</span>) &#123;</span><br><span class="line">                    <span class="keyword">type</span> = <span class="module-access"><span class="module"><span class="identifier">DragPointType</span>.</span></span>values<span class="literal">()</span><span class="literal">[<span class="identifier">i</span>]</span>;</span><br><span class="line">                    return <span class="keyword">type</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (check<span class="constructor">Points(<span class="params">mEdgeMidPoints</span>)</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; mEdgeMidPoints.length; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (dragPoint<span class="operator"> == </span>mEdgeMidPoints<span class="literal">[<span class="identifier">i</span>]</span>)&#123;</span><br><span class="line">                    <span class="keyword">type</span> = <span class="module-access"><span class="module"><span class="identifier">DragPointType</span>.</span></span>values<span class="literal">()</span><span class="literal">[<span class="number">4</span>+<span class="identifier">i</span>]</span>;</span><br><span class="line">                    return <span class="keyword">type</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> get<span class="constructor">ViewPointX(Point <span class="params">point</span>)</span>&#123;</span><br><span class="line">        return get<span class="constructor">ViewPointX(<span class="params">point</span>.<span class="params">x</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> get<span class="constructor">ViewPointX(<span class="params">float</span> <span class="params">x</span>)</span> &#123;</span><br><span class="line">        return x<span class="operator"> * </span>mScaleX + mActLeft;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> get<span class="constructor">ViewPointY(Point <span class="params">point</span>)</span>&#123;</span><br><span class="line">        return get<span class="constructor">ViewPointY(<span class="params">point</span>.<span class="params">y</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> get<span class="constructor">ViewPointY(<span class="params">float</span> <span class="params">y</span>)</span> &#123;</span><br><span class="line">        return y<span class="operator"> * </span>mScaleY + mActTop;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> dp2px(<span class="built_in">float</span> dp) &#123;</span><br><span class="line">        return dp<span class="operator"> * </span>mDensity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Point<span class="literal">[]</span> get<span class="constructor">FullImgCropPoints()</span> &#123;</span><br><span class="line">        Point<span class="literal">[]</span> points = <span class="keyword">new</span> Point<span class="literal">[<span class="number">4</span>]</span>;</span><br><span class="line">        Drawable drawable = get<span class="constructor">Drawable()</span>;</span><br><span class="line">        <span class="keyword">if</span> (drawable != null) &#123;</span><br><span class="line">            <span class="built_in">int</span> width = drawable.get<span class="constructor">IntrinsicWidth()</span>;</span><br><span class="line">            <span class="built_in">int</span> height = drawable.get<span class="constructor">IntrinsicHeight()</span>;</span><br><span class="line">            points<span class="literal">[<span class="number">0</span>]</span> = <span class="keyword">new</span> <span class="constructor">Point(0, 0)</span>;</span><br><span class="line">            points<span class="literal">[<span class="number">1</span>]</span> = <span class="keyword">new</span> <span class="constructor">Point(<span class="params">width</span>, 0)</span>;</span><br><span class="line">            points<span class="literal">[<span class="number">2</span>]</span> = <span class="keyword">new</span> <span class="constructor">Point(<span class="params">width</span>, <span class="params">height</span>)</span>;</span><br><span class="line">            points<span class="literal">[<span class="number">3</span>]</span> = <span class="keyword">new</span> <span class="constructor">Point(0, <span class="params">height</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return points;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> double get<span class="constructor">PointsDistance(Point <span class="params">p1</span>, Point <span class="params">p2</span>)</span> &#123;</span><br><span class="line">        return get<span class="constructor">PointsDistance(<span class="params">p1</span>.<span class="params">x</span>, <span class="params">p1</span>.<span class="params">y</span>, <span class="params">p2</span>.<span class="params">x</span>, <span class="params">p2</span>.<span class="params">y</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> double get<span class="constructor">PointsDistance(<span class="params">float</span> <span class="params">x1</span>, <span class="params">float</span> <span class="params">y1</span>, <span class="params">float</span> <span class="params">x2</span>, <span class="params">float</span> <span class="params">y2</span>)</span> &#123;</span><br><span class="line">        return <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>sqrt(<span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>pow(x1 - x2, <span class="number">2</span>) + <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>pow(y1 - y2, <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/聊一聊Kotlin中的线程安全/" data-toggle="tooltip" data-placement="top" title="聊一聊Kotlin中的线程安全">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/网络笔记/" data-toggle="tooltip" data-placement="top" title="Android网络部分笔记">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">实现效果如下</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%85%B7%E4%BD%93%E8%AF%B7%E7%9C%8BGit-demo-%E6%AC%A2%E8%BF%8EStar%EF%BC%8Cfork"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">具体请看Git demo,欢迎Star，fork</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#自定义View" title="自定义View">自定义View</a>
+            
+            <a class="tag" href="/tags/#不规则裁剪" title="不规则裁剪">不规则裁剪</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/xluu233">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          卢小胖
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://xluu233.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

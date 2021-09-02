@@ -436,6 +436,96 @@
   <!-- top end -->
   
 
+  <a href="/cn/RecyclerView动画设置/">
+    <h2 class="post-title">
+      RecyclerView加载动画设置
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+之前介绍了各种界面间的切换动画，这次我们介绍下常用的列表加载动画
+
+实现效果：
+
+居中加载、和滑动动画
+
+
+
+从左边加载
+
+
+
+从右边加载
+
+
+实现代码
+加载动画：
+val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationController = LayoutAnimationController......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-09-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#自定义View" title="自定义View">自定义View</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/Activity切换动画/">
+    <h2 class="post-title">
+      Activity跳转动画及View无缝衔接，了解一下？
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      如何设置Activity的切换动画？
+
+上一片文章我们讲述了Navigation切换动画，其实在Activity也能轻松实现切换动画。只不过我们很少去给activity设置切换动画，一般都是系统默认的。
+
+在Activity类中提供了overridePendingTransition方法:
+
+其参数意思是设置进入动画和退出动画，调用时机为：startActivity(intent)之后或者f......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-08-30
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#自定义View" title="自定义View">自定义View</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/">
     <h2 class="post-title">
       写一个MVVM快速开发框架（四）优雅的数据处理和事件通信
@@ -677,10 +767,89 @@ Github上关于Toas......
 </div>
 <hr>
 
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/聊一聊Android存储行为的变化/">
+    <h2 class="post-title">
+      聊一聊Android存储行为的变化
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      总所周知Android上的存储权限一直在更改，从Android增加file provider,到Android10增加分区存储，Google对于存储权限管理越来越严格。我们聊一下Android上的存储Api兼容性适配。
+
+1. 应用存储空间应用保存数据的方式有如下：
+
+文件和媒体数据可以保存在“应用专属存储空间”和“公共存储空间之中”
+短数据或者偏好设置可以通过sharePreference......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-07-22
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#分区存储" title="分区存储">分区存储</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/聊一聊Kotlin中的线程安全/">
+    <h2 class="post-title">
+      聊一聊Kotlin中的线程安全
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      以上代码已上传Github,球球老哥们的Star
+前言在实际开发中有许多地方需要保证线程安全，保证互斥性。加锁是一个很好的实现方式，在kotlin中有哪些方式可以实现线程安全的效果？
+为什么需要处理线程安全问题线程安全问题由全局变量和静态变量引起，多个线程同时对统同一对象进行写操作，就可能发生每个线程读取到的值不一样。简而言之，如果在线程中不对变量进行写操作，值进行读操作，就可以避免线程安全......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-06-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#线程安全" title="线程安全">线程安全</a>
+    
+    <a href="/tags/#Kotlin" title="Kotlin">Kotlin</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
 
   <!-- Pager -->
   <ul class="pager">
     
+    
+    <li class="next">
+      <a href="/cn/archives/2/">下一页 &rarr;</a>
+    </li>
     
   </ul>
 
@@ -730,6 +899,54 @@ Github上关于Toas......
           
           
           <a href="/tags/#Room" title="Room" rel="1">Room</a>
+          
+          
+          
+          <a href="/tags/#LibJpegTurbo" title="LibJpegTurbo" rel="3">LibJpegTurbo</a>
+          
+          
+          
+          <a href="/tags/#Android" title="Android" rel="1">Android</a>
+          
+          
+          
+          <a href="/tags/#iOS" title="iOS" rel="1">iOS</a>
+          
+          
+          
+          <a href="/tags/#Replaykit2" title="Replaykit2" rel="1">Replaykit2</a>
+          
+          
+          
+          <a href="/tags/#网络" title="网络" rel="1">网络</a>
+          
+          
+          
+          <a href="/tags/#相册" title="相册" rel="1">相册</a>
+          
+          
+          
+          <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
+          
+          
+          
+          <a href="/tags/#自定义View" title="自定义View" rel="3">自定义View</a>
+          
+          
+          
+          <a href="/tags/#不规则裁剪" title="不规则裁剪" rel="1">不规则裁剪</a>
+          
+          
+          
+          <a href="/tags/#线程安全" title="线程安全" rel="1">线程安全</a>
+          
+          
+          
+          <a href="/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
+          
+          
+          
+          <a href="/tags/#分区存储" title="分区存储" rel="1">分区存储</a>
           
           
         </div>

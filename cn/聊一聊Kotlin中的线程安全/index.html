@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="bugmaker,xlu233,Android"/>
+  <link rel="shortcut icon" href="/img/icon.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://xluu233.github.io/cn/聊一聊Kotlin中的线程安全/">
+  <title>
+    
+      聊一聊Kotlin中的线程安全 - 卢小胖的开发日志
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">BugMaker</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/home.jpg');
+      --intro-header-background-image-url-post: url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: url('//img/common_back.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/common_back.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/common_back.jpg'); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#线程安全" title="线程安全">线程安全</a>
+              
+              <a class="tag" href="/tags/#Kotlin" title="Kotlin">Kotlin</a>
+              
+            </div>
+            <h1>聊一聊Kotlin中的线程安全</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2021-06-11
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">14</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>以上代码已上传<a target="_blank" rel="noopener" href="https://github.com/IMAlex233/ThreadSafe">Github</a>,球球老哥们的Star</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在实际开发中有许多地方需要保证线程安全，保证互斥性。加锁是一个很好的实现方式，在kotlin中有哪些方式可以实现线程安全的效果？</p>
+<h3 id="为什么需要处理线程安全问题"><a href="#为什么需要处理线程安全问题" class="headerlink" title="为什么需要处理线程安全问题"></a>为什么需要处理线程安全问题</h3><p>线程安全问题由全局变量和静态变量引起，多个线程同时对统同一对象进行写操作，就可能发生每个线程读取到的值不一样。简而言之，如果在线程中不对变量进行写操作，值进行读操作，就可以避免线程安全。</p>
+<h3 id="加锁"><a href="#加锁" class="headerlink" title="加锁"></a>加锁</h3><p><strong>锁可以分为实例锁和全局锁，通用的方法有Synchronized关键字和Lock方法进行加锁</strong></p>
+<ul>
+<li>实例锁：对某一个对象加锁，如果该对象的类的单例类，将同时也和全局锁一样</li>
+<li>全局锁：对某一类加锁，该类的所有对象都会加锁，持有类锁的线程将会同时持有全部对象的锁</li>
+</ul>
+<h2 id="1-Synchronized"><a href="#1-Synchronized" class="headerlink" title="1. Synchronized"></a>1. Synchronized</h2><p>Synchronized在java中是一个关键字，在kotlin中是一个注解类</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Marks the JVM method generated from the annotated function as `synchronized`, meaning that the method</span></span><br><span class="line"><span class="comment"> * will be protected from concurrent execution by multiple threads by the monitor of the instance (or,</span></span><br><span class="line"><span class="comment"> * for static methods, the class) on which the method is defined.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="variable">@Target</span>(FUNCTION, PROPERTY_GETTER, PROPERTY_SETTER)</span><br><span class="line"><span class="variable">@Retention</span>(AnnotationRetention.SOURCE)</span><br><span class="line"><span class="variable">@MustBeDocumented</span></span><br><span class="line">public actual annotation class Synchronized</span><br></pre></td></tr></table></figure>
+<p>我们复习一下java中的Synchronized关键字：</p>
+<blockquote>
+<p>Synchronized关键字可以保证加锁对象在多线程环境下同时只有一个线程能够执行，在当前线程释放对象锁之后其他线程才能获取。synchronized同时能够保证共享变量的可见性。</p>
+</blockquote>
+<p>基本规则：</p>
+<ul>
+<li>对于普通方法，锁的是当前对象</li>
+<li>对于静态方法，锁的是class类</li>
+<li>对于代码块加锁，锁的是代码块内对象<blockquote>
+<p>一个线程访问对象的synchronized区域时，其他线程访问该对象synchronized区域将会阻塞，但是其他线程可以访问该对象的非同步区域。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-1-java中的synchronized使用"><a href="#1-1-java中的synchronized使用" class="headerlink" title="1.1 java中的synchronized使用"></a>1.1 java中的synchronized使用</h3><p>略略略</p>
+<h3 id="1-2-kotlin中的synchronized使用"><a href="#1-2-kotlin中的synchronized使用" class="headerlink" title="1.2 kotlin中的synchronized使用"></a>1.2 kotlin中的synchronized使用</h3><h4 id="对方法加锁"><a href="#对方法加锁" class="headerlink" title="对方法加锁"></a>对方法加锁</h4><hr>
+<p>对方法加锁的时候只需要加上@Synchronized 注解就Ok了,比如我们定义了以下方法：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Synchronized</span></span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">postResult</span><span class="params">(s: <span class="type">String</span>)</span></span>&#123;</span><br><span class="line">    println(<span class="string">&quot;<span class="subst">$&#123;System.currentTimeMillis()&#125;</span> ：<span class="variable">$s</span>&quot;</span> )</span><br><span class="line">    sleep(<span class="number">5000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在不同的线程中调用该方法：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">testFunSync</span><span class="params">()</span></span> &#123;</span><br><span class="line">    Thread&#123;</span><br><span class="line">        postResult(<span class="string">&quot;first thread&quot;</span>)</span><br><span class="line">    &#125;.start()</span><br><span class="line"></span><br><span class="line">    Thread&#123;</span><br><span class="line">        postResult(<span class="string">&quot;second thread&quot;</span>)</span><br><span class="line">    &#125;.start()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>第一个线程调用postResult方法，输出当前时间后阻塞5s。5s之后第二个线程才能获取postResult 的锁。</strong></p>
+<p>输出结果：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="number">1622794297695</span> ��<span class="keyword">first</span> thread</span><br><span class="line"><span class="number">1622794302698</span> ��<span class="keyword">second</span> thread</span><br><span class="line"></span><br><span class="line">输出结果和我们预想的一样，相差<span class="number">5</span>s</span><br></pre></td></tr></table></figure>
+<p>如果我们将第一个线程进行阻塞呢，此时锁的获取情况是什么样的？</p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">fun</span> <span class="function"><span class="title">testFunSync</span>() &#123;</span></span><br><span class="line"><span class="function">    <span class="variable">Thread</span>&#123;</span></span><br><span class="line"><span class="function">        <span class="title">postResult</span>(<span class="string">&quot;first thread&quot;</span>)</span></span><br><span class="line">        <span class="comment">//我们在此线程阻塞10s,看下结果是否一样</span></span><br><span class="line">        <span class="function"><span class="title"><span class="built_in">sleep</span></span>(<span class="number">10000</span>)</span></span><br><span class="line">    &#125;.start()</span><br><span class="line"></span><br><span class="line">    <span class="variable">Thread</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">postResult</span>(<span class="string">&quot;second thread&quot;</span>)</span></span><br><span class="line">    &#125;.start()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">1622794450105 </span>��first thread</span><br><span class="line"><span class="symbol">1622794455107 </span>��second thread</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>输出结果依旧是一样的，first线程在执行玩postResult之后就会释放锁，后续的操作不会影响second线程获取postResult的锁</strong></p>
+<hr>
+<h4 id="对类加锁"><a href="#对类加锁" class="headerlink" title="对类加锁"></a>对类加锁</h4><p>首先我们创建一个Result类：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Result</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> s : String = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">fun</span> <span class="title">printResult</span><span class="params">()</span></span>&#123;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;System.currentTimeMillis()&#125;</span> ：<span class="variable">$s</span>&quot;</span> )</span><br><span class="line">        Thread.sleep(<span class="number">5000</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">fun</span> <span class="function"><span class="title">testClassSync</span>() &#123;</span></span><br><span class="line"><span class="function">    <span class="variable">val</span> <span class="variable"><span class="class">result</span></span>= <span class="title">Result</span>()</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="variable">Thread</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">synchronized</span>(<span class="variable"><span class="class">result</span></span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.s</span> = <span class="title">currentThread</span>().name</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.printResult</span>()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.apply &#123;</span><br><span class="line">        <span class="variable">name</span> = <span class="string">&quot;first thread&quot;</span></span><br><span class="line">        <span class="function"><span class="title">start</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">Thread</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">synchronized</span>(<span class="variable"><span class="class">result</span></span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.s</span> = <span class="title">currentThread</span>().name</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.printResult</span>()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.apply &#123;</span><br><span class="line">        <span class="variable">name</span> = <span class="string">&quot;second thread&quot;</span></span><br><span class="line">        <span class="function"><span class="title">start</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="number">1622795509253</span> ��first <span class="keyword">thread</span></span><br><span class="line"><span class="number">1622795514269</span> ��second <span class="keyword">thread</span></span><br><span class="line"><span class="comment">//时间相差5s，说明锁生效了</span></span><br></pre></td></tr></table></figure>
+<p>以上就是对Result类对象加锁，如果Result类有多个实例对象怎么办？我们稍微修改下调用方法：</p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">fun</span> <span class="function"><span class="title">testClassSync</span>() &#123;</span></span><br><span class="line"><span class="function">    <span class="variable">val</span> <span class="variable"><span class="class">result</span></span>= <span class="title">Result</span>()</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Result类的多个实例对象</span></span><br><span class="line">    <span class="variable">val</span> <span class="variable">result2</span>= <span class="function"><span class="title">Result</span>()</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">Thread</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">synchronized</span>(<span class="variable"><span class="class">result</span></span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.s</span> = <span class="title">currentThread</span>().name</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.printResult</span>()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.apply &#123;</span><br><span class="line">        <span class="variable">name</span> = <span class="string">&quot;first thread&quot;</span></span><br><span class="line">        <span class="function"><span class="title">start</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="variable">Thread</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">synchronized</span>(<span class="variable">result2</span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable">result2.s</span> = <span class="title">currentThread</span>().name</span></span><br><span class="line"><span class="function">            <span class="variable">result2.printResult</span>()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.apply &#123;</span><br><span class="line">        <span class="variable">name</span> = <span class="string">&quot;second thread&quot;</span></span><br><span class="line">        <span class="function"><span class="title">start</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>创建了多个Result类对象，first线程对A对象加锁，并不会影响second线程获取B对象锁，输出结果：</strong></p>
+<blockquote>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">1622795623480 </span>��first thread</span><br><span class="line"><span class="symbol">1622795623480 </span>��second thread</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>如果我们对Result类加锁，那所有的对象将会共享同一锁：</p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">fun</span> <span class="function"><span class="title">testClassSync</span>() &#123;</span></span><br><span class="line"><span class="function">    <span class="variable">val</span> <span class="variable"><span class="class">result</span></span>= <span class="title">Result</span>()</span></span><br><span class="line">    <span class="variable">val</span> <span class="variable">result2</span>= <span class="function"><span class="title">Result</span>()</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//对Result类加锁</span></span><br><span class="line">    <span class="variable">Thread</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">synchronized</span>(<span class="variable"><span class="class">Result</span></span>::<span class="variable">class.java</span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.s</span> = <span class="title">currentThread</span>().name</span></span><br><span class="line"><span class="function">            <span class="variable"><span class="class">result</span>.printResult</span>()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.apply &#123;</span><br><span class="line">        <span class="variable">name</span> = <span class="string">&quot;first thread&quot;</span></span><br><span class="line">        <span class="function"><span class="title">start</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">Thread</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">synchronized</span>(<span class="variable"><span class="class">Result</span></span>::<span class="variable">class.java</span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable">result2.s</span> = <span class="title">currentThread</span>().name</span></span><br><span class="line"><span class="function">            <span class="variable">result2.printResult</span>()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.apply &#123;</span><br><span class="line">        <span class="variable">name</span> = <span class="string">&quot;second thread&quot;</span></span><br><span class="line">        <span class="function"><span class="title">start</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">1622796124320 </span>��first thread</span><br><span class="line"><span class="symbol">1622796129336 </span>��second thread</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>尽管first线程和second线程调用的是不同对象，但是first线程对Resutl类加上了类锁，second线程只能乖乖等着。<br><strong>输出结果表示：对xx::class.java加上类锁的时候，该类所有的对象将会共享同一锁。</strong></p>
+</blockquote>
+<hr>
+<h3 id="2-Lock"><a href="#2-Lock" class="headerlink" title="2.Lock"></a>2.Lock</h3><p><strong>lock是一个接口，我们常用的实现类有ReentrantLock，意思是可重入锁。</strong></p>
+<p>我们定义一个全局变量，在两个线程中同时进行写操作，同时start两个线程</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">testLockSync</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> thread1 = Thread&#123;</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0.</span><span class="number">.1000</span>)&#123;</span><br><span class="line">            count += i</span><br><span class="line">        &#125;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;Thread.currentThread().name&#125;</span> : count:<span class="subst">$&#123;count&#125;</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> thread2 = Thread&#123;</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0.</span><span class="number">.1000</span>)&#123;</span><br><span class="line">            count += i</span><br><span class="line">        &#125;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;Thread.currentThread().name&#125;</span> : count:<span class="subst">$&#123;count&#125;</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//同时开启两个线程</span></span><br><span class="line">    thread1.start()</span><br><span class="line">    thread2.start()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：会发现每次输出的结果都不一样</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">Thread-1 :</span> <span class="string">count:505253</span></span><br><span class="line"><span class="attr">Thread-2 :</span> <span class="string">count:1001000</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">Thread-2 :</span> <span class="string">count:1001000</span></span><br><span class="line"><span class="attr">Thread-1 :</span> <span class="string">count:1001000</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">Thread-2 :</span> <span class="string">count:822155</span></span><br><span class="line"><span class="attr">Thread-1 :</span> <span class="string">count:822155</span></span><br></pre></td></tr></table></figure>
+<p><strong>使用ReentrantLock保证线程安全：</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">testLockSync</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> lock = ReentrantLock()</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> thread1 = Thread&#123;</span><br><span class="line">        lock.lock()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0.</span><span class="number">.1000</span>)&#123;</span><br><span class="line">            count += i</span><br><span class="line">        &#125;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;Thread.currentThread().name&#125;</span> : count:<span class="subst">$&#123;count&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">        lock.unlock()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> thread2 = Thread&#123;</span><br><span class="line">        lock.lock()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0.</span><span class="number">.1000</span>)&#123;</span><br><span class="line">            count += i</span><br><span class="line">        &#125;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;Thread.currentThread().name&#125;</span> : count:<span class="subst">$&#123;count&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        lock.unlock()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    thread1.start()</span><br><span class="line">    thread2.start()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果和执行顺序每次都是一样：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Thread</span>-<span class="number">1</span> : count:<span class="number">500500</span></span><br><span class="line"><span class="attribute">Thread</span>-<span class="number">2</span> : count:<span class="number">1001000</span></span><br></pre></td></tr></table></figure>
+<p><strong>Lock常用方法</strong></p>
+<ul>
+<li>lock() ：获取锁，获取成功设置当前线程count++，如果其他线程占有锁，则当前线程不可用，等待。</li>
+<li>tryLock() : 获取锁，如果锁不可用，则此方法将立即返回，线程不阻塞，可设置等待时间。</li>
+<li>unLock() : 尝试释放锁，当前thread count—,如果count为0，则释放锁。</li>
+</ul>
+<h2 id="2-Object"><a href="#2-Object" class="headerlink" title="2.Object"></a>2.Object</h2><p>在kotlin中object有很多作用，可以实现对象表达式、对象声明等</p>
+<p>对象表达式就是创建一个Object类，实现单例模式：</p>
+<figure class="highlight ceylon"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">object</span> Singleton &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在idea中查看其反编译java代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">static</span> &#123;</span><br><span class="line">      Singleton var0 = <span class="keyword">new</span> Singleton();</span><br><span class="line">      INSTANCE = var0;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到其属于饿汉模式：<br>优点是在类加载的时候创建，不会存在线程安全问题，效率高。缺点就是浪费资源。具体可以参考此<a target="_blank" rel="noopener" href="https://blog.csdn.net/fly910905/article/details/79286680">链接</a></p>
+<p><strong>但是在Object类中定义的方法并不是线程安全的</strong></p>
+<p>我们定义如下方法：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">object</span> Singleton &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">printS</span><span class="params">()</span></span>&#123;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;System.currentTimeMillis()&#125;</span> : <span class="subst">$&#123;Thread.currentThread().name&#125;</span>&quot;</span>)</span><br><span class="line">        sleep(<span class="number">1000</span>)</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;System.currentTimeMillis()&#125;</span> : <span class="subst">$&#123;Thread.currentThread().name&#125;</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用：<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">fun</span> test<span class="constructor">ObjectSync()</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> thread1 = thread(start = <span class="literal">false</span>,name = <span class="string">&quot;first thread&quot;</span>)&#123;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">Singleton</span>.</span></span>print<span class="constructor">S()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> thread2 = thread(start = <span class="literal">false</span>,name = <span class="string">&quot;second thread&quot;</span>)&#123;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">Singleton</span>.</span></span>print<span class="constructor">S()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    thread1.start<span class="literal">()</span></span><br><span class="line">    thread2.start<span class="literal">()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">1623036691322 </span>: first thread</span><br><span class="line"><span class="symbol">1623036691322 </span>: second thread</span><br><span class="line"><span class="symbol">1623036692329 </span>: second thread</span><br><span class="line"><span class="symbol">1623036692329 </span>: first thread</span><br></pre></td></tr></table></figure>
+<p>我们发现两个线程能够同时获取到对象，输出结果几乎是同一时间，并没有起到sleep效果。</p>
+<p>还是需要加锁@Synchronized才能实现线程安全，如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">object</span> Singleton &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Synchronized</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">printS</span><span class="params">()</span></span>&#123;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;System.currentTimeMillis()&#125;</span> : <span class="subst">$&#123;Thread.currentThread().name&#125;</span>&quot;</span>)</span><br><span class="line">        sleep(<span class="number">1000</span>)</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;System.currentTimeMillis()&#125;</span> : <span class="subst">$&#123;Thread.currentThread().name&#125;</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line"><span class="number">1623036783474</span> : first thread</span><br><span class="line"><span class="number">1623036784474</span> : first thread</span><br><span class="line"><span class="number">1623036784474</span> : second thread</span><br><span class="line"><span class="number">1623036785476</span> : second thread</span><br></pre></td></tr></table></figure>
+<h2 id="3-by-lazy实现"><a href="#3-by-lazy实现" class="headerlink" title="3.by lazy实现"></a>3.by lazy实现</h2><p>Object虽然非常简单是实现单例模式，但是Objcet不能初始化参数，我们可以利用by lazy 的延迟加载属性创建带参数的单例类：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeSingleton</span></span>(s:String) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">var</span> s = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">val</span> instance : SomeSingleton <span class="keyword">by</span> lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) &#123;</span><br><span class="line">            SomeSingleton(s)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">getInstances</span><span class="params">(string: <span class="type">String</span>)</span></span>:SomeSingleton&#123;</span><br><span class="line">            <span class="keyword">this</span>.s = string</span><br><span class="line">            <span class="keyword">return</span> instance</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">printS</span><span class="params">()</span></span>&#123;</span><br><span class="line">        println(<span class="string">&quot;<span class="subst">$&#123;System.currentTimeMillis()&#125;</span> : <span class="subst">$&#123;Thread.currentThread().name&#125;</span> -------   s is:<span class="subst">$&#123;s&#125;</span>&quot;</span>)</span><br><span class="line">        Thread.sleep(<span class="number">5000</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意这里的by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED)</strong></p>
+<p>延迟属性的在初始化的过程分多钟情况，首先是默认的SYNCHRONIZED，上锁为了保证只有一条线程可去初始化lazy属性。也就是说同时多线程进行访问该延迟属性时，如果没有初始化好，其他线程将无法访问。</p>
+<p>延迟加载上锁实现源码:</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">SynchronizedLazyImpl</span>&lt;<span class="type">out T</span>&gt;</span>(initializer: () -&gt; T, lock: Any? = <span class="literal">null</span>) : Lazy&lt;T&gt;, Serializable &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> initializer: (() -&gt; T)? = initializer</span><br><span class="line">    <span class="meta">@Volatile</span> <span class="keyword">private</span> <span class="keyword">var</span> _value: Any? = UNINITIALIZED_VALUE</span><br><span class="line">    <span class="comment">// final field is required to enable safe publication of constructed instance</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> lock = lock ?: <span class="keyword">this</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">val</span> value: T</span><br><span class="line">        <span class="keyword">get</span>() &#123;</span><br><span class="line">            <span class="keyword">val</span> _v1 = _value</span><br><span class="line">            <span class="keyword">if</span> (_v1 !== UNINITIALIZED_VALUE) &#123;</span><br><span class="line">                <span class="meta">@Suppress(<span class="meta-string">&quot;UNCHECKED_CAST&quot;</span>)</span></span><br><span class="line">                <span class="keyword">return</span> _v1 <span class="keyword">as</span> T</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> synchronized(lock) &#123;</span><br><span class="line">                <span class="keyword">val</span> _v2 = _value</span><br><span class="line">                <span class="keyword">if</span> (_v2 !== UNINITIALIZED_VALUE) &#123;</span><br><span class="line">                    <span class="meta">@Suppress(<span class="meta-string">&quot;UNCHECKED_CAST&quot;</span>)</span> (_v2 <span class="keyword">as</span> T)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">val</span> typedValue = initializer!!()</span><br><span class="line">                    _value = typedValue</span><br><span class="line">                    initializer = <span class="literal">null</span></span><br><span class="line">                    typedValue</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">isInitialized</span><span class="params">()</span></span>: <span class="built_in">Boolean</span> = _value !== UNINITIALIZED_VALUE</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">toString</span><span class="params">()</span></span>: String = <span class="keyword">if</span> (isInitialized()) value.toString() <span class="keyword">else</span> <span class="string">&quot;Lazy value not initialized yet.&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">writeReplace</span><span class="params">()</span></span>: Any = InitializedLazyImpl(value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同样SomeSingleton中的方法并不是线程安全的，同样需要加上@Synchorized，这里就不过多叙述了。</p>
+<h2 id="4-协程中的线程安全"><a href="#4-协程中的线程安全" class="headerlink" title="4.协程中的线程安全"></a>4.协程中的线程安全</h2><p>协程中提供了<strong>Mutex</strong>来保证互斥，可以看做是Synchorinzed和Lock的替代品，还有withLock 扩展函数，可以⽅便替代常⽤的：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">mutex.<span class="keyword">lock</span>()</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    mutex.unlock()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>替换为：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mutex.withLock &#123;</span><br><span class="line">    <span class="regexp">//</span><span class="keyword">do</span> something</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体源码：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="meta">@OptIn(ExperimentalContracts::class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">suspend</span> <span class="keyword">inline</span> <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> Mutex.<span class="title">withLock</span><span class="params">(owner: <span class="type">Any</span>? = <span class="literal">null</span>, action: () -&gt; <span class="type">T</span>)</span></span>: T &#123;</span><br><span class="line">    contract &#123; </span><br><span class="line">        callsInPlace(action, InvocationKind.EXACTLY_ONCE)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lock(owner)</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> action()</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        unlock(owner)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们看一下具体的使用：</p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">suspend</span> <span class="variable">fun</span> <span class="function"><span class="title">testMutex</span>() &#123;</span></span><br><span class="line"><span class="function">    <span class="variable">var</span> <span class="variable">count</span> = <span class="number">0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    <span class="variable">val</span> <span class="variable">job1</span> = <span class="title">CoroutineScope</span>(<span class="variable">Dispatchers.IO</span>).launch&#123;</span></span><br><span class="line"><span class="function">        <span class="title">repeat</span>(<span class="number">100</span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable">count</span> ++</span></span><br><span class="line"><span class="function">            <span class="comment">//delay 1ms是为了比避免执行太快</span></span></span><br><span class="line"><span class="function">            <span class="title">delay</span>(<span class="number">1</span>)</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="title">println</span>(<span class="string">&quot;count1:$&#123;count&#125;&quot;</span>)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="variable">val</span> <span class="variable">job2</span> = <span class="function"><span class="title">CoroutineScope</span>(<span class="variable">Dispatchers.IO</span>).launch&#123;</span></span><br><span class="line"><span class="function">        <span class="title">repeat</span>(<span class="number">100</span>)&#123;</span></span><br><span class="line"><span class="function">            <span class="variable">count</span> ++</span></span><br><span class="line"><span class="function">            <span class="title">delay</span>(<span class="number">1</span>)</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="title">println</span>(<span class="string">&quot;count2:$&#123;count&#125;&quot;</span>)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">job1.join</span>()</span><br><span class="line">    <span class="variable">job2.join</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们多次运行看下结果，发现每次输出都不一样：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">count2</span>:<span class="number">196</span></span><br><span class="line"><span class="attribute">count1</span>:<span class="number">196</span></span><br></pre></td></tr></table></figure>
+<p>我们加上Mutex试一下：注意，<strong>对于多个协程来说用的是同一个Mutex</strong></p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable">suspend</span> <span class="variable">fun</span> <span class="function"><span class="title">testMutex</span>() &#123;</span></span><br><span class="line"><span class="function">    <span class="variable">var</span> <span class="variable">count</span> = <span class="number">0</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">//注意：对于多个协程来说用的是同一个Mutex</span></span></span><br><span class="line"><span class="function">    <span class="variable">val</span> <span class="variable">mutex</span> = <span class="title">Mutex</span>()</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">val</span> <span class="variable">job1</span> = <span class="function"><span class="title">CoroutineScope</span>(<span class="variable">Dispatchers.IO</span>).launch&#123;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="variable">mutex.withLock</span>(<span class="variable">count</span>) &#123;</span></span><br><span class="line"><span class="function">            <span class="title">repeat</span>(<span class="number">100</span>) &#123;</span></span><br><span class="line"><span class="function">                <span class="variable">count</span>++</span></span><br><span class="line"><span class="function">                <span class="title">delay</span>(<span class="number">1</span>)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="title">println</span>(<span class="string">&quot;count1:$&#123;count&#125;&quot;</span>)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="variable">val</span> <span class="variable">job2</span> = <span class="function"><span class="title">CoroutineScope</span>(<span class="variable">Dispatchers.IO</span>).launch&#123;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="variable">mutex.withLock</span>(<span class="variable">count</span>) &#123;</span></span><br><span class="line"><span class="function">            <span class="title">repeat</span>(<span class="number">100</span>) &#123;</span></span><br><span class="line"><span class="function">                <span class="variable">count</span>++</span></span><br><span class="line"><span class="function">                <span class="title">delay</span>(<span class="number">1</span>)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="title">println</span>(<span class="string">&quot;count2:$&#123;count&#125;&quot;</span>)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">job1.join</span>()</span><br><span class="line">    <span class="variable">job2.join</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果：几乎同时开启两个协程，去竞争count的锁，job1和job2谁先拿到count的锁几率是相同的<br><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">count2</span>:<span class="number">100</span></span><br><span class="line"><span class="attribute">count1</span>:<span class="number">200</span></span><br></pre></td></tr></table></figure><br>如果我们只在一个协程中执行mutex，不会影响到另一个协程对count的读取。</p>
+<h3 id="谨慎在协程中使用-Synchronized"><a href="#谨慎在协程中使用-Synchronized" class="headerlink" title="谨慎在协程中使用@Synchronized"></a>谨慎在协程中使用@Synchronized</h3><p>总所周知协程只是线程的封装框架,那么Synchronized配合协程使用有效吗？</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 测试协程中使用Synchronzied</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">testCoroutineWithSync</span><span class="params">()</span></span> = runBlocking&#123;</span><br><span class="line">    repeat(<span class="number">3</span>)&#123;</span><br><span class="line">        launch(Dispatchers.IO)&#123;</span><br><span class="line">            doSomething()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Synchronized</span></span><br><span class="line"><span class="keyword">suspend</span> <span class="function"><span class="keyword">fun</span> <span class="title">doSomething</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    println(<span class="string">&quot;currentThread:<span class="subst">$&#123;Thread.currentThread().name&#125;</span>, time:<span class="subst">$&#123;System.currentTimeMillis()&#125;</span>, start&quot;</span>)</span><br><span class="line">    delay(<span class="number">1000</span>)</span><br><span class="line">    println(<span class="string">&quot;currentThread:<span class="subst">$&#123;Thread.currentThread().name&#125;</span>, time:<span class="subst">$&#123;System.currentTimeMillis()&#125;</span>, end&quot;</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们利用@Synchronized标记suspend函数，理想情况应该是3次协程依次执行，但是实际情况是：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">1</span>, time:<span class="number">1623380113511</span>, start</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">2</span>, time:<span class="number">1623380113516</span>, start</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">3</span>, time:<span class="number">1623380113516</span>, start</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">3</span>, time:<span class="number">1623380114521</span>, end</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">2</span>, time:<span class="number">1623380114521</span>, end</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">1</span>, time:<span class="number">1623380114521</span>, end</span><br></pre></td></tr></table></figure>
+<p>输出结果并没有按照我们预想的一样，<strong>@Synchronized并没有起到加锁的效果。</strong></p>
+<p>即使我们不适用@Synchronized标记，我们修改一下：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">suspend</span> <span class="function"><span class="keyword">fun</span> <span class="title">doSomething2</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    synchronized(Any())&#123;</span><br><span class="line">        println(<span class="string">&quot;currentThread:<span class="subst">$&#123;Thread.currentThread().name&#125;</span>, time:<span class="subst">$&#123;System.currentTimeMillis()&#125;</span>, start&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">//模拟某些阻塞操作</span></span><br><span class="line">        <span class="keyword">val</span> time = measureTimeMillis &#123;</span><br><span class="line">            <span class="keyword">var</span> count = <span class="number">0</span></span><br><span class="line">            repeat(<span class="number">1000000</span>)&#123;</span><br><span class="line">                count *= count</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        println(<span class="string">&quot;currentThread:<span class="subst">$&#123;Thread.currentThread().name&#125;</span>, time:<span class="subst">$&#123;System.currentTimeMillis()&#125;</span>, end&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果依旧是一样的，并没有起到加锁效果：<br><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">1</span>, time:<span class="number">1623381184155</span>, start</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">3</span>, time:<span class="number">1623381184157</span>, start</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">2</span>, time:<span class="number">1623381184157</span>, start</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">3</span>, time:<span class="number">1623381184167</span>, end</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">2</span>, time:<span class="number">1623381184167</span>, end</span><br><span class="line"><span class="attribute">currentThread</span>:DefaultDispatcher-worker-<span class="number">1</span>, time:<span class="number">1623381184167</span>, end</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h2><p>Kotlin协程中Mutex还是相对好用的，需要注意的是suspend函数中不要使用@synchronized。陆陆续续写了好几天,n脑子一片空白，以上应该还有不严谨和不完善的地方，欢迎大家补充。以上代码已上传<a target="_blank" rel="noopener" href="https://github.com/IMAlex233/ThreadSafe">Github</a>,球球老哥们的Star和点赞</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/聊一聊Android存储行为的变化/" data-toggle="tooltip" data-placement="top" title="聊一聊Android存储行为的变化">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/Android自定义不规则裁剪/" data-toggle="tooltip" data-placement="top" title="Android自定义不规则裁剪">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%A4%84%E7%90%86%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">为什么需要处理线程安全问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A0%E9%94%81"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">加锁</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Synchronized"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">1. Synchronized</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-java%E4%B8%AD%E7%9A%84synchronized%E4%BD%BF%E7%94%A8"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">1.1 java中的synchronized使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-kotlin%E4%B8%AD%E7%9A%84synchronized%E4%BD%BF%E7%94%A8"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">1.2 kotlin中的synchronized使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AF%B9%E6%96%B9%E6%B3%95%E5%8A%A0%E9%94%81"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">对方法加锁</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AF%B9%E7%B1%BB%E5%8A%A0%E9%94%81"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">对类加锁</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-Lock"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">2.Lock</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Object"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">2.Object</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-by-lazy%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">3.by lazy实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-%E5%8D%8F%E7%A8%8B%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">4.协程中的线程安全</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%B0%A8%E6%85%8E%E5%9C%A8%E5%8D%8F%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8-Synchronized"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">谨慎在协程中使用@Synchronized</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-%E6%80%BB%E7%BB%93"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">5.总结</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#线程安全" title="线程安全">线程安全</a>
+            
+            <a class="tag" href="/tags/#Kotlin" title="Kotlin">Kotlin</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/xluu233">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          卢小胖
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://xluu233.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
