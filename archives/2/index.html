@@ -242,6 +242,17 @@
           
           
           <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/archive/">
               
               归档
@@ -267,17 +278,6 @@
             <a href="/tags/">
               
               标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/about/">
-              
-              关于
               
               
             </a>
@@ -608,10 +608,11 @@ Github上关于Toas......
     <div class="post-content-preview">
       总所周知Android上的存储权限一直在更改，从Android增加file provider,到Android10增加分区存储，Google对于存储权限管理越来越严格。我们聊一下Android上的存储Api兼容性适配。
 
-1. 应用存储空间应用保存数据的方式有如下：
+1. 应用存储空间
+应用保存数据的方式有如下：
 
 文件和媒体数据可以保存在“应用专属存储空间”和“公共存储空间之中”
-短数据或者偏好设置可以通过sharePreference......
+短数据或者偏好设置可以通过sharePreferenc......
     </div>
   </a>
   
@@ -645,8 +646,10 @@ Github上关于Toas......
     </h3>
     <div class="post-content-preview">
       以上代码已上传Github,球球老哥们的Star
-前言在实际开发中有许多地方需要保证线程安全，保证互斥性。加锁是一个很好的实现方式，在kotlin中有哪些方式可以实现线程安全的效果？
-为什么需要处理线程安全问题线程安全问题由全局变量和静态变量引起，多个线程同时对统同一对象进行写操作，就可能发生每个线程读取到的值不一样。简而言之，如果在线程中不对变量进行写操作，值进行读操作，就可以避免线程安全......
+前言
+在实际开发中有许多地方需要保证线程安全，保证互斥性。加锁是一个很好的实现方式，在kotlin中有哪些方式可以实现线程安全的效果？
+为什么需要处理线程安全问题
+线程安全问题由全局变量和静态变量引起，多个线程同时对统同一对象进行写操作，就可能发生每个线程读取到的值不一样。简而言之，如果在线程中不对变量进行写操作，值进行读操作，就可以避免线程......
     </div>
   </a>
   
@@ -686,9 +689,11 @@ Github上关于Toas......
 
 实现效果如下
 
+
 直接将代码，不多BB
 
-具体请看Git demo,欢迎Star，forkpackage com.xlu.cropimage;import android.content.Context;import android.content.res.Ty......
+具体请看Git demo,欢迎Star，fork
+package com.xlu.cropimage;import android.content.Context;import android.content.res.......
     </div>
   </a>
   
@@ -724,11 +729,12 @@ Github上关于Toas......
     </h3>
     <div class="post-content-preview">
       1.TCP/IP说一下
+
 TCP/IP是网络协议的总称，包括了TCP\UDP\IP\HTTP\FTP等协议，大概可以分为4层：链路层，网络层，链路层，网络应用层，TCP\UDP都是传输层中的协议。
-TCP全称传输控制协议，传输形式为数据流，是面向连接的协议，也就是说必须与 对方建立连接才能（参考TCP三次握手四次挥手）  
+TCP全称传输控制协议，传输形式为数据流，是面向连接的协议，也就是说必须与 对方建立连接才能（参考TCP三次握手四次挥手）
 UDP是用户数据报协议，传输形式为数据报，是不面向连接的。
 
-2.HT......
+2.HTT......
     </div>
   </a>
   
@@ -761,8 +767,10 @@ UDP是用户数据报协议，传输形式为数据报，是不面向连接的�
       
     </h3>
     <div class="post-content-preview">
-      Mac平台编译Libjpegturbo的优势我尝试过在windows,linux（Ubuntu），mac下用不同的方式来编译，最后实际测试，在mac平台下，用cmake（非AS自带）编译性能是最好的。
-1.Debug与Release版本区别：debug主要用于测试，release主要用于正式版本。按道理是一样的，但是在实际测试过程中发现，debug版本性能非常差劲，在Android上的表现甚......
+      Mac平台编译Libjpegturbo的优势
+我尝试过在windows,linux（Ubuntu），mac下用不同的方式来编译，最后实际测试，在mac平台下，用cmake（非AS自带）编译性能是最好的。
+1.Debug与Release版本区别：
+debug主要用于测试，release主要用于正式版本。按道理是一样的，但是在实际测试过程中发现，debug版本性能非常差劲，在Android上的表......
     </div>
   </a>
   
@@ -795,9 +803,10 @@ UDP是用户数据报协议，传输形式为数据报，是不面向连接的�
       
     </h3>
     <div class="post-content-preview">
-      LibjpegTurbo既然你看到这篇文章了，大概了解了LibjpegTurbo的作用了。这里不做多的介绍，官方生成LibjpegTurbo速度能提升2-6倍，根据实际测试，Turbo版本确实有提升，但是1.5.x版本和2.0.x版本速度差距较大，我们选择最新的release版本libjpeg2.0
+      LibjpegTurbo
+既然你看到这篇文章了，大概了解了LibjpegTurbo的作用了。这里不做多的介绍，官方生成LibjpegTurbo速度能提升2-6倍，根据实际测试，Turbo版本确实有提升，但是1.5.x版本和2.0.x版本速度差距较大，我们选择最新的release版本libjpeg2.0
 
-下载：https://sourceforge.net/projects/libjpeg-t......
+下载：https://sourceforge.net/projects/libjpeg-......
     </div>
   </a>
   
@@ -845,39 +854,23 @@ UDP是用户数据报协议，传输形式为数据报，是不面向连接的�
         <div class="tags">
           
           
-          <a href="/tags/#MVVM" title="MVVM" rel="4">MVVM</a>
+          <a href="/tags/#自定义View" title="自定义View" rel="3">自定义View</a>
           
           
           
-          <a href="/tags/#网络框架" title="网络框架" rel="1">网络框架</a>
+          <a href="/tags/#widget" title="widget" rel="1">widget</a>
           
           
           
-          <a href="/tags/#组件化" title="组件化" rel="1">组件化</a>
+          <a href="/tags/#不规则裁剪" title="不规则裁剪" rel="1">不规则裁剪</a>
           
           
           
-          <a href="/tags/#Toast" title="Toast" rel="1">Toast</a>
+          <a href="/tags/#相册" title="相册" rel="1">相册</a>
           
           
           
-          <a href="/tags/#Lottie" title="Lottie" rel="1">Lottie</a>
-          
-          
-          
-          <a href="/tags/#Navigation" title="Navigation" rel="2">Navigation</a>
-          
-          
-          
-          <a href="/tags/#动画" title="动画" rel="1">动画</a>
-          
-          
-          
-          <a href="/tags/#LiveData" title="LiveData" rel="1">LiveData</a>
-          
-          
-          
-          <a href="/tags/#Room" title="Room" rel="1">Room</a>
+          <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
           
           
           
@@ -897,23 +890,51 @@ UDP是用户数据报协议，传输形式为数据报，是不面向连接的�
           
           
           
+          <a href="/tags/#c++" title="c++" rel="5">c++</a>
+          
+          
+          
+          <a href="/tags/#MVVM" title="MVVM" rel="4">MVVM</a>
+          
+          
+          
+          <a href="/tags/#网络框架" title="网络框架" rel="1">网络框架</a>
+          
+          
+          
+          <a href="/tags/#组件化" title="组件化" rel="1">组件化</a>
+          
+          
+          
+          <a href="/tags/#LiveData" title="LiveData" rel="1">LiveData</a>
+          
+          
+          
+          <a href="/tags/#Room" title="Room" rel="1">Room</a>
+          
+          
+          
+          <a href="/tags/#Toast" title="Toast" rel="1">Toast</a>
+          
+          
+          
+          <a href="/tags/#Lottie" title="Lottie" rel="1">Lottie</a>
+          
+          
+          
           <a href="/tags/#网络" title="网络" rel="1">网络</a>
           
           
           
-          <a href="/tags/#相册" title="相册" rel="1">相册</a>
+          <a href="/tags/#分区存储" title="分区存储" rel="1">分区存储</a>
           
           
           
-          <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
+          <a href="/tags/#Navigation" title="Navigation" rel="2">Navigation</a>
           
           
           
-          <a href="/tags/#自定义View" title="自定义View" rel="3">自定义View</a>
-          
-          
-          
-          <a href="/tags/#不规则裁剪" title="不规则裁剪" rel="1">不规则裁剪</a>
+          <a href="/tags/#动画" title="动画" rel="1">动画</a>
           
           
           
@@ -922,18 +943,6 @@ UDP是用户数据报协议，传输形式为数据报，是不面向连接的�
           
           
           <a href="/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
-          
-          
-          
-          <a href="/tags/#分区存储" title="分区存储" rel="1">分区存储</a>
-          
-          
-          
-          <a href="/tags/#widget" title="widget" rel="1">widget</a>
-          
-          
-          
-          <a href="/tags/#c++" title="c++" rel="5">c++</a>
           
           
         </div>

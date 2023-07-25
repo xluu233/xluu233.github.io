@@ -242,6 +242,17 @@
           
           
           <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/archive/">
               
               归档
@@ -267,17 +278,6 @@
             <a href="/tags/">
               
               标签
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/about/">
-              
-              关于
               
               
             </a>
@@ -457,79 +457,120 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h4 id="1-TCP-IP说一下"><a href="#1-TCP-IP说一下" class="headerlink" title="1.TCP/IP说一下"></a>1.TCP/IP说一下</h4><ul>
+        <h4 id="1-TCP-IP说一下">1.TCP/IP说一下</h4>
+<ul>
 <li>TCP/IP是网络协议的总称，包括了TCP\UDP\IP\HTTP\FTP等协议，大概可以分为4层：链路层，网络层，链路层，网络应用层，TCP\UDP都是传输层中的协议。</li>
-<li>TCP全称传输控制协议，传输形式为数据流，是面向连接的协议，也就是说必须与 对方建立连接才能（参考TCP三次握手四次挥手）  </li>
+<li>TCP全称传输控制协议，传输形式为数据流，是面向连接的协议，也就是说必须与 对方建立连接才能（参考TCP三次握手四次挥手）</li>
 <li>UDP是用户数据报协议，传输形式为数据报，是不面向连接的。</li>
 </ul>
-<h4 id="2-HTTP-HTTPS了解多少"><a href="#2-HTTP-HTTPS了解多少" class="headerlink" title="2.HTTP/HTTPS了解多少"></a>2.HTTP/HTTPS了解多少</h4><ul>
-<li>HTTP是网络协议中的网络应用层，全称超文本传输协议，HTTP协议是B/S架构，浏览器作为HTTP客户端通过URL向web服务器发送请求。  </li>
+<h4 id="2-HTTP-HTTPS了解多少">2.HTTP/HTTPS了解多少</h4>
+<ul>
+<li>HTTP是网络协议中的网络应用层，全称超文本传输协议，HTTP协议是B/S架构，浏览器作为HTTP客户端通过URL向web服务器发送请求。</li>
 <li>HTTPS可以理解为HTTP+SSL,通过ssl证书来验证服务器的身份，为浏览器和服务器之间的传输加密。</li>
 <li>http因为是明文传输，所以不太安全。https因为SSL涉及加密算法，所以消耗比http多，加载会变慢。</li>
 </ul>
-<h4 id="3-HTTP断点传输"><a href="#3-HTTP断点传输" class="headerlink" title="3.HTTP断点传输"></a>3.HTTP断点传输</h4><ul>
+<h4 id="3-HTTP断点传输">3.HTTP断点传输</h4>
+<ul>
 <li>在请求头中指明Range参数，一般格式Range:(unit=first byte pos)-[last byte pos]</li>
 <li>响应头中用Content-Range指示了实体的长度，一般格式：Content-Range: bytes (unit first byte pos) - [last byte pos]/[entity legth]</li>
 </ul>
-<h4 id="4-多线程下载大文件"><a href="#4-多线程下载大文件" class="headerlink" title="4.多线程下载大文件"></a>4.多线程下载大文件</h4><p>首先我们要知道为什么多线程下载速度会更快？理论进程的实时网速=实时可用网络带宽，但再实际中进程拥有的带宽&lt;=实时可用带宽。   </p>
-<p><strong>TCP拥有一个流量探测机制</strong>，一个TCP连接遇到丢包之后速度会骤减，速度升的却很慢。总结就是单个TCP连接不稳定，需要多线程来弥补，当TCP连接更加智能稳定的时候，多线程就没有优势了。  </p>
+<h4 id="4-多线程下载大文件">4.多线程下载大文件</h4>
+<p>首先我们要知道为什么多线程下载速度会更快？理论进程的实时网速=实时可用网络带宽，但再实际中进程拥有的带宽&lt;=实时可用带宽。</p>
+<p><strong>TCP拥有一个流量探测机制</strong>，一个TCP连接遇到丢包之后速度会骤减，速度升的却很慢。总结就是单个TCP连接不稳定，需要多线程来弥补，当TCP连接更加智能稳定的时候，多线程就没有优势了。</p>
 <blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/376805151">https://www.zhihu.com/question/376805151</a></p>
 </blockquote>
-<h4 id="5-HTTP2-0了解多少"><a href="#5-HTTP2-0了解多少" class="headerlink" title="5.HTTP2.0了解多少"></a>5.HTTP2.0了解多少</h4><p>目前大多版本是HTTP1.0(1996年)和1.1(1999年)<br>HTTP2.0有更好的web性能，更低的TCP延迟<br>体验一下：<a target="_blank" rel="noopener" href="https://http2.akamai.com/demo">https://http2.akamai.com/demo</a><br>参考：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016656529?utm_source=tag-newest">https://segmentfault.com/a/1190000016656529?utm_source=tag-newest</a></p>
+<h4 id="5-HTTP2-0了解多少">5.HTTP2.0了解多少</h4>
+<p>目前大多版本是HTTP1.0(1996年)和1.1(1999年)<br>
+HTTP2.0有更好的web性能，更低的TCP延迟<br>
+体验一下：<a target="_blank" rel="noopener" href="https://http2.akamai.com/demo">https://http2.akamai.com/demo</a><br>
+参考：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016656529?utm_source=tag-newest">https://segmentfault.com/a/1190000016656529?utm_source=tag-newest</a></p>
 <blockquote>
 <p>增加的特点：</p>
 <ol>
-<li>二进制传输 </li>
+<li>二进制传输</li>
 <li>多路复用</li>
 <li>Header压缩</li>
 <li>服务器Push</li>
 <li>更安全的SSL</li>
 </ol>
 </blockquote>
-<h4 id="5-OkHttp源码看过吗"><a href="#5-OkHttp源码看过吗" class="headerlink" title="5.OkHttp源码看过吗"></a>5.OkHttp源码看过吗</h4><h5 id="okhttp是对socket的封装"><a href="#okhttp是对socket的封装" class="headerlink" title="okhttp是对socket的封装"></a>okhttp是对socket的封装</h5><p>主要的一些类：OkhttpClient,Request,Response,Call,Dispatcher</p>
+<h4 id="5-OkHttp源码看过吗">5.OkHttp源码看过吗</h4>
+<h5 id="okhttp是对socket的封装">okhttp是对socket的封装</h5>
+<p>主要的一些类：OkhttpClient,Request,Response,Call,Dispatcher</p>
 <ol>
 <li>new OkHttpClient()创建client对象</li>
-<li>通过Builder设置参数 </li>
+<li>通过Builder设置参数</li>
 <li>new Request().Builder().url().builder()创建request对象</li>
 <li>通过client.newCall()创建call对象，使用call.excute()进行同步请求，call.enqueue()进行异步请求</li>
 </ol>
-<h5 id="线程池和请求队列"><a href="#线程池和请求队列" class="headerlink" title="线程池和请求队列"></a>线程池和请求队列</h5><p>这里call是一个接口，具体实现在reallCall类中<br>Dispatcher类维护okhttp的线程池和队列：</p>
+<h5 id="线程池和请求队列">线程池和请求队列</h5>
+<p>这里call是一个接口，具体实现在reallCall类中<br>
+Dispatcher类维护okhttp的线程池和队列：</p>
 <blockquote>
-<p>readyAsyncCalls：待访问请求队列，里面存储准备执行的请求。<br>runningAsyncCalls：异步请求队列，里面存储正在执行，包含已经取消但是还没有结束的请求。<br>runningSyncCalls：同步请求队列，正在执行的请求，包含已经取消但是还没有结束的请求。<br>ExecutorService：线程池，最小0，最大Max的线程池</p>
+<p>readyAsyncCalls：待访问请求队列，里面存储准备执行的请求。<br>
+runningAsyncCalls：异步请求队列，里面存储正在执行，包含已经取消但是还没有结束的请求。<br>
+runningSyncCalls：同步请求队列，正在执行的请求，包含已经取消但是还没有结束的请求。<br>
+ExecutorService：线程池，最小0，最大Max的线程池</p>
 </blockquote>
 <figure class="highlight julia"><table><tr><td class="code"><pre><span class="line">executorServiceOrNull = ThreadPoolExecutor(<span class="number">0</span>, <span class="built_in">Int</span>.MAX_VALUE, <span class="number">60</span>, TimeUnit.SECONDS,</span><br><span class="line">            SynchronousQueue(), threadFactory(<span class="string">&quot;<span class="variable">$okHttpName</span> Dispatcher&quot;</span>, <span class="literal">false</span>))</span><br></pre></td></tr></table></figure>
 <p>虽然线程池设置为MAX,但在调度器中还有其他设置：</p>
 <figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="variable">@get:</span>Synchronized var maxRequests = <span class="number">64</span></span><br><span class="line"><span class="variable">@get</span>:Synchronized var maxRequestsPerHost = <span class="number">5</span></span><br></pre></td></tr></table></figure>
-<p>意思是最大并发数为64，最多开启64线程。<br>单个Host最多5个请求。</p>
-<h5 id="excute和enqueue"><a href="#excute和enqueue" class="headerlink" title="excute和enqueue"></a>excute和enqueue</h5><ul>
-<li>同步任务：<br>调用ReallCall.excute()方法，此方法里面会调用client.dispatcher.executed(this)进入Dispatcher类，并向runningSyncCalls添加这个请求  </li>
-<li>异步任务：<br>调用ReallCall.enqueue()方法，此方法调用client.dispatcher.enqueue(AsyncCall(responseCallback))，向readyAsyncCalls中添加这个请求。<blockquote>
-<p>注意这里this是实现了call接口的对象<br>AsyncCall()是实现了Runable接口的内联函数，参数responseCallback是CallBack接口，CallBack接口中有两个函数是onFailure,onResponse,<strong>这两个函数中的参数还是实现了call接口的对象</strong></p>
-</blockquote>
-</li>
+<p>意思是最大并发数为64，最多开启64线程。<br>
+单个Host最多5个请求。</p>
+<h5 id="excute和enqueue">excute和enqueue</h5>
+<ul>
+<li>同步任务：<br>
+调用ReallCall.excute()方法，此方法里面会调用client.dispatcher.executed(this)进入Dispatcher类，并向runningSyncCalls添加这个请求</li>
+<li>异步任务：<br>
+调用ReallCall.enqueue()方法，此方法调用client.dispatcher.enqueue(AsyncCall(responseCallback))，向readyAsyncCalls中添加这个请求。</li>
 </ul>
-<h5 id="ConnectionPool连接池"><a href="#ConnectionPool连接池" class="headerlink" title="ConnectionPool连接池"></a>ConnectionPool连接池</h5><p>连接池用来管理socket连接，设置每个地址的连接数最大为5，最长为5分钟。</p>
+<blockquote>
+<p>注意这里this是实现了call接口的对象<br>
+AsyncCall()是实现了Runable接口的内联函数，参数responseCallback是CallBack接口，CallBack接口中有两个函数是onFailure,onResponse,<strong>这两个函数中的参数还是实现了call接口的对象</strong></p>
+</blockquote>
+<h5 id="ConnectionPool连接池">ConnectionPool连接池</h5>
+<p>连接池用来管理socket连接，设置每个地址的连接数最大为5，最长为5分钟。</p>
 <p>Okhttp中的设计模式：</p>
 <blockquote>
-<p>单例模式：最好用单例模式创建OkHttpClient,因为每个client对象斗管理自己的线程池、队列，如果每个请求都要创建client对象，那内存就要爆掉了  </p>
-<p>Builder模式:网络配置需要的属性太多，所以使用了建造者模式（将多个简单的对象构建成一个最终对象 ）  </p>
+<p>单例模式：最好用单例模式创建OkHttpClient,因为每个client对象斗管理自己的线程池、队列，如果每个请求都要创建client对象，那内存就要爆掉了</p>
+</blockquote>
+<blockquote>
+<p>Builder模式:网络配置需要的属性太多，所以使用了建造者模式（将多个简单的对象构建成一个最终对象 ）</p>
+</blockquote>
+<blockquote>
 <p>策略模式:CacheInterceptor实现了数据的选择策略。CacheInterceptor根据这个策略提供者去选择走网络数据还是本地缓存。</p>
 </blockquote>
-<h4 id="6-TCP-三次握手四次挥手"><a href="#6-TCP-三次握手四次挥手" class="headerlink" title="6.TCP-三次握手四次挥手"></a>6.TCP-三次握手四次挥手</h4><p>讲道理这个我也不太清楚，通俗的说法  </p>
+<h4 id="6-TCP-三次握手四次挥手">6.TCP-三次握手四次挥手</h4>
+<p>讲道理这个我也不太清楚，通俗的说法</p>
 <blockquote>
-<p>三次握手：<br>1）Client：嘿，李四，是我，听到了吗？<br>2）Server：我听到了，你能听到我的吗?<br>3）Client：好的，我们互相都能听到对方的话，我们的通信可以开始了。  </p>
-<p>四次挥手：<br>1）Client：我所有东西都说完了<br>2）Server：我已经全部听到了，但是等等我，我还没说完<br>3）Server：好了，我已经说完了<br>4）Client：好的，那我们的通信结束</p>
+<p>三次握手：<br>
+1）Client：嘿，李四，是我，听到了吗？<br>
+2）Server：我听到了，你能听到我的吗?<br>
+3）Client：好的，我们互相都能听到对方的话，我们的通信可以开始了。</p>
 </blockquote>
-<h4 id="7-Glide原理"><a href="#7-Glide原理" class="headerlink" title="7.Glide原理"></a>7.Glide原理</h4><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Glide使用方式如下：</span></span><br><span class="line"><span class="selector-tag">Glide</span><span class="selector-class">.with</span>(context)</span><br><span class="line">     <span class="selector-class">.load</span>(path)</span><br><span class="line">     <span class="selector-class">.into</span>(iv);</span><br></pre></td></tr></table></figure>
-<h5 id="1-Glide的缓存"><a href="#1-Glide的缓存" class="headerlink" title="1.Glide的缓存"></a>1.Glide的缓存</h5><p>一种是内存缓存：LruCache,一种是磁盘缓存：DiskLruCache</p>
-<h5 id="2-Glide三级缓存"><a href="#2-Glide三级缓存" class="headerlink" title="2.Glide三级缓存"></a>2.Glide三级缓存</h5><p>LruCache缓存-&gt;弱引用缓存-&gt;磁盘缓存</p>
+<blockquote>
+<p>四次挥手：<br>
+1）Client：我所有东西都说完了<br>
+2）Server：我已经全部听到了，但是等等我，我还没说完<br>
+3）Server：好了，我已经说完了<br>
+4）Client：好的，那我们的通信结束</p>
+</blockquote>
+<h4 id="7-Glide原理">7.Glide原理</h4>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Glide使用方式如下：</span></span><br><span class="line"><span class="selector-tag">Glide</span><span class="selector-class">.with</span>(context)</span><br><span class="line">     <span class="selector-class">.load</span>(path)</span><br><span class="line">     <span class="selector-class">.into</span>(iv);</span><br></pre></td></tr></table></figure>
+<h5 id="1-Glide的缓存">1.Glide的缓存</h5>
+<p>一种是内存缓存：LruCache,一种是磁盘缓存：DiskLruCache</p>
+<h5 id="2-Glide三级缓存">2.Glide三级缓存</h5>
+<p>LruCache缓存-&gt;弱引用缓存-&gt;磁盘缓存</p>
 <blockquote>
 <p>读取一张图片时，先从LruCache缓存读取，找到了就放入WeakReference中，如果没有就去WeakReference中找，还没有就去DiskLruCache、网络请求。</p>
 </blockquote>
-<h5 id="3-Glide加载一个很大的图片到100100尺寸上，会先压缩再加载吗，放到一个300-300的view上会怎样，800-800呢，图片会很模糊，怎么处理？"><a href="#3-Glide加载一个很大的图片到100100尺寸上，会先压缩再加载吗，放到一个300-300的view上会怎样，800-800呢，图片会很模糊，怎么处理？" class="headerlink" title="3.Glide加载一个很大的图片到100100尺寸上，会先压缩再加载吗，放到一个300  300的view上会怎样，800 * 800呢，图片会很模糊，怎么处理？"></a>3.Glide加载一个很大的图片到100<em>100尺寸上，会先压缩再加载吗，放到一个300 </em> 300的view上会怎样，800 * 800呢，图片会很模糊，怎么处理？</h5><p>gilde的缓存是根据imageview大小，所以imageview大小改变就会从网络重新加载数据，并以此大小重新缓存。</p>
-<h5 id="4-Glide加载的过程中，activity突然关闭会造成内存泄漏吗？"><a href="#4-Glide加载的过程中，activity突然关闭会造成内存泄漏吗？" class="headerlink" title="4.Glide加载的过程中，activity突然关闭会造成内存泄漏吗？"></a>4.Glide加载的过程中，activity突然关闭会造成内存泄漏吗？</h5><p>不会！Glide在加载资源的时候，如果在activity、fragment上进行的话，会创建一个透明的requestMangerFragment加入到FragmentManger中，感知生命周期，当activity不可见或者销毁时，Glide会停止加载资源。</p>
-<h5 id="5-如何设计一个网络图片加载框架"><a href="#5-如何设计一个网络图片加载框架" class="headerlink" title="5.如何设计一个网络图片加载框架"></a>5.如何设计一个网络图片加载框架</h5><p>解析-下载-解码-变换-缓存-显示等操作。</p>
+<h5 id="3-Glide加载一个很大的图片到100-100尺寸上，会先压缩再加载吗，放到一个300-300的view上会怎样，800-800呢，图片会很模糊，怎么处理？">3.Glide加载一个很大的图片到100*100尺寸上，会先压缩再加载吗，放到一个300 * 300的view上会怎样，800 * 800呢，图片会很模糊，怎么处理？</h5>
+<p>gilde的缓存是根据imageview大小，所以imageview大小改变就会从网络重新加载数据，并以此大小重新缓存。</p>
+<h5 id="4-Glide加载的过程中，activity突然关闭会造成内存泄漏吗？">4.Glide加载的过程中，activity突然关闭会造成内存泄漏吗？</h5>
+<p>不会！Glide在加载资源的时候，如果在activity、fragment上进行的话，会创建一个透明的requestMangerFragment加入到FragmentManger中，感知生命周期，当activity不可见或者销毁时，Glide会停止加载资源。</p>
+<h5 id="5-如何设计一个网络图片加载框架">5.如何设计一个网络图片加载框架</h5>
+<p>解析-下载-解码-变换-缓存-显示等操作。</p>
 <blockquote>
 <p>具体一点就是：</p>
 <ol>
@@ -541,13 +582,15 @@
 <li>事件处理：点击事件，滑动</li>
 </ol>
 </blockquote>
-<h5 id="6-总结下Glide的优点"><a href="#6-总结下Glide的优点" class="headerlink" title="6.总结下Glide的优点"></a>6.总结下Glide的优点</h5><ol>
+<h5 id="6-总结下Glide的优点">6.总结下Glide的优点</h5>
+<ol>
 <li>链式加载，使用简单</li>
 <li>多种图片格式</li>
 <li>基于生命周期处理</li>
 <li>高效的缓存策略</li>
 </ol>
-<p>参考：<a target="_blank" rel="noopener" href="https://juejin.im/post/6844903986412126216">https://juejin.im/post/6844903986412126216</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/6844904002551808013">https://juejin.im/post/6844904002551808013</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://juejin.im/post/6844903986412126216">https://juejin.im/post/6844903986412126216</a><br>
+<a target="_blank" rel="noopener" href="https://juejin.im/post/6844904002551808013">https://juejin.im/post/6844904002551808013</a></p>
 
 
         <hr>
@@ -593,7 +636,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-TCP-IP%E8%AF%B4%E4%B8%80%E4%B8%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1.TCP&#x2F;IP说一下</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-HTTP-HTTPS%E4%BA%86%E8%A7%A3%E5%A4%9A%E5%B0%91"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2.HTTP&#x2F;HTTPS了解多少</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-HTTP%E6%96%AD%E7%82%B9%E4%BC%A0%E8%BE%93"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3.HTTP断点传输</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%A4%A7%E6%96%87%E4%BB%B6"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4.多线程下载大文件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-HTTP2-0%E4%BA%86%E8%A7%A3%E5%A4%9A%E5%B0%91"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">5.HTTP2.0了解多少</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-OkHttp%E6%BA%90%E7%A0%81%E7%9C%8B%E8%BF%87%E5%90%97"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">5.OkHttp源码看过吗</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#okhttp%E6%98%AF%E5%AF%B9socket%E7%9A%84%E5%B0%81%E8%A3%85"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">okhttp是对socket的封装</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%92%8C%E8%AF%B7%E6%B1%82%E9%98%9F%E5%88%97"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">线程池和请求队列</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#excute%E5%92%8Cenqueue"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">excute和enqueue</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ConnectionPool%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-nav-number">6.4.</span> <span class="toc-nav-text">ConnectionPool连接池</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6-TCP-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">6.TCP-三次握手四次挥手</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#7-Glide%E5%8E%9F%E7%90%86"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">7.Glide原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-Glide%E7%9A%84%E7%BC%93%E5%AD%98"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">1.Glide的缓存</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-Glide%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-nav-number">8.2.</span> <span class="toc-nav-text">2.Glide三级缓存</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3-Glide%E5%8A%A0%E8%BD%BD%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A4%A7%E7%9A%84%E5%9B%BE%E7%89%87%E5%88%B0100100%E5%B0%BA%E5%AF%B8%E4%B8%8A%EF%BC%8C%E4%BC%9A%E5%85%88%E5%8E%8B%E7%BC%A9%E5%86%8D%E5%8A%A0%E8%BD%BD%E5%90%97%EF%BC%8C%E6%94%BE%E5%88%B0%E4%B8%80%E4%B8%AA300-300%E7%9A%84view%E4%B8%8A%E4%BC%9A%E6%80%8E%E6%A0%B7%EF%BC%8C800-800%E5%91%A2%EF%BC%8C%E5%9B%BE%E7%89%87%E4%BC%9A%E5%BE%88%E6%A8%A1%E7%B3%8A%EF%BC%8C%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%EF%BC%9F"><span class="toc-nav-number">8.3.</span> <span class="toc-nav-text">3.Glide加载一个很大的图片到100100尺寸上，会先压缩再加载吗，放到一个300  300的view上会怎样，800 * 800呢，图片会很模糊，怎么处理？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#4-Glide%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8Cactivity%E7%AA%81%E7%84%B6%E5%85%B3%E9%97%AD%E4%BC%9A%E9%80%A0%E6%88%90%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%90%97%EF%BC%9F"><span class="toc-nav-number">8.4.</span> <span class="toc-nav-text">4.Glide加载的过程中，activity突然关闭会造成内存泄漏吗？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#5-%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E6%A1%86%E6%9E%B6"><span class="toc-nav-number">8.5.</span> <span class="toc-nav-text">5.如何设计一个网络图片加载框架</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#6-%E6%80%BB%E7%BB%93%E4%B8%8BGlide%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-nav-number">8.6.</span> <span class="toc-nav-text">6.总结下Glide的优点</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-TCP-IP%E8%AF%B4%E4%B8%80%E4%B8%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1.TCP&#x2F;IP说一下</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-HTTP-HTTPS%E4%BA%86%E8%A7%A3%E5%A4%9A%E5%B0%91"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2.HTTP&#x2F;HTTPS了解多少</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-HTTP%E6%96%AD%E7%82%B9%E4%BC%A0%E8%BE%93"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3.HTTP断点传输</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%A4%A7%E6%96%87%E4%BB%B6"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4.多线程下载大文件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-HTTP2-0%E4%BA%86%E8%A7%A3%E5%A4%9A%E5%B0%91"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">5.HTTP2.0了解多少</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-OkHttp%E6%BA%90%E7%A0%81%E7%9C%8B%E8%BF%87%E5%90%97"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">5.OkHttp源码看过吗</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#okhttp%E6%98%AF%E5%AF%B9socket%E7%9A%84%E5%B0%81%E8%A3%85"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">okhttp是对socket的封装</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%92%8C%E8%AF%B7%E6%B1%82%E9%98%9F%E5%88%97"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">线程池和请求队列</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#excute%E5%92%8Cenqueue"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">excute和enqueue</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ConnectionPool%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-nav-number">6.4.</span> <span class="toc-nav-text">ConnectionPool连接池</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6-TCP-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">6.TCP-三次握手四次挥手</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#7-Glide%E5%8E%9F%E7%90%86"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">7.Glide原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-Glide%E7%9A%84%E7%BC%93%E5%AD%98"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">1.Glide的缓存</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-Glide%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-nav-number">8.2.</span> <span class="toc-nav-text">2.Glide三级缓存</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3-Glide%E5%8A%A0%E8%BD%BD%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A4%A7%E7%9A%84%E5%9B%BE%E7%89%87%E5%88%B0100-100%E5%B0%BA%E5%AF%B8%E4%B8%8A%EF%BC%8C%E4%BC%9A%E5%85%88%E5%8E%8B%E7%BC%A9%E5%86%8D%E5%8A%A0%E8%BD%BD%E5%90%97%EF%BC%8C%E6%94%BE%E5%88%B0%E4%B8%80%E4%B8%AA300-300%E7%9A%84view%E4%B8%8A%E4%BC%9A%E6%80%8E%E6%A0%B7%EF%BC%8C800-800%E5%91%A2%EF%BC%8C%E5%9B%BE%E7%89%87%E4%BC%9A%E5%BE%88%E6%A8%A1%E7%B3%8A%EF%BC%8C%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%EF%BC%9F"><span class="toc-nav-number">8.3.</span> <span class="toc-nav-text">3.Glide加载一个很大的图片到100*100尺寸上，会先压缩再加载吗，放到一个300 * 300的view上会怎样，800 * 800呢，图片会很模糊，怎么处理？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#4-Glide%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8Cactivity%E7%AA%81%E7%84%B6%E5%85%B3%E9%97%AD%E4%BC%9A%E9%80%A0%E6%88%90%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%90%97%EF%BC%9F"><span class="toc-nav-number">8.4.</span> <span class="toc-nav-text">4.Glide加载的过程中，activity突然关闭会造成内存泄漏吗？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#5-%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E6%A1%86%E6%9E%B6"><span class="toc-nav-number">8.5.</span> <span class="toc-nav-text">5.如何设计一个网络图片加载框架</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#6-%E6%80%BB%E7%BB%93%E4%B8%8BGlide%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-nav-number">8.6.</span> <span class="toc-nav-text">6.总结下Glide的优点</span></a></li></ol></li></ol>
         
         </div>
       </aside>
