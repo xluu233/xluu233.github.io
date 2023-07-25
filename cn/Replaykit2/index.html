@@ -239,6 +239,19 @@
 
           
           
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
           <li>
             <a href="/categories/">
               
@@ -247,8 +260,6 @@
               
             </a>
           </li>
-          
-          
           
           
           
@@ -267,17 +278,6 @@
             <a href="/archive/">
               
               归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/about/">
-              
-              关于
               
               
             </a>
@@ -397,7 +397,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">940</span> In Total
+              Words <span class="post-count">941</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -459,30 +459,36 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>公司有个项目要用到Replaykit录屏, 无奈从Android转到学习IOS，正好扩展下自己，技多不压身嘛。</p>
+        <h2 id="前言">前言</h2>
+<p>公司有个项目要用到Replaykit录屏, 无奈从Android转到学习IOS，正好扩展下自己，技多不压身嘛。</p>
 <p>本篇是为了整理一下关于Replaykit的知识，网上关于Replaykit2的相关资料还是太少了。</p>
-<h2 id="Replaykit"><a href="#Replaykit" class="headerlink" title="Replaykit"></a>Replaykit</h2><h3 id="Replaykit有什么用？"><a href="#Replaykit有什么用？" class="headerlink" title="Replaykit有什么用？"></a>Replaykit有什么用？</h3><ul>
+<h2 id="Replaykit">Replaykit</h2>
+<h3 id="Replaykit有什么用？">Replaykit有什么用？</h3>
+<ul>
 <li>第一代的IOS9版本只能通过API请求开始录制屏幕，得到用户许可才开始，结束录制后得到一个mp4文件，不能进行实时操作。</li>
 <li>IOS 10版本支持实时获取视频数据。这样就可以做视频直播了，给直播App留了一条活路。</li>
 <li>IOS 11版本才算完善了，支持全局录制，后台录制，机制和以前不同，要通过extension（Broadcast）启动，直播App喜大普奔qvq</li>
 <li>但是在IOS11中还是要用户下拉状态栏，长按录制按钮，选择App启动，emmmmm虽然我不觉得麻烦，但是产品经理肯定觉得用户麻烦，可能Apple的开发者和IOS的程序员想法都是一样的吧。所以在IOS12中支持直接启动录制了（网上没找到相关资料，不知道怎么做啊QvQ）</li>
 </ul>
-<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><blockquote>
+<h3 id="官方文档">官方文档</h3>
+<blockquote>
 <p>Apple官方文档全是英文版的，新手看起来很痛苦，注释很简介，缺点是没有相关的例子demo</p>
 </blockquote>
 <p>官方文档地址：<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/replaykit">https://developer.apple.com/documentation/replaykit</a></p>
 <p>简书上有个简单的翻译：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/80547d68a36a">https://www.jianshu.com/p/80547d68a36a</a></p>
-<h3 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h3><blockquote>
+<h3 id="发展历史">发展历史</h3>
+<blockquote>
 <p>Replaykit最低支持IOS9，比较完善的是IOS11（可以称为Replaykit 2 ），截止写这篇文章是IOS12，Xcode10+。</p>
 </blockquote>
 <p>有个比较完整的介绍：<a target="_blank" rel="noopener" href="https://www.jianshu.com/nb/31084767">https://www.jianshu.com/nb/31084767</a></p>
 <p>这个大佬写了三篇，看完你就对Replaykit的发展有了一定了解。</p>
-<h3 id="使用解析"><a href="#使用解析" class="headerlink" title="使用解析"></a>使用解析</h3><p>首先我们得知道extension，IOS全局录制必须通过extension，你可以这样理解：APP在后台是被限制的，很多活动不能进行，苹</p>
+<h3 id="使用解析">使用解析</h3>
+<p>首先我们得知道extension，IOS全局录制必须通过extension，你可以这样理解：APP在后台是被限制的，很多活动不能进行，苹</p>
 <p>果不可能给你这个权限，但是upload extension是苹果的特权APP，可以在后台运行。但是它也有限制：内存不超过50M。</p>
 <p>还有一个缺点就像是extension和宿主APP不是统一进程，资源文件不放在同一沙盒。</p>
 <p><strong>宿主App文件路径：</strong></p>
 <blockquote>
-<p> //file:///private/var/mobile/Containers/Data/Application/85CA32DD-3842-4A18-A21F-14F4B7F0F9CD/Documents</p>
+<p>//file:///private/var/mobile/Containers/Data/Application/85CA32DD-3842-4A18-A21F-14F4B7F0F9CD/Documents</p>
 </blockquote>
 <p><strong>extension文件路径：</strong></p>
 <blockquote>
@@ -490,7 +496,8 @@
 </blockquote>
 <p>在Xcode上下载真机的沙盒数据：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190122163700446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>download container-&gt;显示包内容<br><img src="https://img-blog.csdnimg.cn/20190122163808818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>download container-&gt;显示包内容<br>
+<img src="https://img-blog.csdnimg.cn/20190122163808818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
 <ul>
 <li>一般文件保存在document中，如图片视频</li>
 <li>Library是缓存数据</li>
@@ -502,28 +509,33 @@
 <li>APP和extension的代码共享</li>
 <li>APP和extension间进程通信</li>
 </ul>
-<h3 id="extension是如何录屏的"><a href="#extension是如何录屏的" class="headerlink" title="extension是如何录屏的?"></a>extension是如何录屏的?</h3><p><img src="https://img-blog.csdnimg.cn/20190122162021159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="extension是如何录屏的">extension是如何录屏的?</h3>
+<p><img src="https://img-blog.csdnimg.cn/20190122162021159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
 <p>我们在target中选择Broadcast upload extension，</p>
 <p>UI extension你可以不用管它。</p>
 <p>数据共享需要用到App group, 需要在苹果开发者网站进行注册。参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4b5a7b661aa5">https://www.jianshu.com/p/4b5a7b661aa5</a></p>
 <p><img src="https://img-blog.csdnimg.cn/20190122161917205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>我们再来看一下extension：<br><img src="https://img-blog.csdnimg.cn/20190122162226664.png" alt="image"></p>
+<p>我们再来看一下extension：<br>
+<img src="https://img-blog.csdnimg.cn/20190122162226664.png" alt="image"></p>
 <p><strong>在samplehandle.swift中，有如下4个方法：</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20190122162411712.png" alt="image"><br><img src="https://img-blog.csdnimg.cn/20190122162448247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190122162411712.png" alt="image"><br>
+<img src="https://img-blog.csdnimg.cn/20190122162448247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
 <p>通俗易懂，就是广播的一些状态。</p>
-<h3 id="获取数据："><a href="#获取数据：" class="headerlink" title="获取数据："></a>获取数据：</h3><ul>
+<h3 id="获取数据：">获取数据：</h3>
+<ul>
 <li>视频屏幕数据</li>
 <li>App音频数据</li>
 <li>mic音频数据</li>
 </ul>
 <p><img src="https://img-blog.csdnimg.cn/20190122162628133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzMyMTMz,size_16,color_FFFFFF,t_70" alt="image"></p>
 <p>很显然我们可以在upload extension进程中或者主App进程中将数据进行编码。</p>
-<p>视频-&gt;h264   音频-&gt;aac  然后封装成flv或者mp4 </p>
+<p>视频-&gt;h264   音频-&gt;aac  然后封装成flv或者mp4</p>
 <p>将视频保存在本地，就完成录屏操作了。</p>
 <blockquote>
-<p>将buffer封装成视频的方法可以用Asswriter,可以参考<a target="_blank" rel="noopener" href="https://github.com/giridharvc7/ScreenRecord">https://github.com/giridharvc7/ScreenRecord</a></p>
+<p>将buffer封装成视频的方法可以用Asswriter,可以参考https://github.com/giridharvc7/ScreenRecord</p>
 </blockquote>
-<h3 id="相关参考："><a href="#相关参考：" class="headerlink" title="相关参考："></a>相关参考：</h3><ul>
+<h3 id="相关参考：">相关参考：</h3>
+<ul>
 <li>swift版本（iOS9）:</li>
 <li>swift版本（iOS10）:</li>
 <li>swift版本（iOS11）: <a target="_blank" rel="noopener" href="https://github.com/giridharvc7/ScreenRecord">https://github.com/giridharvc7/ScreenRecord</a></li>
@@ -531,7 +543,9 @@
 <li>oc版本（IOS10）：</li>
 <li>oc版本（IOS11）：<a target="_blank" rel="noopener" href="https://github.com/anirban261491/Screen-sharing-iOS">https://github.com/anirban261491/Screen-sharing-iOS</a></li>
 </ul>
-<h3 id="坑和吐槽点："><a href="#坑和吐槽点：" class="headerlink" title="坑和吐槽点："></a>坑和吐槽点：</h3><p>妈蛋，一直视频录制要搞这么复杂嘛，Android上早就开放了。<br>API调用有点混乱。</p>
+<h3 id="坑和吐槽点：">坑和吐槽点：</h3>
+<p>妈蛋，一直视频录制要搞这么复杂嘛，Android上早就开放了。<br>
+API调用有点混乱。</p>
 <hr>
 <p>最后附上我的<a target="_blank" rel="noopener" href="https://github.com/xluu233/Replaykit2_xlu">demo</a></p>
 

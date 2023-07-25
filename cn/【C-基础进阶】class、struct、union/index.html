@@ -239,6 +239,19 @@
 
           
           
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
           <li>
             <a href="/categories/">
               
@@ -247,8 +260,6 @@
               
             </a>
           </li>
-          
-          
           
           
           
@@ -267,17 +278,6 @@
             <a href="/archive/">
               
               归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/about/">
-              
-              关于
               
               
             </a>
@@ -457,15 +457,16 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><p>类是面向对象中的特性，在c中是没有类的概念。通常用class来表示，cpp中有抽象类，但是没有接口这种说法，cpp支持多继承。</p>
+        <h2 id="类class">类class</h2>
+<p>类是面向对象中的特性，在c中是没有类的概念。通常用class来表示，cpp中有抽象类，但是没有接口这种说法，cpp支持多继承。</p>
 <p><strong>一个普通的类：</strong></p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">class Fruit</span><br><span class="line">&#123;</span><br><span class="line">    private:</span><br><span class="line">        </span><br><span class="line">    public:</span><br><span class="line">        <span class="built_in">Fruit</span>();</span><br><span class="line">        ~Fruit();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Fruit::<span class="built_in">Fruit</span>()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fruit::~<span class="built_in">Fruit</span>()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>构造函数和析构函数：</strong>  </p>
+<p><strong>构造函数和析构函数：</strong></p>
 <p>其中<code>Fruit()</code>表示构造函数，<code>~Fruit()</code>表示析构函数。构造函数用来创建对象，设置初始化参数。析构函数在对象销毁的时候执行。</p>
 <p><strong>修饰符：</strong></p>
 <ul>
-<li><code>private：</code>表示私有成员，外部不可访问，只有自身类和友元函数可以访问。  </li>
-<li><code>public:</code>表示公共成员，外部可以访问。  </li>
+<li><code>private：</code>表示私有成员，外部不可访问，只有自身类和友元函数可以访问。</li>
+<li><code>public:</code>表示公共成员，外部可以访问。</li>
 <li><code>protected:</code>表示保护成员，保护成员和私有成员相似，但是子类可以访问保护成员。</li>
 </ul>
 <p><strong>类中的成员函数：</strong></p>
@@ -484,8 +485,10 @@
 <p>虚函数表示被子类重写的时候，调用子类的函数而不是父类的此函数</p>
 <p><strong>纯虚函数</strong>：空的虚函数</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fuck</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>抽象类：</strong> 只要类中有纯虚函数就代表是抽象类  </p>
-<p>抽象类是被实体化的，必须通过子类创建。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">Fruit</span>();</span><br><span class="line">        ~<span class="built_in">Fruit</span>();</span><br><span class="line">        <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fuck</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">fuck1</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt;<span class="string">&quot;fuck 1&quot;</span>&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fuck2</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt;<span class="string">&quot;fuck 2&quot;</span>&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br><strong>继承：</strong> 注意继承需使用<code>public</code>修饰，</p>
+<p><strong>抽象类：</strong> 只要类中有纯虚函数就代表是抽象类</p>
+<p>抽象类是被实体化的，必须通过子类创建。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">Fruit</span>();</span><br><span class="line">        ~<span class="built_in">Fruit</span>();</span><br><span class="line">        <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fuck</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">fuck1</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt;<span class="string">&quot;fuck 1&quot;</span>&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fuck2</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt;<span class="string">&quot;fuck 2&quot;</span>&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>继承：</strong> 注意继承需使用<code>public</code>修饰，</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span>:</span> <span class="keyword">public</span> Fruit</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">Apple</span>();</span><br><span class="line">        ~<span class="built_in">Apple</span>();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">fuck</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;fuck apple&quot;</span>&lt;&lt;endl;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">fuck2</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;fuck apple 22&quot;</span>&lt;&lt;endl;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>调用看输出结果：</p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">Apple apple<span class="comment">;</span></span><br><span class="line">apple.fuck()<span class="comment">;</span></span><br><span class="line">apple.fuck1()<span class="comment">;</span></span><br><span class="line">apple.fuck2()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
@@ -496,13 +499,18 @@
 <li>fuck1()调用的是父类的方法</li>
 <li>fuck2()因为是虚函数，又被子类重写了，所以调用的是子类。如果子类不重写虚函数，还是会调用父类的。</li>
 </ul>
-<p>多继承如下：<br><figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Apple: <span class="symbol">public</span></span> <span class="symbol">Fruit, <span class="symbol">public</span></span> <span class="symbol">Orange</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="结构体struct"><a href="#结构体struct" class="headerlink" title="结构体struct"></a>结构体struct</h2><p>cpp可以用struct来创建自定义数据结构，相当于java中的bean类</p>
-<p>创建一个基本的结构体：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    string name;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">int</span> ISBN;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br>可以在<code>&#125; ;</code>之间创建一个或多个结构体对象：</p>
+<p>多继承如下：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Apple: <span class="symbol">public</span></span> <span class="symbol">Fruit, <span class="symbol">public</span></span> <span class="symbol">Orange</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结构体struct">结构体struct</h2>
+<p>cpp可以用struct来创建自定义数据结构，相当于java中的bean类</p>
+<p>创建一个基本的结构体：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    string name;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">int</span> ISBN;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可以在<code>&#125; ;</code>之间创建一个或多个结构体对象：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    string name;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">int</span> ISBN;</span><br><span class="line">&#125;book1,book2;</span><br></pre></td></tr></table></figure>
 <p>数据局初始化：</p>
 <figure class="highlight dust"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--直接赋值：--&gt;</span></span></span><br><span class="line"><span class="xml">book1.name = &quot;C++ programing&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!--或者创建的时候初始化：--&gt;</span></span></span><br><span class="line"><span class="xml">Book book3</span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">    &quot;Android++&quot;,</span></span><br><span class="line"><span class="template-variable">    1,</span></span><br><span class="line"><span class="template-variable">    21321231</span></span><br><span class="line"><span class="template-variable">&#125;</span><span class="xml">;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">cout&lt;&lt;book3.id&lt;&lt;endl;</span></span><br><span class="line"><span class="xml">cout&lt;&lt;book3.name&lt;&lt;endl;</span></span><br><span class="line"><span class="xml">cout&lt;&lt;book3.ISBN&lt;&lt;endl;</span></span><br></pre></td></tr></table></figure>
-<p>使用类型别名：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    string name;</span><br><span class="line">&#125;Ebook;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>使用类型别名：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    string name;</span><br><span class="line">&#125;Ebook;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>我感觉是无用的语法糖。</p>
 </blockquote>
@@ -529,7 +537,8 @@
 <figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">tbook.<span class="attr">name</span> = <span class="string">&quot;C++&quot;</span>;</span><br><span class="line">tbook.<span class="attr">names</span> = <span class="string">&quot;Android++&quot;</span>;</span><br><span class="line">tbook.<span class="attr">TTT</span> = <span class="number">1213</span>;</span><br><span class="line"></span><br><span class="line">tbook.printBook(&amp;tbook);</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="comment">1232342</span></span><br><span class="line"><span class="comment">Android</span>++</span><br><span class="line"><span class="comment">1213</span></span><br><span class="line"><span class="comment">C</span>++</span><br></pre></td></tr></table></figure>
-<h2 id="共用体union"><a href="#共用体union" class="headerlink" title="共用体union"></a>共用体union</h2><p>共用体类似于结构体，但是只会同时存在一个数据成员，在一个成员被赋值后，其他成员值将会丢失。</p>
+<h2 id="共用体union">共用体union</h2>
+<p>共用体类似于结构体，但是只会同时存在一个数据成员，在一个成员被赋值后，其他成员值将会丢失。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">ONE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">float</span> j;</span><br><span class="line">    <span class="keyword">double</span> ids[<span class="number">10</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    ONE one;</span><br><span class="line">    one.i = <span class="number">123</span>;</span><br><span class="line">    cout &lt;&lt; one.i &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    one.j = <span class="number">1.0f</span>;</span><br><span class="line">    cout &lt;&lt; one.i &lt;&lt;endl;   <span class="comment">//one.i将会丢失</span></span><br><span class="line">    cout &lt;&lt; one.j &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><strong>共用体特点：</strong></p>
 <ul>

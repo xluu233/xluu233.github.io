@@ -239,6 +239,19 @@
 
           
           
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
           <li>
             <a href="/categories/">
               
@@ -247,8 +260,6 @@
               
             </a>
           </li>
-          
-          
           
           
           
@@ -267,17 +278,6 @@
             <a href="/archive/">
               
               归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/about/">
-              
-              关于
               
               
             </a>
@@ -457,9 +457,13 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="类-amp-对象"><a href="#类-amp-对象" class="headerlink" title="类&amp;对象"></a>类&amp;对象</h2><p>一个普普通通的类：<br><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&#123;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有成员</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">double</span> length;</span><br><span class="line">        <span class="keyword">double</span> width;</span><br><span class="line">    <span class="comment">// 公共成员</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 内部定义成员函数</span></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getV</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> length*width;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 外部定义成员函数</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">(<span class="keyword">double</span> _length)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setWidth</span><span class="params">(<span class="keyword">double</span> _width)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 外部定义成员函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Box::setLength</span><span class="params">(<span class="keyword">double</span> _length)</span></span>&#123;</span><br><span class="line">    length = _length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Box::setWidth</span><span class="params">(<span class="keyword">double</span> _width)</span></span>&#123;</span><br><span class="line">    width = _width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>调用：</p>
+        <h2 id="类-对象">类&amp;对象</h2>
+<p>一个普普通通的类：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&#123;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有成员</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">double</span> length;</span><br><span class="line">        <span class="keyword">double</span> width;</span><br><span class="line">    <span class="comment">// 公共成员</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 内部定义成员函数</span></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getV</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> length*width;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 外部定义成员函数</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">(<span class="keyword">double</span> _length)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setWidth</span><span class="params">(<span class="keyword">double</span> _width)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 外部定义成员函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Box::setLength</span><span class="params">(<span class="keyword">double</span> _length)</span></span>&#123;</span><br><span class="line">    length = _length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Box::setWidth</span><span class="params">(<span class="keyword">double</span> _width)</span></span>&#123;</span><br><span class="line">    width = _width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>调用：</p>
 <figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">Box</span> <span class="type">box</span>;</span><br><span class="line"><span class="type">box</span>.setLength(<span class="number">100</span>);</span><br><span class="line"><span class="type">box</span>.setWidth(<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><blockquote>
+<h3 id="修饰符">修饰符</h3>
+<blockquote>
 <p>常见的有私有（private）和public(公共)修饰符，还有一个保护（protected）成员：</p>
 </blockquote>
 <p>在Box类中加入一个保护成员：</p>
@@ -467,43 +471,55 @@
 <p>派生类：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 派生类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmallBox</span>:</span>Box</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">setSmallAge</span><span class="params">(<span class="keyword">int</span> _age)</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getSmallAge</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SmallBox::setSmallAge</span><span class="params">(<span class="keyword">int</span> _age)</span></span>&#123;</span><br><span class="line">    age = _age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">SmallBox::getSmallAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>保护成员和私有成员相似，外部对象不可以访问，其派生类可以访问。</p>
+<li>
+<p>保护成员和私有成员相似，外部对象不可以访问，其派生类可以访问。</p>
 </li>
-<li><p>派生类可以访问父类的公共成员，不可访问私有成员</p>
+<li>
+<p>派生类可以访问父类的公共成员，不可访问私有成员</p>
 </li>
 </ul>
-<h3 id="类构造函数"><a href="#类构造函数" class="headerlink" title="类构造函数"></a>类构造函数</h3><blockquote>
+<h3 id="类构造函数">类构造函数</h3>
+<blockquote>
 <p>构造函数用于创建该对象，并赋予初始值。</p>
 </blockquote>
 <p>Box类的构造函数也可以理解成返回Box类型的成员方法，同样需要在类中定义，在内部或者外部实现。</p>
 <figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 公共成员</span></span><br><span class="line">public:</span><br><span class="line">    <span class="built_in">int</span> size;</span><br><span class="line">    <span class="comment">// 构造函数：</span></span><br><span class="line">    <span class="constructor">Box()</span>;</span><br><span class="line">    <span class="constructor">Box(<span class="params">double</span> <span class="params">_length</span>,<span class="params">int</span> <span class="params">_size</span>)</span>;</span><br><span class="line">    <span class="comment">//Box(double _length,int _age);</span></span><br></pre></td></tr></table></figure>
-<p>实现：<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line">Box::<span class="constructor">Box()</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Box::<span class="constructor">Box(<span class="params">double</span> <span class="params">_length</span>,<span class="params">int</span> <span class="params">_size</span>)</span>&#123;</span><br><span class="line">    length = _length;</span><br><span class="line">    size = _size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//错误，与上一个冲突</span></span><br><span class="line">Box::<span class="constructor">Box(<span class="params">double</span> <span class="params">_length</span>,<span class="params">int</span> <span class="params">_age</span>)</span>&#123;</span><br><span class="line">    length = _length;</span><br><span class="line">    age = _age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>使用：</p>
+<p>实现：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line">Box::<span class="constructor">Box()</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Box::<span class="constructor">Box(<span class="params">double</span> <span class="params">_length</span>,<span class="params">int</span> <span class="params">_size</span>)</span>&#123;</span><br><span class="line">    length = _length;</span><br><span class="line">    size = _size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//错误，与上一个冲突</span></span><br><span class="line">Box::<span class="constructor">Box(<span class="params">double</span> <span class="params">_length</span>,<span class="params">int</span> <span class="params">_age</span>)</span>&#123;</span><br><span class="line">    length = _length;</span><br><span class="line">    age = _age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用：</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Box</span> box<span class="number">1</span>(<span class="number">12</span>,<span class="number">12</span>);</span><br><span class="line"><span class="attribute">cout</span> &lt;&lt; <span class="string">&quot;box1:&quot;</span> &lt;&lt; box<span class="number">1</span>.size &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
-<h3 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h3><p>类的析构函数是类的一种特殊的成员函数，它会在每次删除所创建的对象时执行。</p>
+<h3 id="析构函数">析构函数</h3>
+<p>类的析构函数是类的一种特殊的成员函数，它会在每次删除所创建的对象时执行。</p>
 <p>析构函数的名称与类的名称是完全相同的，只是在前面加了个波浪号（~）作为前缀，它不会返回任何值，也不能带有任何参数。析构函数有助于在跳出程序（比如关闭文件、释放内存等）前释放资源。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 析构函数：</span></span><br><span class="line">     ~<span class="built_in">Box</span>();</span><br><span class="line">        </span><br><span class="line"><span class="comment">// 析构函数</span></span><br><span class="line">Box::~<span class="built_in">Box</span>()&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;box deleted&quot;</span> &lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>我们在对象删除的时候打印，查看是否执行了析构函数。</p>
-<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><p>友元函数使用<code>friend</code>修饰符修饰，不仅仅是函数，对类同样有效，成为友元类。</p>
+<h3 id="友元函数">友元函数</h3>
+<p>友元函数使用<code>friend</code>修饰符修饰，不仅仅是函数，对类同样有效，成为友元类。</p>
 <p>我们在类外部定义一个普通函数：</p>
 <figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> printSth(<span class="type">Box</span> <span class="type">box</span>)&#123;</span><br><span class="line">    // 在<span class="type">Box</span>类中设置了友元函数，所以能访问<span class="type">Box</span>的所有成员</span><br><span class="line">    cout &lt;&lt; &quot;friend:&quot; &lt;&lt; <span class="type">box</span>.length &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>在Box类中加入并使用friend修饰：</p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 私有成员</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">double</span> length;</span><br><span class="line">        <span class="keyword">double</span> width;</span><br><span class="line">    <span class="comment">// 公共成员</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="comment">// 友元函数</span></span><br><span class="line">        <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">printSth</span><span class="params">(Box box)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 派生成员</span></span><br><span class="line">    <span class="keyword">protected</span>:</span><br><span class="line">        <span class="keyword">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>友元函数能够访问该类的私有成员和保护成员。</p>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/balingybj/p/4778247.html">https://www.cnblogs.com/balingybj/p/4778247.html</a></p>
-<h3 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h3><blockquote>
+<h3 id="内联函数">内联函数</h3>
+<blockquote>
 <p>和kotlin中内联函数相似</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 内联函数</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Max</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i &gt;= j ? i : j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h3><blockquote>
+<h3 id="this指针">this指针</h3>
+<blockquote>
 <p>指向本类或者该函数的地址，用来调用自身成员。</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="keyword">this</span>-&gt;length &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>友元函数没有this指针，因为其不是类的成员，只有成员函数才有this指针。</p>
-<h3 id="类指针"><a href="#类指针" class="headerlink" title="类指针"></a>类指针</h3><blockquote>
+<h3 id="类指针">类指针</h3>
+<blockquote>
 <p>指向类成员的指针，使用<code>-&gt;</code>来使用其类成员</p>
 </blockquote>
 <figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Box</span> <span class="keyword">box</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类指针</span></span><br><span class="line"><span class="built_in">Box</span> *ptrBOX;</span><br><span class="line">ptrBOX = &amp;<span class="keyword">box</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line">cout &lt;&lt; ptrBOX-&gt;size &lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<h3 id="static静态"><a href="#static静态" class="headerlink" title="static静态"></a>static静态</h3><h4 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h4><ul>
+<h3 id="static静态">static静态</h3>
+<h4 id="静态成员">静态成员</h4>
+<ul>
 <li>对于类的静态成员来说，无论有多少个对象，只存在一个静态成员副本。</li>
 <li>静态成员在所有类对象中是共享的。</li>
 <li>每次创建新的类对象，需要注意静态成员值的变化。</li>
@@ -513,13 +529,17 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 静态成员初始化</span></span><br><span class="line"><span class="keyword">int</span> Box::money = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 <p>以下展示了静态成员在创建多个类对象时候的变化：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> money;</span><br><span class="line">        <span class="comment">// 初始化次数</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> initCount;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">setMoney</span><span class="params">(<span class="keyword">int</span> _money)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>-&gt;money = _money;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getMoney</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;init:&quot;</span>&lt;&lt;initCount&lt;&lt;<span class="string">&quot;    money:&quot;</span>&lt;&lt;money &lt;&lt;endl;</span><br><span class="line">            <span class="keyword">return</span> money;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">Box</span>()&#123;</span><br><span class="line">            initCount++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 静态函数</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> initCount;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">init:<span class="number">1</span>    money:<span class="number">1</span></span><br><span class="line">init:<span class="number">2</span>    money:<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h4 id="静态函数"><a href="#静态函数" class="headerlink" title="静态函数"></a>静态函数</h4><p>创建一个静态函数：<br><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 静态函数</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> initCount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="静态函数">静态函数</h4>
+<p>创建一个静态函数：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 静态函数</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> initCount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>静态函数不能访问类的非static成员，所以也不能使用this指针。</p>
-<p>静态函数是在编译期就存在的，所以不需要类的对象就可以调用:<br><figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Box</span> <span class="keyword">box</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法：</span></span><br><span class="line"><span class="built_in">Box</span>::getCount()</span><br><span class="line"><span class="keyword">box</span>.getCount()</span><br></pre></td></tr></table></figure></p>
+<p>静态函数是在编译期就存在的，所以不需要类的对象就可以调用:</p>
+<figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Box</span> <span class="keyword">box</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法：</span></span><br><span class="line"><span class="built_in">Box</span>::getCount()</span><br><span class="line"><span class="keyword">box</span>.getCount()</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/cpp/cpp-classes-objects.html">https://www.w3cschool.cn/cpp/cpp-classes-objects.html</a></p>
 </blockquote>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>创建一个基类：</p>
+<h2 id="继承">继承</h2>
+<p>创建一个基类：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Base</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="built_in">int</span> i;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">int</span> j;</span><br><span class="line">    <span class="keyword">protected</span>:</span><br><span class="line">        <span class="built_in">int</span> k;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>继承类，也成为<strong>派生类</strong>：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Activity</span> : <span class="symbol">Base</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">int</span> getJ()&#123;</span><br><span class="line">            <span class="keyword">return</span> j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span> getK()&#123;</span><br><span class="line">            <span class="keyword">return</span> k;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -538,10 +558,12 @@
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 继承类型</span></span><br><span class="line"><span class="keyword">class</span> <span class="symbol">test: <span class="symbol">public</span></span> <span class="symbol">Base</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="symbol">test2: <span class="symbol">protected</span></span> <span class="symbol">Base</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="symbol">test3: <span class="symbol">private</span></span> <span class="symbol">Base</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>多继承</strong></p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">test4</span> : <span class="symbol">Base,<span class="symbol">test2</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="symbol">test5</span> : <span class="symbol">public</span> <span class="symbol">Base,<span class="symbol">private</span></span> <span class="symbol">test2,<span class="symbol">protected</span></span> <span class="symbol">test3</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><blockquote>
+<h2 id="封装">封装</h2>
+<blockquote>
 <p>省略…</p>
 </blockquote>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><blockquote>
+<h2 id="多态">多态</h2>
+<blockquote>
 <p>同一个类的不同对象在不同情况下有不同的表现</p>
 </blockquote>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span>&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> length;</span><br><span class="line">        <span class="keyword">int</span> width;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">area</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;Shape&quot;</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> :</span> <span class="keyword">public</span> Shape&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">area</span><span class="params">()</span></span>&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;Rectangle&quot;</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    Shape *shape;</span><br><span class="line">    Rectangle rec;</span><br><span class="line"></span><br><span class="line">    shape = &amp;rec;</span><br><span class="line">    shape-&gt;<span class="built_in">area</span>();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -557,7 +579,8 @@
 <blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/cpp/cpp-polymorphism.html">https://www.w3cschool.cn/cpp/cpp-polymorphism.html</a></p>
 </blockquote>
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><blockquote>
+<h2 id="接口">接口</h2>
+<blockquote>
 <p>cpp中没有接口，只有抽象类，只要一个类有<code>virtual</code>修饰的纯虚函数，就成为抽象类。</p>
 </blockquote>
 <p>cpp抽象类特点：</p>
@@ -611,7 +634,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%B1%BB-amp-%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">类&amp;对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">修饰符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%B1%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">类构造函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">析构函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">友元函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">内联函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#this%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">this指针</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%B1%BB%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">类指针</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#static%E9%9D%99%E6%80%81"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">static静态</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-nav-number">1.8.1.</span> <span class="toc-nav-text">静态成员</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.8.2.</span> <span class="toc-nav-text">静态函数</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">继承</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">封装</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">多态</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">接口</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%B1%BB-%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">类&amp;对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">修饰符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%B1%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">类构造函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">析构函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">友元函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">内联函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#this%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">this指针</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%B1%BB%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">类指针</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#static%E9%9D%99%E6%80%81"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">static静态</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-nav-number">1.8.1.</span> <span class="toc-nav-text">静态成员</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.8.2.</span> <span class="toc-nav-text">静态函数</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">继承</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">封装</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">多态</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">接口</span></a></li></ol>
         
         </div>
       </aside>

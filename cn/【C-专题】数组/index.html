@@ -239,6 +239,19 @@
 
           
           
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
           <li>
             <a href="/categories/">
               
@@ -247,8 +260,6 @@
               
             </a>
           </li>
-          
-          
           
           
           
@@ -267,17 +278,6 @@
             <a href="/archive/">
               
               归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/about/">
-              
-              关于
               
               
             </a>
@@ -460,17 +460,24 @@
         <blockquote>
 <p><strong>数组是一个固定大小、相同类型的连续有序集合，是一块连续的内存块</strong></p>
 </blockquote>
-<h2 id="数组的几种实现方式"><a href="#数组的几种实现方式" class="headerlink" title="数组的几种实现方式"></a>数组的几种实现方式</h2><h3 id="原生数组"><a href="#原生数组" class="headerlink" title="原生数组"></a>原生数组</h3><p>c++原生提供的数据结构，创建形式为：</p>
+<h2 id="数组的几种实现方式">数组的几种实现方式</h2>
+<h3 id="原生数组">原生数组</h3>
+<p>c++原生提供的数据结构，创建形式为：</p>
 <figure class="highlight fortran"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="keyword">name</span>[<span class="built_in">size</span>]</span><br></pre></td></tr></table></figure>
 <p><code>type</code>为数据类型，<code>name</code>为名称，<code>size</code>为初始化大小</p>
 <p>初始化：</p>
 <figure class="highlight fortran"><table><tr><td class="code"><pre><span class="line"><span class="built_in">char</span> <span class="keyword">name</span>[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
 <p>初始化并赋值：</p>
 <figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="type">name</span>[<span class="number">4</span>] = &#123;<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><blockquote>
+<h3 id="Vector">Vector</h3>
+<blockquote>
 <p>vector意思：向量，是可以自由增删的数组，简称的动态数组，和java中的ArrayList类似。</p>
 </blockquote>
-<p>使用需要导入头文件：<br><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure><br>初始化：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; test;</span><br></pre></td></tr></table></figure><br>常用方法：</p>
+<p>使用需要导入头文件：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>初始化：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; test;</span><br></pre></td></tr></table></figure>
+<p>常用方法：</p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>push_back 在数组的最后添加一个数据</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>pop_back 去掉数组的最后一个数据</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>at 得到编号位置的数据</span><br><span class="line"></span><br><span class="line"><span class="number">4.b</span>egin 得到数组头的指针</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>end 得到数组的最后一个单元+<span class="number">1</span>的指针</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>．front 得到数组头的引用</span><br><span class="line"></span><br><span class="line"><span class="number">7.b</span>ack 得到数组的最后一个单元的引用</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span>max_size 得到vector最大可以是多大</span><br><span class="line"></span><br><span class="line"><span class="number">9.</span>capacity 当前vector分配的大小</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span>size 当前使用数据的大小</span><br><span class="line"></span><br><span class="line"><span class="number">11.</span>resize 改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</span><br><span class="line"></span><br><span class="line"><span class="number">12.</span>reserve 改变当前vecotr所分配空间的大小</span><br><span class="line"></span><br><span class="line"><span class="number">13.</span>erase 删除指针指向的数据项</span><br><span class="line"></span><br><span class="line"><span class="number">14.</span>clear 清空当前的vector</span><br><span class="line"></span><br><span class="line"><span class="number">15.</span>rbegin 将vector反转后的开始指针返回(其实就是原来的end<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">16.</span>rend 将vector反转构的结束指针返回(其实就是原来的begin<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">17.</span>empty 判断vector是否为空</span><br><span class="line"></span><br><span class="line"><span class="number">18.</span>swap 与另一个vector交换数据</span><br></pre></td></tr></table></figure>
 <p>实例：</p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; test;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        test.<span class="built_in">push_back</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        test.<span class="built_in">pop_back</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 更新数据</span></span><br><span class="line">    test[<span class="number">10</span>] = <span class="number">123</span>;</span><br><span class="line">    test[<span class="number">11</span>] = <span class="number">112</span>;</span><br><span class="line">    <span class="comment">//更新第13个数据</span></span><br><span class="line">    test.<span class="built_in">insert</span>(test.<span class="built_in">begin</span>()+<span class="number">12</span>,<span class="number">110</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除数据</span></span><br><span class="line">    <span class="comment">// 删除test[1]</span></span><br><span class="line">    test.<span class="built_in">erase</span>(test.<span class="built_in">begin</span>()+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 普通遍历方式</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; test.<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; test[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -479,9 +486,12 @@
 <blockquote>
 <p>这里需要注意是的end()指向数组的最后一个地址+1</p>
 </blockquote>
-<p>复制数组：<br><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 复制数组:</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; test3;</span><br><span class="line">test3.<span class="built_in">insert</span>(test3.<span class="built_in">end</span>(),test.<span class="built_in">begin</span>(),test.<span class="built_in">end</span>());</span><br><span class="line">cout &lt;&lt;<span class="string">&quot;test3.size:&quot;</span> &lt;&lt; test3.<span class="built_in">size</span>() &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">test4</span><span class="params">(test)</span></span>;</span><br><span class="line">cout &lt;&lt;<span class="string">&quot;test4.size:&quot;</span> &lt;&lt; test4.<span class="built_in">size</span>() &lt;&lt;endl;</span><br></pre></td></tr></table></figure><br>交换数组：</p>
+<p>复制数组：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 复制数组:</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; test3;</span><br><span class="line">test3.<span class="built_in">insert</span>(test3.<span class="built_in">end</span>(),test.<span class="built_in">begin</span>(),test.<span class="built_in">end</span>());</span><br><span class="line">cout &lt;&lt;<span class="string">&quot;test3.size:&quot;</span> &lt;&lt; test3.<span class="built_in">size</span>() &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">test4</span><span class="params">(test)</span></span>;</span><br><span class="line">cout &lt;&lt;<span class="string">&quot;test4.size:&quot;</span> &lt;&lt; test4.<span class="built_in">size</span>() &lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p>交换数组：</p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 交换数组：</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; test2;</span><br><span class="line"><span class="comment">// swap(test2,test);</span></span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line">test2.<span class="built_in">swap</span>(test);</span><br><span class="line">cout &lt;&lt;<span class="string">&quot;test2.size:&quot;</span> &lt;&lt; test2.<span class="built_in">size</span>() &lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><blockquote>
+<h3 id="Array">Array</h3>
+<blockquote>
 <p>array是在C++11时候增加的，相比数组更安全，但是效率不会更低。array加入了更多的操作功能，类似于vector，但是array大小是固定的，不可以动态增删，需要在初始化的时候设置大小。</p>
 </blockquote>
 <p>初始化：</p>
@@ -495,36 +505,48 @@
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> size = array2.<span class="built_in">size</span>();</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;size:&quot;</span> &lt;&lt; size &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> empty = array1.<span class="built_in">empty</span>();</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;is empty:&quot;</span> &lt;&lt; empty &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
 <p>交换复制：</p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;---------数组交换--------&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="comment">// 数组交换</span></span><br><span class="line">array2.<span class="built_in">swap</span>(array3);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : array2) &#123;</span><br><span class="line">    cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;--------数组复制1---------&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="comment">// 数组复制</span></span><br><span class="line">array1 = array2;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : array1) &#123;</span><br><span class="line">    cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;-------数组复制2----------&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line">array&lt;<span class="keyword">int</span>, 5&gt; array4;</span><br><span class="line"><span class="built_in">copy</span>(array2.<span class="built_in">begin</span>(),array2.<span class="built_in">end</span>(),array4.<span class="built_in">begin</span>());</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : array4) &#123;</span><br><span class="line">    cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="数组的奇妙之旅"><a href="#数组的奇妙之旅" class="headerlink" title="数组的奇妙之旅"></a>数组的奇妙之旅</h2><h3 id="数组配合函数"><a href="#数组配合函数" class="headerlink" title="数组配合函数"></a>数组配合函数</h3><p><strong>作为函数参数：</strong></p>
+<h2 id="数组的奇妙之旅">数组的奇妙之旅</h2>
+<h3 id="数组配合函数">数组配合函数</h3>
+<p><strong>作为函数参数：</strong></p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指针指向数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">(<span class="keyword">int</span> *p)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 大小为10的数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function2</span><span class="params">(<span class="keyword">int</span> p[<span class="number">10</span>])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 未定义数组大小</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function3</span><span class="params">(<span class="keyword">int</span> p[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>作为函数返回值</strong>：</p>
 <p>c++中不能直接返回数组，可以利用指针代替：</p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">function4</span><span class="params">(<span class="keyword">int</span> size)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr;</span><br><span class="line">    arr = <span class="keyword">new</span> <span class="keyword">int</span>[size];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        arr[i] = i * <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">int</span> *p;</span><br><span class="line">    p = <span class="built_in">function4</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt; p[i] &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="数组与指针"><a href="#数组与指针" class="headerlink" title="数组与指针"></a>数组与指针</h3><p>在C++中可以用指针代替数组名，指针指向的是数组第一个元素的地址，如下：</p>
+<h3 id="数组与指针">数组与指针</h3>
+<p>在C++中可以用指针代替数组名，指针指向的是数组第一个元素的地址，如下：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> *p;</span><br><span class="line">p = arr;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;p0:&quot;</span> &lt;&lt; p[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;p1:&quot;</span> &lt;&lt; p[<span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;p2:&quot;</span> &lt;&lt; p[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line"><span class="comment">// 超出范围</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;p3:&quot;</span> &lt;&lt; p[<span class="number">3</span>] &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
 <p>指针p指向&amp;arr[0],我们直接使用p[i]来访问数组第i个元素，但是需要注意是别超出数组的本身范围。</p>
-<h3 id="指针数组和数组指针"><a href="#指针数组和数组指针" class="headerlink" title="指针数组和数组指针"></a>指针数组和数组指针</h3><blockquote>
+<h3 id="指针数组和数组指针">指针数组和数组指针</h3>
+<blockquote>
 <p>是不是有点头晕，啥玩意这是？</p>
 </blockquote>
 <ul>
 <li>数组指针：指向数组的指针</li>
 <li>指针数组：其对象都是指针的一个数组</li>
 </ul>
-<h4 id="数组指针："><a href="#数组指针：" class="headerlink" title="数组指针："></a>数组指针：</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> arr4[<span class="number">3</span>] = &#123;<span class="number">12</span>,<span class="number">123</span>,<span class="number">123324</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化一个数组指针</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*cp)[<span class="number">3</span>] = &amp;arr4;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;error usage &quot;</span>&lt;&lt;*cp[i] &lt;&lt;<span class="string">&quot;  success usage &quot;</span>&lt;&lt;(*cp)[i]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="数组指针：">数组指针：</h4>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> arr4[<span class="number">3</span>] = &#123;<span class="number">12</span>,<span class="number">123</span>,<span class="number">123324</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化一个数组指针</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*cp)[<span class="number">3</span>] = &amp;arr4;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;error usage &quot;</span>&lt;&lt;*cp[i] &lt;&lt;<span class="string">&quot;  success usage &quot;</span>&lt;&lt;(*cp)[i]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">error </span>usage 12  success usage 12</span><br><span class="line"><span class="keyword">error </span>usage 1  success usage 123</span><br><span class="line"><span class="keyword">error </span>usage 0  success usage 123324</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>其看起来和上述的普通指针没什么区别，等在下多维数组中就可理解<code>数组指针</code> 存在的意义了。</p>
 </blockquote>
-<h4 id="指针数组："><a href="#指针数组：" class="headerlink" title="指针数组："></a>指针数组：</h4><p>这个也很好理解，数组中的所有元素都在指针。</p>
-<p>方式一：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">    <span class="comment">// 指针数组：数组里面的每个原生都是指针</span></span><br><span class="line">    <span class="keyword">char</span> *tp[<span class="number">3</span>] = &#123;<span class="string">&quot;asd&quot;</span>,<span class="string">&quot;as&quot;</span>,<span class="string">&quot;f&quot;</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:tp)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;value:&quot;</span>&lt;&lt;i&lt;&lt;<span class="string">&quot;      address:&quot;</span>&lt;&lt;&amp;i&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">value:asd      address:<span class="number">0x6fd53ffcf8</span></span><br><span class="line">value:as      address:<span class="number">0x6fd53ffcf8</span></span><br><span class="line">value:f      address:<span class="number">0x6fd53ffcf8</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><br>方式二：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="comment">// 无法通过上面方式初始化</span></span><br><span class="line">    <span class="keyword">int</span> *ttp[<span class="number">3</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> arr4[<span class="number">3</span>] = &#123;<span class="number">12</span>,<span class="number">123</span>,<span class="number">123324</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ttp[i] = &amp;arr4[i];</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;address:&quot;</span>&lt;&lt;ttp[i] &lt;&lt; <span class="string">&quot;  value:&quot;</span>&lt;&lt;*ttp[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">输出：</span><br><span class="line">address:<span class="number">0x6fd53ffd38</span>  value:<span class="number">12</span></span><br><span class="line">address:<span class="number">0x6fd53ffd3c</span>  value:<span class="number">123</span></span><br><span class="line">address:<span class="number">0x6fd53ffd40</span>  value:<span class="number">123324</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="多维数组和多级指针"><a href="#多维数组和多级指针" class="headerlink" title="多维数组和多级指针"></a>多维数组和多级指针</h3><p>我们上面讲的都是一维数组，还有多维数组，比较常见的就是二维数组。</p>
+<h4 id="指针数组：">指针数组：</h4>
+<p>这个也很好理解，数组中的所有元素都在指针。</p>
+<p>方式一：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">    <span class="comment">// 指针数组：数组里面的每个原生都是指针</span></span><br><span class="line">    <span class="keyword">char</span> *tp[<span class="number">3</span>] = &#123;<span class="string">&quot;asd&quot;</span>,<span class="string">&quot;as&quot;</span>,<span class="string">&quot;f&quot;</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:tp)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;value:&quot;</span>&lt;&lt;i&lt;&lt;<span class="string">&quot;      address:&quot;</span>&lt;&lt;&amp;i&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">value:asd      address:<span class="number">0x6fd53ffcf8</span></span><br><span class="line">value:as      address:<span class="number">0x6fd53ffcf8</span></span><br><span class="line">value:f      address:<span class="number">0x6fd53ffcf8</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>方式二：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="comment">// 无法通过上面方式初始化</span></span><br><span class="line">    <span class="keyword">int</span> *ttp[<span class="number">3</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> arr4[<span class="number">3</span>] = &#123;<span class="number">12</span>,<span class="number">123</span>,<span class="number">123324</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ttp[i] = &amp;arr4[i];</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;address:&quot;</span>&lt;&lt;ttp[i] &lt;&lt; <span class="string">&quot;  value:&quot;</span>&lt;&lt;*ttp[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">输出：</span><br><span class="line">address:<span class="number">0x6fd53ffd38</span>  value:<span class="number">12</span></span><br><span class="line">address:<span class="number">0x6fd53ffd3c</span>  value:<span class="number">123</span></span><br><span class="line">address:<span class="number">0x6fd53ffd40</span>  value:<span class="number">123324</span></span><br></pre></td></tr></table></figure>
+<h3 id="多维数组和多级指针">多维数组和多级指针</h3>
+<p>我们上面讲的都是一维数组，还有多维数组，比较常见的就是二维数组。</p>
 <p>初始化：</p>
 <figure class="highlight inform7"><table><tr><td class="code"><pre><span class="line">int test<span class="comment">[3]</span><span class="comment">[4]</span>;</span><br><span class="line">int array<span class="comment">[3]</span><span class="comment">[4]</span> = &#123;</span><br><span class="line">    &#123;1,2,3&#125;,</span><br><span class="line">    &#123;123,123,234&#125;,</span><br><span class="line">    &#123;12313,123123,123123&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>我们看下array[0]是什么样的</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;array[0]:&quot;</span> &lt;&lt; array[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">array[<span class="number">1</span>]:<span class="number">0x3529fff9a0</span></span><br></pre></td></tr></table></figure>
 <p>其指向一个数组指针</p>
-<p>…..<br>还有多级指针，省略，不想写了<br>…..</p>
+<p>…<br>
+还有多级指针，省略，不想写了<br>
+…</p>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chenyangyao/p/5222696.html">https://www.cnblogs.com/chenyangyao/p/5222696.html</a></p>
 
 

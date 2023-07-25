@@ -134,10 +134,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://xluu233.github.io/archives/2020/">
+  <link rel="canonical" href="https://xluu233.github.io/cn/QtCreator远程调试及qBreakpad-Dump分析/">
   <title>
     
-      卢小胖的开发日志
+      QtCreator远程调试及qBreakpad Dump分析 - 卢小胖的开发日志
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -343,19 +343,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/home.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/archive.jpg');
+      --intro-header-background-image-url-post: url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: url('//img/common_back.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/archive.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/common_back.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/archive.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/common_back.jpg'); */
       
     }
 
@@ -373,10 +373,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>BugMaker</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Create bugs to solve problems</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#c++" title="c++">c++</a>
+              
+              <a class="tag" href="/tags/#Qt" title="Qt">Qt</a>
+              
+            </div>
+            <h1>QtCreator远程调试及qBreakpad Dump分析</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2022-03-10
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">5</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -417,494 +451,363 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>QtCreator远程调试及qBreakpad Dump分析</h1>
+<h1>1、QtCreator远程连接Linux开发板调试</h1>
+<p><strong>GCC:    arm-poky-linux-gnueabi-g++ (GCC) 5.3.0</strong></p>
+<p>开发板：arm-poky-linux-gnueabi-gcc</p>
+<p>ubuntu:  /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-g++</p>
+<p><strong>GDB：GNU gdb (GDB) 7.10.1</strong></p>
+<p>开发板：gdbserver --version</p>
+<p>目录：/usr/arm-poky-linux-gnueabi/bin</p>
+<p>ubuntu:  /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gdb</p>
+<ol>
+<li><strong>通过Tools-&gt;Options-&gt;Device，在QtCreator中新增remote device</strong></li>
+</ol>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/b0493421-2aff-4b47-84d5-71d7928c887b.png" alt="image"></p>
+<ol start="2">
+<li><strong>选择新增Debugger</strong></li>
+</ol>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/4e5bbe15-ee28-43ca-8444-197adbc69357.png" alt="image"></p>
+<p>配置的GDB工具路径：</p>
+<blockquote>
+<p>/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gdb</p>
+</blockquote>
+<ol start="3">
+<li>
+<p><strong>QtVersion和Compliers配置与原Cross2.0配置相同</strong></p>
+</li>
+<li>
+<p><strong>新增编译Kit： SSH-Cross2.0</strong></p>
+</li>
+</ol>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/b1f873f8-3190-4de8-855d-2cc550dfe6db.png" alt="image"></p>
+<p>Device选择之前新增的RemoteDevice, Complier选择Cross2.0, Debugger选择之前新增的</p>
+<ol start="5">
+<li><strong>为项目配置SSH-Cross2.0 ，Build部分与之前的Cross2.0配置相同</strong></li>
+</ol>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/06c4bfd2-6a51-4cda-bd3c-14f8c3c3b40d.png" alt="image"></p>
+<ol start="6">
+<li>
+<p><strong>在项目.pro文件下新增配置：</strong></p>
+<p>target.path += /opt/Raise3D<br>
+INSTALLS += target</p>
+</li>
+</ol>
+<p>配置代表程序远程推送的目录，可以看到pro中配置的目录就是RemoteDirectory，程序编译后会推送到此目录运行。</p>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/6ad3f99d-4837-4bc6-a4eb-321aa8968d57.png" alt="image"></p>
+<ol start="7">
+<li><strong>配置自定义步骤</strong></li>
+</ol>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/4ddac458-5287-4f7e-918e-d18263852371.png" alt="image"></p>
+<ul>
+<li>
+<p>QtCreator是通过SFTP上传文件的，有些系统可能不支持，可以换用scp上传。亲测我们的主机可以支持SFTP上传，反而scp上传需要配置密码，比较麻烦。</p>
+</li>
+<li>
+<p>关于一些报错可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/jackchen810/article/details/128584700">(54条消息) 飞凌Imx6ull开发板Qt远程调试_imx6ull qt_Just810的博客-CSDN博客</a></p>
+</li>
+</ul>
+<ol>
+<li><strong>Run:</strong></li>
+</ol>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/4575b3cd-8254-4e87-a269-83e69997dc6b.png" alt="image"></p>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/e945b456-372d-43a9-92b3-c20be04de189.png" alt="image"></p>
+<h2 id="Debug">Debug:</h2>
+<p>待补充</p>
+<h1>2、使用qBreakpad生成并分析Dump文件</h1>
+<p><a target="_blank" rel="noopener" href="https://qr.dingtalk.com/page/yunpan?route=previewDentry&amp;spaceId=21611903417&amp;fileId=107066981277&amp;type=folder">相关文件:</a></p>
+<p><a target="_blank" rel="noopener" href="https://alidocs.dingtalk.com/i/nodes/MNDoBb60VLr0PRZ0t1noYx978lemrZQ3?doc_type=wiki_doc&amp;iframeQuery=anchorId%253DX02liq3807k9wa3f53qqlb">请至钉钉文档查看附件《breakpad-2021.08.09.zip》</a></p>
+<p><a target="_blank" rel="noopener" href="https://alidocs.dingtalk.com/i/nodes/MNDoBb60VLr0PRZ0t1noYx978lemrZQ3?doc_type=wiki_doc&amp;iframeQuery=anchorId%253DX02liq3802nsl63g709wo">请至钉钉文档查看附件《lss.tar.gz》</a></p>
+<p><a target="_blank" rel="noopener" href="https://alidocs.dingtalk.com/i/nodes/MNDoBb60VLr0PRZ0t1noYx978lemrZQ3?doc_type=wiki_doc&amp;iframeQuery=anchorId%253DX02liq3802k2wetvg166im">请至钉钉文档查看附件《breakpad.tar.gz》</a></p>
+<p>不同的平台都可以使用dump分析程序异常问题，在Qt上可以使用qBreakpad生成dump文件，qBreakpad是基于breakpad开发的，breakpad是Google的开源项目。</p>
+<p><strong>编译qBreadkpad需要依赖breakpad和lss</strong></p>
+<ul>
+<li><strong>qBreadkpad</strong>:<a target="_blank" rel="noopener" href="https://github.com/buzzySmile/qBreakpad">buzzySmile/qBreakpad: Cross-platform Qt crash handler, implemented as wrapper around google-breakpad (github.com)</a></li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/d69a154a-4550-4602-b02d-f195db65f3d3.png" alt="image"></p>
+<ul>
+<li><strong>breakpad</strong>:<a target="_blank" rel="noopener" href="https://github.com/google/breakpad">google/breakpad: Mirror of Google Breakpad project (github.com)</a></li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/84da5a5b-04b1-4cb0-b71f-8fc8d299793b.png" alt="image"></p>
+<ul>
+<li><strong>lss</strong>:<a target="_blank" rel="noopener" href="https://github.com/ithaibo/linux-syscall-support">ithaibo/linux-syscall-support: a copy from google (github.com)</a></li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/e7166120-5c87-4b0f-a8dc-195a542bfd9e.png" alt="image"></p>
+<h3 id="编译Tips">编译Tips:</h3>
+<ul>
+<li>
+<p>最好选择上述版本，三个库版本不一致可能会编译失败</p>
+</li>
+<li>
+<p>最好在Linux下直接下载或解压，在windows打开后会导致脚本文件格式不一致问题</p>
+</li>
+<li>
+<p>编译breadpad最好升级系统GCC到7.0+版本，实测5.5.0编译失败，如果失败了可直接使用云盘中已经编译好的</p>
+</li>
+</ul>
+<h3 id="编译步骤：">编译步骤：</h3>
+<ul>
+<li>
+<p>创建qBreadk目录，将三个库放在同一目录下，重<strong>命名为breadkpad / lss /qBreakpad</strong></p>
+</li>
+<li>
+<p><strong>拷贝breadkpad和lss到 qBreakpad-&gt;third_party目录下</strong></p>
+</li>
+<li>
+<p>QtCreator打开qBreadkpad项目，其下面有三个子项目</p>
+</li>
+<li>
+<p>配置qBreadkpad编译套件，使用Cross2.0，因为最后需要加到MXCUI中，需要与开发板环境一致。最后一一编译三个子项目，如有出错，请检查编译环境和breadpad版本。</p>
+</li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/2f9646df-e5db-4a24-b17a-507f495ff5b8.png" alt="image"></p>
+<h3 id="编译结果">编译结果</h3>
+<ul>
+<li>最后在qBreakpad-&gt;handler-&gt;singleton目录下会生成.a文件和头文件</li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/dad31d01-6a4d-4107-9dff-a6b718ea875d.png" alt="image"></p>
+<ul>
+<li>在mxc-public-common中加入</li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/5e2eaafe-ff24-4301-985b-f42caa27cd45.png" alt="image"></p>
+<ul>
+<li>
+<p>配置.pro文件</p>
+<p>LIBS += -L$$PWD/…/…/mxc-public-com/qBreakpad/ -lqBreakpad</p>
+<p>INCLUDEPATH += “…/…/mxc-public-com/qBreakpad/include”</p>
+</li>
+</ul>
+<h3 id="代码中配置qBreakpad">代码中配置qBreakpad</h3>
+<pre><code>#define QBEAKPAD_DUMP_DIR (applicationPath+&quot;/qBeakpadDump&quot;)
+
+
+#include &lt;QBreakpadHandler.h&gt;
+#include &lt;QBreakpadHttpUploader.h&gt;
+
+int main(int argc, char *argv[])
+&#123;
+    QBreakpadInstance.setDumpPath(QBEAKPAD_DUMP_DIR); //设置dump生成的路径
+&#125;
+</code></pre>
+<p>程序异常后可以在此目录查看到dmp日志</p>
+<h3 id="编译breakpad">编译breakpad</h3>
+<p>分析dump文件需要用到breakpad提供的工具 ，我们打开之前的breadpad库，执行</p>
+<pre><code>cd breakpad
+./configure   或者  bash ./configure
+sudo make -j12
+</code></pre>
+<p>breadkpad可能会因系统环境造成编译失败，可以直接使用编译好的程序。</p>
+<p>编译完成之后，执行：</p>
+<pre><code>sudo make install
+</code></pre>
+<p>会将生成的程序安装在系统目录，主要是：</p>
+<ul>
+<li>
+<p>在breakpad/src/tools/linux/dump_syms目录下，生成了dump_syms</p>
+</li>
+<li>
+<p>在breakpad/src/processor目录下，生成了minidump_stackwalk</p>
+</li>
+</ul>
+<h2 id="使用dump-syms和minidump-stackwalk定位bug">使用dump_syms和minidump_stackwalk定位bug</h2>
+<blockquote>
+<p>直接解析dmp文件只能看到函数的地址信息，看不到函数名，这样可读性很差，配合sym文件来解析dmp可以定位到函数名及其行号。</p>
+</blockquote>
+<h3 id="1、dump-syms提取程序的符号信息">1、dump_syms提取程序的符号信息</h3>
+<p>我们以MXCUI程序为例，生成的可执行程序在pack-bin4411/MXCUI, 首先需要为MXCUI程序生成函数信息文件</p>
+<p>，dump_syms不仅可以为程序生成函数信息，还可以为动态库生成。</p>
+<pre><code>cd xxx/mxc-mxcui/pack-bin4411
+dump_syms MXCUI &gt; MXCUI.sym
+</code></pre>
+<p><strong>在mxc-mxcui目录下新建symbols目录，再新建MXCUI目录，层级结构为：</strong></p>
+<ul>
+<li>
+<p>第一级目录，固定为symbols</p>
+</li>
+<li>
+<p>第二级目录，为即将放入的符号文件名称，如MXCUI.sym，则目录名为MXCUI；</p>
+</li>
+<li>
+<p>第三级目录，在sym文件中第一行内容，有一串16进制编号，将其作为目录名。</p>
+</li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/521bc5c8-871e-49cf-aa35-9f96805795ea.png" alt="image"></p>
+<p><strong>最终的层级结构如下：</strong></p>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/434b0d41-a767-4d5a-9082-237fac778d15.png" alt="image"></p>
+<p>生成函数信息:</p>
+<pre><code>./dump_syms libbreakpad-core.so &gt; libbreakpad-core.so.sym
+</code></pre>
+<h3 id="2、minidump-stackwalk生成函数栈和crash信息">2、minidump_stackwalk生成函数栈和crash信息</h3>
+<p>将开发板的dump文件上传到本地，执行：</p>
+<pre><code>minidump_stackwalk 2210e229-20a6-4edd-2a041caa-0fb09c7c.dmp ./symbols  &gt; mxcui_error.log
+</code></pre>
+<p>具体格式为：</p>
+<ul>
+<li>
+<p>minidump_stackwalk    xxx.dump路径    /xxx/xx/symbools路径   &gt;   xxx_error.log</p>
+</li>
+<li>
+<p>mxcui_error.log生成在当前所处目录</p>
+</li>
+</ul>
+<h3 id="3、log分析">3、log分析</h3>
+<ul>
+<li>
+<p>log中显示crash最近的函数，一般就是程序崩溃的地方</p>
+</li>
+<li>
+<p>log无法显示函数名和代码行数，可能原因：</p>
+<ul>
+<li>
+<p>sym文件路径不正确</p>
+</li>
+<li>
+<p>breakpad和程序调用的版本不匹配</p>
+</li>
+<li>
+<p>建议使用Debug模式编译程序</p>
+</li>
+<li>
+<p>编辑器开启了神秘优化</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/v9kqDN7p87zZlVxe/img/b07ed8e1-fba4-485a-8a31-807795189300.png" alt="image"></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/Android-12桌面小组件/" data-toggle="tooltip" data-placement="top" title="Android12桌面小组件">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
-    <!-- NO SIDEBAR -->
-    <!-- Post Container -->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
-          
-          <li>
-            03-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/QtCreator远程调试及qBreakpad-Dump分析/" style="color: #0085a1">
-              <span>
-                QtCreator远程调试及qBreakpad Dump分析
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
-          
-          <li>
-            09-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Android-12桌面小组件/" style="color: #0085a1">
-              <span>
-                Android12桌面小组件
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础进阶】class、struct、union/" style="color: #0085a1">
-              <span>
-                【C++基础进阶】class、struct、union
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础进阶】const、static、volatile/" style="color: #0085a1">
-              <span>
-                【C++基础进阶】const、static、volatile
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-专题】数组/" style="color: #0085a1">
-              <span>
-                【C++专题】数组
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础】面向对象/" style="color: #0085a1">
-              <span>
-                【C++基础】面向对象
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础】语法、数据类型/" style="color: #0085a1">
-              <span>
-                【C++基础】语法、数据类型
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RecyclerView动画设置/" style="color: #0085a1">
-              <span>
-                RecyclerView加载动画设置
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Activity切换动画/" style="color: #0085a1">
-              <span>
-                Activity跳转动画及View无缝衔接，了解一下？
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/" style="color: #0085a1">
-              <span>
-                写一个MVVM快速开发框架（四）优雅的数据处理和事件通信
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/自定义Navigation动画/" style="color: #0085a1">
-              <span>
-                一点也不炫酷的Navigation动画
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/谈一谈“单Activity-多Fragment”模式/" style="color: #0085a1">
-              <span>
-                MVVM(三) 谈一谈“单Activity+多Fragment”模式
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/封装一个好看的吐司框架/" style="color: #0085a1">
-              <span>
-                封装一个好看的吐司框架
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/写一个MVVM快速开发框架（二）组件化改造/" style="color: #0085a1">
-              <span>
-                写一个MVVM快速开发框架（二）组件化改造
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/写一个MVVM快速开发框架（一）基础类封装/" style="color: #0085a1">
-              <span>
-                写一个MVVM快速开发框架（一）基础类封装
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-22
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/聊一聊Android存储行为的变化/" style="color: #0085a1">
-              <span>
-                聊一聊Android存储行为的变化
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/聊一聊Kotlin中的线程安全/" style="color: #0085a1">
-              <span>
-                聊一聊Kotlin中的线程安全
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Android自定义不规则裁剪/" style="color: #0085a1">
-              <span>
-                Android自定义不规则裁剪
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <li>
-            08-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/网络笔记/" style="color: #0085a1">
-              <span>
-                Android网络部分笔记
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-          <span class="tag-text">2019</span>
-        </span>
-        <ul>
-          
-          <li>
-            09-07
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Mac下编译LibjpegTurbo/" style="color: #0085a1">
-              <span>
-                Mac下编译LibjpegTurbo
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Windows平台下编译LibjpegTurbo的静态库-a文件和动态库-so文件/" style="color: #0085a1">
-              <span>
-                Windows平台下编译LibjpegTurbo的静态库.a文件和动态库.so文件
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/window-libjpegturbo编译/" style="color: #0085a1">
-              <span>
-                Windows平台编译libjpegturbo的lib文件
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-22
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/ios图片保存/" style="color: #0085a1">
-              <span>
-                iOS将View以图片格式保存在系统相册
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Replaykit2/" style="color: #0085a1">
-              <span>
-                Replaykit2（iOS 11+）视频录制详解
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-    </div>
-    <!-- Sidebar Container -->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
-
-      <!-- Featured Tags -->
-      
-      <section>
-        <!-- no hr -->
-        <h5><a href="/tags/">特色标签</a></h5>
-        <div class="tags">
-          
-          
-          <a href="/tags/#自定义View" title="自定义View" rel="3">自定义View</a>
-          
-          
-          
-          <a href="/tags/#widget" title="widget" rel="1">widget</a>
-          
-          
-          
-          <a href="/tags/#LibJpegTurbo" title="LibJpegTurbo" rel="3">LibJpegTurbo</a>
-          
-          
-          
-          <a href="/tags/#不规则裁剪" title="不规则裁剪" rel="1">不规则裁剪</a>
-          
-          
-          
-          <a href="/tags/#iOS" title="iOS" rel="1">iOS</a>
-          
-          
-          
-          <a href="/tags/#Replaykit2" title="Replaykit2" rel="1">Replaykit2</a>
-          
-          
-          
-          <a href="/tags/#c++" title="c++" rel="6">c++</a>
-          
-          
-          
-          <a href="/tags/#Qt" title="Qt" rel="1">Qt</a>
-          
-          
-          
-          <a href="/tags/#相册" title="相册" rel="1">相册</a>
-          
-          
-          
-          <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
-          
-          
-          
-          <a href="/tags/#Android" title="Android" rel="1">Android</a>
-          
-          
-          
-          <a href="/tags/#MVVM" title="MVVM" rel="4">MVVM</a>
-          
-          
-          
-          <a href="/tags/#网络框架" title="网络框架" rel="1">网络框架</a>
-          
-          
-          
-          <a href="/tags/#组件化" title="组件化" rel="1">组件化</a>
-          
-          
-          
-          <a href="/tags/#LiveData" title="LiveData" rel="1">LiveData</a>
-          
-          
-          
-          <a href="/tags/#Room" title="Room" rel="1">Room</a>
-          
-          
-          
-          <a href="/tags/#Toast" title="Toast" rel="1">Toast</a>
-          
-          
-          
-          <a href="/tags/#Lottie" title="Lottie" rel="1">Lottie</a>
-          
-          
-          
-          <a href="/tags/#网络" title="网络" rel="1">网络</a>
-          
-          
-          
-          <a href="/tags/#分区存储" title="分区存储" rel="1">分区存储</a>
-          
-          
-          
-          <a href="/tags/#线程安全" title="线程安全" rel="1">线程安全</a>
-          
-          
-          
-          <a href="/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
-          
-          
-          
-          <a href="/tags/#Navigation" title="Navigation" rel="2">Navigation</a>
-          
-          
-          
-          <a href="/tags/#动画" title="动画" rel="1">动画</a>
-          
-          
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">QtCreator远程调试及qBreakpad Dump分析</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">1、QtCreator远程连接Linux开发板调试</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Debug"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Debug:</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">2、使用qBreakpad生成并分析Dump文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BC%96%E8%AF%91Tips"><span class="toc-nav-number">3.0.1.</span> <span class="toc-nav-text">编译Tips:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BC%96%E8%AF%91%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-nav-number">3.0.2.</span> <span class="toc-nav-text">编译步骤：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C"><span class="toc-nav-number">3.0.3.</span> <span class="toc-nav-text">编译结果</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E4%B8%AD%E9%85%8D%E7%BD%AEqBreakpad"><span class="toc-nav-number">3.0.4.</span> <span class="toc-nav-text">代码中配置qBreakpad</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BC%96%E8%AF%91breakpad"><span class="toc-nav-number">3.0.5.</span> <span class="toc-nav-text">编译breakpad</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8dump-syms%E5%92%8Cminidump-stackwalk%E5%AE%9A%E4%BD%8Dbug"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">使用dump_syms和minidump_stackwalk定位bug</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1%E3%80%81dump-syms%E6%8F%90%E5%8F%96%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%AC%A6%E5%8F%B7%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">1、dump_syms提取程序的符号信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2%E3%80%81minidump-stackwalk%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E6%A0%88%E5%92%8Ccrash%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">2、minidump_stackwalk生成函数栈和crash信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3%E3%80%81log%E5%88%86%E6%9E%90"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">3、log分析</span></a></li></ol></li></ol></li></ol>
+        
         </div>
-      </section>
-      
-
-      <!-- Friends Blog -->
-      
-    </div>
+      </aside>
     
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#c++" title="c++">c++</a>
+            
+            <a class="tag" href="/tags/#Qt" title="Qt">Qt</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
