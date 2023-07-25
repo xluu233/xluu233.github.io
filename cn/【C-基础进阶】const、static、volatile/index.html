@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -395,7 +395,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">841</span> In Total
+              Words <span class="post-count">840</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -457,31 +457,30 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="Const">Const</h2>
-<p>const代表不可更改，和kotlin中const类似。</p>
+        <h2 id="Const"><a href="#Const" class="headerlink" title="Const"></a>Const</h2><p>const代表不可更改，和kotlin中const类似。</p>
 <p><strong>一般用法：</strong></p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">const int i = <span class="number">0</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">//error</span><br><span class="line"><span class="attribute">i</span> = <span class="number">2</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>普通变量申明在顶层中，可以被其他文件访问。const只可以被本文件中的函数访问，可以使用extern来访问其他文件中的const变量。</p>
-<p><strong>指针与const：</strong></p>
+<p><strong>指针与const：</strong>  </p>
 <blockquote>
 <p>指针与const配合使用有几种不同的情况</p>
 </blockquote>
 <ol>
-<li>const在前，修饰数据类型</li>
-</ol>
+<li><p>const在前，修饰数据类型</p>
 <figure class="highlight hsp"><table><tr><td class="code"><pre><span class="line">const <span class="keyword">int</span> *ptr<span class="comment">;</span></span><br><span class="line"><span class="comment">//error</span></span><br><span class="line"><span class="symbol">*prt</span> = <span class="number">10</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//success</span></span><br><span class="line"><span class="keyword">int</span> val = <span class="number">10</span><span class="comment">;</span></span><br><span class="line"><span class="symbol">*ptr</span> = &amp;val<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>不可以直接操作*ptr，但是可以将非const类型对象地址赋值给const类型数据指针。</p>
 </blockquote>
-<ol start="2">
-<li>和上面一样</li>
+</li>
+<li><p>和上面一样</p>
+</li>
 </ol>
 <figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> <span class="keyword">const</span> *<span class="built_in">ptr</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
+<ol>
 <li>const修饰指针，指针地址一旦赋值就不可改变，成为<strong>常指针</strong></li>
 </ol>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> * <span class="keyword">const</span> ptr2;</span><br><span class="line"><span class="comment">// error</span></span><br><span class="line">ptr2 = &amp;j;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span>指针必须一次性初始化完成：</span><br><span class="line"><span class="comment">// success</span></span><br><span class="line"><span class="built_in">int</span>* <span class="keyword">const</span> ptr2 = &amp;j;</span><br></pre></td></tr></table></figure>
-<ol start="4">
+<ol>
 <li>const数据类型对的const指针：</li>
 </ol>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">int</span>* <span class="keyword">const</span> ptr3 = &amp;i;</span><br></pre></td></tr></table></figure>
@@ -491,15 +490,14 @@
 <li>const修饰返回值</li>
 </ol>
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> int <span class="function"><span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> int* <span class="function"><span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">返回<span class="keyword">const</span>指针：</span><br><span class="line">int* <span class="keyword">const</span> <span class="function"><span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ol start="2">
+<ol>
 <li>const修饰参数：</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    cout&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">    <span class="comment">// error</span></span><br><span class="line">    <span class="comment">//i = 123;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">修饰指针：</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun3</span><span class="params">(<span class="keyword">char</span>* <span class="keyword">const</span> str)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>关于函数参数使用引用还是指针：</strong></p>
 <p>非基础数类型（自定义结构体）作为参数的时候，函数内部会创建临时的数据对象，会经过构造-复制-析构过程，非常消耗性能，所以传递引用，避免性能消耗，同时使用const避免修改源数据</p>
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">void <span class="function"><span class="title">fun</span><span class="params">(<span class="keyword">const</span> A &amp;a)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Static">Static</h2>
-<p>静态变量在程序生命周期中只分配一次，其分配在单独的空间中。如果一个类中有静态变量，其经过了多次创建，多个对象会共享一个静态变量。</p>
+<h2 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h2><p>静态变量在程序生命周期中只分配一次，其分配在单独的空间中。如果一个类中有静态变量，其经过了多次创建，多个对象会共享一个静态变量。</p>
 <blockquote>
 <p>静态对象贯穿程序的生命周期。</p>
 </blockquote>
@@ -512,32 +510,28 @@
 <p>类中的static变量必须在类外面初始化，不能直接初始化：</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="comment">//在外面初始化：</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> money;</span><br><span class="line">        <span class="comment">//直接初始化:error</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> jk = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 静态函数,可以直接初始化</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">123</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Box::money = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="Volatile">Volatile</h2>
-<blockquote>
+<h2 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h2><blockquote>
 <p>在java中volatile修饰变量，表示该变量只存在一个引用，被所有线程共享，线程栈内存中不存储该变量的副本。</p>
-</blockquote>
-<blockquote>
 <p>cpp中的作用与之类似，在多线程共享同一变量的时候，使用volatile修饰方式编译器优化把变量内存装入cpu寄存器，每一次读写都是该变量的真正内存地址。</p>
 </blockquote>
 <p><strong>常见问题：</strong></p>
 <ol>
-<li>volatile和const可以用时修饰吗？</li>
-</ol>
+<li><p>volatile和const可以用时修饰吗？</p>
 <blockquote>
 <p>可以</p>
 </blockquote>
-<ol start="2">
-<li>volatile和static可以同时修饰吗？</li>
-</ol>
+</li>
+<li><p>volatile和static可以同时修饰吗？</p>
 <blockquote>
 <p>可以</p>
 </blockquote>
-<ol start="3">
-<li>volatile和const、static可以用时修饰吗？</li>
-</ol>
+</li>
+<li><p>volatile和const、static可以用时修饰吗？</p>
 <blockquote>
 <p>可以</p>
 </blockquote>
+</li>
+</ol>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keyword">int</span> local = <span class="number">10</span>; </span><br><span class="line">    &lt;!--强制类型转换--&gt;</span><br><span class="line">    <span class="keyword">int</span> *ptr = (<span class="keyword">int</span>*) &amp;local; </span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Initial value of local : %d \n&quot;</span>, local); </span><br><span class="line">    </span><br><span class="line">    *ptr = <span class="number">100</span>; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Modified value of local: %d \n&quot;</span>, local); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">int</span> i = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">int</span> j = <span class="number">123</span>;</span><br><span class="line">    cout&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;j&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>指针也可以被volatile修饰，但是并不常见。</p>

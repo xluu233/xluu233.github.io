@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -444,13 +444,12 @@
       
     </h3>
     <div class="post-content-preview">
-      前言
-Anroid上的桌面小组件很早以前就有了，相比iOS的小组件一出来就大火不同，Android桌面小组件一直很难用，最近看到了Google微信号推送的文章：
+      前言Anroid上的桌面小组件很早以前就有了，相比iOS的小组件一出来就大火不同，Android桌面小组件一直很难用，最近看到了Google微信号推送的文章：
 
 更新您的 widget 以适配 Android 12
 创造无限可能 | 在 Android 12 中使用 widget
 
-我以为Android小组件间要崛起了！！开心的去看了[官网demo](user-interface-samp......
+我以为Android小组件间要崛起了！！开心的去看了官网demo](https://github.com/an......
     </div>
   </a>
   
@@ -483,10 +482,9 @@ Anroid上的桌面小组件很早以前就有了，相比iOS的小组件一出�
       
     </h3>
     <div class="post-content-preview">
-      类class
-类是面向对象中的特性，在c中是没有类的概念。通常用class来表示，cpp中有抽象类，但是没有接口这种说法，cpp支持多继承。
+      类class类是面向对象中的特性，在c中是没有类的概念。通常用class来表示，cpp中有抽象类，但是没有接口这种说法，cpp支持多继承。
 一个普通的类：
-class Fruit&#123;    private:            public:        Fruit();        ~Fruit();&#125;;Fruit::Fruit()&#123;&#125;Frui......
+class Fruit&#123;    private:            public:        Fruit();        ~Fruit();&#125;;Fruit::Fruit()&#123;&#125;Fruit......
     </div>
   </a>
   
@@ -519,18 +517,16 @@ class Fruit&#123;    private:            public:        Fruit();        ~Fruit()
       
     </h3>
     <div class="post-content-preview">
-      Const
-const代表不可更改，和kotlin中const类似。
+      Constconst代表不可更改，和kotlin中const类似。
 一般用法：
 const int i = 0;//errori = 2;
 普通变量申明在顶层中，可以被其他文件访问。const只可以被本文件中的函数访问，可以使用extern来访问其他文件中的const变量。
-指针与const：
+指针与const：  
 
 指针与const配合使用有几种不同的情况
 
 
 const在前，修饰数据类型
-
 const in......
     </div>
   </a>
@@ -567,15 +563,13 @@ const in......
       
 数组是一个固定大小、相同类型的连续有序集合，是一块连续的内存块
 
-数组的几种实现方式
-原生数组
-c++原生提供的数据结构，创建形式为：
+数组的几种实现方式原生数组c++原生提供的数据结构，创建形式为：
 type name[size]
 type为数据类型，name为名称，size为初始化大小
 初始化：
 char name[4];
 初始化并赋值：
-char name[4] = &#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C......
+char name[4] = &#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#......
     </div>
   </a>
   
@@ -608,9 +602,7 @@ char name[4] = &#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C......
       
     </h3>
     <div class="post-content-preview">
-      类&amp;对象
-一个普普通通的类：
-class Box&#123;        // 私有成员    private:        double length;        double width;    // 公共成员    public:        int size;    // 内部定义成员函数    double getV()&#123;        return l......
+      类&amp;对象一个普普通通的类：class Box&#123;        // 私有成员    private:        double length;        double width;    // 公共成员    public:        int size;    // 内部定义成员函数    double getV()&#123;        return len......
     </div>
   </a>
   
@@ -643,8 +635,7 @@ class Box&#123;        // 私有成员    private:        double length;        
       
     </h3>
     <div class="post-content-preview">
-      基础语法
-main函数：
+      基础语法main函数：
 
 每个单独的程序必须要有一个main函数，除非这个程序是一个库。
 
@@ -653,7 +644,7 @@ iostream.h:
 
 这玩意是基础的输入输出头文件，我们一般使用如下：
 
-#include &lt;iostream.h&gt;using name......
+#include &lt;iostream.h&gt;using names......
     </div>
   </a>
   
@@ -690,7 +681,6 @@ iostream.h:
 之前介绍了各种界面间的切换动画，这次我们介绍下常用的列表加载动画
 
 实现效果：
-
 居中加载、和滑动动画
 
 
@@ -702,9 +692,8 @@ iostream.h:
 从右边加载
 
 
-实现代码
-加载动画：
-val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationController = LayoutAnimationController......
+实现代码加载动画：
+val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationController = LayoutAnimationController(a......
     </div>
   </a>
   
@@ -738,12 +727,11 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
     </h3>
     <div class="post-content-preview">
       如何设置Activity的切换动画？
-
 上一片文章我们讲述了Navigation切换动画，其实在Activity也能轻松实现切换动画。只不过我们很少去给activity设置切换动画，一般都是系统默认的。
 
 在Activity类中提供了overridePendingTransition方法:
 
-其参数意思是设置进入动画和退出动画，调用时机为：startActivity(intent)之后或者f......
+其参数意思是设置进入动画和退出动画，调用时机为：startActivity(intent)之后或者fi......
     </div>
   </a>
   
@@ -776,8 +764,7 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
       
     </h3>
     <div class="post-content-preview">
-      前言
-之前的文章介绍了网络封装、组件化、基础工具等，有兴趣的可以查看：
+      前言之前的文章介绍了网络封装、组件化、基础工具等，有兴趣的可以查看：
 写一个MVVM快速开发框架（一）基础类封装
 写一个MVVM快速开发框架（二）组件化改造 
 写一个MVVM快速开发框架（三）单Activity+多Fragment模式
@@ -785,7 +772,7 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
 封装一个好看的吐司工具
 一点也不炫酷的Navigation动画
 
-不知道从什么说起，就记录一些关于数据的那些事吧，与数据打交道......
+不知道从什么说起，就记录一些关于数据的那些事吧，与数据打交道是......
     </div>
   </a>
   
@@ -825,9 +812,7 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
       
 在上一篇中我们说到了使用Navigation导航Fragment，介绍了Navigation的基本使用，然后突然想到做一些Fragment的跳转动画，所以产生了一些内容哈哈哈
 
-Navigation中使用动画
-通常我们设置一个跳转action是酱紫的：
-&lt;action    android:id=&quot;@+id/action_scale1&quot;    app:destin......
+Navigation中使用动画通常我们设置一个跳转action是酱紫的：&lt;action    android:id=&quot;@+id/action_scale1&quot;    app:destinat......
     </div>
   </a>
   
@@ -871,23 +856,11 @@ Navigation中使用动画
         <div class="tags">
           
           
-          <a href="/tags/#自定义View" title="自定义View" rel="3">自定义View</a>
-          
-          
-          
           <a href="/tags/#widget" title="widget" rel="1">widget</a>
           
           
           
-          <a href="/tags/#不规则裁剪" title="不规则裁剪" rel="1">不规则裁剪</a>
-          
-          
-          
-          <a href="/tags/#相册" title="相册" rel="1">相册</a>
-          
-          
-          
-          <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
+          <a href="/tags/#自定义View" title="自定义View" rel="3">自定义View</a>
           
           
           
@@ -895,7 +868,7 @@ Navigation中使用动画
           
           
           
-          <a href="/tags/#Android" title="Android" rel="1">Android</a>
+          <a href="/tags/#不规则裁剪" title="不规则裁剪" rel="1">不规则裁剪</a>
           
           
           
@@ -904,6 +877,18 @@ Navigation中使用动画
           
           
           <a href="/tags/#Replaykit2" title="Replaykit2" rel="1">Replaykit2</a>
+          
+          
+          
+          <a href="/tags/#Android" title="Android" rel="1">Android</a>
+          
+          
+          
+          <a href="/tags/#相册" title="相册" rel="1">相册</a>
+          
+          
+          
+          <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
           
           
           
@@ -947,19 +932,19 @@ Navigation中使用动画
           
           
           
-          <a href="/tags/#Navigation" title="Navigation" rel="2">Navigation</a>
-          
-          
-          
-          <a href="/tags/#动画" title="动画" rel="1">动画</a>
-          
-          
-          
           <a href="/tags/#线程安全" title="线程安全" rel="1">线程安全</a>
           
           
           
           <a href="/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
+          
+          
+          
+          <a href="/tags/#Navigation" title="Navigation" rel="2">Navigation</a>
+          
+          
+          
+          <a href="/tags/#动画" title="动画" rel="1">动画</a>
           
           
         </div>

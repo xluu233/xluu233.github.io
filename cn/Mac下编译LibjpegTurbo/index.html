@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -457,22 +457,16 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="Mac平台编译Libjpegturbo的优势">Mac平台编译Libjpegturbo的优势</h3>
-<p>我尝试过在windows,linux（Ubuntu），mac下用不同的方式来编译，最后实际测试，在mac平台下，用cmake（非AS自带）编译性能是最好的。</p>
-<h4 id="1-Debug与Release版本区别：">1.Debug与Release版本区别：</h4>
-<p>debug主要用于测试，release主要用于正式版本。按道理是一样的，但是在实际测试过程中发现，debug版本性能非常差劲，在Android上的表现甚至还不如原生方法，release版本提升非常大，比如:debug版本压缩一张1080P图片要150ms，release版本只要10-30ms.</p>
-<h4 id="2-cmake与as编译区别：">2.cmake与as编译区别：</h4>
-<p>as自带cmake编译工具，只有10和6两个大版本，而编译出来的想过大多数不理想。性能表现差劲 。所以我们选用了自己的编译链工具cmake，编写sh脚本编译。用AS编译的方法可以去看我前几篇文章，以下只介绍cmake编译。</p>
-<h4 id="3-为什么要在mac下编译：">3.为什么要在mac下编译：</h4>
-<p>上面提到了在不同平台不同工具下编译的结果都是不同的。在mac平台下编译的.so文件，以手机cpu常用构架v8a为例，压缩一张1080P图片只要10ms,但是在其他平台编译的文件需要30ms,差距还是非常大的。实测windows和linux都不能达到这个效果。</p>
-<h3 id="编译准备">编译准备</h3>
-<ol>
+        <h3 id="Mac平台编译Libjpegturbo的优势"><a href="#Mac平台编译Libjpegturbo的优势" class="headerlink" title="Mac平台编译Libjpegturbo的优势"></a>Mac平台编译Libjpegturbo的优势</h3><p>我尝试过在windows,linux（Ubuntu），mac下用不同的方式来编译，最后实际测试，在mac平台下，用cmake（非AS自带）编译性能是最好的。</p>
+<h4 id="1-Debug与Release版本区别："><a href="#1-Debug与Release版本区别：" class="headerlink" title="1.Debug与Release版本区别："></a>1.Debug与Release版本区别：</h4><p>debug主要用于测试，release主要用于正式版本。按道理是一样的，但是在实际测试过程中发现，debug版本性能非常差劲，在Android上的表现甚至还不如原生方法，release版本提升非常大，比如:debug版本压缩一张1080P图片要150ms，release版本只要10-30ms.</p>
+<h4 id="2-cmake与as编译区别："><a href="#2-cmake与as编译区别：" class="headerlink" title="2.cmake与as编译区别："></a>2.cmake与as编译区别：</h4><p>as自带cmake编译工具，只有10和6两个大版本，而编译出来的想过大多数不理想。性能表现差劲 。所以我们选用了自己的编译链工具cmake，编写sh脚本编译。用AS编译的方法可以去看我前几篇文章，以下只介绍cmake编译。</p>
+<h4 id="3-为什么要在mac下编译："><a href="#3-为什么要在mac下编译：" class="headerlink" title="3.为什么要在mac下编译："></a>3.为什么要在mac下编译：</h4><p>上面提到了在不同平台不同工具下编译的结果都是不同的。在mac平台下编译的.so文件，以手机cpu常用构架v8a为例，压缩一张1080P图片只要10ms,但是在其他平台编译的文件需要30ms,差距还是非常大的。实测windows和linux都不能达到这个效果。</p>
+<h3 id="编译准备"><a href="#编译准备" class="headerlink" title="编译准备"></a>编译准备</h3><ol>
 <li>源码下载，<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/libjpeg-turbo/">https://sourceforge.net/projects/libjpeg-turbo/</a> 建议下载2.0.x最新版本</li>
 <li>ndk下载，在ndk17之前是支持gcc编译的，在ndk17之后默认clang编译，所以我们要下载ndk16b版本。<a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/downloads/">https://developer.android.google.cn/ndk/downloads/</a></li>
 <li>cmake工具和nasm工具，如何安装还请自行查找教程。</li>
 </ol>
-<h3 id="源码Cmakelist-txt修改">源码Cmakelist.txt修改</h3>
-<blockquote>
+<h3 id="源码Cmakelist-txt修改"><a href="#源码Cmakelist-txt修改" class="headerlink" title="源码Cmakelist.txt修改"></a>源码Cmakelist.txt修改</h3><blockquote>
 <p>在编写脚本前，我们需要对源码进行一些微小的修改，主要是注释掉版本号，不然你编译出来的.so文件会有一些莫名其妙的后缀哦。</p>
 </blockquote>
 <p>最外层的主Cmakelist.text:</p>
@@ -480,23 +474,19 @@
 <p>sharelib文件夹下的cmakelist.txt修改：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set_target_properties</span>(jpeg PROPERTIES SOVERSION <span class="variable">$&#123;SO_MAJOR_VERSION&#125;</span></span><br><span class="line">  VERSION <span class="variable">$&#123;SO_MAJOR_VERSION&#125;</span>.<span class="variable">$&#123;SO_AGE&#125;</span>.<span class="variable">$&#123;SO_MINOR_VERSION&#125;</span>)</span><br></pre></td></tr></table></figure>
 <p>找到以上两处注释掉，或者直接删除就好了。下面开始编写脚本文件。</p>
-<h3 id="编写脚本文件">编写脚本文件</h3>
-<h4 id="build-sh文件">build.sh文件</h4>
-<p>新建build.sh文件，需要修改的地方就是ndk路径了，主意要使用16b版本。</p>
+<h3 id="编写脚本文件"><a href="#编写脚本文件" class="headerlink" title="编写脚本文件"></a>编写脚本文件</h3><h4 id="build-sh文件"><a href="#build-sh文件" class="headerlink" title="build.sh文件"></a>build.sh文件</h4><p>新建build.sh文件，需要修改的地方就是ndk路径了，主意要使用16b版本。</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment"># 获取指定架构名称</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$#</span>&quot;</span> -lt 1 ]; then</span><br><span class="line">	<span class="attribute">THE_ARCH</span>=armv7</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="attribute">THE_ARCH</span>=$(tr [A-Z] [a-z] &lt;&lt;&lt; <span class="string">&quot;<span class="variable">$1</span>&quot;</span>)</span><br><span class="line">fi</span><br><span class="line"><span class="comment"># 查找指定架构参数信息</span></span><br><span class="line">case <span class="string">&quot;<span class="variable">$THE_ARCH</span>&quot;</span> <span class="keyword">in</span></span><br><span class="line">	arm|armv5|armv6|armv7|armeabi)</span><br><span class="line">		# 配置参数</span><br><span class="line">		# toolchain下的文件夹名称前缀</span><br><span class="line">		<span class="attribute">TOOLCHAIN_LEFT</span>=arm-linux-androideabi</span><br><span class="line">		# android版本下的编译器</span><br><span class="line">		<span class="attribute">ANDROID_PLATFORMS</span>=arm</span><br><span class="line">		# CMAKE_SYSTEM_PROCESSOR下的配置名称</span><br><span class="line">		<span class="attribute">PROCESSOR_PLATFORMS</span>=arm</span><br><span class="line">		# prebuilt文件夹下的编译器名称</span><br><span class="line">		<span class="attribute">TOOLCHAIN_PLEBUILT</span>=arm-linux-androideabi</span><br><span class="line">		# include下全名</span><br><span class="line">		<span class="attribute">INCLUDE_PLATFORMS</span>=arm-linux-androideabi</span><br><span class="line">		# CFLAGS是否有配置项</span><br><span class="line">		<span class="attribute">CFLAGS_MARCH</span>=<span class="string">&quot;-march=armv7-a -mfloat-abi=softfp -fprefetch-loop-arrays&quot;</span></span><br><span class="line">		# 文件夹名称</span><br><span class="line">		<span class="attribute">BUILD_NAME</span>=armeabi</span><br><span class="line">		;;</span><br><span class="line">	armv7a|armeabi-v7a)</span><br><span class="line">		# 配置参数</span><br><span class="line">		# toolchain下的文件夹名称前缀</span><br><span class="line">		<span class="attribute">TOOLCHAIN_LEFT</span>=arm-linux-androideabi</span><br><span class="line">		# android版本下的编译器</span><br><span class="line">		<span class="attribute">ANDROID_PLATFORMS</span>=arm</span><br><span class="line">		# CMAKE_SYSTEM_PROCESSOR下的配置名称</span><br><span class="line">		<span class="attribute">PROCESSOR_PLATFORMS</span>=arm</span><br><span class="line">		# prebuilt文件夹下的编译器名称</span><br><span class="line">		<span class="attribute">TOOLCHAIN_PLEBUILT</span>=arm-linux-androideabi</span><br><span class="line">		# include下全名</span><br><span class="line">		<span class="attribute">INCLUDE_PLATFORMS</span>=arm-linux-androideabi</span><br><span class="line">		# CFLAGS是否有配置项</span><br><span class="line">		<span class="attribute">CFLAGS_MARCH</span>=<span class="string">&quot;-march=armv7-a -mfloat-abi=softfp -fprefetch-loop-arrays&quot;</span></span><br><span class="line">		<span class="attribute">BUILD_NAME</span>=armeabi-v7a</span><br><span class="line">		;;</span><br><span class="line">	armv8|armv8a|aarch64|arm64|arm64-v8a)</span><br><span class="line">		# 配置参数</span><br><span class="line">		# toolchain下的文件夹名称前缀</span><br><span class="line">		<span class="attribute">TOOLCHAIN_LEFT</span>=aarch64-linux-android</span><br><span class="line">		# android版本下的编译器</span><br><span class="line">		<span class="attribute">ANDROID_PLATFORMS</span>=arm64</span><br><span class="line">		# CMAKE_SYSTEM_PROCESSOR下的配置名称</span><br><span class="line">		<span class="attribute">PROCESSOR_PLATFORMS</span>=aarch64</span><br><span class="line">		# prebuilt文件夹下的编译器名称</span><br><span class="line">		<span class="attribute">TOOLCHAIN_PLEBUILT</span>=aarch64-linux-android</span><br><span class="line">		# include下全名</span><br><span class="line">		<span class="attribute">INCLUDE_PLATFORMS</span>=aarch64-linux-android</span><br><span class="line">		# CFLAGS是否有配置项</span><br><span class="line">		<span class="attribute">CFLAGS_MARCH</span>=<span class="string">&quot;&quot;</span></span><br><span class="line">		<span class="attribute">BUILD_NAME</span>=arm64-v8a</span><br><span class="line">		;;</span><br><span class="line">	x86)</span><br><span class="line">		# 配置参数</span><br><span class="line">		# toolchain下的文件夹名称前缀</span><br><span class="line">		<span class="attribute">TOOLCHAIN_LEFT</span>=x86</span><br><span class="line">		# android版本下的编译器</span><br><span class="line">		<span class="attribute">ANDROID_PLATFORMS</span>=x86</span><br><span class="line">		# CMAKE_SYSTEM_PROCESSOR下的配置名称</span><br><span class="line">		<span class="attribute">PROCESSOR_PLATFORMS</span>=x86</span><br><span class="line">		# prebuilt文件夹下的编译器名称</span><br><span class="line">		<span class="attribute">TOOLCHAIN_PLEBUILT</span>=i686-linux-android</span><br><span class="line">		# include下全名</span><br><span class="line">		<span class="attribute">INCLUDE_PLATFORMS</span>=i686-linux-android</span><br><span class="line">		# CFLAGS是否有配置项</span><br><span class="line">		<span class="attribute">CFLAGS_MARCH</span>=<span class="string">&quot;&quot;</span></span><br><span class="line">		<span class="attribute">BUILD_NAME</span>=x86</span><br><span class="line">		;;</span><br><span class="line">	x86_64|x64)</span><br><span class="line">		# 配置参数</span><br><span class="line">		# toolchain下的文件夹名称前缀</span><br><span class="line">		<span class="attribute">TOOLCHAIN_LEFT</span>=x86_64</span><br><span class="line">		# android版本下的编译器</span><br><span class="line">		<span class="attribute">ANDROID_PLATFORMS</span>=x86_64</span><br><span class="line">		# CMAKE_SYSTEM_PROCESSOR下的配置名称</span><br><span class="line">		<span class="attribute">PROCESSOR_PLATFORMS</span>=x86_64</span><br><span class="line">		# prebuilt文件夹下的编译器名称</span><br><span class="line">		<span class="attribute">TOOLCHAIN_PLEBUILT</span>=x86_64-linux-android</span><br><span class="line">		# include下全名</span><br><span class="line">		<span class="attribute">INCLUDE_PLATFORMS</span>=x86_64-linux-android</span><br><span class="line">		# CFLAGS是否有配置项</span><br><span class="line">		<span class="attribute">CFLAGS_MARCH</span>=<span class="string">&quot;&quot;</span></span><br><span class="line">		<span class="attribute">BUILD_NAME</span>=x86_64</span><br><span class="line">		;;</span><br><span class="line">esac</span><br><span class="line"><span class="comment"># 基本配置</span></span><br><span class="line"><span class="comment">#ndk所在目录</span></span><br><span class="line"><span class="attribute">NDK_PATH</span>=/Users/alexlu/Desktop/ndk/android-ndk-r16b</span><br><span class="line"><span class="comment">#编译环境这里是 macOS</span></span><br><span class="line"><span class="attribute">BUILD_PLATFORM</span>=darwin-x86_64</span><br><span class="line"><span class="comment">#编译工具链版本</span></span><br><span class="line"><span class="attribute">TOOLCHAIN_VERSION</span>=4.9</span><br><span class="line"><span class="comment">#最低兼容</span></span><br><span class="line"><span class="attribute">ANDROID_VERSION</span>=21</span><br><span class="line"><span class="comment"># 编译配置</span></span><br><span class="line"><span class="attribute">SYSROOT</span>=<span class="variable">$&#123;NDK_PATH&#125;</span>/platforms/android-$&#123;ANDROID_VERSION&#125;/arch-<span class="variable">$&#123;ANDROID_PLATFORMS&#125;</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CFLAGS</span>=<span class="string">&quot;<span class="variable">$&#123;CFLAGS_MARCH&#125;</span> -D__ANDROID_API__=<span class="variable">$&#123;ANDROID_VERSION&#125;</span> --sysroot=<span class="variable">$&#123;SYSROOT&#125;</span> \</span></span><br><span class="line"><span class="string">  -isystem <span class="variable">$&#123;NDK_PATH&#125;</span>/sysroot/usr/include \</span></span><br><span class="line"><span class="string">  -isystem <span class="variable">$&#123;NDK_PATH&#125;</span>/sysroot/usr/include/<span class="variable">$&#123;INCLUDE_PLATFORMS&#125;</span>&quot;</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">LDFLAGS</span>=-pie</span><br><span class="line"><span class="attribute">TOOLCHAIN</span>=<span class="variable">$&#123;NDK_PATH&#125;</span>/toolchains/$&#123;TOOLCHAIN_LEFT&#125;-<span class="variable">$&#123;TOOLCHAIN_VERSION&#125;</span>/prebuilt/<span class="variable">$&#123;BUILD_PLATFORM&#125;</span></span><br><span class="line"><span class="comment"># 创建该架构下的对应文件夹</span></span><br><span class="line">mkdir -p <span class="variable">$&#123;BUILD_NAME&#125;</span></span><br><span class="line"> </span><br><span class="line">cd <span class="variable">$&#123;BUILD_NAME&#125;</span></span><br><span class="line">cat &lt;&lt;EOF &gt;toolchain.cmake</span><br><span class="line"><span class="builtin-name">set</span>(CMAKE_SYSTEM_NAME Linux)</span><br><span class="line"><span class="builtin-name">set</span>(CMAKE_SYSTEM_PROCESSOR <span class="variable">$&#123;ANDROID_PLATFORMS&#125;</span>)</span><br><span class="line"><span class="builtin-name">set</span>(CMAKE_C_COMPILER <span class="variable">$&#123;TOOLCHAIN&#125;</span>/bin/<span class="variable">$&#123;TOOLCHAIN_PLEBUILT&#125;</span>-gcc)</span><br><span class="line"><span class="builtin-name">set</span>(CMAKE_FIND_ROOT_PATH <span class="variable">$&#123;TOOLCHAIN&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_PLEBUILT&#125;</span>)</span><br><span class="line">EOF</span><br><span class="line"> </span><br><span class="line">cmake -G<span class="string">&quot;Unix Makefiles&quot;</span> <span class="attribute">-DCMAKE_TOOLCHAIN_FILE</span>=toolchain.cmake \</span><br><span class="line">	<span class="attribute">-DCMAKE_POSITION_INDEPENDENT_CODE</span>=1 \</span><br><span class="line">	<span class="built_in">..</span>/libjpeg-turbo # 这里是源库的地址</span><br><span class="line"> </span><br><span class="line">make clean</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h4 id="build-all-sh">build_all.sh</h4>
-<p>主要就是将各个构架全都执行一遍。</p>
+<h4 id="build-all-sh"><a href="#build-all-sh" class="headerlink" title="build_all.sh"></a>build_all.sh</h4><p>主要就是将各个构架全都执行一遍。</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">for</span> arch in armeabi armeabi-v<span class="number">7</span>a arm<span class="number">64</span>-v<span class="number">8</span>a x<span class="number">86</span> x<span class="number">86</span>_<span class="number">64</span></span><br><span class="line"><span class="attribute">do</span></span><br><span class="line">	<span class="attribute">bash</span> build.sh $arch</span><br><span class="line"><span class="attribute">done</span></span><br></pre></td></tr></table></figure>
 <p><strong>以上脚本编写完成后。开始以下步骤：</strong></p>
 <ol>
 <li>将源码目录修改为libjpeg_turbo   (与sh脚本对应就行了)</li>
 <li>在桌面新建test文件夹，将源码libjpeg-turbo文件夹和两个脚本文件放入。</li>
-<li>打开终端，执行：</li>
+<li>打开终端，执行：<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">1.<span class="keyword">cd</span> desktop/<span class="keyword">test</span></span><br><span class="line"> </span><br><span class="line">2.sudo <span class="keyword">sh</span> build_all.<span class="keyword">sh</span></span><br><span class="line"> </span><br><span class="line">输入密码即可（<span class="keyword">mac</span>和linux下密码是不显示的哦?）</span><br></pre></td></tr></table></figure>
+或者：</li>
 </ol>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">1.<span class="keyword">cd</span> desktop/<span class="keyword">test</span></span><br><span class="line"> </span><br><span class="line">2.sudo <span class="keyword">sh</span> build_all.<span class="keyword">sh</span></span><br><span class="line"> </span><br><span class="line">输入密码即可（<span class="keyword">mac</span>和linux下密码是不显示的哦?）</span><br></pre></td></tr></table></figure>
-<p>或者：</p>
 <figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">1. <span class="keyword">cd</span> desktop/<span class="keyword">test</span></span><br><span class="line"> </span><br><span class="line">2. chmod 777 build_all.<span class="keyword">sh</span></span><br><span class="line"> </span><br><span class="line">3. ./build_all.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
+<ol>
 <li>等待完成编译即可</li>
 </ol>
 <hr>

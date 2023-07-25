@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -397,7 +397,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">841</span> In Total
+              Words <span class="post-count">839</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -462,54 +462,29 @@
         <blockquote>
 <p>在上一篇中我们说到了使用Navigation导航Fragment，介绍了Navigation的基本使用，然后突然想到做一些Fragment的跳转动画，所以产生了一些内容哈哈哈</p>
 </blockquote>
-<h3 id="Navigation中使用动画">Navigation中使用动画</h3>
-<p>通常我们设置一个跳转action是酱紫的：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;action</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/action_scale1&quot;</span></span><br><span class="line">    app:<span class="attribute">destination</span>=<span class="string">&quot;@id/fragmentTwo&quot;</span></span><br><span class="line">    app:<span class="attribute">enterAnim</span>=<span class="string">&quot;@anim/scale_in_right&quot;</span></span><br><span class="line">    app:<span class="attribute">exitAnim</span>=<span class="string">&quot;@anim/scale_out_left&quot;</span></span><br><span class="line">    app:<span class="attribute">popExitAnim</span>=<span class="string">&quot;@anim/scale_out_right&quot;</span></span><br><span class="line">    app:<span class="attribute">popEnterAnim</span>=<span class="string">&quot;@anim/scale_in_left&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
-<p>可以点击Fragment,通过傍边的小箭头设置：</p>
+<h3 id="Navigation中使用动画"><a href="#Navigation中使用动画" class="headerlink" title="Navigation中使用动画"></a>Navigation中使用动画</h3><p>通常我们设置一个跳转action是酱紫的：<br><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;action</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/action_scale1&quot;</span></span><br><span class="line">    app:<span class="attribute">destination</span>=<span class="string">&quot;@id/fragmentTwo&quot;</span></span><br><span class="line">    app:<span class="attribute">enterAnim</span>=<span class="string">&quot;@anim/scale_in_right&quot;</span></span><br><span class="line">    app:<span class="attribute">exitAnim</span>=<span class="string">&quot;@anim/scale_out_left&quot;</span></span><br><span class="line">    app:<span class="attribute">popExitAnim</span>=<span class="string">&quot;@anim/scale_out_right&quot;</span></span><br><span class="line">    app:<span class="attribute">popEnterAnim</span>=<span class="string">&quot;@anim/scale_in_left&quot;</span>/&gt;</span><br></pre></td></tr></table></figure><br>可以点击Fragment,通过傍边的小箭头设置：</p>
 <div align=center>
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3abb6419b9d942a38867e4fe3fd24247~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
+
+
 <p>其中可以设置目的地，动画，返回地址：</p>
 <div align=center>
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7707704d6b574a088c6d8537170cb824~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
+
+
 <p>设置动画需要在res目录下新建anim文件夹，保存动画xml文件：</p>
 <div align=center>
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/32f8963fd8ee44aeb43c7a1d8c3b71af~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
-<p><strong>关于几个参数的介绍：</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>app:enterAnim</td>
-<td>目标Fragment进场动画</td>
-</tr>
-<tr>
-<td>app:exitAnim</td>
-<td>原Fragment退出动画</td>
-</tr>
-<tr>
-<td>app:popExitAnim</td>
-<td>返回时，原Fragment退出动画</td>
-</tr>
-<tr>
-<td>app:popEnterAnim</td>
-<td>返回Fragment进场动画</td>
-</tr>
-</tbody>
-</table>
-<h3 id="动画属性说明">动画属性说明</h3>
-<blockquote>
-<p>这里使用的是补间动画，就是显示样式看起来改变了，其实view的实际位置是没有变化的：</p>
+
+<p><strong>关于几个参数的介绍：</strong><br>| 属性 | 详情 |<br>| —- | —- |<br>| app:enterAnim | 目标Fragment进场动画 |<br>| app:exitAnim | 原Fragment退出动画 |<br>| app:popExitAnim | 返回时，原Fragment退出动画 |<br>| app:popEnterAnim | 返回Fragment进场动画 |</p>
+<h3 id="动画属性说明"><a href="#动画属性说明" class="headerlink" title="动画属性说明"></a>动画属性说明</h3><blockquote>
+<p>这里使用的是补间动画，就是显示样式看起来改变了，其实view的实际位置是没有变化的：<br><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:duration</span>=<span class="string">&quot;4000&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:fillAfter</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:fillBefore</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:interpolator</span>=<span class="string">&quot;@[package:]anim/interpolator_resource&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatMode</span>=<span class="string">&quot;restart | reverse&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatCount</span> = <span class="string">“0”</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shareInterpolator</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:startOffset</span>=<span class="string">&quot;float&quot;</span>&gt;</span></span><br><span class="line">    &lt;alpha</span><br><span class="line">        android:fromAlpha=&quot;float&quot;</span><br><span class="line">        android:toAlpha=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;scale</span><br><span class="line">        android:fromXScale=&quot;float&quot;</span><br><span class="line">        android:fromYScale=&quot;float&quot;</span><br><span class="line">        android:pivotX=&quot;float&quot;</span><br><span class="line">        android:pivotY=&quot;float&quot;</span><br><span class="line">        android:toXScale=&quot;float&quot;</span><br><span class="line">        android:toYScale=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;rotate</span><br><span class="line">        android:fromDegrees=&quot;float&quot;</span><br><span class="line">        android:pivotX=&quot;float&quot;</span><br><span class="line">        android:pivotY=&quot;float&quot;</span><br><span class="line">        android:toDegrees=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;translate</span><br><span class="line">        android:fromXDelta=&quot;float&quot;</span><br><span class="line">        android:fromYDelta=&quot;float&quot;</span><br><span class="line">        android:toXDelta=&quot;float&quot;</span><br><span class="line">        android:toYDelta=&quot;float&quot; /&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:duration</span>=<span class="string">&quot;4000&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:fillAfter</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:fillBefore</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:interpolator</span>=<span class="string">&quot;@[package:]anim/interpolator_resource&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatMode</span>=<span class="string">&quot;restart | reverse&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatCount</span> = <span class="string">“0”</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shareInterpolator</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:startOffset</span>=<span class="string">&quot;float&quot;</span>&gt;</span></span><br><span class="line">    &lt;alpha</span><br><span class="line">        android:fromAlpha=&quot;float&quot;</span><br><span class="line">        android:toAlpha=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;scale</span><br><span class="line">        android:fromXScale=&quot;float&quot;</span><br><span class="line">        android:fromYScale=&quot;float&quot;</span><br><span class="line">        android:pivotX=&quot;float&quot;</span><br><span class="line">        android:pivotY=&quot;float&quot;</span><br><span class="line">        android:toXScale=&quot;float&quot;</span><br><span class="line">        android:toYScale=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;rotate</span><br><span class="line">        android:fromDegrees=&quot;float&quot;</span><br><span class="line">        android:pivotX=&quot;float&quot;</span><br><span class="line">        android:pivotY=&quot;float&quot;</span><br><span class="line">        android:toDegrees=&quot;float&quot; /&gt;</span><br><span class="line">    &lt;translate</span><br><span class="line">        android:fromXDelta=&quot;float&quot;</span><br><span class="line">        android:fromYDelta=&quot;float&quot;</span><br><span class="line">        android:toXDelta=&quot;float&quot;</span><br><span class="line">        android:toYDelta=&quot;float&quot; /&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>常用的属性：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -536,7 +511,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>常用设置：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -559,54 +536,50 @@
 </tr>
 </tbody>
 </table>
-<p>具体的参数太多了，可以参考：<br>
-<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1aabbd498262">https://www.jianshu.com/p/1aabbd498262</a><br>
-<a target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/android-animation/1.html">https://wiki.jikexueyuan.com/project/android-animation/1.html</a></p>
+</div>
+<p>具体的参数太多了，可以参考：<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1aabbd498262">https://www.jianshu.com/p/1aabbd498262</a><br><a target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/android-animation/1.html">https://wiki.jikexueyuan.com/project/android-animation/1.html</a></p>
 <blockquote>
 <p>接下来我们自己定义一些跳转动画，为了让大家看清楚，时间设置的会长一点，实际使用建议设置短一点，这样看起来干净利落。我一般将经场动画设置为400ms，出场动画设置为250ms</p>
 </blockquote>
-<h3 id="样式总结">样式总结</h3>
-<h4 id="渐入渐出样式">渐入渐出样式</h4>
-<p>AS提供了一些默认的动画，是<strong>渐入渐出样式</strong>：</p>
+<h3 id="样式总结"><a href="#样式总结" class="headerlink" title="样式总结"></a>样式总结</h3><h4 id="渐入渐出样式"><a href="#渐入渐出样式" class="headerlink" title="渐入渐出样式"></a>渐入渐出样式</h4><p>AS提供了一些默认的动画，是<strong>渐入渐出样式</strong>：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;action</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/action_default&quot;</span></span><br><span class="line">    app:<span class="attribute">destination</span>=<span class="string">&quot;@id/fragmentTwo&quot;</span></span><br><span class="line">    app:<span class="attribute">enterAnim</span>=<span class="string">&quot;@anim/nav_default_enter_anim&quot;</span></span><br><span class="line">    app:<span class="attribute">exitAnim</span>=<span class="string">&quot;@anim/nav_default_exit_anim&quot;</span></span><br><span class="line">    app:<span class="attribute">popEnterAnim</span>=<span class="string">&quot;@anim/nav_default_pop_enter_anim&quot;</span></span><br><span class="line">    app:<span class="attribute">popExitAnim</span>=<span class="string">&quot;@anim/nav_default_pop_exit_anim&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
 <div align=center>
 <img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/926b6bb68ac34aae9fd33a9893d1320a~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
-<h4 id="平移样式">平移样式</h4>
-<p>自定义<strong>平移样式</strong>，主要是设置X轴偏移：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;translate</span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;400&quot;</span></span><br><span class="line">    android:<span class="attribute">fromXDelta</span>=<span class="string">&quot;100%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">toYDelta</span>=<span class="string">&quot;0%&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="平移样式"><a href="#平移样式" class="headerlink" title="平移样式"></a>平移样式</h4><p>自定义<strong>平移样式</strong>，主要是设置X轴偏移：<br><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;translate</span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;400&quot;</span></span><br><span class="line">    android:<span class="attribute">fromXDelta</span>=<span class="string">&quot;100%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">toYDelta</span>=<span class="string">&quot;0%&quot;</span>/&gt;</span><br></pre></td></tr></table></figure></p>
 <div align=center>
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ea36f93c9e04411a9e3af78d0e08cae4~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
-<h4 id="缩放样式1">缩放样式1</h4>
-<p>自定义<strong>缩放样式</strong>，translate配合scale使用：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;translate</span><br><span class="line">    android:<span class="attribute">fromXDelta</span>=<span class="string">&quot;-100%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">toYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;300&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;scale</span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;300&quot;</span></span><br><span class="line">    android:<span class="attribute">fromXScale</span>=<span class="string">&quot;0.5&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYScale</span>=<span class="string">&quot;0.5&quot;</span></span><br><span class="line">    android:<span class="attribute">pivotX</span>=<span class="string">&quot;50%&quot;</span></span><br><span class="line">    android:<span class="attribute">pivotY</span>=<span class="string">&quot;50%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXScale</span>=<span class="string">&quot;1&quot;</span></span><br><span class="line">    android:<span class="attribute">toYScale</span>=<span class="string">&quot;1&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="缩放样式1"><a href="#缩放样式1" class="headerlink" title="缩放样式1"></a>缩放样式1</h4><p>自定义<strong>缩放样式</strong>，translate配合scale使用：<br><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;translate</span><br><span class="line">    android:<span class="attribute">fromXDelta</span>=<span class="string">&quot;-100%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">toYDelta</span>=<span class="string">&quot;0%&quot;</span></span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;300&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;scale</span><br><span class="line">    android:<span class="attribute">duration</span>=<span class="string">&quot;300&quot;</span></span><br><span class="line">    android:<span class="attribute">fromXScale</span>=<span class="string">&quot;0.5&quot;</span></span><br><span class="line">    android:<span class="attribute">fromYScale</span>=<span class="string">&quot;0.5&quot;</span></span><br><span class="line">    android:<span class="attribute">pivotX</span>=<span class="string">&quot;50%&quot;</span></span><br><span class="line">    android:<span class="attribute">pivotY</span>=<span class="string">&quot;50%&quot;</span></span><br><span class="line">    android:<span class="attribute">toXScale</span>=<span class="string">&quot;1&quot;</span></span><br><span class="line">    android:<span class="attribute">toYScale</span>=<span class="string">&quot;1&quot;</span> /&gt;</span><br></pre></td></tr></table></figure></p>
 <div align=center>
 <img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1cbf1e1b723f49a6b2d4c5f127719b64~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
-<h4 id="缩放样式2">缩放样式2</h4>
-<div align=center>
+
+<h4 id="缩放样式2"><a href="#缩放样式2" class="headerlink" title="缩放样式2"></a>缩放样式2</h4><div align=center>
 <img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/de757b12bf44479ea6f0c436d595d076~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
-<h4 id="缩放样式3">缩放样式3</h4>
-<div align=center>
+
+<h4 id="缩放样式3"><a href="#缩放样式3" class="headerlink" title="缩放样式3"></a>缩放样式3</h4><div align=center>
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8686378e93d434a801369d231030841~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
-<h4 id="从下往上出现">从下往上出现</h4>
-<div align=center>
+
+<h4 id="从下往上出现"><a href="#从下往上出现" class="headerlink" title="从下往上出现"></a>从下往上出现</h4><div align=center>
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/21a76122402345ceb7b4ac32f27e051d~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
-<h4 id="旋转">旋转</h4>
-<p>如果你想玩点花的，还可以这样子：</p>
+
+<h4 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h4><p>如果你想玩点花的，还可以这样子：  </p>
 <div align=center>
 <img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f564688d3be442148f7fd3145742ea5c~tplv-k3u1fbpfcp-watermark.image"/>
 </div>
+
+
+
 <hr>
-<p><strong>最后附上代码：</strong><br>
-<a target="_blank" rel="noopener" href="https://github.com/xluu233/NavigationAnim">https://github.com/xluu233/NavigationAnim</a></p>
+<p><strong>最后附上代码：</strong><br><a target="_blank" rel="noopener" href="https://github.com/xluu233/NavigationAnim">https://github.com/xluu233/NavigationAnim</a></p>
 <p><em>卑微Androider在线求个Star</em>😅</p>
-<p><strong>相关阅读：</strong><br>
-<a target="_blank" rel="noopener" href="https://juejin.cn/post/6996164509534519333">封装一个好看的吐司工具</a></p>
+<p><strong>相关阅读：</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6996164509534519333">封装一个好看的吐司工具</a></p>
 
 
         <hr>

@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -395,7 +395,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">809</span> In Total
+              Words <span class="post-count">808</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -457,8 +457,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="如何设置Activity的切换动画？">如何设置Activity的切换动画？</h3>
-<blockquote>
+        <h3 id="如何设置Activity的切换动画？"><a href="#如何设置Activity的切换动画？" class="headerlink" title="如何设置Activity的切换动画？"></a>如何设置Activity的切换动画？</h3><blockquote>
 <p>上一片文章我们讲述了<a target="_blank" rel="noopener" href="https://juejin.cn/post/6998067266365423646">Navigation切换动画</a>，其实在Activity也能轻松实现切换动画。只不过我们很少去给activity设置切换动画，一般都是系统默认的。</p>
 </blockquote>
 <p>在Activity类中提供了<code>overridePendingTransition</code>方法:</p>
@@ -466,43 +465,32 @@
 <p>其参数意思是设置进入动画和退出动画，调用时机为：startActivity(intent)之后或者finish()方法中</p>
 <p><strong>示例：</strong> 从MainActivity跳转到MainActivity2</p>
 <figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> intent = <span class="constructor">Intent(MainActivity::<span class="params">class</span>.<span class="params">java</span>, MainActivity2::<span class="params">class</span>.<span class="params">java</span>)</span></span><br><span class="line">start<span class="constructor">Activity(<span class="params">intent</span>)</span></span><br><span class="line"><span class="comment">//进入动画(for MainActivity2)和退出动画(for MainActivity)</span></span><br><span class="line">override<span class="constructor">PendingTransition(R.<span class="params">anim</span>.<span class="params">slide_in_left</span>,R.<span class="params">anim</span>.<span class="params">slide_out_right</span>)</span></span><br></pre></td></tr></table></figure>
-<p><strong>R.anim.slide_in_left:</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;translate</span><br><span class="line">        android:fromXDelta=&quot;-100%&quot;</span><br><span class="line">        android:toXDelta=&quot;0%&quot;</span><br><span class="line">        android:fromYDelta=&quot;0%&quot;</span><br><span class="line">        android:toYDelta=&quot;0%&quot;</span><br><span class="line">        android:duration=&quot;400&quot;/&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>R.anim.slide_out_right:</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">translate</span> <span class="attr">android:fromXDelta</span>=<span class="string">&quot;0%&quot;</span> <span class="attr">android:toXDelta</span>=<span class="string">&quot;100%&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">android:fromYDelta</span>=<span class="string">&quot;0%&quot;</span> <span class="attr">android:toYDelta</span>=<span class="string">&quot;0%&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">android:duration</span>=<span class="string">&quot;400&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>最终效果：</strong></p>
+<p><strong>R.anim.slide_in_left:</strong><br><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;translate</span><br><span class="line">        android:fromXDelta=&quot;-100%&quot;</span><br><span class="line">        android:toXDelta=&quot;0%&quot;</span><br><span class="line">        android:fromYDelta=&quot;0%&quot;</span><br><span class="line">        android:toYDelta=&quot;0%&quot;</span><br><span class="line">        android:duration=&quot;400&quot;/&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure><br><strong>R.anim.slide_out_right:</strong><br><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">translate</span> <span class="attr">android:fromXDelta</span>=<span class="string">&quot;0%&quot;</span> <span class="attr">android:toXDelta</span>=<span class="string">&quot;100%&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">android:fromYDelta</span>=<span class="string">&quot;0%&quot;</span> <span class="attr">android:toYDelta</span>=<span class="string">&quot;0%&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">android:duration</span>=<span class="string">&quot;400&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br></pre></td></tr></table></figure><br><strong>最终效果：</strong></p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9d68469280e34434ab180792d21506c4~tplv-k3u1fbpfcp-watermark.image" alt="2.gif"></p>
 <blockquote>
 <p>从ActivityA跳转到ActivityB, A使用的是enter_anim,B使用的是exit_anim</p>
 </blockquote>
-<p>返回的时候并没有执行动效，我们可以在finish中设置：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">finish</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.finish()</span><br><span class="line">    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回的时候并没有执行动效，我们可以在finish中设置：<br><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">finish</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.finish()</span><br><span class="line">    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>从ActivtyB返回ActivityA，B执行exit_anim，A执行enter_anim</p>
 </blockquote>
 <p><strong>现在我们得到一个完整的跳转动画：</strong></p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/24730740c2be4ca7b25e79ebdfda5dc8~tplv-k3u1fbpfcp-watermark.image" alt="2.gif"></p>
 <p>参考前面介绍的视图动画，我们可以创建一系列旋转缩放透明度动画，更多动效请在Demo中查看。</p>
-<h3 id="View无缝衔接">View无缝衔接</h3>
-<p>我们经常在一些app中看到界面跳转的时候，一些控件好像可以无缝衔接，比如搜索框、九宫格图片等</p>
-<p>现在来实现ImageView的无缝切换，在MainActivity界面中加入一张图片：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;ImageView</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/imageview&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_width</span>=<span class="string">&quot;200dp&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_marginTop</span>=<span class="string">&quot;32dp&quot;</span></span><br><span class="line">    android:<span class="attribute">adjustViewBounds</span>=<span class="string">&quot;true&quot;</span></span><br><span class="line">    android:<span class="attribute">src</span>=<span class="string">&quot;@drawable/test&quot;</span></span><br><span class="line">    android:<span class="attribute">transitionName</span>=<span class="string">&quot;shareElement&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintHorizontal_bias</span>=<span class="string">&quot;0.0&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintStart_toStartOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintTop_toBottomOf</span>=<span class="string">&quot;@+id/radioGroup&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>重点是<code>android:transitionName=&quot;shareElement&quot;</code>用来设置<code>共享元素</code>名称，在ActivityB布局中加入同样的控件。</p>
-<p>使用<code>ActivityOptionsCompat</code>进行获取共享元素，注意只在Andoid5.0以上有效：</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> bundle = <span class="module-access"><span class="module"><span class="identifier">ActivityOptionsCompat</span>.</span></span>make<span class="constructor">SceneTransitionAnimation(<span class="params">this</span>,<span class="params">binding</span>.<span class="params">imageview</span>,<span class="string">&quot;shareElement&quot;</span>)</span>.<span class="keyword">to</span><span class="constructor">Bundle()</span></span><br><span class="line"><span class="keyword">val</span> intent = <span class="constructor">Intent(<span class="params">this</span>,MainActivity3::<span class="params">class</span>.<span class="params">java</span>)</span></span><br><span class="line">start<span class="constructor">Activity(<span class="params">intent</span>,<span class="params">bundle</span>)</span></span><br></pre></td></tr></table></figure>
-<p><strong>最终效果：</strong></p>
+<h3 id="View无缝衔接"><a href="#View无缝衔接" class="headerlink" title="View无缝衔接"></a>View无缝衔接</h3><p>我们经常在一些app中看到界面跳转的时候，一些控件好像可以无缝衔接，比如搜索框、九宫格图片等</p>
+<p>现在来实现ImageView的无缝切换，在MainActivity界面中加入一张图片：<br><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;ImageView</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/imageview&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_width</span>=<span class="string">&quot;200dp&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_marginTop</span>=<span class="string">&quot;32dp&quot;</span></span><br><span class="line">    android:<span class="attribute">adjustViewBounds</span>=<span class="string">&quot;true&quot;</span></span><br><span class="line">    android:<span class="attribute">src</span>=<span class="string">&quot;@drawable/test&quot;</span></span><br><span class="line">    android:<span class="attribute">transitionName</span>=<span class="string">&quot;shareElement&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintHorizontal_bias</span>=<span class="string">&quot;0.0&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintStart_toStartOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintTop_toBottomOf</span>=<span class="string">&quot;@+id/radioGroup&quot;</span> /&gt;</span><br></pre></td></tr></table></figure><br>重点是<code>android:transitionName=&quot;shareElement&quot;</code>用来设置<code>共享元素</code>名称，在ActivityB布局中加入同样的控件。</p>
+<p>使用<code>ActivityOptionsCompat</code>进行获取共享元素，注意只在Andoid5.0以上有效：<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> bundle = <span class="module-access"><span class="module"><span class="identifier">ActivityOptionsCompat</span>.</span></span>make<span class="constructor">SceneTransitionAnimation(<span class="params">this</span>,<span class="params">binding</span>.<span class="params">imageview</span>,<span class="string">&quot;shareElement&quot;</span>)</span>.<span class="keyword">to</span><span class="constructor">Bundle()</span></span><br><span class="line"><span class="keyword">val</span> intent = <span class="constructor">Intent(<span class="params">this</span>,MainActivity3::<span class="params">class</span>.<span class="params">java</span>)</span></span><br><span class="line">start<span class="constructor">Activity(<span class="params">intent</span>,<span class="params">bundle</span>)</span></span><br></pre></td></tr></table></figure><br><strong>最终效果：</strong></p>
 <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e473331cfab7430b9d7d58ec8aaa1a20~tplv-k3u1fbpfcp-watermark.image" alt="1.gif"></p>
 <blockquote>
 <p>这里在加载Bitmap大图的时候有明显卡顿，所以只建议在一些原生控件中使用</p>
 </blockquote>
 <p><strong>搜索框切换：</strong></p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d9ef912c6e1647c69902b32123c28ad3~tplv-k3u1fbpfcp-watermark.image" alt="1.gif"></p>
-<p><strong>设置多个共享元素：Pair(View,TAG)</strong></p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">import androidx.core.util.Pair</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> bundle = <span class="module-access"><span class="module"><span class="identifier">ActivityOptionsCompat</span>.</span></span>make<span class="constructor">SceneTransitionAnimation(<span class="params">this</span>, Pair(<span class="params">binding</span>.<span class="params">imageview</span>,<span class="string">&quot;shareElement&quot;</span>)</span>,</span><br><span class="line">    <span class="constructor">Pair(<span class="params">binding</span>.<span class="params">searchEdit</span>,<span class="string">&quot;shareSearch&quot;</span>)</span></span><br><span class="line">).<span class="keyword">to</span><span class="constructor">Bundle()</span></span><br><span class="line"><span class="keyword">val</span> intent = <span class="constructor">Intent(<span class="params">this</span>,MainActivity3::<span class="params">class</span>.<span class="params">java</span>)</span></span><br><span class="line">start<span class="constructor">Activity(<span class="params">intent</span>, <span class="params">bundle</span>)</span></span><br></pre></td></tr></table></figure>
-<h3 id="ActivityOptions">ActivityOptions</h3>
-<blockquote>
+<p><strong>设置多个共享元素：Pair(View,TAG)</strong><br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">import androidx.core.util.Pair</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> bundle = <span class="module-access"><span class="module"><span class="identifier">ActivityOptionsCompat</span>.</span></span>make<span class="constructor">SceneTransitionAnimation(<span class="params">this</span>, Pair(<span class="params">binding</span>.<span class="params">imageview</span>,<span class="string">&quot;shareElement&quot;</span>)</span>,</span><br><span class="line">    <span class="constructor">Pair(<span class="params">binding</span>.<span class="params">searchEdit</span>,<span class="string">&quot;shareSearch&quot;</span>)</span></span><br><span class="line">).<span class="keyword">to</span><span class="constructor">Bundle()</span></span><br><span class="line"><span class="keyword">val</span> intent = <span class="constructor">Intent(<span class="params">this</span>,MainActivity3::<span class="params">class</span>.<span class="params">java</span>)</span></span><br><span class="line">start<span class="constructor">Activity(<span class="params">intent</span>, <span class="params">bundle</span>)</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="ActivityOptions"><a href="#ActivityOptions" class="headerlink" title="ActivityOptions"></a>ActivityOptions</h3><blockquote>
 <p>前面说到了<code>ActivityOptionsCompat</code>设置共享元素，其实<code>ActivityOptions</code>中还有许多其他方法</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -529,11 +517,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>具体可以参考官方文档：<a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/app/ActivityOptions">https://developer.android.com/reference/android/app/ActivityOptions</a></p>
 <p>个人觉得这些方法基本没太大用用处</p>
 <hr>
-<p>Demo地址：<a target="_blank" rel="noopener" href="https://github.com/xluu233/AnimationDemo">https://github.com/xluu233/AnimationDemo</a><br>
-文章代码略有缺失，完整请查看Demo,项目整体还在完善中，欢迎大佬们指点。<em>卑微Androider在线求个Star</em>😅</p>
+<p>Demo地址：<a target="_blank" rel="noopener" href="https://github.com/xluu233/AnimationDemo">https://github.com/xluu233/AnimationDemo</a><br>文章代码略有缺失，完整请查看Demo,项目整体还在完善中，欢迎大佬们指点。<em>卑微Androider在线求个Star</em>😅</p>
 
 
         <hr>

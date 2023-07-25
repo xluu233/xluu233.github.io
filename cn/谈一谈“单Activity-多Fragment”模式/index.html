@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -459,88 +459,73 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="单Activity-多Fragment模式">单Activity+多Fragment模式</h2>
-<blockquote>
+        <h2 id="单Activity-多Fragment模式"><a href="#单Activity-多Fragment模式" class="headerlink" title="单Activity+多Fragment模式"></a>单Activity+多Fragment模式</h2><blockquote>
 <p>自从知道这一招之后我基本不太愿意使用activity了，fragment可以快速创建和管理，可以合理设计页面跳转，设计炫酷的跳转动画，一些操作可以统一进行管理。</p>
 </blockquote>
 <ol>
-<li><strong>用Fragment替代Activity</strong></li>
+<li><strong>用Fragment替代Activity</strong>  </li>
 </ol>
 <p>以前大部分时候都是将Activity作为页面，Fragment作为页面中的子页面（当时称之为碎片），基本上大部分功能由activity实现，比如老版本的淘宝app就是有上百个activity，当时卡顿的不要不要的。随着技术迭代，我们发现activtiy创建、切换、销毁所消耗的性能远比fragment要大，fragment如今也能替代activity实现大部分功能。</p>
-<ol start="2">
-<li><strong>将Activity作为容器</strong></li>
+<ol>
+<li><strong>将Activity作为容器</strong>  </li>
 </ol>
 <p>我理解的<code>单Activity+多Fragment</code>模式并不是指一个App一定只有一个activity，对于一些业务相关的场景，可以整合成一个<code>单Activity+多Fragment</code>模块，将activity作为fragment的容器，让fragment去做UI绘制工作。</p>
-<ol start="3">
+<ol>
 <li><strong>管理Fragment栈</strong></li>
 </ol>
 <p>我们可以使用navigation管理fragment，fragment之间的跳转、栈管理都轻而易举，navigation还可以设置切换动画、页面间的数据传递。</p>
-<h2 id="Navigation组件">Navigation组件</h2>
-<blockquote>
+<h2 id="Navigation组件"><a href="#Navigation组件" class="headerlink" title="Navigation组件"></a>Navigation组件</h2><blockquote>
 <p>Navigation是Jetpack组件之一，很早之前iOS就是采用的这种跳转方式，当时就在想Android为啥没有，没多久Navigation就面世了。</p>
 </blockquote>
 <p>Navigation可以理解为以一个管理fragment的容器，在容器中各个fragment可以实现任意跳转，</p>
-<h3 id="基础使用：">基础使用：</h3>
-<ol>
+<h3 id="基础使用："><a href="#基础使用：" class="headerlink" title="基础使用："></a>基础使用：</h3><ol>
 <li>我们需要在布局中创建Fragment容器：</li>
 </ol>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;androidx.fragment.app.FragmentContainerView</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/main_fragment_container&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_height</span>=<span class="string">&quot;0dp&quot;</span></span><br><span class="line">    android:<span class="attribute">name</span>=<span class="string">&quot;androidx.navigation.fragment.NavHostFragment&quot;</span></span><br><span class="line">    app:<span class="attribute">defaultNavHost</span>=<span class="string">&quot;true&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintStart_toStartOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">layout_constraintTop_toTopOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:<span class="attribute">navGraph</span>=<span class="string">&quot;@navigation/nav_main&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<ol>
 <li>创建navigation.xml文件</li>
 </ol>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">navigation</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/navigation_main&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:startDestination</span>=<span class="string">&quot;@+id/mainFragment&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/mainFragment&quot;</span><br><span class="line">        android:name=&quot;com.example.mvvm_develop.MainFragment&quot;</span><br><span class="line">        android:label=&quot;MainFragment&quot; /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
+<ol>
 <li>使用NavController</li>
 </ol>
 <figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> navController = (childFragmentManager.find<span class="constructor">FragmentById(R.<span class="params">id</span>.<span class="params">module_fragment_container</span>)</span> <span class="keyword">as</span> NavHostFragment).navController</span><br><span class="line"><span class="comment">//跳转</span></span><br><span class="line">navController.navigate(<span class="module-access"><span class="module"><span class="identifier">R</span>.</span></span>id.mainFragment)</span><br></pre></td></tr></table></figure>
-<h3 id="一些具体参数和用法：">一些具体参数和用法：</h3>
-<h4 id="navGraph">navGraph</h4>
-<p>这个值指向xml文件，在xml文件中我们可以定义fragment，跳转行为，目的地等。</p>
+<h3 id="一些具体参数和用法："><a href="#一些具体参数和用法：" class="headerlink" title="一些具体参数和用法："></a>一些具体参数和用法：</h3><h4 id="navGraph"><a href="#navGraph" class="headerlink" title="navGraph"></a>navGraph</h4><p>这个值指向xml文件，在xml文件中我们可以定义fragment，跳转行为，目的地等。</p>
 <p>创建、新增Fragment：</p>
 <div align=center>
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a13d933d887542b8be485bf922cff646~tplv-k3u1fbpfcp-watermark.image" width="xxx" height="XXX" />
 </div>
+
 <p>创建跳转行为：</p>
 <div align=center>
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/882f5ddfc227408d92d553284a9c7bc1~tplv-k3u1fbpfcp-watermark.image" width="xxx" height="XXX" />
 </div>
+
 <p>动画、目的地、返回栈配置：</p>
 <div align=center>
 <img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7c6be5b489c745459a69ed343d420162~tplv-k3u1fbpfcp-watermark.image" width="xxx" height="XXX" />
 </div>
-<h3 id="NavController">NavController</h3>
-<p>字面意思就是导航控制器，NavController可以控制跳转、返回、动画、监听等操作。我们可以使用它进行灵活的跳转，Google还出了一些<a target="_blank" rel="noopener" href="https://github.com/android/architecture-components-samples/tree/master/NavigationAdvancedSample">Navigation Demo</a>演示如何配合Toolbar和底部导航栏进行使用。</p>
+
+<h3 id="NavController"><a href="#NavController" class="headerlink" title="NavController"></a>NavController</h3><p>字面意思就是导航控制器，NavController可以控制跳转、返回、动画、监听等操作。我们可以使用它进行灵活的跳转，Google还出了一些<a target="_blank" rel="noopener" href="https://github.com/android/architecture-components-samples/tree/master/NavigationAdvancedSample">Navigation Demo</a>演示如何配合Toolbar和底部导航栏进行使用。</p>
 <blockquote>
 <p>关于具体的用法这里不讲解了，很多文章都有，也可以参考<a target="_blank" rel="noopener" href="https://developer.android.com/guide/navigation">官网</a>。</p>
 </blockquote>
-<h3 id="Navigation存在的问题：">Navigation存在的问题：</h3>
-<h4 id="重走生命周期">重走生命周期</h4>
-<p>Navigation目前有个问题：Fragment回退重走生命周期，这个问题可能是Google想让Fragment和activity拥有同样的工作模式，单重走生命周期真的很烦，我们可以自定义NavHostFragment去修复这个问题，具体参考<a target="_blank" rel="noopener" href="https://github.com/xluu233/mvvm_develop/tree/master/mvvm_develop/base/src/main/java/com/example/baselibrary/navigation">项目代码</a></p>
+<h3 id="Navigation存在的问题："><a href="#Navigation存在的问题：" class="headerlink" title="Navigation存在的问题："></a>Navigation存在的问题：</h3><h4 id="重走生命周期"><a href="#重走生命周期" class="headerlink" title="重走生命周期"></a>重走生命周期</h4><p>Navigation目前有个问题：Fragment回退重走生命周期，这个问题可能是Google想让Fragment和activity拥有同样的工作模式，单重走生命周期真的很烦，我们可以自定义NavHostFragment去修复这个问题，具体参考<a target="_blank" rel="noopener" href="https://github.com/xluu233/mvvm_develop/tree/master/mvvm_develop/base/src/main/java/com/example/baselibrary/navigation">项目代码</a></p>
 <p>修改之后使用如下：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">android:<span class="attribute">name</span>=<span class="string">&quot;androidx.navigation.fragment.NavHostFragment&quot;</span></span><br><span class="line">修改为我们自定义的NavHostFragment：</span><br><span class="line">android:<span class="attribute">name</span>=<span class="string">&quot;com.example.baselibrary.navigation.NavHostFragment&quot;</span></span><br><span class="line"></span><br><span class="line">&lt;fragment</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">&quot;@+id/navigation_main&quot;</span></span><br><span class="line">    android:<span class="attribute">name</span>=<span class="string">&quot;com.example.baselibrary.navigation.NavHostFragment&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    android:<span class="attribute">layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    app:<span class="attribute">defaultNavHost</span>=<span class="string">&quot;true&quot;</span></span><br><span class="line">    app:<span class="attribute">navGraph</span>=<span class="string">&quot;@navigation/nav_main&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="组件化中使用Navigation">组件化中使用Navigation</h4>
-<p>我们通常使用底部导航栏将app划分出不同的功能，这些都是单独的module,但是在navigation中怎么进行module间的跳转呢？</p>
+<h4 id="组件化中使用Navigation"><a href="#组件化中使用Navigation" class="headerlink" title="组件化中使用Navigation"></a>组件化中使用Navigation</h4><p>我们通常使用底部导航栏将app划分出不同的功能，这些都是单独的module,但是在navigation中怎么进行module间的跳转呢？</p>
 <p><strong>比如：</strong></p>
 <div align=center>
 <img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c9a6fd52f09f49fba4b11bb9a123c197~tplv-k3u1fbpfcp-watermark.image" width="300" height="XXX" />
 </div>
+
 <p>其布局文件就是一个<code>FragmentContainerView</code>+<code>BottomNavigationView</code>，切换下面按钮的时候需要切换到不同的moduel页面。首先我们将不同的moduel视为一个“单activity+多fragment”的模块，或者也可以省略activity。</p>
-<p><strong>方式一：</strong><br>
-google的demo中是在MainActivity中创建一个main_navGraph,其中包含了不同子moduel的navGraph<br>
-,如下：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">navigation</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/nav_module&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:startDestination</span>=<span class="string">&quot;@+id/navi_home&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">app:graph</span>=<span class="string">&quot;@navigation/navi_home&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">app:graph</span>=<span class="string">&quot;@navigation/navi_collection&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">app:graph</span>=<span class="string">&quot;@navigation/navi_center&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>navi_home</code> 、<code>navi_collection</code> 、<code>navi_center</code>是子moduel中的navGraph文件，这种做法要求其指定<code>startDestination</code>，而且只能跳转到<code>startDestination</code></p>
-<p>配合<code>BottomNavigationView</code>使用：</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> navController = (childFragmentManager.find<span class="constructor">FragmentById(R.<span class="params">id</span>.<span class="params">module_fragment_container</span>)</span> <span class="keyword">as</span> NavHostFragment).navController</span><br><span class="line">setup<span class="constructor">WithNavController(<span class="params">binding</span>.<span class="params">bottomNav</span>,<span class="params">navController</span>)</span></span><br></pre></td></tr></table></figure>
-<p>这样子确实可以实现moduel间的切换，但是我发现这种方法每次切换naviagtion都会重新初始化，导致性能消耗很大。</p>
+<p><strong>方式一：</strong><br>google的demo中是在MainActivity中创建一个main_navGraph,其中包含了不同子moduel的navGraph<br>,如下：<br><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">navigation</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/nav_module&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:startDestination</span>=<span class="string">&quot;@+id/navi_home&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">app:graph</span>=<span class="string">&quot;@navigation/navi_home&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">app:graph</span>=<span class="string">&quot;@navigation/navi_collection&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">app:graph</span>=<span class="string">&quot;@navigation/navi_center&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation</span>&gt;</span></span><br></pre></td></tr></table></figure><br><code>navi_home</code> 、<code>navi_collection</code> 、<code>navi_center</code>是子moduel中的navGraph文件，这种做法要求其指定<code>startDestination</code>，而且只能跳转到<code>startDestination</code></p>
+<p>配合<code>BottomNavigationView</code>使用：<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> navController = (childFragmentManager.find<span class="constructor">FragmentById(R.<span class="params">id</span>.<span class="params">module_fragment_container</span>)</span> <span class="keyword">as</span> NavHostFragment).navController</span><br><span class="line">setup<span class="constructor">WithNavController(<span class="params">binding</span>.<span class="params">bottomNav</span>,<span class="params">navController</span>)</span></span><br></pre></td></tr></table></figure><br>这样子确实可以实现moduel间的切换，但是我发现这种方法每次切换naviagtion都会重新初始化，导致性能消耗很大。</p>
 <blockquote>
 <p>也许是我使用姿势不对？</p>
 </blockquote>
-<p><strong>方式二：</strong><br>
-因为app module本身是需要依赖各个子moduel的，我们可以在navGraph直接使用子moduel中的Fragment，主页面只需加入各个module的主Fragment就行了：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">navigation</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/nav_module&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:startDestination</span>=<span class="string">&quot;@+id/navi_home&quot;</span>&gt;</span></span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/navi_home&quot;</span><br><span class="line">        android:name=&quot;com.xlu.module_tab1.HomeFragment&quot;</span><br><span class="line">        android:label=&quot;HomeFragment&quot; /&gt;</span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/navi_collection&quot;</span><br><span class="line">        android:name=&quot;com.xlu.module_collection.FragmentCollection&quot;</span><br><span class="line">        android:label=&quot;CenterFragment&quot; /&gt;</span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/navi_center&quot;</span><br><span class="line">        android:name=&quot;com.xlu.module_center.CenterFragment&quot;</span><br><span class="line">        android:label=&quot;FragmentCollection&quot; /&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在底部状态切换的时候直接切换Fragment就行了：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> navController = (childFragmentManager.findFragmentById(R.id.module_fragment_container) <span class="keyword">as</span> NavHostFragment).navController</span><br><span class="line"></span><br><span class="line">binding.bottomNav.setOnItemSelectedListener(<span class="keyword">object</span> :NavigationBarView.OnItemSelectedListener&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onNavigationItemSelected</span><span class="params">(item: <span class="type">MenuItem</span>)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">        navController.navigate(item.itemId)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>方式二：</strong><br>因为app module本身是需要依赖各个子moduel的，我们可以在navGraph直接使用子moduel中的Fragment，主页面只需加入各个module的主Fragment就行了：<br><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">navigation</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/nav_module&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:startDestination</span>=<span class="string">&quot;@+id/navi_home&quot;</span>&gt;</span></span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/navi_home&quot;</span><br><span class="line">        android:name=&quot;com.xlu.module_tab1.HomeFragment&quot;</span><br><span class="line">        android:label=&quot;HomeFragment&quot; /&gt;</span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/navi_collection&quot;</span><br><span class="line">        android:name=&quot;com.xlu.module_collection.FragmentCollection&quot;</span><br><span class="line">        android:label=&quot;CenterFragment&quot; /&gt;</span><br><span class="line">    &lt;fragment</span><br><span class="line">        android:id=&quot;@+id/navi_center&quot;</span><br><span class="line">        android:name=&quot;com.xlu.module_center.CenterFragment&quot;</span><br><span class="line">        android:label=&quot;FragmentCollection&quot; /&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation</span>&gt;</span></span><br></pre></td></tr></table></figure><br>在底部状态切换的时候直接切换Fragment就行了：<br><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> navController = (childFragmentManager.findFragmentById(R.id.module_fragment_container) <span class="keyword">as</span> NavHostFragment).navController</span><br><span class="line"></span><br><span class="line">binding.bottomNav.setOnItemSelectedListener(<span class="keyword">object</span> :NavigationBarView.OnItemSelectedListener&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onNavigationItemSelected</span><span class="params">(item: <span class="type">MenuItem</span>)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">        navController.navigate(item.itemId)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>偷懒的话可以将BottomNavigationView使用的menu中的id与navGraph中设置成一样的啊哈哈哈哈</p>
 </blockquote>
@@ -553,16 +538,10 @@ google的demo中是在MainActivity中创建一个main_navGraph,其中包含了�
 
 创建接口：
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">AppItf</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    这里直接使用ARouter中的路径，因为每个fragment和activity都会配置一个ARouter路径</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">navigation</span><span class="params">(destination: <span class="type">String</span>)</span></span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在app moduel中实现此接口：</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">@<span class="constructor">Route(<span class="params">path</span> = ConstantARouter.MainActivity)</span></span><br><span class="line"><span class="keyword">class</span> MainActivity : <span class="constructor">BaseActivity(R.<span class="params">layout</span>.<span class="params">activity_main</span>)</span>,AppItf&#123;</span><br><span class="line"></span><br><span class="line">     ......</span><br><span class="line">     </span><br><span class="line">    override <span class="keyword">fun</span> navigation(destination: String) &#123;</span><br><span class="line">        <span class="keyword">when</span>(destination)&#123;</span><br><span class="line">            ConstantARouter.ARouterFragment -&gt; &#123;</span><br><span class="line">                navController.navigate(<span class="module-access"><span class="module"><span class="identifier">R</span>.</span></span>id.ARouterFragment)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ConstantARouter</span>.</span></span>xx -&gt; &#123;</span><br><span class="line">                navController.navigate(<span class="module-access"><span class="module"><span class="identifier">R</span>.</span></span>id.xx)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>提供服务的统一工具类：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">object</span> ServerUtil &#123;</span><br><span class="line"></span><br><span class="line">    ......</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">getAppServer</span><span class="params">()</span></span>:AppItf&#123;</span><br><span class="line">        <span class="keyword">return</span> ARouter.getInstance().navigation(AppItf::<span class="keyword">class</span>.java)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用：</p>
-<pre><code>在子moduel中控制app moduel的页面跳转
+<p>在app moduel中实现此接口：<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">@<span class="constructor">Route(<span class="params">path</span> = ConstantARouter.MainActivity)</span></span><br><span class="line"><span class="keyword">class</span> MainActivity : <span class="constructor">BaseActivity(R.<span class="params">layout</span>.<span class="params">activity_main</span>)</span>,AppItf&#123;</span><br><span class="line"></span><br><span class="line">     ......</span><br><span class="line">     </span><br><span class="line">    override <span class="keyword">fun</span> navigation(destination: String) &#123;</span><br><span class="line">        <span class="keyword">when</span>(destination)&#123;</span><br><span class="line">            ConstantARouter.ARouterFragment -&gt; &#123;</span><br><span class="line">                navController.navigate(<span class="module-access"><span class="module"><span class="identifier">R</span>.</span></span>id.ARouterFragment)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ConstantARouter</span>.</span></span>xx -&gt; &#123;</span><br><span class="line">                navController.navigate(<span class="module-access"><span class="module"><span class="identifier">R</span>.</span></span>id.xx)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>提供服务的统一工具类：<br><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">object</span> ServerUtil &#123;</span><br><span class="line"></span><br><span class="line">    ......</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">getAppServer</span><span class="params">()</span></span>:AppItf&#123;</span><br><span class="line">        <span class="keyword">return</span> ARouter.getInstance().navigation(AppItf::<span class="keyword">class</span>.java)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>使用：<br><code>在子moduel中控制app moduel的页面跳转
 binding.button -&gt; &#123;
     getAppServer().navigation(ConstantARouter.ARouterFragment)
-&#125;
-```--&gt;</code></pre>
+&#125;</code>—&gt;</p>
 
 
         <hr>

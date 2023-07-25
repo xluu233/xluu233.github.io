@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -397,7 +397,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">736</span> In Total
+              Words <span class="post-count">738</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -459,89 +459,82 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="前言">前言</h3>
-<p>Android各家定制的系统Toast ui都不一样，而且很简单，之前使用只是简单的封装了一个工具类使用，后来看到Lottie之后想着做一个好看点的Toast，所以就抽空好好写了一下。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Android各家定制的系统Toast ui都不一样，而且很简单，之前使用只是简单的封装了一个工具类使用，后来看到Lottie之后想着做一个好看点的Toast，所以就抽空好好写了一下。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/xluu233/ToastBox">ToastBox</a>是一个自定义吐司库，可以实现多种自定义toast，有WindowsManger和系统Toast两种实现方式，配合Lottie动画库可以做一些好看的toast</p>
 <blockquote>
 <p>Github上关于Toast的工具很多了，但我就是喜欢造轮子哈哈哈</p>
 </blockquote>
-<h3 id="实例：">实例：</h3>
-<blockquote>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><blockquote>
 <p>ToastBox可以实现自定义View、显示时长、显示位置、各种自定义风格，我这里写了几个常用的Toast，比如网络错误、操作成功、信息、失败等，静态图：</p>
 </blockquote>
-<h4 id="普通的toast">普通的toast:</h4>
-<div align=center>
+<h4 id="普通的toast"><a href="#普通的toast" class="headerlink" title="普通的toast:"></a>普通的toast:</h4><div align=center>
 <img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/580a4bf391ad47d9b87892deab3080e1~tplv-k3u1fbpfcp-watermark.image" width="300" height="XXX" />
 </div>
-<h4 id="一些有意思的toast：">一些有意思的toast：</h4>
-<div align=center>
+
+
+<h4 id="一些有意思的toast："><a href="#一些有意思的toast：" class="headerlink" title="一些有意思的toast："></a>一些有意思的toast：</h4><div align=center>
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7253b6acce354403bbf61e73c46815ae~tplv-k3u1fbpfcp-watermark.image" width="400" height="XXX" />
 </div>
+
 <p><strong>success：</strong></p>
 <div align=center>
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7fd376adf1164baa81d13eebe5a92e94~tplv-k3u1fbpfcp-watermark.image" width="xxx" height="XXX" />
 </div>
+
 <p><strong>fail:</strong></p>
 <div align=center>
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c181942878874969bfb318087386449f~tplv-k3u1fbpfcp-watermark.image" width="XXX" height="XXX" />
 </div>
+
 <p><strong>网络错误：</strong></p>
 <div align=center>
 <img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1203ffe2ae564f4f9540b731b894103a~tplv-k3u1fbpfcp-watermark.image" width="XXX" height="XXX" />
 </div>
+
 <p><strong>普通信息：</strong></p>
 <div align=center>
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/70788df056a54b378a9a914dcece1bba~tplv-k3u1fbpfcp-watermark.image" width="XXX" height="XXX" />
 </div>
+
 <p><strong>网络错误：</strong></p>
 <div align=center>
 <img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0d9975a34bce4f1bbe0d3bed99bd4dcb~tplv-k3u1fbpfcp-watermark.image" width="XXX" height="XXX" />
 </div>
+
+
 <p>关于LottieToast的演示，可以查看：<a target="_blank" rel="noopener" href="https://github.com/xluu233/ToastBox/blob/master/app/src/main/java/com/example/toastbox/LottieActivity.kt">LottieActivity</a></p>
 <p>Lottie中有很多看好的动画，你也可以自己设计一个。</p>
-<p><a target="_blank" rel="noopener" href="https://lottiefiles.com/featured">Lottie动画</a><br>
-<a target="_blank" rel="noopener" href="http://airbnb.io/lottie/#/android?id=loading-an-animation">Lottie开发文档</a></p>
-<h3 id="实现：">实现：</h3>
-<blockquote>
+<p><a target="_blank" rel="noopener" href="https://lottiefiles.com/featured">Lottie动画</a><br><a target="_blank" rel="noopener" href="http://airbnb.io/lottie/#/android?id=loading-an-animation">Lottie开发文档</a></p>
+<h3 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h3><blockquote>
 <p>具体实现可以看代码，这里不详细介绍了</p>
 </blockquote>
 <ul>
-<li>
-<p>一共有两种toast实现，一是系统toast，二是windows实现，各有好坏，调用的时候可以灵活配置</p>
+<li><p>一共有两种toast实现，一是系统toast，二是windows实现，各有好坏，调用的时候可以灵活配置</p>
 </li>
-<li>
-<p>在Application中需要初始化，利用ActivityLifecycleCallbacks用来监听activity生命周期，避免内存泄漏。</p>
+<li><p>在Application中需要初始化，利用ActivityLifecycleCallbacks用来监听activity生命周期，避免内存泄漏。</p>
 </li>
 </ul>
-<h3 id="快速接入：">快速接入：</h3>
-<p>Add it in your root build.gradle at the end of repositories:</p>
+<h3 id="快速接入："><a href="#快速接入：" class="headerlink" title="快速接入："></a>快速接入：</h3><p>Add it in your root build.gradle at the end of repositories:</p>
 <pre><code>allprojects &#123;
-	repositories &#123;
-		...
-		maven &#123; url 'https://jitpack.io' &#125;
-	&#125;
+    repositories &#123;
+        ...
+        maven &#123; url &#39;https://jitpack.io&#39; &#125;
+    &#125;
 &#125;
-</code></pre>
-<p>Step 2. Add the dependency</p>
+</code></pre><p>Step 2. Add the dependency</p>
 <pre><code>dependencies &#123;
-    implementation 'com.github.xluu233:ToastBox:$&#123;version&#125;'
+    implementation &#39;com.github.xluu233:ToastBox:$&#123;version&#125;&#39;
 &#125;
-</code></pre>
-<h3 id="使用：">使用：</h3>
-<p><strong>stetup1:</strong> 在Application中初始化</p>
+</code></pre><h3 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h3><p><strong>stetup1:</strong> 在Application中初始化</p>
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">ToastBoxRegister.<span class="keyword">init</span>(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
 <p>初始化时可以配置一些参数</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">ToastBoxRegister<span class="selector-class">.init</span>(this)<span class="selector-class">.apply</span> &#123;</span><br><span class="line">    <span class="comment">//text样式：白色和灰色</span></span><br><span class="line">    textStyle = TextStyle.White</span><br><span class="line">    <span class="comment">//可以设置默认显示图标</span></span><br><span class="line">    defaultIcon = R<span class="selector-class">.drawable</span>.ic_launcher_background</span><br><span class="line">    <span class="comment">//设置默认动画</span></span><br><span class="line">    animStyle = R<span class="selector-class">.style</span>.xxx</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>setup2</strong>:简单调用</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">ToastBox</span><span class="params">(this)</span></span><span class="selector-class">.show</span>(<span class="string">&quot;This is ToastBox&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="更多参数设置">更多参数设置</h3>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正常使用</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.show</span>(<span class="string">&quot;This is ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//在不同的位置弹出</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.TOP)<span class="selector-class">.show</span>(<span class="string">&quot;TOP ToastBox&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.CENTER)<span class="selector-class">.show</span>(<span class="string">&quot;Center ToastBox&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.BOTTOM)<span class="selector-class">.show</span>(<span class="string">&quot;Bottom ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改透明度</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.CENTER)<span class="selector-class">.setAlpha</span>(<span class="number">0.5</span>f)<span class="selector-class">.show</span>(<span class="string">&quot;Center ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义布局，传入View或者layout</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setView</span>(R.layout.custom_toast_common_1)<span class="selector-class">.show</span>(<span class="string">&quot;This is Custom View&quot;</span>,<span class="number">5000</span>L)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置toast时间</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.show</span>(<span class="string">&quot;5000L&quot;</span>,duration = <span class="number">5000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置xy必须在设置location后面</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.BOTTOM)<span class="selector-class">.setXY</span>(<span class="number">100</span>,<span class="number">200</span>)<span class="selector-class">.show</span>(<span class="string">&quot;Center ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置监听</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setListener</span>(<span class="attribute">object </span>: ToastClickItf&#123;</span><br><span class="line">    <span class="selector-tag">override</span> <span class="selector-tag">fun</span> <span class="selector-tag">setOnToastDismissed</span>() &#123;</span><br><span class="line">        <span class="selector-tag">xLog</span><span class="selector-class">.d</span>(TAG,<span class="string">&quot;toast dismissed&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)<span class="selector-class">.show</span>(<span class="string">&quot;哈啊啊啊啊啊哼哼&quot;</span>,<span class="number">3000</span>L)</span><br><span class="line"></span><br><span class="line"><span class="comment">//不同风格的toast</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setTextStyle</span>(TextStyle.GRAY)<span class="selector-class">.show</span>(<span class="string">&quot;灰色Toast&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setTextStyle</span>(TextStyle.White)<span class="selector-class">.setXY</span>(<span class="number">0</span>,<span class="number">300</span>)<span class="selector-class">.show</span>(<span class="string">&quot;白色Toast&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setTextStyle</span>(TextStyle.Black)<span class="selector-class">.setXY</span>(<span class="number">0</span>,<span class="number">600</span>)<span class="selector-class">.show</span>(<span class="string">&quot;黑色Toast&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置动画</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setAnim</span>(R.style.MiuiToast)<span class="selector-class">.show</span>(<span class="string">&quot;切换弹出动画&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义图标</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setIcon</span>(R.drawable.icon)<span class="selector-class">.show</span>(<span class="string">&quot;This is ToastBox&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="更多参数设置"><a href="#更多参数设置" class="headerlink" title="更多参数设置"></a>更多参数设置</h3><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正常使用</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.show</span>(<span class="string">&quot;This is ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//在不同的位置弹出</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.TOP)<span class="selector-class">.show</span>(<span class="string">&quot;TOP ToastBox&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.CENTER)<span class="selector-class">.show</span>(<span class="string">&quot;Center ToastBox&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.BOTTOM)<span class="selector-class">.show</span>(<span class="string">&quot;Bottom ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改透明度</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.CENTER)<span class="selector-class">.setAlpha</span>(<span class="number">0.5</span>f)<span class="selector-class">.show</span>(<span class="string">&quot;Center ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义布局，传入View或者layout</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setView</span>(R.layout.custom_toast_common_1)<span class="selector-class">.show</span>(<span class="string">&quot;This is Custom View&quot;</span>,<span class="number">5000</span>L)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置toast时间</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.show</span>(<span class="string">&quot;5000L&quot;</span>,duration = <span class="number">5000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置xy必须在设置location后面</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setLocation</span>(Location.BOTTOM)<span class="selector-class">.setXY</span>(<span class="number">100</span>,<span class="number">200</span>)<span class="selector-class">.show</span>(<span class="string">&quot;Center ToastBox&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置监听</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setListener</span>(<span class="attribute">object </span>: ToastClickItf&#123;</span><br><span class="line">    <span class="selector-tag">override</span> <span class="selector-tag">fun</span> <span class="selector-tag">setOnToastDismissed</span>() &#123;</span><br><span class="line">        <span class="selector-tag">xLog</span><span class="selector-class">.d</span>(TAG,<span class="string">&quot;toast dismissed&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)<span class="selector-class">.show</span>(<span class="string">&quot;哈啊啊啊啊啊哼哼&quot;</span>,<span class="number">3000</span>L)</span><br><span class="line"></span><br><span class="line"><span class="comment">//不同风格的toast</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setTextStyle</span>(TextStyle.GRAY)<span class="selector-class">.show</span>(<span class="string">&quot;灰色Toast&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setTextStyle</span>(TextStyle.White)<span class="selector-class">.setXY</span>(<span class="number">0</span>,<span class="number">300</span>)<span class="selector-class">.show</span>(<span class="string">&quot;白色Toast&quot;</span>)</span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setTextStyle</span>(TextStyle.Black)<span class="selector-class">.setXY</span>(<span class="number">0</span>,<span class="number">600</span>)<span class="selector-class">.show</span>(<span class="string">&quot;黑色Toast&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置动画</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setAnim</span>(R.style.MiuiToast)<span class="selector-class">.show</span>(<span class="string">&quot;切换弹出动画&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义图标</span></span><br><span class="line"><span class="selector-tag">ToastBox</span>()<span class="selector-class">.setIcon</span>(R.drawable.icon)<span class="selector-class">.show</span>(<span class="string">&quot;This is ToastBox&quot;</span>)</span><br></pre></td></tr></table></figure>
 <hr>
-<p><em>附上项目地址：<a target="_blank" rel="noopener" href="https://github.com/xluu233/ToastBox">https://github.com/xluu233/ToastBox</a><br>
-卑微Androider求一个Star</em></p>
-<p><strong>相关文章</strong>:<br>
-<a target="_blank" rel="noopener" href="https://juejin.cn/post/6989918599007698957">写一个MVVM快速开发框架（一）基础类封装 </a><br>
-<a target="_blank" rel="noopener" href="https://juejin.cn/post/6995082240287850527">写一个MVVM快速开发框架（二）组件化改造</a></p>
+<p><em>附上项目地址：<a target="_blank" rel="noopener" href="https://github.com/xluu233/ToastBox">https://github.com/xluu233/ToastBox</a><br>卑微Androider求一个Star</em></p>
+<p><strong>相关文章</strong>:<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6989918599007698957">写一个MVVM快速开发框架（一）基础类封装 </a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6995082240287850527">写一个MVVM快速开发框架（二）组件化改造</a></p>
 
 
         <hr>

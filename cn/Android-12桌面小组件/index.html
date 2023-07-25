@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -457,46 +457,38 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="前言">前言</h3>
-<p>Anroid上的桌面小组件很早以前就有了，相比iOS的小组件一出来就大火不同，Android桌面小组件一直很难用，最近看到了Google微信号推送的文章：</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Anroid上的桌面小组件很早以前就有了，相比iOS的小组件一出来就大火不同，Android桌面小组件一直很难用，最近看到了Google微信号推送的文章：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzk0NDIwMTExNw==&amp;mid=2247497931&amp;idx=1&amp;sn=b8fa524e7f02ba8d6ee0dcb63f168fd1&amp;scene=21#wechat_redirect">更新您的 widget 以适配 Android 12</a></li>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fX5Dx41vrGlRFw6WfJIASw">创造无限可能 | 在 Android 12 中使用 widget</a></li>
 </ul>
-<p>我以为Android小组件间要崛起了！！开心的去看了[官网demo](<a target="_blank" rel="noopener" href="https://github.com/android/user-interface-samples/tree/main/AppWidget">user-interface-samples/AppWidget at main · android/user-interface-samples (github.com)</a>)</p>
+<p>我以为Android小组件间要崛起了！！开心的去看了<a href="[user-interface-samples/AppWidget at main · android/user-interface-samples (github.com">官网demo</a>](<a target="_blank" rel="noopener" href="https://github.com/android/user-interface-samples/tree/main/AppWidget">https://github.com/android/user-interface-samples/tree/main/AppWidget</a>))</p>
 <p>在Android12上主要更新了<strong>可调整窗口大小</strong>，不同主题下的效果，和一些圆角边距等细节设置，<strong>看起来还是不太聪明的样子</strong></p>
-<h3 id="快速上手Widget">快速上手Widget</h3>
-<p>桌面小组件被Google成为<code>微件：AppWidget</code>，查看<a target="_blank" rel="noopener" href="https://developer.android.com/guide/topics/appwidgets">官网文档</a></p>
-<p>右键菜单栏中创建Widget组件，其会自动创建相关类：<br>
-<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e131d6f4a16e4ced86fcf85478470c60~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h3 id="快速上手Widget"><a href="#快速上手Widget" class="headerlink" title="快速上手Widget"></a>快速上手Widget</h3><p>桌面小组件被Google成为<code>微件：AppWidget</code>，查看<a target="_blank" rel="noopener" href="https://developer.android.com/guide/topics/appwidgets">官网文档</a></p>
+<p>右键菜单栏中创建Widget组件，其会自动创建相关类：<br><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e131d6f4a16e4ced86fcf85478470c60~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
 <blockquote>
 <p>我们以创建一个TODO组件为例</p>
 </blockquote>
-<h3 id="相关类">相关类</h3>
-<ul>
-<li><strong>AppWidgetProvider</strong></li>
-</ul>
+<h3 id="相关类"><a href="#相关类" class="headerlink" title="相关类"></a>相关类</h3><ul>
+<li><p><strong>AppWidgetProvider</strong> </p>
 <blockquote>
-<p>组件类，通过广播与其连接，可以通过<code>onUpdate</code>,<code>onEnable</code>，<code>onDelete</code>等方法与组件进行通信。<br>
-这里我们新建TodoWidget:</p>
-</blockquote>
+<p>组件类，通过广播与其连接，可以通过<code>onUpdate</code>,<code>onEnable</code>，<code>onDelete</code>等方法与组件进行通信。<br>这里我们新建TodoWidget:</p>
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoWidget</span> : <span class="type">AppWidgetProvider</span></span>() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onUpdate</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        context: <span class="type">Context</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        appWidgetManager: <span class="type">AppWidgetManager</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        appWidgetIds: <span class="type">IntArray</span></span></span></span><br><span class="line"><span class="function"><span class="params">    )</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onEnabled</span><span class="params">(context: <span class="type">Context</span>)</span></span> &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDisabled</span><span class="params">(context: <span class="type">Context</span>)</span></span> &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>同时我们需要在Mainfest.xml中注册：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;receiver</span><br><span class="line">    android:name=&quot;.TodoWidget&quot;</span><br><span class="line">    android:exported=&quot;true&quot;&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.appwidget.action.APPWIDGET_UPDATE&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;meta-data</span><br><span class="line">        android:name=&quot;android.appwidget.provider&quot;</span><br><span class="line">        android:resource=&quot;@xml/todo_widget_info&quot; /&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">receiver</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>widgetProvider继承自广播，本身可以通过onReceive()来接受消息</p>
 </blockquote>
-<ul>
-<li><strong>AppWidgetProviderInfo</strong></li>
-</ul>
+</li>
+<li><p><strong>AppWidgetProviderInfo</strong></p>
 <blockquote>
 <p>提供了组件的各种信息，尺寸、布局、预览等信息，以xml文件的形式创建</p>
 </blockquote>
+</li>
+</ul>
 <p>在资源文件下新建xml目录：</p>
 <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fdf22d6e0d6043f28bbac7811dd822f4~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;?xml <span class="attribute">version</span>=<span class="string">&quot;1.0&quot;</span> <span class="attribute">encoding</span>=<span class="string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="line">&lt;appwidget-provider xmlns:<span class="attribute">android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    android:<span class="attribute">description</span>=<span class="string">&quot;@string/app_widget_description&quot;</span></span><br><span class="line">    android:<span class="attribute">initialKeyguardLayout</span>=<span class="string">&quot;@layout/todo_widget_min&quot;</span></span><br><span class="line">    android:<span class="attribute">initialLayout</span>=<span class="string">&quot;@layout/todo_widget_min&quot;</span></span><br><span class="line">    android:<span class="attribute">minWidth</span>=<span class="string">&quot;110dp&quot;</span></span><br><span class="line">    android:<span class="attribute">minHeight</span>=<span class="string">&quot;110dp&quot;</span></span><br><span class="line">    android:<span class="attribute">previewImage</span>=<span class="string">&quot;@drawable/example_appwidget_preview&quot;</span></span><br><span class="line">    android:<span class="attribute">previewLayout</span>=<span class="string">&quot;@layout/todo_widget_min&quot;</span></span><br><span class="line">    android:<span class="attribute">resizeMode</span>=<span class="string">&quot;horizontal|vertical&quot;</span></span><br><span class="line">    android:<span class="attribute">targetCellWidth</span>=<span class="string">&quot;1&quot;</span></span><br><span class="line">    android:<span class="attribute">targetCellHeight</span>=<span class="string">&quot;1&quot;</span></span><br><span class="line">    android:<span class="attribute">updatePeriodMillis</span>=<span class="string">&quot;86400000&quot;</span></span><br><span class="line">    android:<span class="attribute">widgetCategory</span>=<span class="string">&quot;home_screen&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="创建布局">创建布局</h3>
-<p>Widget组件布局基于：<a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/widget/RemoteViews">RemoteViews</a>有很多特殊性，这也是目前Android小窗口的局限，很多组件都无法使用，交互也表困难。</p>
+<h3 id="创建布局"><a href="#创建布局" class="headerlink" title="创建布局"></a>创建布局</h3><p>Widget组件布局基于：<a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/widget/RemoteViews">RemoteViews</a>有很多特殊性，这也是目前Android小窗口的局限，很多组件都无法使用，交互也表困难。</p>
 <p>RemoteViews 可以支持以下布局类：</p>
 <ul>
 <li><code>FrameLayout</code></li>
@@ -525,30 +517,22 @@
 <p>布局代码可以看Demo，这里说下狂口调整时候的布局变化，<strong>调整窗口的大小在Android12上才可用</strong></p>
 <p>我们可以在WidgetProvider类中的onUpdate中更新组件：</p>
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onUpdate</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    context: <span class="type">Context</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    appWidgetManager: <span class="type">AppWidgetManager</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    appWidgetIds: <span class="type">IntArray</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span> &#123;</span><br><span class="line">    <span class="comment">// There may be multiple widgets active, so update all of them</span></span><br><span class="line">    <span class="keyword">for</span> (appWidgetId <span class="keyword">in</span> appWidgetIds) &#123;</span><br><span class="line">        updateAppWidget(context, appWidgetManager, appWidgetId)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>创建多个RemoteView，我这里创建了三个不同布局对应不同尺寸：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">@SuppressLint(<span class="string">&quot;RemoteViewLayout&quot;</span>)</span><br><span class="line">internal fun updateAppWidget(</span><br><span class="line">    context: Context,</span><br><span class="line">    appWidgetManager: AppWidgetManager,</span><br><span class="line">    appWidgetId: Int</span><br><span class="line">) &#123;</span><br><span class="line">    val remoteViewsMin = RemoteViews(</span><br><span class="line">        context<span class="selector-class">.packageName</span>,</span><br><span class="line">        R<span class="selector-class">.layout</span>.todo_widget_min</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    val remoteViewsNormal = RemoteViews(</span><br><span class="line">        context<span class="selector-class">.packageName</span>,</span><br><span class="line">        R<span class="selector-class">.layout</span>.todo_widget_normal</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    val remoteViewsMax = RemoteViews(</span><br><span class="line">        context<span class="selector-class">.packageName</span>,</span><br><span class="line">        R<span class="selector-class">.layout</span>.todo_widget_max</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*不同大小控件对应不同布局*/</span></span><br><span class="line">    val viewMapping: MutableMap&lt;SizeF, RemoteViews&gt; = mutableMapOf()</span><br><span class="line">    viewMapping<span class="selector-attr">[SizeF(180.0f, 110.0f)]</span> = remoteViewsMin</span><br><span class="line">    viewMapping<span class="selector-attr">[SizeF(230.0f, 180.0f)]</span> = remoteViewsNormal</span><br><span class="line">    viewMapping<span class="selector-attr">[SizeF(270.0f, 300.0f)]</span> = remoteViewsMax</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*只有在Android12以上版本才支持*/</span></span><br><span class="line">    <span class="keyword">if</span> (Build<span class="selector-class">.VERSION</span><span class="selector-class">.SDK_INT</span> &gt;= Build<span class="selector-class">.VERSION_CODES</span>.S) &#123;</span><br><span class="line">        appWidgetManager<span class="selector-class">.updateAppWidget</span>(appWidgetId, RemoteViews(viewMapping))</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        appWidgetManager<span class="selector-class">.updateAppWidget</span>(appWidgetId, remoteViewsNormal)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="查看效果">查看效果</h3>
-<p>长按app图标就可在桌面添加组件，不同系统操作方式不一样。</p>
+<p>创建多个RemoteView，我这里创建了三个不同布局对应不同尺寸：<br><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">@SuppressLint(<span class="string">&quot;RemoteViewLayout&quot;</span>)</span><br><span class="line">internal fun updateAppWidget(</span><br><span class="line">    context: Context,</span><br><span class="line">    appWidgetManager: AppWidgetManager,</span><br><span class="line">    appWidgetId: Int</span><br><span class="line">) &#123;</span><br><span class="line">    val remoteViewsMin = RemoteViews(</span><br><span class="line">        context<span class="selector-class">.packageName</span>,</span><br><span class="line">        R<span class="selector-class">.layout</span>.todo_widget_min</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    val remoteViewsNormal = RemoteViews(</span><br><span class="line">        context<span class="selector-class">.packageName</span>,</span><br><span class="line">        R<span class="selector-class">.layout</span>.todo_widget_normal</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    val remoteViewsMax = RemoteViews(</span><br><span class="line">        context<span class="selector-class">.packageName</span>,</span><br><span class="line">        R<span class="selector-class">.layout</span>.todo_widget_max</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*不同大小控件对应不同布局*/</span></span><br><span class="line">    val viewMapping: MutableMap&lt;SizeF, RemoteViews&gt; = mutableMapOf()</span><br><span class="line">    viewMapping<span class="selector-attr">[SizeF(180.0f, 110.0f)]</span> = remoteViewsMin</span><br><span class="line">    viewMapping<span class="selector-attr">[SizeF(230.0f, 180.0f)]</span> = remoteViewsNormal</span><br><span class="line">    viewMapping<span class="selector-attr">[SizeF(270.0f, 300.0f)]</span> = remoteViewsMax</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*只有在Android12以上版本才支持*/</span></span><br><span class="line">    <span class="keyword">if</span> (Build<span class="selector-class">.VERSION</span><span class="selector-class">.SDK_INT</span> &gt;= Build<span class="selector-class">.VERSION_CODES</span>.S) &#123;</span><br><span class="line">        appWidgetManager<span class="selector-class">.updateAppWidget</span>(appWidgetId, RemoteViews(viewMapping))</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        appWidgetManager<span class="selector-class">.updateAppWidget</span>(appWidgetId, remoteViewsNormal)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>长按app图标就可在桌面添加组件，不同系统操作方式不一样。</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eb6d97d3f2ed466dbaf38cc5a32468ea~tplv-k3u1fbpfcp-watermark.image?" alt="Screenshot_20210928-172300.png"></p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/37c1444d46a74bdfbf7c423de529dc2f~tplv-k3u1fbpfcp-watermark.image?" alt="Screenshot_20210928-172311.png"></p>
-<h3 id="通信交互">通信交互</h3>
-<p><strong>打开App，在Activity做出响应</strong></p>
+<h3 id="通信交互"><a href="#通信交互" class="headerlink" title="通信交互"></a>通信交互</h3><p><strong>打开App，在Activity做出响应</strong>  </p>
 <blockquote>
 <p>widget和宿主app不属于同一进程，可以通过<code>PendingIntent</code>通信，和传统的Intent有点不一样，简言之：PendingIntent含有app的context，可以在外部进程打开app进程，PendingIntent不是立即执行的。</p>
 </blockquote>
-<p>RemoteView设置点击事件</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">set<span class="constructor">OnClickPendingIntent(R.<span class="params">id</span>.<span class="params">add</span>, <span class="params">createPendingIntent</span>(<span class="params">context</span>,R.<span class="params">id</span>.<span class="params">add</span>)</span>)</span><br></pre></td></tr></table></figure>
-<p>createPendingIntent()是一个将id传给activity的方法，你也可以设置其他信息，在activity做出响应</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">createPendingIntent</span><span class="params">(context: <span class="type">Context</span>,<span class="meta">@IdRes</span> id:<span class="type">Int</span>)</span></span>:PendingIntent&#123;</span><br><span class="line">    <span class="comment">/*打开APP intent*/</span></span><br><span class="line">    <span class="keyword">val</span> activityIntent = Intent(context, MainActivity::<span class="keyword">class</span>.java).apply &#123;</span><br><span class="line">        setData(Uri.parse(<span class="string">&quot;harvic:<span class="variable">$id</span>&quot;</span>))</span><br><span class="line">        flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">val</span> appOpenIntent = PendingIntent.getActivity(</span><br><span class="line">        context,</span><br><span class="line">        <span class="number">1</span>,</span><br><span class="line">        activityIntent,</span><br><span class="line">        PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> appOpenIntent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>RemoteView设置点击事件<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">set<span class="constructor">OnClickPendingIntent(R.<span class="params">id</span>.<span class="params">add</span>, <span class="params">createPendingIntent</span>(<span class="params">context</span>,R.<span class="params">id</span>.<span class="params">add</span>)</span>)</span><br></pre></td></tr></table></figure><br>createPendingIntent()是一个将id传给activity的方法，你也可以设置其他信息，在activity做出响应<br><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">createPendingIntent</span><span class="params">(context: <span class="type">Context</span>,<span class="meta">@IdRes</span> id:<span class="type">Int</span>)</span></span>:PendingIntent&#123;</span><br><span class="line">    <span class="comment">/*打开APP intent*/</span></span><br><span class="line">    <span class="keyword">val</span> activityIntent = Intent(context, MainActivity::<span class="keyword">class</span>.java).apply &#123;</span><br><span class="line">        setData(Uri.parse(<span class="string">&quot;harvic:<span class="variable">$id</span>&quot;</span>))</span><br><span class="line">        flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">val</span> appOpenIntent = PendingIntent.getActivity(</span><br><span class="line">        context,</span><br><span class="line">        <span class="number">1</span>,</span><br><span class="line">        activityIntent,</span><br><span class="line">        PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> appOpenIntent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>在onReceive中处理：</strong></p>
-<p>和上述的基本一样，根据id来处理不同的点击事件</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build<span class="selector-class">.VERSION</span><span class="selector-class">.SDK_INT</span> &gt;= Build<span class="selector-class">.VERSION_CODES</span>.S) &#123;</span><br><span class="line">    val clickIntent = PendingIntent<span class="selector-class">.getBroadcast</span>(</span><br><span class="line">        context,</span><br><span class="line">        <span class="number">2</span>,</span><br><span class="line">        Intent(context, TodoWidget::class.java)<span class="selector-class">.apply</span> &#123;</span><br><span class="line">            putExtra(EXTRA_VIEW_ID, R<span class="selector-class">.id</span>.title)</span><br><span class="line">        &#125;,</span><br><span class="line">        PendingIntent<span class="selector-class">.FLAG_UPDATE_CURRENT</span> or PendingIntent.FLAG_MUTABLE</span><br><span class="line">    )</span><br><span class="line">    setOnClickPendingIntent(R<span class="selector-class">.id</span><span class="selector-class">.title</span>,clickIntent)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="最后">最后</h3>
-<p>点击查看：<a target="_blank" rel="noopener" href="https://github.com/xluu233/Widget12">项目代码</a>，欢迎大佬们的<code>Star</code></p>
+<p>和上述的基本一样，根据id来处理不同的点击事件<br><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build<span class="selector-class">.VERSION</span><span class="selector-class">.SDK_INT</span> &gt;= Build<span class="selector-class">.VERSION_CODES</span>.S) &#123;</span><br><span class="line">    val clickIntent = PendingIntent<span class="selector-class">.getBroadcast</span>(</span><br><span class="line">        context,</span><br><span class="line">        <span class="number">2</span>,</span><br><span class="line">        Intent(context, TodoWidget::class.java)<span class="selector-class">.apply</span> &#123;</span><br><span class="line">            putExtra(EXTRA_VIEW_ID, R<span class="selector-class">.id</span>.title)</span><br><span class="line">        &#125;,</span><br><span class="line">        PendingIntent<span class="selector-class">.FLAG_UPDATE_CURRENT</span> or PendingIntent.FLAG_MUTABLE</span><br><span class="line">    )</span><br><span class="line">    setOnClickPendingIntent(R<span class="selector-class">.id</span><span class="selector-class">.title</span>,clickIntent)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>点击查看：<a target="_blank" rel="noopener" href="https://github.com/xluu233/Widget12">项目代码</a>，欢迎大佬们的<code>Star</code></p>
 <blockquote>
 <p>感觉Andorid桌面小组件依旧不够完善，和以前相比也没啥大大的改变。=.=</p>
 </blockquote>
-<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/17c3269a73844a22a76388b5ffd99a8c~tplv-k3u1fbpfcp-watermark.image?" width = "300"  alt="图片名称" align=center />
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/17c3269a73844a22a76388b5ffd99a8c~tplv-k3u1fbpfcp-watermark.image?" width = "300"  alt="图片名称" align=center /></p>
 <hr>
 <p>之前的文章介绍了网络封装、组件化、基础工具等，有兴趣的可以查看：</p>
 <ul>

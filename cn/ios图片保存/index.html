@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -459,12 +459,10 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="方法一：">方法一：</h2>
-<p>如下代码：</p>
+        <h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>如下代码：</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将view转成图片并保存相册</span></span><br><span class="line">    <span class="keyword">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">saveBtnClick</span>()</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> frame <span class="operator">=</span> view.frame</span><br><span class="line">        <span class="type">UIGraphicsBeginImageContext</span>(frame.size)</span><br><span class="line">        view.layer.render(in: <span class="type">UIGraphicsGetCurrentContext</span>()<span class="operator">!</span>)</span><br><span class="line">        <span class="keyword">let</span> image <span class="operator">=</span> <span class="type">UIGraphicsGetImageFromCurrentImageContext</span>()</span><br><span class="line">        <span class="type">UIGraphicsEndImageContext</span>()</span><br><span class="line">        <span class="keyword">self</span>.loadImage(image: image<span class="operator">!</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//保存图片</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">loadImage</span>(<span class="params">image</span>:<span class="type">UIImage</span>)</span>&#123;</span><br><span class="line">        <span class="type">UIImageWriteToSavedPhotosAlbum</span>(image, <span class="keyword">self</span>, #selector(<span class="keyword">self</span>.image(image:didFinishSavingWithError:contextInfo:)), <span class="literal">nil</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//回调</span></span><br><span class="line">    <span class="keyword">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">image</span>(<span class="params">image</span>: <span class="type">UIImage</span>, <span class="params">didFinishSavingWithError</span>: <span class="type">NSError</span>?,<span class="params">contextInfo</span>: <span class="type">AnyObject</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> didFinishSavingWithError <span class="operator">!=</span> <span class="literal">nil</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;error!&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;保存成功&quot;</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>实测效果在IOS 12上可用，但是保存的质量不高。</p>
-<h2 id="方法二：">方法二：</h2>
-<p>保存UIview</p>
+<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><p>保存UIview</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UIImageWriteToSavedPhotosAlbum</span>(<span class="keyword">_</span> <span class="params">image</span>: <span class="type">UIImage</span>, <span class="keyword">_</span> <span class="params">completionTarget</span>: <span class="keyword">Any</span><span class="operator">?</span>, <span class="keyword">_</span> <span class="params">completionSelector</span>: <span class="type">Selector</span>?, <span class="keyword">_</span> <span class="params">contextInfo</span>: <span class="type">UnsafeMutableRawPointer</span>?)</span></span><br></pre></td></tr></table></figure>
 <p>最后在info.plist中加入权限：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190122140908334.png" alt="image"></p>

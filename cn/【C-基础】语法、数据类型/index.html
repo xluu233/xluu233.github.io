@@ -239,12 +239,23 @@
 
           
           
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              关于
+              标签
               
               
             </a>
@@ -264,20 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
+              关于
               
               
             </a>
@@ -395,7 +395,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.9k</span> In Total
+              Words <span class="post-count">1.8k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -457,8 +457,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="基础语法">基础语法</h2>
-<p><strong>main函数：</strong></p>
+        <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p><strong>main函数：</strong></p>
 <blockquote>
 <p>每个单独的程序必须要有一个main函数，除非这个程序是一个库。</p>
 </blockquote>
@@ -472,9 +471,7 @@
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><strong>注释代码：</strong></p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">//</span> test.cpp</span><br></pre></td></tr></table></figure>
-<p><strong>输出log:</strong></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;test&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>获取输入：</strong></p>
+<p><strong>输出log:</strong><br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;test&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br><strong>获取输入：</strong></p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">    std::cin.<span class="built_in">get</span>();</span><br><span class="line"></span><br><span class="line">或者：</span><br><span class="line">    <span class="keyword">long</span> distance;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;输入距离：&quot;</span> &lt;&lt;endl;</span><br><span class="line">    cin &gt;&gt; distance;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>你可以这样记：<code>c-in</code>,<code>c-out</code>，代表cpp的输入输出，在这里不建议使用<code>printf</code>，至于为什么我也不知道</p>
@@ -488,8 +485,7 @@
 <p>namespace是指标识符的各种可见范围。命名空间用关键字namespace 来定义。C++标准程序库中的所有标识符都被定义于一个名为std的namespace中，命名空间是C++的一种机制，用来把单个标识符下的大量有逻辑联系的程序实体组合到一起。此标识符作为此组群的名字。</p>
 <p>比如打印输出完整语句如下：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::cout&lt;&lt;std::hex&lt;&lt;<span class="number">3.4</span>&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
-<p>使用using namespace std：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;<span class="comment">//此处也可以改为cout &lt;&lt; &quot;hello world\n&quot;;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用using namespace std：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;<span class="comment">//此处也可以改为cout &lt;&lt; &quot;hello world\n&quot;;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>这样命名空间std内定义的所有标识符都有效，就好像它们被声明为全局变量一样</li>
 <li>所谓命名空间，是一种将程序库名称封装起来的方法，它就像在各个程序库中立起一道道围墙。</li>
@@ -504,26 +500,9 @@
 <p>自定义函数的时候需要定义头文件方法，using namespace std放在外部使得所有函数都能访问std成员。</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getSum</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> result = <span class="built_in">getSum</span>(<span class="number">1.0</span>,<span class="number">2.0</span>);</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;result&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getSum</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> c = a + b;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="基础数据类型">基础数据类型</h2>
-<p>首先需要明确的是，cpp中的基础数据类型有哪些：<br>
-<code>char</code><br>
-<code>short</code><br>
-<code>int</code><br>
-<code>double</code><br>
-<code>long</code><br>
-<code>bool</code><br>
-<code>float</code></p>
-<p>还有一些组合类型：<br>
-<code>long double</code><br>
-<code>long long</code><br>
-<code>long float</code><br>
-<code>long int</code><br>
-<code>short int</code></p>
-<p>特殊标识符：<br>
-<code>unsigned</code><br>
-<code>signed</code><br>
-<code>long</code><br>
-<code>short</code></p>
+<h2 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h2><p>首先需要明确的是，cpp中的基础数据类型有哪些：<br><code>char</code><br><code>short</code><br><code>int</code><br><code>double</code><br><code>long</code><br><code>bool</code><br><code>float</code></p>
+<p>还有一些组合类型：<br><code>long double</code><br><code>long long</code><br><code>long float</code><br><code>long int</code><br><code>short int</code></p>
+<p>特殊标识符：<br><code>unsigned</code><br><code>signed</code><br><code>long</code><br><code>short</code></p>
 <p>具体可以参考：<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/cpp/cpp-data-types.html">https://www.w3cschool.cn/cpp/cpp-data-types.html</a></p>
 <blockquote>
 <p>char只有一个字节，取值范围为2的8次方，-128~127，unsigned char代表0-255</p>
@@ -538,15 +517,10 @@
 <p>unsigned int取值范围就是0到2的32次方</p>
 <blockquote>
 <p>char默认情况不是有限定符，也不是无限定符，是由C++实现决定的。</p>
-</blockquote>
-<blockquote>
 <p>如果在操作数据的时候超出了该取值范围，将会怎样？</p>
 </blockquote>
-<p>如下定义了不同int类型的最大最小值：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 基本数据类型展示</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">int</span> i = INT_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_m = INT_MIN;</span><br><span class="line">    cout &lt;&lt; i_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt;i &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i_8 = INT8_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_8_m = INT8_MIN;</span><br><span class="line">    cout &lt;&lt; i_8_m &lt;&lt; <span class="string">&quot;~&quot;</span>  &lt;&lt; i_8 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i_16 = INT16_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_16_m = INT16_MIN;</span><br><span class="line">    cout &lt;&lt; i_16_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt; i_16 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i_32 = INT32_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_32_m = INT32_MIN;</span><br><span class="line">    cout  &lt;&lt; i_32_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt; i_32 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> i_64 = INT64_MAX;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> i_64_m = INT64_MIN;</span><br><span class="line">    cout  &lt;&lt; i_64_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt; i_64 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line"><span class="number">-2147483648</span>~<span class="number">2147483647</span></span><br><span class="line"><span class="number">-128</span>~<span class="number">127</span></span><br><span class="line"><span class="number">-32768</span>~<span class="number">32767</span></span><br><span class="line"><span class="number">-2147483648</span>~<span class="number">2147483647</span></span><br><span class="line"><span class="number">0</span>~<span class="number">4294967295</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>我们测试下数据类型超出取值范围是什么情况：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = INT_MAX;</span><br><span class="line"><span class="keyword">int</span> i_m = INT_MIN;</span><br><span class="line">cout &lt;&lt; i_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt;i &lt;&lt; endl;</span><br><span class="line">输出最小值和最大值：<span class="number">-2147483648</span>~<span class="number">2147483647</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//最大值+1，最小值-1</span></span><br><span class="line">i++;</span><br><span class="line">i_m--;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; i_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt;i &lt;&lt; endl;</span><br><span class="line">输出：<span class="number">2147483647</span>~<span class="number">-2147483648</span></span><br></pre></td></tr></table></figure>
-<p>可以看到数据的取值范围向是一个闭环，对于无符号类型也是一样的。</p>
+<p>如下定义了不同int类型的最大最小值：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 基本数据类型展示</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">int</span> i = INT_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_m = INT_MIN;</span><br><span class="line">    cout &lt;&lt; i_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt;i &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i_8 = INT8_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_8_m = INT8_MIN;</span><br><span class="line">    cout &lt;&lt; i_8_m &lt;&lt; <span class="string">&quot;~&quot;</span>  &lt;&lt; i_8 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i_16 = INT16_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_16_m = INT16_MIN;</span><br><span class="line">    cout &lt;&lt; i_16_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt; i_16 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i_32 = INT32_MAX;</span><br><span class="line">    <span class="keyword">int</span> i_32_m = INT32_MIN;</span><br><span class="line">    cout  &lt;&lt; i_32_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt; i_32 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> i_64 = INT64_MAX;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> i_64_m = INT64_MIN;</span><br><span class="line">    cout  &lt;&lt; i_64_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt; i_64 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line"><span class="number">-2147483648</span>~<span class="number">2147483647</span></span><br><span class="line"><span class="number">-128</span>~<span class="number">127</span></span><br><span class="line"><span class="number">-32768</span>~<span class="number">32767</span></span><br><span class="line"><span class="number">-2147483648</span>~<span class="number">2147483647</span></span><br><span class="line"><span class="number">0</span>~<span class="number">4294967295</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>我们测试下数据类型超出取值范围是什么情况：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = INT_MAX;</span><br><span class="line"><span class="keyword">int</span> i_m = INT_MIN;</span><br><span class="line">cout &lt;&lt; i_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt;i &lt;&lt; endl;</span><br><span class="line">输出最小值和最大值：<span class="number">-2147483648</span>~<span class="number">2147483647</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//最大值+1，最小值-1</span></span><br><span class="line">i++;</span><br><span class="line">i_m--;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; i_m &lt;&lt; <span class="string">&quot;~&quot;</span> &lt;&lt;i &lt;&lt; endl;</span><br><span class="line">输出：<span class="number">2147483647</span>~<span class="number">-2147483648</span></span><br></pre></td></tr></table></figure><br>可以看到数据的取值范围向是一个闭环，对于无符号类型也是一样的。</p>
 <p><strong>const限定符：</strong></p>
 <blockquote>
 <p>kotlin中生成编译器不可修改常量：const val TEST = 1</p>
@@ -572,17 +546,12 @@
 <p><strong>枚举enum</strong></p>
 <figure class="highlight processing"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> Color &#123;<span class="built_in">red</span>,<span class="built_in">blue</span>,<span class="built_in">green</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> main()&#123;</span><br><span class="line">    Color <span class="built_in">color</span> = <span class="built_in">red</span>;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">color</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这时候color输出为0，因为枚举类默认值为0，依次递增，也可以自定义值。</p>
-<p><strong>字符串：</strong><br>
-可以用<code>char[]</code>来表示字符串:</p>
+<p><strong>字符串：</strong><br>可以用<code>char[]</code>来表示字符串:</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> site[<span class="number">7</span>] = &#123;<span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;\0&#x27;</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> name[] = &#123;<span class="string">&quot;hahahahahah&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> tets[<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; site &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; name &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"><span class="built_in">strcpy</span>(tets,site);</span><br><span class="line">cout &lt;&lt; tets &lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<p><strong>使用string：</strong></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">加入头文件：</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line">    string title;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;输入title:&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cin&gt;&gt;title;</span><br><span class="line">    cout &lt;&lt; title &lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p><strong>使用string：</strong><br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">加入头文件：</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line">    string title;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;输入title:&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cin&gt;&gt;title;</span><br><span class="line">    cout &lt;&lt; title &lt;&lt;endl;</span><br></pre></td></tr></table></figure></p>
 <p><strong>字符串操作：</strong></p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 字符串赋值拼接操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 复制char</span></span><br><span class="line"><span class="built_in">strcpy</span>(tets,site);</span><br><span class="line">cout &lt;&lt; tets &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取长度</span></span><br><span class="line"><span class="keyword">int</span> length = <span class="built_in">strlen</span>(name);</span><br><span class="line">cout &lt;&lt; length &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> length2 = title.<span class="built_in">size</span>();</span><br><span class="line">cout &lt;&lt; length2 &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//拼接</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">strcat</span>(site,name) &lt;&lt; endl;</span><br><span class="line">string id = <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">string result = name + id;</span><br><span class="line">cout &lt;&lt; result &lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<h4 id="struct">struct</h4>
-<p>创建一个结构体：</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">struct People</span><br><span class="line">&#123;</span><br><span class="line">    int id<span class="comment">;</span></span><br><span class="line">    string name<span class="comment">;</span></span><br><span class="line">    float weight<span class="comment">;</span></span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<p>创建：</p>
+<h4 id="struct"><a href="#struct" class="headerlink" title="struct"></a>struct</h4><p>创建一个结构体：<br><figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">struct People</span><br><span class="line">&#123;</span><br><span class="line">    int id<span class="comment">;</span></span><br><span class="line">    string name<span class="comment">;</span></span><br><span class="line">    float weight<span class="comment">;</span></span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure><br>创建：</p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">People people<span class="comment">;</span></span><br><span class="line">people.id = <span class="number">1</span><span class="comment">;</span></span><br><span class="line">people.name = <span class="string">&quot;xiaoming&quot;</span><span class="comment">;</span></span><br><span class="line">people.weight = <span class="number">130.0</span>f<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>c++11之后可以简写：</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">//</span> c++<span class="number">11</span></span><br><span class="line">People test &#123;</span><br><span class="line">    <span class="number">2</span>,<span class="string">&quot;hah&quot;</span>,<span class="number">120.0</span>f</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -595,9 +564,7 @@
 <p>共用体包含多种类型成员，但同时只能使用一种</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">ONE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">/* data */</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">float</span> j;</span><br><span class="line">    <span class="keyword">double</span> ids[<span class="number">10</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    ONE one;</span><br><span class="line">    one.i = <span class="number">123</span>;</span><br><span class="line">    cout &lt;&lt; one.i &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    one.j = <span class="number">1.0f</span>;</span><br><span class="line">    cout &lt;&lt; one.i &lt;&lt;endl;   <span class="comment">//one.i将会丢失</span></span><br><span class="line">    cout &lt;&lt; one.j &lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>配合结构体使用：</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">struct people</span><br><span class="line">&#123;</span><br><span class="line">    string name<span class="comment">;</span></span><br><span class="line">    union TEST</span><br><span class="line">    &#123;</span><br><span class="line">        int id<span class="comment">;</span></span><br><span class="line">        float id_f<span class="comment">;</span></span><br><span class="line">    &#125; test<span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<p>也可以设置为匿名共用体：</p>
+<p>配合结构体使用：<br><figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">struct people</span><br><span class="line">&#123;</span><br><span class="line">    string name<span class="comment">;</span></span><br><span class="line">    union TEST</span><br><span class="line">    &#123;</span><br><span class="line">        int id<span class="comment">;</span></span><br><span class="line">        float id_f<span class="comment">;</span></span><br><span class="line">    &#125; test<span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure><br>也可以设置为匿名共用体：</p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">struct PEOPLE2</span><br><span class="line">&#123;</span><br><span class="line">    string name<span class="comment">;</span></span><br><span class="line">    union &#123;</span><br><span class="line">        int id<span class="comment">;</span></span><br><span class="line">        float id_f<span class="comment">;</span></span><br><span class="line">    &#125;<span class="comment">;</span></span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 
 
