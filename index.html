@@ -253,9 +253,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              分类
+              归档
               
               
             </a>
@@ -275,9 +275,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              归档
+              分类
               
               
             </a>
@@ -428,6 +428,179 @@
       <!-- Main Content -->
 
 
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/手撕STL之vector/">
+    <h2 class="post-title">
+      【C++】手撕STL之vector
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      具体实现就是维护一个原生数组，看代码就行了，这里只是简单的实现
+#include &lt;iostream&gt;template&lt;typename T&gt;class vector&#123;private:    T* data = nullptr;    int size = 0;    int capacity = 0;    inline void checkMemory(......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2022-07-15
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#STL" title="STL">STL</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/手撕memcpy基础函数/">
+    <h2 class="post-title">
+      【C++】手撕memcpy基础函数
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      手撕字符串函数，包括：
+
+memcpy
+memmove
+strcpy
+strcat
+strcmp
+strstr
+
+
+memcpy
+
+memcpy函数是c和c++使用的内存拷贝函数，
+函数原型是：void memcpy(voiddest, const void *src, size_t n);
+表示由src指向地址为起始地址的连续n个字节的数据复制到以dest指向地址为起始地址的空间内。与st......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2022-07-15
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#STL" title="STL">STL</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/手撕智能指针/">
+    <h2 class="post-title">
+      【C++】手撕STL系列之智能指针
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      手撕STL系列之智能指针
+C++11智能指针：
+
+shared_ptr: 基于引用计数实现
+unique_ptr: 不可以移动的智能指针
+weak_ptr: 解决shared_ptr循环引用问题，更加类似于shared_ptr的管理指针工具。
+
+shared_ptr
+shared_ptr是基于引用计数实现，可在生命周期内自动管理内存
+我们先实现一个应用计数的类，用atomic实现，保证线程安......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2022-07-14
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#STL" title="STL">STL</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/手撕LRU算法/">
+    <h2 class="post-title">
+      【C++】手撕LRU算法
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      LRU
+LRU(Least Recently Used) 即最近最少使用，属于典型的内存淘汰机制。
+该算法需要达到两个目的：
+
+可以轻易的更新最新的访问数据。
+轻易的找出最近最少未使用的数据。
+
+所以要用到哈希表+双向链表实现。利用map，获取key对应的value是O(1)，利用双向链表，实现新增和删除都是O(1)。
+版本1：自己实现循环链表存储，没有用API
+/*************......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2022-07-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#算法" title="算法">算法</a>
+    
+  </div>
+  
+
+</div>
+<hr>
 
 <div class="post-preview">
   
@@ -667,185 +840,6 @@ class Box&#123;        // 私有成员    private:        double length;        
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/【C-基础】语法、数据类型/">
-    <h2 class="post-title">
-      【C++基础】语法、数据类型
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      基础语法
-main函数：
-
-每个单独的程序必须要有一个main函数，除非这个程序是一个库。
-
-int main()&#123;    return 0;&#125;int代表返回类型为int数据类型，void代表无返回数据，可以省略void
-iostream.h:
-
-这玩意是基础的输入输出头文件，我们一般使用如下：
-
-#include &lt;iostream.h&gt;using name......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2021-09-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#c++" title="c++">c++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RecyclerView动画设置/">
-    <h2 class="post-title">
-      RecyclerView加载动画设置
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      
-之前介绍了各种界面间的切换动画，这次我们介绍下常用的列表加载动画
-
-实现效果：
-
-居中加载、和滑动动画
-
-
-
-从左边加载
-
-
-
-从右边加载
-
-
-实现代码
-加载动画：
-val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationController = LayoutAnimationController......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2021-09-01
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#自定义View" title="自定义View">自定义View</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Activity切换动画/">
-    <h2 class="post-title">
-      Activity跳转动画及View无缝衔接，了解一下？
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      如何设置Activity的切换动画？
-
-上一片文章我们讲述了Navigation切换动画，其实在Activity也能轻松实现切换动画。只不过我们很少去给activity设置切换动画，一般都是系统默认的。
-
-在Activity类中提供了overridePendingTransition方法:
-
-其参数意思是设置进入动画和退出动画，调用时机为：startActivity(intent)之后或者f......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2021-08-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#自定义View" title="自定义View">自定义View</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/">
-    <h2 class="post-title">
-      写一个MVVM快速开发框架（四）优雅的数据处理和事件通信
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      前言
-之前的文章介绍了网络封装、组件化、基础工具等，有兴趣的可以查看：
-写一个MVVM快速开发框架（一）基础类封装
-写一个MVVM快速开发框架（二）组件化改造 
-写一个MVVM快速开发框架（三）单Activity+多Fragment模式
-还有一些关于UI的基础工具：
-封装一个好看的吐司工具
-一点也不炫酷的Navigation动画
-
-不知道从什么说起，就记录一些关于数据的那些事吧，与数据打交道......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2021-08-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
-    
-    <a href="/tags/#LiveData" title="LiveData">LiveData</a>
-    
-    <a href="/tags/#Room" title="Room">Room</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -886,6 +880,14 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
           
           
           
+          <a href="/tags/#c++" title="c++" rel="10">c++</a>
+          
+          
+          
+          <a href="/tags/#Qt" title="Qt" rel="1">Qt</a>
+          
+          
+          
           <a href="/tags/#iOS" title="iOS" rel="1">iOS</a>
           
           
@@ -894,11 +896,7 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
           
           
           
-          <a href="/tags/#c++" title="c++" rel="6">c++</a>
-          
-          
-          
-          <a href="/tags/#Qt" title="Qt" rel="1">Qt</a>
+          <a href="/tags/#Android" title="Android" rel="1">Android</a>
           
           
           
@@ -907,10 +905,6 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
           
           
           <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
-          
-          
-          
-          <a href="/tags/#Android" title="Android" rel="1">Android</a>
           
           
           
@@ -939,6 +933,14 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
           
           
           <a href="/tags/#Lottie" title="Lottie" rel="1">Lottie</a>
+          
+          
+          
+          <a href="/tags/#算法" title="算法" rel="1">算法</a>
+          
+          
+          
+          <a href="/tags/#STL" title="STL" rel="3">STL</a>
           
           
           

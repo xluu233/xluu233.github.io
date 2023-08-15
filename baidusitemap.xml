@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xluu233.github.io/cn/%E6%89%8B%E6%92%95STL%E4%B9%8Bvector/</loc>
+    <lastmod>2022-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xluu233.github.io/cn/%E6%89%8B%E6%92%95memcpy%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2022-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xluu233.github.io/cn/%E6%89%8B%E6%92%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2022-07-13</lastmod>
+  </url>
+  <url>
+    <loc>https://xluu233.github.io/cn/%E6%89%8B%E6%92%95LRU%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2022-07-10</lastmod>
+  </url>
+  <url>
     <loc>https://xluu233.github.io/cn/QtCreator%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8F%8AqBreakpad-Dump%E5%88%86%E6%9E%90/</loc>
     <lastmod>2022-03-09</lastmod>
   </url>
