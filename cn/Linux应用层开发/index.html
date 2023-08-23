@@ -134,10 +134,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://xluu233.github.io/archives/2019/01/">
+  <link rel="canonical" href="https://xluu233.github.io/cn/Linux应用层开发/">
   <title>
     
-      卢小胖的开发日志
+      Linux多进程通信基础 - 卢小胖的开发日志
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -343,19 +343,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/home.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/archive.jpg');
+      --intro-header-background-image-url-post: url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: url('//img/common_back.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/archive.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/common_back.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/archive.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/common_back.jpg'); */
       
     }
 
@@ -373,10 +373,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>BugMaker</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Create bugs to solve problems</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#C++" title="C++">C++</a>
+              
+              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+              
+            </div>
+            <h1>Linux多进程通信基础</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2023-08-23
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">7</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.6k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -417,584 +451,262 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="1、Linux系统中进程的概念，以及创建进程">1、Linux系统中进程的概念，以及创建进程</h2>
+<p>在Linux中主要提供了fork、vfork、clone三个进程创建方法。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;process id is :%d \n&quot;</span>,<span class="built_in">getpid</span>());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pid_t</span> pid = fork();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sleep</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (pid == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;我是子进程,id:%d\n&quot;</span>,<span class="built_in">getpid</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (pid &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;我是父进程,id:%d\n&quot;</span>,<span class="built_in">getpid</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">process <span class="built_in">id</span> <span class="keyword">is</span> :<span class="number">13078</span> </span><br><span class="line">我是子进程,<span class="built_in">id</span>:<span class="number">13079</span></span><br><span class="line">我是父进程,<span class="built_in">id</span>:<span class="number">13078</span></span><br></pre></td></tr></table></figure>
+<p>为什么执行了两次了，这就是fork机制导致的</p>
+<blockquote>
+<p>fork函数创建了一个新的进程，新进程（子进程）与原有的进程（父进程）一模一样。子进程和父进程使用相同的代码段；子进程拷贝了父进程的堆栈段和数据段。子进程一旦开始运行，它复制了父进程的一切数据，然后各自运行，相互之间没有影响。</p>
+</blockquote>
+<h4 id="线程与进程区别，以及通信方式">线程与进程区别，以及通信方式</h4>
+<ul>
+<li>线程之间是共享进程资源的，实现线程通信的方式很多种，共享对象，消息队列，注意的是线程通信需要注意线程安全问题，在这里不详细介绍</li>
+<li>进程通信基本是依靠系统提供的方式，在不同系统上有独特的进程通信实现方式，在Linux上大致分为这几种：
+<ul>
+<li>管道（无名管道Pipe,有名管道FIFO）</li>
+<li>信号量</li>
+<li>Socket</li>
+<li>共享内存</li>
+<li>mmap</li>
+</ul>
+</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ACMer_L/article/details/107594116">Linux下进程间通信方式及实例</a></li>
+<li></li>
+</ul>
+<h2 id="2、实现进程通信">2、实现进程通信</h2>
+<h4 id="2-1-无名管道Pipe">2.1 无名管道Pipe</h4>
+<p><strong>管道概念</strong><br>
+1、管道是操作提供的一块操作系统内存；<br>
+2、管道是Unix中最古老的进程间通信方式；<br>
+3、我们把一个进程连接到另一进程的数据流称为管道。</p>
+<p><code>管道函数：int pipe(int pipefd[2])</code></p>
+<p>实现代码：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_pipe</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//fd是管道的读写文件描述符，0-代表读，1-代表写</span></span><br><span class="line">    <span class="keyword">int</span> fd[<span class="number">2</span>];</span><br><span class="line">    <span class="comment">//创建管道</span></span><br><span class="line">    <span class="built_in">pipe</span>(fd);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建一个子进程</span></span><br><span class="line">    <span class="keyword">pid_t</span> pid = fork();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (pid == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//当前是子进程</span></span><br><span class="line">        <span class="built_in">write</span>(fd[<span class="number">1</span>],<span class="string">&quot;hello&quot;</span>,<span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (pid &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//当前是父进程</span></span><br><span class="line">        <span class="keyword">char</span> buf[<span class="number">12</span>];</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="built_in">read</span>(fd[<span class="number">0</span>],buf,<span class="built_in"><span class="keyword">sizeof</span></span>(buf));</span><br><span class="line">        <span class="keyword">if</span> (ret &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//从管道读取成功</span></span><br><span class="line">            <span class="comment">//write(STDOUT_FILENO, buf, ret);</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;pipe read:%s\n&quot;</span>,buf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">pipe read:hello��$�</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37925202/article/details/79835102">Linux管道 - 系统调用pipe()函数实现</a></li>
+</ul>
+<h4 id="2-2-命名管道（FIFO）">2.2 命名管道（FIFO）</h4>
+<p>FIFO常被称为命名管道，以区分管道（pipe）。管道（pipe只能用于“有血缘关系”的进程间。但通过FIFO，不相关的进程也能交换数据。</p>
+<p>FIFO是unix基础文件类型中的一种。但，FIFO文件在磁盘上没有数据块，仅仅用来标识内核中一条通道。备进程可以打开这个文件进行 read/write，实际上是在读写内核通道，这样就实现了进程间通信。</p>
+<p><strong>创建管道</strong><br>
+使用命令：<code>mkfifo myfifo</code><br>
+使用函数：<code>int mkfifo(const char *pathname, mode_t mode);</code> 成功：0；失败：-1</p>
+<blockquote>
+<p>原理：内核会针对fifo文件开辟一个缓冲区，操作FIFO文件，可以操作缓冲区，实现进程通信。一旦使用mkfifo创建了一个FIFO，就可以使用open打开它，常见的文件IO函数都可以用于FIFO。如：close、read、write、unlink等</p>
+</blockquote>
+<p><strong>创建打开FIFO并将文件中的字符串写入FIFO：</strong></p>
+<figure class="highlight plain"><figcaption><span><stdio.h></span></figcaption><table><tr><td class="code"><pre><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;sys&#x2F;stat.h&gt;</span><br><span class="line">#include &lt;sys&#x2F;types.h&gt;</span><br><span class="line">#include &lt;fcntl.h&gt;</span><br><span class="line"> </span><br><span class="line">int main(int argc, char **argv)</span><br><span class="line">&#123;</span><br><span class="line">    if(argc !&#x3D; 2)&#123;</span><br><span class="line">        fprintf(stderr,&quot;usage:%s srcfile\n&quot;,argv[0]);</span><br><span class="line">        exit(EXIT_FAILURE);</span><br><span class="line">    &#125;</span><br><span class="line">    int infd;</span><br><span class="line">    infd &#x3D; open(argv[1],O_RDONLY);</span><br><span class="line">    if(infd &#x3D;&#x3D; -1)&#123;</span><br><span class="line">        perror(&quot;open error&quot;);                                                                                                               </span><br><span class="line">        exit(EXIT_FAILURE);</span><br><span class="line">     &#125;</span><br><span class="line">     if(mkfifo(&quot;tmpfifo&quot;,0644) &#x3D;&#x3D; -1)&#123;</span><br><span class="line">        perror(&quot;mkfifo error&quot;);</span><br><span class="line">        exit(EXIT_FAILURE);</span><br><span class="line">     &#125;</span><br><span class="line">     int fd ;</span><br><span class="line">     fd &#x3D; open(&quot;tmpfifo&quot;,O_WRONLY);</span><br><span class="line">     if(fd &#x3D;&#x3D; -1)&#123;</span><br><span class="line">         perror(&quot;open error&quot;);</span><br><span class="line">         exit(EXIT_FAILURE);</span><br><span class="line">     &#125;</span><br><span class="line">     char buf[1024*4];</span><br><span class="line">     int n &#x3D; 0;</span><br><span class="line">     while((n &#x3D; read(infd,buf,1024*4)))&#123;</span><br><span class="line">        write(fd,buf,n);</span><br><span class="line">     &#125;</span><br><span class="line">     close(infd);</span><br><span class="line">     close(fd);</span><br><span class="line">     printf(&quot;write success\n&quot;);</span><br><span class="line">     return 0;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p><strong>打开FIFO读取FIFO中的字符串，放入新文件中：</strong></p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(argc != <span class="number">3</span>)&#123;</span><br><span class="line">		<span class="built_in">fprintf</span>(stderr,<span class="string">&quot;usage:%s desfile\n&quot;</span>,argv[<span class="number">0</span>]);</span><br><span class="line">		<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> outfd;</span><br><span class="line">	outfd = <span class="built_in">open</span>(argv[<span class="number">1</span>],O_WRONLY|O_CREAT|O_TRUNC);</span><br><span class="line">	<span class="keyword">if</span>(outfd == <span class="number">-1</span>)&#123;</span><br><span class="line">		<span class="built_in">perror</span>(<span class="string">&quot;open error&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> fd ;</span><br><span class="line">	fd = <span class="built_in">open</span>(argv[<span class="number">2</span>],O_RDONLY);</span><br><span class="line">	<span class="keyword">if</span>(fd == <span class="number">-1</span>)&#123;</span><br><span class="line">		<span class="built_in">perror</span>(<span class="string">&quot;open error&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">1024</span>*<span class="number">4</span>];</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>((n = <span class="built_in">read</span>(fd,buf,<span class="number">1024</span>*<span class="number">4</span>)))&#123;</span><br><span class="line">		<span class="built_in">write</span>(outfd,buf,n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">close</span>(fd);</span><br><span class="line">	<span class="built_in">close</span>(outfd);</span><br><span class="line">	<span class="built_in">unlink</span>(argv[<span class="number">2</span>]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;read success\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mickole/p/3192909.html">linux系统编程之管道（三）：命令管道（FIFO)</a></li>
+</ul>
+<h4 id="2-3-信号量（SEMAPHORE）">2.3 信号量（SEMAPHORE）</h4>
+<blockquote>
+<p>Linux中信号和信号量是存在区别的：</p>
+</blockquote>
+<ul>
+<li>Linux内核的信号量用来操作系统进程间同步访问共享资源。</li>
+<li>signal，又简称为信号（软中断信号 ）用来通知进程发生了异步事件。</li>
+</ul>
+<p>具体信号量实现，参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/8632.html">Linux信号量详解</a></li>
+</ul>
+<h4 id="2-4-共享内存（SHARE-MEMORY）">2.4 共享内存（SHARE MEMORY）</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1551288">世上最好的共享内存(Linux共享内存最透彻的一篇)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37808566">进程间的通信方式（一）：共享内存</a></li>
+</ul>
+<h4 id="2-5-内存映射（MAPPED-MEMORY）">2.5 内存映射（MAPPED MEMORY）</h4>
+<blockquote>
+<p>很多黑科技开源库都是基于mmap实现的，理解mmap是提升代码能力的必不可少的。</p>
+</blockquote>
+<p><strong>mmap函数原型：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">mmap</span><span class="params">(<span class="keyword">void</span> *addr, <span class="keyword">size_t</span> length, <span class="keyword">int</span> prot, <span class="keyword">int</span> flags, <span class="keyword">int</span> fd, <span class="keyword">off_t</span> offset)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>addr : 映射地址，可以传NULL</li>
+<li>length：映射区的长度</li>
+<li>prot：
+<ul>
+<li>PROT_EXEC pages may be executed.</li>
+<li>PROT_READ pages may be read.</li>
+<li>PROT_WRITE pages may be written.</li>
+<li>PROT_NONE pages may not be accessed.</li>
+</ul>
+</li>
+<li>flags：
+<ul>
+<li>MAP_SHARED 映射区是共享的，对内存的修改会影响到源文件</li>
+<li>MAP_PRIVATE 映射区是私有的</li>
+</ul>
+</li>
+<li>fd：文件描述符，open打开一个文件</li>
+<li>offset：偏移量</li>
+<li>返回值
+<ul>
+<li>成功：返回可用内存首地址</li>
+<li>失败：返回MAP_FAILED</li>
+</ul>
+</li>
+</ul>
+<p><strong>释放mmap内存函数原型：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">munmap</span><span class="params">(<span class="keyword">void</span> *addr, <span class="keyword">size_t</span> length)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>addr：传mmap的返回值</li>
+<li>length：mmap创建长度</li>
+<li>返回值：
+<ul>
+<li>成功：0</li>
+<li>失败：-1</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_mmap</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> fd = <span class="built_in">open</span>(<span class="string">&quot;/tmp/mem.txt&quot;</span>,O_RDWR|O_CREAT);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fd:%d\n&quot;</span>,fd);</span><br><span class="line">    <span class="comment">//创建映射区</span></span><br><span class="line">    <span class="keyword">char</span>* mem = (<span class="keyword">char</span>*)<span class="built_in">mmap</span>(<span class="literal">nullptr</span>,<span class="number">8</span>,PROT_READ|PROT_WRITE,MAP_SHARED, fd, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (mem == MAP_FAILED)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//拷贝数据</span></span><br><span class="line">    <span class="built_in">strcpy</span>(mem,<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="comment">//释放mmap</span></span><br><span class="line">    <span class="built_in">munmap</span>(mem,<span class="number">8</span>);</span><br><span class="line">    <span class="built_in">close</span>(fd);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/546009181">Linux内核黑科技——mmap实现详解</a></li>
+</ul>
+<h4 id="2-6-消息队列（MESSAGE-QUEUE）">2.6 消息队列（MESSAGE QUEUE）</h4>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/手撕STL之vector/" data-toggle="tooltip" data-placement="top" title="【C++】手撕STL之vector">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
-    <!-- NO SIDEBAR -->
-    <!-- Post Container -->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            08-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Linux应用层开发/" style="color: #0085a1">
-              <span>
-                Linux多进程通信基础
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
-          
-          <li>
-            07-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/手撕memcpy基础函数/" style="color: #0085a1">
-              <span>
-                【C++】手撕memcpy基础函数
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/手撕STL之vector/" style="color: #0085a1">
-              <span>
-                【C++】手撕STL之vector
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/手撕智能指针/" style="color: #0085a1">
-              <span>
-                【C++】手撕STL系列之智能指针
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/手撕LRU算法/" style="color: #0085a1">
-              <span>
-                【C++】手撕LRU算法
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/QtCreator远程调试及qBreakpad-Dump分析/" style="color: #0085a1">
-              <span>
-                QtCreator远程调试及qBreakpad Dump分析
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
-          
-          <li>
-            09-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Android-12桌面小组件/" style="color: #0085a1">
-              <span>
-                Android12桌面小组件
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础进阶】class、struct、union/" style="color: #0085a1">
-              <span>
-                【C++基础进阶】class、struct、union
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础进阶】const、static、volatile/" style="color: #0085a1">
-              <span>
-                【C++基础进阶】const、static、volatile
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-专题】数组/" style="color: #0085a1">
-              <span>
-                【C++专题】数组
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础】面向对象/" style="color: #0085a1">
-              <span>
-                【C++基础】面向对象
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【C-基础】语法、数据类型/" style="color: #0085a1">
-              <span>
-                【C++基础】语法、数据类型
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RecyclerView动画设置/" style="color: #0085a1">
-              <span>
-                RecyclerView加载动画设置
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Activity切换动画/" style="color: #0085a1">
-              <span>
-                Activity跳转动画及View无缝衔接，了解一下？
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/" style="color: #0085a1">
-              <span>
-                写一个MVVM快速开发框架（四）优雅的数据处理和事件通信
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/自定义Navigation动画/" style="color: #0085a1">
-              <span>
-                一点也不炫酷的Navigation动画
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/谈一谈“单Activity-多Fragment”模式/" style="color: #0085a1">
-              <span>
-                MVVM(三) 谈一谈“单Activity+多Fragment”模式
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/封装一个好看的吐司框架/" style="color: #0085a1">
-              <span>
-                封装一个好看的吐司框架
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/写一个MVVM快速开发框架（二）组件化改造/" style="color: #0085a1">
-              <span>
-                写一个MVVM快速开发框架（二）组件化改造
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/写一个MVVM快速开发框架（一）基础类封装/" style="color: #0085a1">
-              <span>
-                写一个MVVM快速开发框架（一）基础类封装
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-22
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/聊一聊Android存储行为的变化/" style="color: #0085a1">
-              <span>
-                聊一聊Android存储行为的变化
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/聊一聊Kotlin中的线程安全/" style="color: #0085a1">
-              <span>
-                聊一聊Kotlin中的线程安全
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Android自定义不规则裁剪/" style="color: #0085a1">
-              <span>
-                Android自定义不规则裁剪
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <li>
-            08-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/网络笔记/" style="color: #0085a1">
-              <span>
-                Android网络部分笔记
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-          <span class="tag-text">2019</span>
-        </span>
-        <ul>
-          
-          <li>
-            09-07
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Mac下编译LibjpegTurbo/" style="color: #0085a1">
-              <span>
-                Mac下编译LibjpegTurbo
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Windows平台下编译LibjpegTurbo的静态库-a文件和动态库-so文件/" style="color: #0085a1">
-              <span>
-                Windows平台下编译LibjpegTurbo的静态库.a文件和动态库.so文件
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/window-libjpegturbo编译/" style="color: #0085a1">
-              <span>
-                Windows平台编译libjpegturbo的lib文件
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-22
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/ios图片保存/" style="color: #0085a1">
-              <span>
-                iOS将View以图片格式保存在系统相册
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Replaykit2/" style="color: #0085a1">
-              <span>
-                Replaykit2（iOS 11+）视频录制详解
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-    </div>
-    <!-- Sidebar Container -->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
-
-      <!-- Featured Tags -->
-      
-      <section>
-        <!-- no hr -->
-        <h5><a href="/tags/">特色标签</a></h5>
-        <div class="tags">
-          
-          
-          <a href="/tags/#自定义View" title="自定义View" rel="3">自定义View</a>
-          
-          
-          
-          <a href="/tags/#widget" title="widget" rel="1">widget</a>
-          
-          
-          
-          <a href="/tags/#LibJpegTurbo" title="LibJpegTurbo" rel="3">LibJpegTurbo</a>
-          
-          
-          
-          <a href="/tags/#不规则裁剪" title="不规则裁剪" rel="1">不规则裁剪</a>
-          
-          
-          
-          <a href="/tags/#c++" title="c++" rel="10">c++</a>
-          
-          
-          
-          <a href="/tags/#Qt" title="Qt" rel="1">Qt</a>
-          
-          
-          
-          <a href="/tags/#iOS" title="iOS" rel="1">iOS</a>
-          
-          
-          
-          <a href="/tags/#Replaykit2" title="Replaykit2" rel="1">Replaykit2</a>
-          
-          
-          
-          <a href="/tags/#Android" title="Android" rel="1">Android</a>
-          
-          
-          
-          <a href="/tags/#相册" title="相册" rel="1">相册</a>
-          
-          
-          
-          <a href="/tags/#图片保存" title="图片保存" rel="1">图片保存</a>
-          
-          
-          
-          <a href="/tags/#MVVM" title="MVVM" rel="4">MVVM</a>
-          
-          
-          
-          <a href="/tags/#网络框架" title="网络框架" rel="1">网络框架</a>
-          
-          
-          
-          <a href="/tags/#组件化" title="组件化" rel="1">组件化</a>
-          
-          
-          
-          <a href="/tags/#LiveData" title="LiveData" rel="1">LiveData</a>
-          
-          
-          
-          <a href="/tags/#Room" title="Room" rel="1">Room</a>
-          
-          
-          
-          <a href="/tags/#Toast" title="Toast" rel="1">Toast</a>
-          
-          
-          
-          <a href="/tags/#Lottie" title="Lottie" rel="1">Lottie</a>
-          
-          
-          
-          <a href="/tags/#算法" title="算法" rel="1">算法</a>
-          
-          
-          
-          <a href="/tags/#STL" title="STL" rel="3">STL</a>
-          
-          
-          
-          <a href="/tags/#网络" title="网络" rel="1">网络</a>
-          
-          
-          
-          <a href="/tags/#分区存储" title="分区存储" rel="1">分区存储</a>
-          
-          
-          
-          <a href="/tags/#线程安全" title="线程安全" rel="1">线程安全</a>
-          
-          
-          
-          <a href="/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
-          
-          
-          
-          <a href="/tags/#Navigation" title="Navigation" rel="2">Navigation</a>
-          
-          
-          
-          <a href="/tags/#动画" title="动画" rel="1">动画</a>
-          
-          
-          
-          <a href="/tags/#C++" title="C++" rel="1">C++</a>
-          
-          
-          
-          <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-          
-          
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1%E3%80%81Linux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%88%9B%E5%BB%BA%E8%BF%9B%E7%A8%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1、Linux系统中进程的概念，以及创建进程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B%E5%8C%BA%E5%88%AB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">线程与进程区别，以及通信方式</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2%E3%80%81%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2、实现进程通信</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-1-%E6%97%A0%E5%90%8D%E7%AE%A1%E9%81%93Pipe"><span class="toc-nav-number">2.0.1.</span> <span class="toc-nav-text">2.1 无名管道Pipe</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-%E5%91%BD%E5%90%8D%E7%AE%A1%E9%81%93%EF%BC%88FIFO%EF%BC%89"><span class="toc-nav-number">2.0.2.</span> <span class="toc-nav-text">2.2 命名管道（FIFO）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-%E4%BF%A1%E5%8F%B7%E9%87%8F%EF%BC%88SEMAPHORE%EF%BC%89"><span class="toc-nav-number">2.0.3.</span> <span class="toc-nav-text">2.3 信号量（SEMAPHORE）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-4-%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%EF%BC%88SHARE-MEMORY%EF%BC%89"><span class="toc-nav-number">2.0.4.</span> <span class="toc-nav-text">2.4 共享内存（SHARE MEMORY）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-5-%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%EF%BC%88MAPPED-MEMORY%EF%BC%89"><span class="toc-nav-number">2.0.5.</span> <span class="toc-nav-text">2.5 内存映射（MAPPED MEMORY）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-6-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%88MESSAGE-QUEUE%EF%BC%89"><span class="toc-nav-number">2.0.6.</span> <span class="toc-nav-text">2.6 消息队列（MESSAGE QUEUE）</span></a></li></ol></li></ol></li></ol>
+        
         </div>
-      </section>
-      
-
-      <!-- Friends Blog -->
-      
-    </div>
+      </aside>
     
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#C++" title="C++">C++</a>
+            
+            <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
