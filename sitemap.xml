@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xluu233.github.io/cn/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2023-09-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xluu233.github.io/cn/Linux%E5%BA%94%E7%94%A8%E5%B1%82%E5%BC%80%E5%8F%91/</loc>
     
     <lastmod>2023-08-22</lastmod>
@@ -242,7 +249,7 @@
 
   <url>
     <loc>https://xluu233.github.io/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -250,196 +257,203 @@
   
   <url>
     <loc>https://xluu233.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89View/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/widget/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/LibJpegTurbo/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E4%B8%8D%E8%A7%84%E5%88%99%E8%A3%81%E5%89%AA/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/c/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Qt/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/iOS/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Replaykit2/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Android/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%9B%B8%E5%86%8C/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/MVVM/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/LiveData/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Room/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Toast/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Lottie/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/STL/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E5%88%86%E5%8C%BA%E5%AD%98%E5%82%A8/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Kotlin/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Navigation/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/%E5%8A%A8%E7%94%BB/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/C/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/tags/Linux/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xluu233.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -448,35 +462,35 @@
   
   <url>
     <loc>https://xluu233.github.io/categories/Android/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/categories/Mac/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/categories/C/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/categories/iOS/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xluu233.github.io/categories/Windows/</loc>
-    <lastmod>2023-08-23</lastmod>
+    <lastmod>2023-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
