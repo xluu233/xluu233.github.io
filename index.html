@@ -436,39 +436,40 @@
   <!-- top end -->
   
 
-  <a href="/cn/设计模式-迭代器模式/">
+  <a href="/cn/十、OpenGL坐标系统-空间转换-摄像机/">
     <h2 class="post-title">
-      【设计模式】迭代器模式
+      十、OpenGL坐标系统 & 空间转换 & 摄像机
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      什么是迭代器通过迭代器可以顺序访问容器内的数据
-迭代器模式迭代器是一种行为设计模式， 让你能在不暴露复杂数据结构内部细节的情况下遍历其中所有的元素。
-迭代器使用场景
-统一容器类的遍历方式
-在不暴露原有数据下，使用不同的方式来遍历整个整合对象
-使用迭代器模式在新增容器类的时候，修改更加方便。
+      1、坐标系统
+右手坐标系：伸开右手，大拇指指向X轴正方向，食指指向Y轴正方向，其他三个手指指向Z轴正方向
 
-缺点：
+左手坐标系：伸开左手，大拇指指向X轴正方向，食指指向Y轴正方向，其他三个手指指向Z轴正方向  
 
-增加类的设计复杂度
 
-具体实现为了考虑到多类复用，我们直接上模板
-1、Iterator.h......
+两者的区别主要是两者Z轴的方向是相反的，openGL中使用的是右手坐标系
+
+
+
+
+每个顶点的x，y，z坐标都应该在-1.0到1.0之间，超出这个坐标范围的顶点都将不可见。我们通常会自己设......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2023-09-11
+    2023-10-13
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
-    <a href="/tags/#设计模式" title="设计模式">设计模式</a>
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
     
   </div>
   
@@ -483,65 +484,39 @@
   <!-- top end -->
   
 
-  <a href="/cn/Linux应用层开发/">
+  <a href="/cn/九、OpenGL基础数学知识/">
     <h2 class="post-title">
-      Linux多进程通信基础
+      九、OpenGL基础数学知识
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      1、Linux系统中进程的概念，以及创建进程
-在Linux中主要提供了fork、vfork、clone三个进程创建方法。
-//头文件#include &lt;sys/types.h&gt;#include &lt;unistd.h&gt;int main()&#123;    printf(&quot;process id is :%d \n&quot;,getpid());    pid_......
+      1、向量
+1.1 向量概念
+向量最基本的定义就是一个方向，每个向量在2D图像中都用一个箭头(x, y)表示。我们在2D图片中展示这些向量，因为这样子会更直观一点。你可以把这些2D向量当做z坐标为0的3D向量。由于向量表示的是方向，起始于何处并不会改变它的值。下图我们可以看到向量v¯和w¯是相等的，尽管他们的起始点不同：
+
+
+
+如果用公式表示：
+
+
+
+如果在三维空间中，就是（x,y,z）表示，......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2023-08-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C++" title="C++">C++</a>
-    
-    <a href="/tags/#Linux" title="Linux">Linux</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/手撕STL之vector/">
-    <h2 class="post-title">
-      【C++】手撕STL之vector
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      具体实现就是维护一个原生数组，看代码就行了，这里只是简单的实现
-#include &lt;iostream&gt;template&lt;typename T&gt;class vector&#123;private:    T* data = nullptr;    int size = 0;    int capacity = 0;    inline void checkMemory(......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2022-07-15
+    2023-10-10
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
-    <a href="/tags/#STL" title="STL">STL</a>
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
     
   </div>
   
@@ -556,41 +531,34 @@
   <!-- top end -->
   
 
-  <a href="/cn/手撕memcpy基础函数/">
+  <a href="/cn/八、Qt-OpenGL-的一些问题记录/">
     <h2 class="post-title">
-      【C++】手撕memcpy基础函数
+      八、Qt+OpenGL 的一些问题记录
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      手撕字符串函数，包括：
-
-memcpy
-memmove
-strcpy
-strcat
-strcmp
-strstr
-
-
-memcpy
-
-memcpy函数是c和c++使用的内存拷贝函数，
-函数原型是：void memcpy(voiddest, const void *src, size_t n);
-表示由src指向地址为起始地址的连续n个字节的数据复制到以dest指向地址为起始地址的空间内。与st......
+      1. 开发背景
+大多数人学习OpenGL估计都是从LearnOpenGL这个网站开始的吧，这个教程使用的是VS Studio + glfw + glad的开发方式。
+好吧，我之前也是这么做的，但是OpenGL本身是C风格的API, 如果用面向对象的思想其写，稍微有一些麻烦，而且在调试参数的时候不太方便。
+后来我在Review LearnOpenGL的时候就想换一种开发方式学习：
+方案一：
+I......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2022-07-15
+    2023-10-08
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
-    <a href="/tags/#STL" title="STL">STL</a>
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
     
   </div>
   
@@ -605,36 +573,35 @@ memcpy函数是c和c++使用的内存拷贝函数，
   <!-- top end -->
   
 
-  <a href="/cn/手撕智能指针/">
+  <a href="/cn/七、OpenGL常用开发库/">
     <h2 class="post-title">
-      【C++】手撕STL系列之智能指针
+      七、OpenGL常用开发库
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      手撕STL系列之智能指针
-C++11智能指针：
+      开发前提
+之前在LearnOpenGL上学习是使用Visual Studio2022开发的，现在需要整理一套开发工具类和基础框架，所以打算换用Clion+Cmake的方式，以下所有编译链接都是基于Cmake, 环境是CLion + MinGW
+基础工具库
+首先在Clion中创建一个基础的C++项目OpenGL-Tools，在其根目录下新建文件夹：
 
-shared_ptr: 基于引用计数实现
-unique_ptr: 不可以移动的智能指针
-weak_ptr: 解决shared_ptr循环引用问题，更加类似于shared_ptr的管理指针工具。
-
-shared_ptr
-shared_ptr是基于引用计数实现，可在生命周期内自动管理内存
-我们先实现一个应用计数的类，用atomic实现，保证线程安......
+include 用来存放三方库的头文件
+l......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2022-07-14
+    2023-10-06
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
-    <a href="/tags/#STL" title="STL">STL</a>
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
     
   </div>
   
@@ -649,36 +616,39 @@ shared_ptr是基于引用计数实现，可在生命周期内自动管理内存
   <!-- top end -->
   
 
-  <a href="/cn/手撕LRU算法/">
+  <a href="/cn/五、Clion配置Qt-Cmake开发环境/">
     <h2 class="post-title">
-      【C++】手撕LRU算法
+      五、Clion配置Qt+Cmake开发环境
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      LRU
-LRU(Least Recently Used) 即最近最少使用，属于典型的内存淘汰机制。
-该算法需要达到两个目的：
+      1. Qt安装
+1.1 Qt在线安装器
+Qt从5.15开始不再提供本地安装包，只能在线下载
 
-可以轻易的更新最新的访问数据。
-轻易的找出最近最少未使用的数据。
+官方资源：https://download.qt.io/
+官方在线下载器：https://download.qt.io/archive/qt/
 
-所以要用到哈希表+双向链表实现。利用map，获取key对应的value是O(1)，利用双向链表，实现新增和删除都是O(1)。
-版本1：自己实现循环链表存储，没有用API
-/*************......
+1.2 国内镜像源
+
+中国科学技术大学：http://mirrors.ustc.edu.cn/qtproject/
+清华大学：https://mirror......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2022-07-11
+    2023-09-28
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
-    <a href="/tags/#算法" title="算法">算法</a>
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
     
   </div>
   
@@ -693,31 +663,32 @@ LRU(Least Recently Used) 即最近最少使用，属于典型的内存淘汰机�
   <!-- top end -->
   
 
-  <a href="/cn/QtCreator远程调试及qBreakpad-Dump分析/">
+  <a href="/cn/六、VisualStudio-Cmake构建Qt项目/">
     <h2 class="post-title">
-      QtCreator远程调试及qBreakpad Dump分析
+      六、VisualStudio+Cmake构建Qt项目
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      QtCreator远程调试及qBreakpad Dump分析
-1、QtCreator远程连接Linux开发板调试
-GCC:    arm-poky-linux-gnueabi-g++ (GCC) 5.3.0
-开发板：arm-poky-linux-gnueabi-gcc
-ubuntu:  /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk......
+      VisualStudio创建QT项目
+这个没啥讲的，配置好Qt项目之后，创建的时候选择CMAKE方式就行，一般直接运行就可以跑了，如果出错看下是否配置正确。
+Cmake管理Qt项目
+CMake是一个跨平台的自动化构建系统，它使用名为CMakeLists.txt的文本文件来描述项目的构建过程。这个文件可以通过编写简单的指令来创建编译过程，并且可以在不同的平台上使用相同的CMakeLists.t......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2022-03-10
+    2023-09-28
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
-    <a href="/tags/#Qt" title="Qt">Qt</a>
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
     
   </div>
   
@@ -732,68 +703,32 @@ ubuntu:  /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk......
   <!-- top end -->
   
 
-  <a href="/cn/Android-12桌面小组件/">
+  <a href="/cn/四、理解OpenGL渲染管线/">
     <h2 class="post-title">
-      Android12桌面小组件
+      四、理解OpenGL渲染管线
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      前言
-Anroid上的桌面小组件很早以前就有了，相比iOS的小组件一出来就大火不同，Android桌面小组件一直很难用，最近看到了Google微信号推送的文章：
-
-更新您的 widget 以适配 Android 12
-创造无限可能 | 在 Android 12 中使用 widget
-
-我以为Android小组件间要崛起了！！开心的去看了[官网demo](user-interface-samp......
+      理解渲染管线
+之前我们简单提到了固定渲染管线和可编程渲染管线，他们有共同特点：渲染管线，那什么是渲染管线？
+Contex为我们提供OpenGL的运行环境，而具体的操作则是在OpenGL的渲染管线中进行的。这里的渲染管线是一次完整的图形图像渲染过程，OpenGL1.0对应的渲染管线是固定渲染管线。意味着开发者只能做一些简单操作，后面OpenGL2.0之后渲染管线升级为可编程渲染管线。其中可编程......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-09-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#widget" title="widget">widget</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/【C-基础进阶】class、struct、union/">
-    <h2 class="post-title">
-      【C++基础进阶】class、struct、union
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      类class
-类是面向对象中的特性，在c中是没有类的概念。通常用class来表示，cpp中有抽象类，但是没有接口这种说法，cpp支持多继承。
-一个普通的类：
-class Fruit&#123;    private:            public:        Fruit();        ~Fruit();&#125;;Fruit::Fruit()&#123;&#125;Frui......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2021-09-28
+    2023-09-27
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
+    
   </div>
   
 
@@ -807,37 +742,121 @@ class Fruit&#123;    private:            public:        Fruit();        ~Fruit()
   <!-- top end -->
   
 
-  <a href="/cn/【C-基础进阶】const、static、volatile/">
+  <a href="/cn/三、理解OpenGL是一个状态机/">
     <h2 class="post-title">
-      【C++基础进阶】const、static、volatile
+      三、理解OpenGL是一个状态机
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      Const
-const代表不可更改，和kotlin中const类似。
-一般用法：
-const int i = 0;//errori = 2;
-普通变量申明在顶层中，可以被其他文件访问。const只可以被本文件中的函数访问，可以使用extern来访问其他文件中的const变量。
-指针与const：
+      理解OpenGL是一个状态机
+什么是状态机，简单的可以理解为：
 
-指针与const配合使用有几种不同的情况
+它有记忆的能力，能够记住自己当前的状态。
+它可以接收输入，根据输入的内容和自己的状态，修改自己的状态，并且可以得到输出。
+当它进入某个特殊的状态（停机状态）的时候，它不再接收输入，停止工作。
 
+我们举个以电脑操作为例：
 
-const在前，修饰数据类型
-
-const in......
+电脑的存储器（内存、硬盘等等），可以记住电脑自己当前的状态（当前安装在电脑中的软件、保存在电脑中的数据，其......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-09-26
+    2023-09-16
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/二、如何理解OpenGL/">
+    <h2 class="post-title">
+      二、如何理解OpenGL
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      OpenGL是什么
+
+OpenGL是一个图像API，是一套接口，并不是一个独立的平台
+硬件层面和驱动层面需要支持OpenGL,才能使用OpenGL API，目前大部分图形设备都支持OpenGL，所以其应用层面才非常广
+OpenGL的Open指的是接口是开放的，而具体实现的库一般都是不公开的。
+
+
+显卡驱动和OpenGL的关系：OpenGL每隔一段时间发布新的API，显卡厂商需要在驱动中支持其......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2023-09-15
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/一、初识计算机图形学/">
+    <h2 class="post-title">
+      一、初识计算机图形学
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      1、什么是计算机图形学？
+什么是计算机图形学？计算机图形学(Computer Graphics，简称CG)的内容比较丰富，与很多学科都有交叉，因此笔者认为是无法严格定义的。
+在“Wiki百科”和“百度百科”上，对“计算机图形学”的解释为：计算机图形学是一种使用数学算法将二维或三维图形转化为计算机显示器的栅格形式的科学。简单地说，计算机图形学的主要研究内容就是研究如何在计算机中表示图形、以及利......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2023-09-14
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+    
+    <a href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
     
   </div>
   
@@ -885,7 +904,7 @@ const in......
           
           
           
-          <a href="/tags/#c++" title="c++" rel="11">c++</a>
+          <a href="/tags/#c++" title="c++" rel="21">c++</a>
           
           
           
@@ -982,6 +1001,14 @@ const in......
           
           
           <a href="/tags/#设计模式" title="设计模式" rel="1">设计模式</a>
+          
+          
+          
+          <a href="/tags/#OpenGL" title="OpenGL" rel="10">OpenGL</a>
+          
+          
+          
+          <a href="/tags/#计算机图形学" title="计算机图形学" rel="10">计算机图形学</a>
           
           
         </div>

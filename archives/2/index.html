@@ -436,37 +436,40 @@
   <!-- top end -->
   
 
-  <a href="/cn/【C-专题】数组/">
+  <a href="/cn/设计模式-迭代器模式/">
     <h2 class="post-title">
-      【C++专题】数组
+      【设计模式】迭代器模式
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-数组是一个固定大小、相同类型的连续有序集合，是一块连续的内存块
+      什么是迭代器通过迭代器可以顺序访问容器内的数据
+迭代器模式迭代器是一种行为设计模式， 让你能在不暴露复杂数据结构内部细节的情况下遍历其中所有的元素。
+迭代器使用场景
+统一容器类的遍历方式
+在不暴露原有数据下，使用不同的方式来遍历整个整合对象
+使用迭代器模式在新增容器类的时候，修改更加方便。
 
-数组的几种实现方式
-原生数组
-c++原生提供的数据结构，创建形式为：
-type name[size]
-type为数据类型，name为名称，size为初始化大小
-初始化：
-char name[4];
-初始化并赋值：
-char name[4] = &#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C......
+缺点：
+
+增加类的设计复杂度
+
+具体实现为了考虑到多类复用，我们直接上模板
+1、Iterator.h......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-09-20
+    2023-09-11
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
+    <a href="/tags/#设计模式" title="设计模式">设计模式</a>
+    
   </div>
   
 
@@ -480,28 +483,66 @@ char name[4] = &#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C......
   <!-- top end -->
   
 
-  <a href="/cn/【C-基础】面向对象/">
+  <a href="/cn/Linux应用层开发/">
     <h2 class="post-title">
-      【C++基础】面向对象
+      Linux多进程通信基础
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      类&amp;对象
-一个普普通通的类：
-class Box&#123;        // 私有成员    private:        double length;        double width;    // 公共成员    public:        int size;    // 内部定义成员函数    double getV()&#123;        return l......
+      1、Linux系统中进程的概念，以及创建进程
+在Linux中主要提供了fork、vfork、clone三个进程创建方法。
+//头文件#include &lt;sys/types.h&gt;#include &lt;unistd.h&gt;int main()&#123;    printf(&quot;process id is :%d \n&quot;,getpid());    pid_......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-09-13
+    2023-08-23
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#C++" title="C++">C++</a>
+    
+    <a href="/tags/#Linux" title="Linux">Linux</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/手撕STL之vector/">
+    <h2 class="post-title">
+      【C++】手撕STL之vector
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      具体实现就是维护一个原生数组，看代码就行了，这里只是简单的实现
+#include &lt;iostream&gt;template&lt;typename T&gt;class vector&#123;private:    T* data = nullptr;    int size = 0;    int capacity = 0;    inline void checkMemory(......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2022-07-15
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
+    <a href="/tags/#STL" title="STL">STL</a>
+    
   </div>
   
 
@@ -515,36 +556,42 @@ class Box&#123;        // 私有成员    private:        double length;        
   <!-- top end -->
   
 
-  <a href="/cn/【C-基础】语法、数据类型/">
+  <a href="/cn/手撕memcpy基础函数/">
     <h2 class="post-title">
-      【C++基础】语法、数据类型
+      【C++】手撕memcpy基础函数
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      基础语法
-main函数：
+      手撕字符串函数，包括：
 
-每个单独的程序必须要有一个main函数，除非这个程序是一个库。
+memcpy
+memmove
+strcpy
+strcat
+strcmp
+strstr
 
-int main()&#123;    return 0;&#125;int代表返回类型为int数据类型，void代表无返回数据，可以省略void
-iostream.h:
 
-这玩意是基础的输入输出头文件，我们一般使用如下：
+memcpy
 
-#include &lt;iostream.h&gt;using name......
+memcpy函数是c和c++使用的内存拷贝函数，
+函数原型是：void memcpy(voiddest, const void *src, size_t n);
+表示由src指向地址为起始地址的连续n个字节的数据复制到以dest指向地址为起始地址的空间内。与st......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-09-10
+    2022-07-15
   </p>
   <div class="tags">
     
     <a href="/tags/#c++" title="c++">c++</a>
     
+    <a href="/tags/#STL" title="STL">STL</a>
+    
   </div>
   
 
@@ -558,43 +605,36 @@ iostream.h:
   <!-- top end -->
   
 
-  <a href="/cn/RecyclerView动画设置/">
+  <a href="/cn/手撕智能指针/">
     <h2 class="post-title">
-      RecyclerView加载动画设置
+      【C++】手撕STL系列之智能指针
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-之前介绍了各种界面间的切换动画，这次我们介绍下常用的列表加载动画
+      手撕STL系列之智能指针
+C++11智能指针：
 
-实现效果：
+shared_ptr: 基于引用计数实现
+unique_ptr: 不可以移动的智能指针
+weak_ptr: 解决shared_ptr循环引用问题，更加类似于shared_ptr的管理指针工具。
 
-居中加载、和滑动动画
-
-
-
-从左边加载
-
-
-
-从右边加载
-
-
-实现代码
-加载动画：
-val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationController = LayoutAnimationController......
+shared_ptr
+shared_ptr是基于引用计数实现，可在生命周期内自动管理内存
+我们先实现一个应用计数的类，用atomic实现，保证线程安......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-09-01
+    2022-07-14
   </p>
   <div class="tags">
     
-    <a href="/tags/#自定义View" title="自定义View">自定义View</a>
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#STL" title="STL">STL</a>
     
   </div>
   
@@ -609,31 +649,36 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
   <!-- top end -->
   
 
-  <a href="/cn/Activity切换动画/">
+  <a href="/cn/手撕LRU算法/">
     <h2 class="post-title">
-      Activity跳转动画及View无缝衔接，了解一下？
+      【C++】手撕LRU算法
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      如何设置Activity的切换动画？
+      LRU
+LRU(Least Recently Used) 即最近最少使用，属于典型的内存淘汰机制。
+该算法需要达到两个目的：
 
-上一片文章我们讲述了Navigation切换动画，其实在Activity也能轻松实现切换动画。只不过我们很少去给activity设置切换动画，一般都是系统默认的。
+可以轻易的更新最新的访问数据。
+轻易的找出最近最少未使用的数据。
 
-在Activity类中提供了overridePendingTransition方法:
-
-其参数意思是设置进入动画和退出动画，调用时机为：startActivity(intent)之后或者f......
+所以要用到哈希表+双向链表实现。利用map，获取key对应的value是O(1)，利用双向链表，实现新增和删除都是O(1)。
+版本1：自己实现循环链表存储，没有用API
+/*************......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-08-30
+    2022-07-11
   </p>
   <div class="tags">
     
-    <a href="/tags/#自定义View" title="自定义View">自定义View</a>
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#算法" title="算法">算法</a>
     
   </div>
   
@@ -648,38 +693,70 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
   <!-- top end -->
   
 
-  <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/">
+  <a href="/cn/QtCreator远程调试及qBreakpad-Dump分析/">
     <h2 class="post-title">
-      写一个MVVM快速开发框架（四）优雅的数据处理和事件通信
+      QtCreator远程调试及qBreakpad Dump分析
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      QtCreator远程调试及qBreakpad Dump分析
+1、QtCreator远程连接Linux开发板调试
+GCC:    arm-poky-linux-gnueabi-g++ (GCC) 5.3.0
+开发板：arm-poky-linux-gnueabi-gcc
+ubuntu:  /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2022-03-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+    <a href="/tags/#Qt" title="Qt">Qt</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/Android-12桌面小组件/">
+    <h2 class="post-title">
+      Android12桌面小组件
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
       前言
-之前的文章介绍了网络封装、组件化、基础工具等，有兴趣的可以查看：
-写一个MVVM快速开发框架（一）基础类封装
-写一个MVVM快速开发框架（二）组件化改造 
-写一个MVVM快速开发框架（三）单Activity+多Fragment模式
-还有一些关于UI的基础工具：
-封装一个好看的吐司工具
-一点也不炫酷的Navigation动画
+Anroid上的桌面小组件很早以前就有了，相比iOS的小组件一出来就大火不同，Android桌面小组件一直很难用，最近看到了Google微信号推送的文章：
 
-不知道从什么说起，就记录一些关于数据的那些事吧，与数据打交道......
+更新您的 widget 以适配 Android 12
+创造无限可能 | 在 Android 12 中使用 widget
+
+我以为Android小组件间要崛起了！！开心的去看了[官网demo](user-interface-samp......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-08-26
+    2021-09-30
   </p>
   <div class="tags">
     
-    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
-    
-    <a href="/tags/#LiveData" title="LiveData">LiveData</a>
-    
-    <a href="/tags/#Room" title="Room">Room</a>
+    <a href="/tags/#widget" title="widget">widget</a>
     
   </div>
   
@@ -694,32 +771,28 @@ val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationContr
   <!-- top end -->
   
 
-  <a href="/cn/自定义Navigation动画/">
+  <a href="/cn/【C-基础进阶】class、struct、union/">
     <h2 class="post-title">
-      一点也不炫酷的Navigation动画
+      【C++基础进阶】class、struct、union
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-在上一篇中我们说到了使用Navigation导航Fragment，介绍了Navigation的基本使用，然后突然想到做一些Fragment的跳转动画，所以产生了一些内容哈哈哈
-
-Navigation中使用动画
-通常我们设置一个跳转action是酱紫的：
-&lt;action    android:id=&quot;@+id/action_scale1&quot;    app:destin......
+      类class
+类是面向对象中的特性，在c中是没有类的概念。通常用class来表示，cpp中有抽象类，但是没有接口这种说法，cpp支持多继承。
+一个普通的类：
+class Fruit&#123;    private:            public:        Fruit();        ~Fruit();&#125;;Fruit::Fruit()&#123;&#125;Frui......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-08-19
+    2021-09-28
   </p>
   <div class="tags">
     
-    <a href="/tags/#Navigation" title="Navigation">Navigation</a>
-    
-    <a href="/tags/#动画" title="动画">动画</a>
+    <a href="/tags/#c++" title="c++">c++</a>
     
   </div>
   
@@ -734,116 +807,37 @@ Navigation中使用动画
   <!-- top end -->
   
 
-  <a href="/cn/谈一谈“单Activity-多Fragment”模式/">
+  <a href="/cn/【C-基础进阶】const、static、volatile/">
     <h2 class="post-title">
-      MVVM(三) 谈一谈“单Activity+多Fragment”模式
+      【C++基础进阶】const、static、volatile
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      单Activity+多Fragment模式
+      Const
+const代表不可更改，和kotlin中const类似。
+一般用法：
+const int i = 0;//errori = 2;
+普通变量申明在顶层中，可以被其他文件访问。const只可以被本文件中的函数访问，可以使用extern来访问其他文件中的const变量。
+指针与const：
 
-自从知道这一招之后我基本不太愿意使用activity了，fragment可以快速创建和管理，可以合理设计页面跳转，设计炫酷的跳转动画，一些操作可以统一进行管理。
+指针与const配合使用有几种不同的情况
 
 
-用Fragment替代Activity
+const在前，修饰数据类型
 
-以前大部分时候都是将Activity作为页面，Fragment作为页面中的子页面（当时称之为碎片），基本上大部分功能由activity实现，......
+const in......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-08-14
+    2021-09-26
   </p>
   <div class="tags">
     
-    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
-    
-    <a href="/tags/#Navigation" title="Navigation">Navigation</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/封装一个好看的吐司框架/">
-    <h2 class="post-title">
-      封装一个好看的吐司框架
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      前言
-Android各家定制的系统Toast ui都不一样，而且很简单，之前使用只是简单的封装了一个工具类使用，后来看到Lottie之后想着做一个好看点的Toast，所以就抽空好好写了一下。
-ToastBox是一个自定义吐司库，可以实现多种自定义toast，有WindowsManger和系统Toast两种实现方式，配合Lottie动画库可以做一些好看的toast
-
-Github上关于Toas......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2021-08-13
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Toast" title="Toast">Toast</a>
-    
-    <a href="/tags/#Lottie" title="Lottie">Lottie</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/写一个MVVM快速开发框架（二）组件化改造/">
-    <h2 class="post-title">
-      写一个MVVM快速开发框架（二）组件化改造
-    </h2>
-    <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
-      组件化思想
-
-组件化对于各个领域都已经不是新鲜的词汇了，在Android上组件化已经遍地开花了，这里只是记录一下我对组件化的理解，有不对的地方请大家指出。
-
-组件化是为了解决什么问题
-优秀的工程项目应该满足高内聚低耦合思想，各个功能有明显的边界划分，各个模块各司其职，至少在修改的时候不是牵一发而动全身，其他人在接手的时候也能快速理解。
-如果你的项目存在一下问题，可以考虑使用组件化了：
-
-代码......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2021-08-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
-    
-    <a href="/tags/#组件化" title="组件化">组件化</a>
+    <a href="/tags/#c++" title="c++">c++</a>
     
   </div>
   
@@ -895,7 +889,7 @@ Github上关于Toas......
           
           
           
-          <a href="/tags/#c++" title="c++" rel="11">c++</a>
+          <a href="/tags/#c++" title="c++" rel="21">c++</a>
           
           
           
@@ -992,6 +986,14 @@ Github上关于Toas......
           
           
           <a href="/tags/#设计模式" title="设计模式" rel="1">设计模式</a>
+          
+          
+          
+          <a href="/tags/#OpenGL" title="OpenGL" rel="10">OpenGL</a>
+          
+          
+          
+          <a href="/tags/#计算机图形学" title="计算机图形学" rel="10">计算机图形学</a>
           
           
         </div>

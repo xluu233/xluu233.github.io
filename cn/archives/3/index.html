@@ -436,30 +436,36 @@
   <!-- top end -->
   
 
-  <a href="/cn/写一个MVVM快速开发框架（一）基础类封装/">
+  <a href="/cn/【C-专题】数组/">
     <h2 class="post-title">
-      写一个MVVM快速开发框架（一）基础类封装
+      【C++专题】数组
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      前言
-最近想要将老项目用MVVM模式去重构，原来的App采用MVP+MVVM的混合模式，老项目嘛大家都懂，最开始用MVP，后来慢慢改成MVVM，但是又没完全重构，所以整个项目看起来乱糟糟的，每次新加功能的时候写的那叫一个难受。
-工欲善其事必先利其器
-用MVVM+Jetpack组件的优点就不用我说了，写过的人肯定都说爽，此次就是想要重新整理下一些基础开发工具，封装一个自己用的顺手的MVVM模式......
+      
+数组是一个固定大小、相同类型的连续有序集合，是一块连续的内存块
+
+数组的几种实现方式
+原生数组
+c++原生提供的数据结构，创建形式为：
+type name[size]
+type为数据类型，name为名称，size为初始化大小
+初始化：
+char name[4];
+初始化并赋值：
+char name[4] = &#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-07-28
+    2021-09-20
   </p>
   <div class="tags">
     
-    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
-    
-    <a href="/tags/#网络框架" title="网络框架">网络框架</a>
+    <a href="/tags/#c++" title="c++">c++</a>
     
   </div>
   
@@ -474,31 +480,27 @@
   <!-- top end -->
   
 
-  <a href="/cn/聊一聊Android存储行为的变化/">
+  <a href="/cn/【C-基础】面向对象/">
     <h2 class="post-title">
-      聊一聊Android存储行为的变化
+      【C++基础】面向对象
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      总所周知Android上的存储权限一直在更改，从Android增加file provider,到Android10增加分区存储，Google对于存储权限管理越来越严格。我们聊一下Android上的存储Api兼容性适配。
-
-1. 应用存储空间
-应用保存数据的方式有如下：
-
-文件和媒体数据可以保存在“应用专属存储空间”和“公共存储空间之中”
-短数据或者偏好设置可以通过sharePreferenc......
+      类&amp;对象
+一个普普通通的类：
+class Box&#123;        // 私有成员    private:        double length;        double width;    // 公共成员    public:        int size;    // 内部定义成员函数    double getV()&#123;        return l......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-07-22
+    2021-09-13
   </p>
   <div class="tags">
     
-    <a href="/tags/#分区存储" title="分区存储">分区存储</a>
+    <a href="/tags/#c++" title="c++">c++</a>
     
   </div>
   
@@ -513,31 +515,35 @@
   <!-- top end -->
   
 
-  <a href="/cn/聊一聊Kotlin中的线程安全/">
+  <a href="/cn/【C-基础】语法、数据类型/">
     <h2 class="post-title">
-      聊一聊Kotlin中的线程安全
+      【C++基础】语法、数据类型
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      以上代码已上传Github,球球老哥们的Star
-前言
-在实际开发中有许多地方需要保证线程安全，保证互斥性。加锁是一个很好的实现方式，在kotlin中有哪些方式可以实现线程安全的效果？
-为什么需要处理线程安全问题
-线程安全问题由全局变量和静态变量引起，多个线程同时对统同一对象进行写操作，就可能发生每个线程读取到的值不一样。简而言之，如果在线程中不对变量进行写操作，值进行读操作，就可以避免线程......
+      基础语法
+main函数：
+
+每个单独的程序必须要有一个main函数，除非这个程序是一个库。
+
+int main()&#123;    return 0;&#125;int代表返回类型为int数据类型，void代表无返回数据，可以省略void
+iostream.h:
+
+这玩意是基础的输入输出头文件，我们一般使用如下：
+
+#include &lt;iostream.h&gt;using name......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-06-11
+    2021-09-10
   </p>
   <div class="tags">
     
-    <a href="/tags/#线程安全" title="线程安全">线程安全</a>
-    
-    <a href="/tags/#Kotlin" title="Kotlin">Kotlin</a>
+    <a href="/tags/#c++" title="c++">c++</a>
     
   </div>
   
@@ -552,37 +558,44 @@
   <!-- top end -->
   
 
-  <a href="/cn/Android自定义不规则裁剪/">
+  <a href="/cn/RecyclerView动画设置/">
     <h2 class="post-title">
-      Android自定义不规则裁剪
+      RecyclerView加载动画设置
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
       
-需求：实现一个不规则裁剪View,以前的实现方式不太优雅，和布局嵌套在一起耦合性太高，所以想将裁剪框和图片封装在一个View中。
+之前介绍了各种界面间的切换动画，这次我们介绍下常用的列表加载动画
 
-实现效果如下
+实现效果：
+
+居中加载、和滑动动画
 
 
-直接将代码，不多BB
 
-具体请看Git demo,欢迎Star，fork
-package com.xlu.cropimage;import android.content.Context;import android.content.res.......
+从左边加载
+
+
+
+从右边加载
+
+
+实现代码
+加载动画：
+val animation = AnimationUtils.loadAnimation(this, anim)val layoutAnimationController = LayoutAnimationController......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2021-02-20
+    2021-09-01
   </p>
   <div class="tags">
     
     <a href="/tags/#自定义View" title="自定义View">自定义View</a>
     
-    <a href="/tags/#不规则裁剪" title="不规则裁剪">不规则裁剪</a>
-    
   </div>
   
 
@@ -596,31 +609,31 @@ package com.xlu.cropimage;import android.content.Context;import android.content.
   <!-- top end -->
   
 
-  <a href="/cn/网络笔记/">
+  <a href="/cn/Activity切换动画/">
     <h2 class="post-title">
-      Android网络部分笔记
+      Activity跳转动画及View无缝衔接，了解一下？
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      1.TCP/IP说一下
+      如何设置Activity的切换动画？
 
-TCP/IP是网络协议的总称，包括了TCP\UDP\IP\HTTP\FTP等协议，大概可以分为4层：链路层，网络层，链路层，网络应用层，TCP\UDP都是传输层中的协议。
-TCP全称传输控制协议，传输形式为数据流，是面向连接的协议，也就是说必须与 对方建立连接才能（参考TCP三次握手四次挥手）
-UDP是用户数据报协议，传输形式为数据报，是不面向连接的。
+上一片文章我们讲述了Navigation切换动画，其实在Activity也能轻松实现切换动画。只不过我们很少去给activity设置切换动画，一般都是系统默认的。
 
-2.HTT......
+在Activity类中提供了overridePendingTransition方法:
+
+其参数意思是设置进入动画和退出动画，调用时机为：startActivity(intent)之后或者f......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2020-08-05
+    2021-08-30
   </p>
   <div class="tags">
     
-    <a href="/tags/#网络" title="网络">网络</a>
+    <a href="/tags/#自定义View" title="自定义View">自定义View</a>
     
   </div>
   
@@ -635,184 +648,202 @@ UDP是用户数据报协议，传输形式为数据报，是不面向连接的�
   <!-- top end -->
   
 
-  <a href="/cn/Mac下编译LibjpegTurbo/">
+  <a href="/cn/写一个MVVM快速开发框架（四）优雅的数据处理和事件通信/">
     <h2 class="post-title">
-      Mac下编译LibjpegTurbo
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Mac平台编译Libjpegturbo的优势
-我尝试过在windows,linux（Ubuntu），mac下用不同的方式来编译，最后实际测试，在mac平台下，用cmake（非AS自带）编译性能是最好的。
-1.Debug与Release版本区别：
-debug主要用于测试，release主要用于正式版本。按道理是一样的，但是在实际测试过程中发现，debug版本性能非常差劲，在Android上的表......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2019-09-07
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#LibJpegTurbo" title="LibJpegTurbo">LibJpegTurbo</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Windows平台下编译LibjpegTurbo的静态库-a文件和动态库-so文件/">
-    <h2 class="post-title">
-      Windows平台下编译LibjpegTurbo的静态库.a文件和动态库.so文件
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      LibjpegTurbo
-既然你看到这篇文章了，大概了解了LibjpegTurbo的作用了。这里不做多的介绍，官方生成LibjpegTurbo速度能提升2-6倍，根据实际测试，Turbo版本确实有提升，但是1.5.x版本和2.0.x版本速度差距较大，我们选择最新的release版本libjpeg2.0
-
-下载：https://sourceforge.net/projects/libjpeg-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2019-09-06
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#LibJpegTurbo" title="LibJpegTurbo">LibJpegTurbo</a>
-    
-    <a href="/tags/#Android" title="Android">Android</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/window-libjpegturbo编译/">
-    <h2 class="post-title">
-      Windows平台编译libjpegturbo的lib文件
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      LibJpegTurbo:
-简单介绍下LibjpegTurbo，LibjpegTurbo是Libjpeg是进化版本，而Android原生的图片压缩框架是基于libjpeg的。根据官方说，能达到libjpeg的2-6倍速度。
-
-Git地址:https://github.com/libjpeg-turbo/libjpeg-turbo
-
-
-库下载地址：https://sourceforge.net......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2019-09-05
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#LibJpegTurbo" title="LibJpegTurbo">LibJpegTurbo</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/ios图片保存/">
-    <h2 class="post-title">
-      iOS将View以图片格式保存在系统相册
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      方法一：
-如下代码：
-//将view转成图片并保存相册    @objc func saveBtnClick()&#123;        let frame = view.frame        UIGraphicsBeginImageContext(frame.size)        view.layer.render(in: UIGraphicsGetCurrentContext(......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 卢小胖 on
-    2019-01-22
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#相册" title="相册">相册</a>
-    
-    <a href="/tags/#图片保存" title="图片保存">图片保存</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Replaykit2/">
-    <h2 class="post-title">
-      Replaykit2（iOS 11+）视频录制详解
+      写一个MVVM快速开发框架（四）优雅的数据处理和事件通信
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
       前言
-公司有个项目要用到Replaykit录屏, 无奈从Android转到学习IOS，正好扩展下自己，技多不压身嘛。
-本篇是为了整理一下关于Replaykit的知识，网上关于Replaykit2的相关资料还是太少了。
-Replaykit
-Replaykit有什么用？
+之前的文章介绍了网络封装、组件化、基础工具等，有兴趣的可以查看：
+写一个MVVM快速开发框架（一）基础类封装
+写一个MVVM快速开发框架（二）组件化改造 
+写一个MVVM快速开发框架（三）单Activity+多Fragment模式
+还有一些关于UI的基础工具：
+封装一个好看的吐司工具
+一点也不炫酷的Navigation动画
 
-第一代的IOS9版本只能通过API请求开始录制屏幕，得到用户许可才开始，结束录制后得到一个mp4文件，不能进行实时操作。
-I......
+不知道从什么说起，就记录一些关于数据的那些事吧，与数据打交道......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 卢小胖 on
-    2019-01-14
+    2021-08-26
   </p>
   <div class="tags">
     
-    <a href="/tags/#iOS" title="iOS">iOS</a>
+    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
     
-    <a href="/tags/#Replaykit2" title="Replaykit2">Replaykit2</a>
+    <a href="/tags/#LiveData" title="LiveData">LiveData</a>
+    
+    <a href="/tags/#Room" title="Room">Room</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/自定义Navigation动画/">
+    <h2 class="post-title">
+      一点也不炫酷的Navigation动画
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+在上一篇中我们说到了使用Navigation导航Fragment，介绍了Navigation的基本使用，然后突然想到做一些Fragment的跳转动画，所以产生了一些内容哈哈哈
+
+Navigation中使用动画
+通常我们设置一个跳转action是酱紫的：
+&lt;action    android:id=&quot;@+id/action_scale1&quot;    app:destin......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-08-19
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Navigation" title="Navigation">Navigation</a>
+    
+    <a href="/tags/#动画" title="动画">动画</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/谈一谈“单Activity-多Fragment”模式/">
+    <h2 class="post-title">
+      MVVM(三) 谈一谈“单Activity+多Fragment”模式
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      单Activity+多Fragment模式
+
+自从知道这一招之后我基本不太愿意使用activity了，fragment可以快速创建和管理，可以合理设计页面跳转，设计炫酷的跳转动画，一些操作可以统一进行管理。
+
+
+用Fragment替代Activity
+
+以前大部分时候都是将Activity作为页面，Fragment作为页面中的子页面（当时称之为碎片），基本上大部分功能由activity实现，......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-08-14
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
+    
+    <a href="/tags/#Navigation" title="Navigation">Navigation</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/封装一个好看的吐司框架/">
+    <h2 class="post-title">
+      封装一个好看的吐司框架
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      前言
+Android各家定制的系统Toast ui都不一样，而且很简单，之前使用只是简单的封装了一个工具类使用，后来看到Lottie之后想着做一个好看点的Toast，所以就抽空好好写了一下。
+ToastBox是一个自定义吐司库，可以实现多种自定义toast，有WindowsManger和系统Toast两种实现方式，配合Lottie动画库可以做一些好看的toast
+
+Github上关于Toas......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-08-13
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Toast" title="Toast">Toast</a>
+    
+    <a href="/tags/#Lottie" title="Lottie">Lottie</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/写一个MVVM快速开发框架（二）组件化改造/">
+    <h2 class="post-title">
+      写一个MVVM快速开发框架（二）组件化改造
+    </h2>
+    <h3 class="post-subtitle">
+      A succinct hexo theme...
+    </h3>
+    <div class="post-content-preview">
+      组件化思想
+
+组件化对于各个领域都已经不是新鲜的词汇了，在Android上组件化已经遍地开花了，这里只是记录一下我对组件化的理解，有不对的地方请大家指出。
+
+组件化是为了解决什么问题
+优秀的工程项目应该满足高内聚低耦合思想，各个功能有明显的边界划分，各个模块各司其职，至少在修改的时候不是牵一发而动全身，其他人在接手的时候也能快速理解。
+如果你的项目存在一下问题，可以考虑使用组件化了：
+
+代码......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 卢小胖 on
+    2021-08-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#MVVM" title="MVVM">MVVM</a>
+    
+    <a href="/tags/#组件化" title="组件化">组件化</a>
     
   </div>
   
@@ -828,6 +859,10 @@ I......
       <a href="/cn/archives/2/">&larr; 上一页</a>
     </li>
     
+    
+    <li class="next">
+      <a href="/cn/archives/4/">下一页 &rarr;</a>
+    </li>
     
   </ul>
 
@@ -860,7 +895,7 @@ I......
           
           
           
-          <a href="/tags/#c++" title="c++" rel="11">c++</a>
+          <a href="/tags/#c++" title="c++" rel="21">c++</a>
           
           
           
@@ -957,6 +992,14 @@ I......
           
           
           <a href="/tags/#设计模式" title="设计模式" rel="1">设计模式</a>
+          
+          
+          
+          <a href="/tags/#OpenGL" title="OpenGL" rel="10">OpenGL</a>
+          
+          
+          
+          <a href="/tags/#计算机图形学" title="计算机图形学" rel="10">计算机图形学</a>
           
           
         </div>

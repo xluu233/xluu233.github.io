@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="bugmaker,xlu233,Android"/>
+  <link rel="shortcut icon" href="/img/icon.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://xluu233.github.io/cn/一、初识计算机图形学/">
+  <title>
+    
+      一、初识计算机图形学 - 卢小胖的开发日志
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">BugMaker</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/home.jpg');
+      --intro-header-background-image-url-post: url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: url('//img/common_back.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/common_back.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/common_back.jpg'); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#c++" title="c++">c++</a>
+              
+              <a class="tag" href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+              
+              <a class="tag" href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
+              
+            </div>
+            <h1>一、初识计算机图形学</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2023-09-14
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">22</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">6.6k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="1、什么是计算机图形学？">1、什么是计算机图形学？</h2>
+<p>什么是计算机图形学？计算机图形学(Computer Graphics，简称CG)的内容比较丰富，与很多学科都有交叉，因此笔者认为是无法严格定义的。</p>
+<p>在“Wiki百科”和“百度百科”上，对“计算机图形学”的解释为：<strong>计算机图形学是一种使用数学算法将二维或三维图形转化为计算机显示器的栅格形式的科学</strong>。简单地说，计算机图形学的主要研究内容就是研究如何在计算机中表示图形、以及利用计算机进行图形的计算、处理和显示的相关原理与算法。虽然通常认为CG是指三维图形的处理，事实上也包括了二维图形及图像的处理。</p>
+<p><strong>狭义地理解，计算机图形学是数字图象处理或计算机视觉的逆过程：计算机图形学是用计算机来画图像的学科，数字图象处理是把外界获得的图象用计算机进行处理的学科，计算机视觉是根据获取的图像来理解和识别其中的物体的三维信息及其他信息。</strong></p>
+<p>注意，这些都是不确切的定义，实际上，计算机图形学、数字图象处理和计算机视觉在很多地方的区别不是非常清晰，很多概念是相通的，而且随着研究的深入，这些学科方向不断的交叉融入，形成一个更大的学科方向，可称之为“可视计算”(Visual Computing)。这是后话，此处不详述。</p>
+<h2 id="2、计算机图形学的主要内容">2、计算机图形学的主要内容</h2>
+<p>在学科开创之初，计算机图形学要解决的是如何在计算机中表示三维几何图形,以及如何利用计算机进行图形的生成、处理和显示的相关原理与算法，产生令人赏心悦目的真实感图像。这是狭义的计算机图形学的范畴。随着近40年的发展，计算机图形学的内容已经远远不止这些了。<strong>广义的计算机图形学的研究内容非常广泛，如图形硬件、图形标准、图形交互技术、光栅图形生成算法、曲线曲面造型、实体造型、真实感图形计算与显示算法，以及科学计算可视化、计算机动画、自然景物仿真、虚拟现实等。</strong></p>
+<p>根据笔者的理解，计算机图形学主要包含四大部分的内容：建模(Modeling)、渲染(Rendering)、动画(Animation)和人机交互(Human–computer Interaction, HCI)。</p>
+<h3 id="2-1-建模-Modeling">2.1 <strong>建模(Modeling)</strong></h3>
+<p>要在计算机中表示一个三维物体，首先要有它的几何模型表达。因此，三维模型的建模是计算机图形学的基础，是其他内容的前提。表达一个几何物体可以是用数学上的样条函数或隐式函数来表达；也可以是用光滑曲面上的采样点及其连接关系所表达的三角网格来表达（即连续曲面的分片线性逼近），如下图所示。</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a490e9f0ff04462fa20722c4960da49d~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1357&amp;h=1623&amp;s=168220&amp;e=jpg&amp;b=f9f6f6" alt="Snipaste_2023-10-08_22-14-00.jpg"></p>
+<p><strong>三维建模方法主要包含如下的一些方法：</strong></p>
+<ul>
+<li>
+<p>计算机辅助设计(CAD)中的主流方法是采用NURBS（非均匀有理B-样条、Bezier曲线曲面）方法（已成为CAD工业领域的标准），这也是计算机辅助几何设计(CAGD)所研究的主要内容。此类表达方法有一些难点问题仍未解决，比如非正规情况下的曲面光滑拼合，复杂曲面表达等。这部分涉及的数学比较多，国内做这块的学者比较多些。</p>
+</li>
+<li>
+<p>细分曲面(Subdivision surface)造型方法，作为一种离散迭代的曲面构造方法，由于其构造过程朴素简单以及实现容易，是一个方兴未艾的研究热点。经过十多年的研究发展，细分曲面造型取得了较大的进展，包括奇异点处的连续性构造方法以及与GPU图形硬件相结合的曲面处理方法。</p>
+</li>
+<li>
+<p><strong>利用软件的直接手工建模。现在主流的商业化的三维建模软件有Autodesk 3D Max和 Maya、Blender。</strong> 其他还有面向特定领域的商业化软件，比如面向建筑模型造型的Google Sketchup，面向CAD/CAM/CAE的CATIA和AutoCAD，面向机械设计的SolidWorks，面向造船行业的Rhino等。这些软件需要建模人员有较强的专业知识，而且需要一定时期的培训才能掌握，建模效率低而学习门槛高，不易于普及和让非专业用户使用。</p>
+</li>
+<li>
+<p>基于笔划或草图交互方式的三维建模方法。草图交互方式由于其符合人类原有日常生活中的思考习惯，交互方式直观简单，是最近几年研究的热点建模方法。其难点是根据具体的应用场合，如何正确地理解和识别用户的交互所表达的语义，构造出用户所希望的模型。</p>
+</li>
+<li>
+<p>基于语法及规则的过程式建模方法。特别适合具有重复特征和结构化的几何物体与场景，比如建筑、树木等。最近几年有较多的论文及较大的发展。</p>
+</li>
+<li>
+<p><strong>基于图像或视频的建模方法。</strong> 这是传统的计算机视觉所要解决的基本问题。在计算机图形学领域，这方面的发展也很迅速。有一些商业化软件或云服务(比如Autodesk的123D)，已经能从若干张照片重建出所拍摄物体的三维模型。该方法的问题是需要物体本身已经存在，而且重建的三维模型的精度有限。</p>
+</li>
+<li>
+<p><strong>基于扫描点云（深度图像如Kinect、结构光扫描、激光扫描、LiDAR扫描等）的建模(Reconstruction)方法。</strong> 随着深度相机的出现及扫描仪的价格迅速下降，人们采集三维数据变得容易，从采集到的三维点云来重建三维模型的工作在最近几年的Siggraph(Asia)上能常见到。但是，单纯的重建方式存在精度低、稳定性差和运算量大等不足，远未能满足实际的需求。</p>
+</li>
+<li>
+<p>基于现有模型来合成建模的方法。随着三维模型的逐渐增多，可以利用现有的三维模型通过简单的操作，比如cut and paste，或者分析及变形等手段，来拼接或合成新的三维模型。这种通过“学习”模型数据库的知识来进行建模的手段在近3-5年里研究得非常热门。从某方面来讲，就是“大数据时代”背景下计算机图形学领域中的一个具体的表现。</p>
+</li>
+</ul>
+<p>除了上述的这些建模方法，还有其他的一些建模方法，在此不再一一列举。</p>
+<blockquote>
+<p>在对三维几何模型的构建过程中，还会涉及到很多需要处理的几何问题，比如数据去噪(denoising or smoothing)、补洞(repairing)、简化(simplification)、层次细节(level of detail)、参数化(parameterization)、变形(deformation or editing)、分割(segmentation)、形状分析及检索(shape analysis and retrieval)等。这些问题构成“数字几何处理”的主要研究内容。</p>
+</blockquote>
+<h3 id="2-2-渲染-Rendering">2.2 <strong>渲染(Rendering)</strong></h3>
+<p>有了三维模型或场景，怎么把这些三维几何模型画出来，产生令人赏心悦目的真实感图像？这就是传统的计算机图形学的核心任务，在计算机辅助设计，影视动漫以及各类可视化应用中都对图形渲染结果的高真实感提出了很高的要求。</p>
+<p>上个世纪80-90年代研究的比较多些，包含了大量的渲染模型，包括局部光照模型(Local Illumination Model)、光线跟踪算法(Ray Tracing)、辐射度(Radiosity)等，以及到后面的更为复杂、真实、快速的渲染技术，比如全局光照模型(Global Illumination Model)、Photo mapping、BTF、BRDF、以及基于GPU的渲染技术等。</p>
+<p>现在的渲染技术已经能够将各种物体，包括皮肤、树木、花草、水、烟雾、毛发等渲染得非常逼真。一些商业化软件（比如Maya, Blender, Pov Ray等）也提供了强大的真实感渲染功能，在计算机图形学研究论文中作图中要经常用到这些工具来渲染漂亮的展示图或结果图。</p>
+<p>然而，已知的渲染实现方法，仍无法实现复杂的视觉特效，离实时的高真实感渲染还有很大差距，比如完整地实现适于电影渲染（高真实感、高分辨率）制作的RenderMan标准，以及其他各类基于物理真实感的实时渲染算法等。因此，如何充分利用GPU的计算特性，结合分布式的集群技术，从而来构造低功耗的渲染服务是发展趋势之一。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cefac7e43efa493694b5694c86f5dbf9~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1351&amp;h=1524&amp;s=153990&amp;e=jpg&amp;b=faf5f4" alt="Snipaste_2023-10-08_22-17-03.jpg"></p>
+<h3 id="2-3-动画-Animation">2.3 <strong>动画(Animation)</strong></h3>
+<p><strong>动画是采用连续播放静止图像的方法产生物体运动的效果。计算机动画借助于编程或动画制作软件生成一系列的景物画面，是计算机图形学的研究热点之一。研究方向包括：物理仿真(simulation)，人体动画，关节动画，运动动画，脚本动画，具有人的意识的虚拟角色的动画系统等。另外，高度物理真实感的动态模拟，包括对各种形变、水、气、云、烟雾、燃烧、爆炸、撕裂、老化等物理现象的真实模拟，也是动画领域的主要问题。</strong> 这些技术是各类动态仿真应用的核心技术，可以极大地提高虚拟现实系统的沉浸感 （其中的本质是数值求解各种偏微分方程）。计算机动画的应用领域广泛，比如动画片制作，广告、 电影特技，训练模拟，游戏等。</p>
+<p>网上的一些3D动画的视频：</p>
+<ul>
+<li>Larva虫虫: <a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XMzAzMzkxMTY0.html">http://v.youku.com/v_show/id_XMzAzMzkxMTY0.html</a></li>
+<li>The Killer Bean: <a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XMjI5ODE2MTEy.html">http://v.youku.com/v_show/id_XMjI5ODE2MTEy.html</a></li>
+<li>爱与孝: <a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XNTU0OTUxNjUy.html">http://v.youku.com/v_show/id_XNTU0OTUxNjUy.html</a></li>
+<li>房地产动画广告宣传片: <a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XNTc1OTE4MDMy.html">http://v.youku.com/v_show/id_XNTc1OTE4MDMy.html</a></li>
+</ul>
+<h3 id="2-4-人机交互">2.4 <strong>人机交互</strong></h3>
+<p>人机交互（Human-Computer Interaction, 简写HCI）是指人与计算机之间以一定的交互方式或交互界面，来完成确定任务的人与计算机之间的信息交换过程。简单来讲，就是人如何通过一定的交互方式告诉计算机来完成他所希望完成的任务。</p>
+<p>计算机图形学的顶级会议ACM SIGGRAPH是“ACM Special Interest Group on GRAPHics and Interactive Techniques”的缩写，缩写中只包含了Graphics，而忽略了Interactive Techniques，在长时间没有得到计算机图形学研究的重视。最近，包括在SIGGRAPH会议上，以及人机交互的顶级会议SIGCHI上，陆续出现了许多新兴的人机交互技术及研究论文。大家逐渐重视起来。</p>
+<p>在早期（上个世纪60-70年代），只有以键盘输入的字符界面；到了80年代，以WIMP(窗口、图符、菜单、鼠标)为基础的图形用户界面(GUI)逐渐成为当今计算机用户界面的主流。</p>
+<p>近年来，以用户为中心的系统设计思想，增进人机交互的自然性，提高人机交互的效率是用户界面的主要研究方向。陆续提出了多通道用户界面的思想，它包括语言、姿势输入、头部跟踪、视觉跟踪、立体显示、三维交互技术、感觉反馈及自然语言界面等。</p>
+<p>事实上，人体的表面本身就是人机界面。人体的任何部分（姿势，手势，语言，眼睛，肌肉电波，脑波等）都可以成为人机对话的通道。比如2010年微软出的Kinect就是一种无需任何操纵杆的基于体感的人机界面，用户本身就是控制器。Kinect在微软的Xbox游戏上取得了极大的成功，之后在其他方面也得到了很多的应用。</p>
+<p>特别是到了今年（2013年），人机交互设备有了巨大的发展，各种自然的交互手段层出不穷，极大地丰富了用户与机器交互的体验，方便了用户的操作，轻松表达了用户的交互意图。可以说，</p>
+<p><strong>我们正处在图形与交互技术极速发展的浪尖！</strong></p>
+<p>以下是最近几年（特别是今年）出现的一些值得关注的新兴的人机交互设备：</p>
+<ul>
+<li>
+<p><a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XNTc2ODY0MTA4.html">Microsoft Kinect</a></p>
+<ul>
+<li>Kinect由微软于2010年推出的对XBOX360体感外设，它不需要使用任何控制器，仅依靠相机捕捉三维空间中玩家的运动，同时它导入了即时动态捕捉、影像辨识、麦克风输入、语音辨识、社群互动等功能。Kinect彻底颠覆了游戏的单一操作。使人机互动的理念更加彻底的展现出来。之后，基于Kinect的各种应用像雨后春笋般的冒出来，包括人机交互，手势识别，几何建模等。</li>
+<li>在2013年5月28日的Xbox One发布会上，微软展示了新一代Kinect 2.0，新 Kinect能感知的语音、手势和玩家感觉信息，将给玩家带来前所未有的互动性体验：<a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XNTIyODU0NDky.html">http://v.youku.com/v_show/id_XNTIyODU0NDky.html</a></li>
+</ul>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XNTAwMzg0MTQw.html">Leap Motion</a></p>
+<p>Leap Motion为放在键盘和显示器之间的小小金属棒，就能让任何一位用户通过简单的手势完成人机交互。Leap Motion 的响应惊人的准确，对各种自然而简洁的手势都能识别。不必站起来或者摆动手臂，Leap Motion 是简单而毫不费力的交互方式。我们在4月份就预订了一台，到现在还未到货，估计要到下个月到货。到货后我们会对其进行评测。</p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XNTYzNzg3MDA0.html">MYO</a></p>
+<p>MYO 是一款能在用户挥动并指向屏幕时测量各种肌肉产生的电活动来完成交互的腕带。MYO 超越 Leap Motion 的一点是，MYO 对用户的位置没有限制。尽管MYO只听令于身体的一个部分（手臂），但是其应用的场合还是很多的。期望未来会有更多的听令于身体的其他部分的交互设备。</p>
+</li>
+<li>
+<p>Google Glass</p>
+<p>Google Glass为Google公司在2012的I/O开发者大会上正式公布的，在看起来普普通通的眼镜上配置强大的计算机和显示器。这款设备小巧而不显眼，可以在任何时间地点使用，即用户想要专注于周围环境时不会碍事。不过对其未来的发展各有说法，让我们拭目以待。</p>
+</li>
+<li>
+<p><strong>3D Printer</strong></p>
+<p>这个就不用笔者详细说了，这两年太火了。正如上面所提到的观点，笔者觉得3D打印的出现带给了我们从事计算机图形学研究的工作者许多的机会。挑战和机会并存！我们应该要抓住这次机会！</p>
+</li>
+</ul>
+<p>除了上述介绍的外，最近还有其他很多新的人机交互类的电子科技产品，比如透明手机，可折叠的屏幕，具有气味和触感反馈的头盔等，就不一一介绍了。</p>
+<p>由此可见，以前在科幻电影里出现的“神器”逐渐被实现，计算机图形学及相关技术在其中发挥了重要的作用。同时，这些设备的出现，也带给了计算机图形学领域更多的探索和机会。</p>
+<h3 id="2-5-其他内容">2.5 <strong>其他内容</strong></h3>
+<p>上述所提到的只是计算机图形学的主要的四个内容。事实上，与计算机图形学相关的学科还有很多，以下仅介绍几个最为相关的研究方向：</p>
+<ul>
+<li>
+<p>虚拟现实(Virtual Reality)：利用计算机图形产生器，位置跟踪器，多功能传感器和控制器等有效地模拟实际场景和情形，从而能够使观察者产生一种真实的身临其境的感觉。虚拟现实技术主要研究用计算机模拟（构造）三维图形空间，并使用户能够自然地与该空间进行交互。对三维图形处理技术的要求特别高。简单的虚拟现实系统早在70年代便被应用于军事领域，训练驾驶员。80年代后随着计算机软硬件技术的提高，它也得到重视并迅速发展。它已在航空航天、医学、教育、艺术、建筑等领域得到初步的应用。</p>
+</li>
+<li>
+<p>可视化(Visualization)：利用计算机图形学和图像处理技术，将数据转换成图形或图像在屏幕上显示出来，并进行交互处理的理论、方法和技术。现已成为研究数据表示、数据处理、决策分析等一系列问题的综合技术。上面提到的虚拟现实技术也是以图形图像的可视化技术为依托的。在现在的大数据时代的背景下，可视化的内容除了传统的科学可视化外，现在还有信息可视化，可视分析等方面。</p>
+</li>
+<li>
+<p>可视媒体计算与处理(Visual Media Processing)：几何数据，被认为是继声音、图像、视频之后的新一代数字媒体，是计算机图形学的研究重点。最近几年，计算机图形学与图像视频处理技术相结合的研究与技术日益增多。正如笔者在上面所提及的，图像和视频的大数据处理能带给计算机图形学很多处理手段上的更新。另一方面，随着而计算机图形学技术，恰可以与这些图像处理，视觉方法相交叉融合，来直接地生成风格化的画面，实现基于图像三维建模，以及直接基于视频和图像数据来生成动画序列。当计算机图形学正向地图像生成方法和计算机视觉中逆向地从图像中恢复各种信息方法相结合，可以带来无可限量的想象空间，构造出很多视觉特效来，最终用于增强现实、数字地图、虚拟博物馆展示等多种应用中去。因此，在很多方面，计算机图形学与图像处理、视频处理、多媒体处理、计算机视觉等学科逐渐融合在一起，有成为一个更大的学科的趋势。</p>
+</li>
+<li>
+<p><strong>医学图像处理(Medical Imaging)</strong> 随着医学成像技术的发展与进步，图像处理在医学研究与临床医学中的应用越来越广泛。与一般意义上的图像处理比较，医学图像处理有其特殊性和不同的侧重点。医学图像处理由生物医学成像(X射线、CT、MRI)和生物医学图像处理两部分组成，在生命科学研究、医学诊断、临床治疗等方面起着重要的作用。医学图像分析中涉及的两个最为重要的内容为图像分割与图像配准。</p>
+</li>
+<li>
+<p>计算机艺术(Computational Arts)：计算机图形学的发展也提供给了艺术家发挥和实现想象的丰富的技术手段。计算机艺术的发展速度远远超出了人们的想象，在代表计算机图形研究最高水平的历届SIGGRAPH年会上，精彩的计算机艺术作品层出不穷。在计算机图形学领域，还有几个关于计算艺术方面的会议，包括非真实性图形学(Non-Photorealistic Graphics)和Computational Aesthetics(计算美学)等。吸引了计算机工作者、艺术家、建筑师、设计师等方面的人员在一起，通过头脑风暴和交流讨论的方式进行一些有创意的技术研究。</p>
+</li>
+</ul>
+<h2 id="3、学习计算机图形学需要哪些基础？"><strong>3、学习计算机图形学需要哪些基础？</strong></h2>
+<p>计算机图形学是一门与很多学科都交叉的学科方向。因此，要学好计算机图形学和做好计算机图形学方面的研究，除了计算机图形学的基础知识以外，你还需要有其他方面的一些知识。当然你懂得越多当然会越好。</p>
+<h3 id="3-1-数学"><strong>3.1 数学</strong></h3>
+<p>计算机图形学进入我国大概在上个世纪70年代末和80年代初，那时国内还没有计算机学科。于是，开始学习和研究计算机图形学的大部分都是搞数学的一些学者和教授。由此可见，计算机图形学是需要数学知识较多的一门计算机应用技术学科，在我国也是应用数学的一个重要分支（国内的很多高校和科研院所的数学专业都有计算机图形学方向）。</p>
+<p><strong>计算机图形学里面用到的数学比较多，列举一些常用的，包括：微积分、线性代数、矩阵计算、微分几何、数值计算和分析、计算方法、偏微分方程、微分方程数值解、最优化、概率、统计、计算几何等。</strong></p>
+<p>计算机图形学领域的一位优秀学者Greg Turk教授在1997年曾写过一篇“计算机图形学中的数学”(Mathematics for Computer Graphics)的帖子，<a target="_blank" rel="noopener" href="http://www.cc.gatech.edu/~turk/math_gr.html">详细可见</a>，其<a target="_blank" rel="noopener" href="http://staff.ustc.edu.cn/~lgliu/Resources/CG/Math_for_CG_Turk_CN.htm">中文翻译版本</a>。</p>
+<p>笔者在多年从事计算机图形学研究中对数学的体会是：“数学不是没有用，而是不够用！”。对数学的学习和应用将是“活到老，学到老”。重要的是，从以前看似枯燥的数学到看到它的实际应用的过程中，你会更容易享受数学的美妙。在你不断进行计算机图形学的研究的过程中，你会感觉到你的数学知识越来越不够用，从而真正理解其中的数学思想和数学方法。</p>
+<p><strong>另一方面，想成为一名计算机图形学的研究者也不必精通各门数学！在大学里，你所学的那些数学看起来都很抽象，枯燥无味，这是因为你并不知道它们的用处，甚至连讲课的老师也不知道，而你们的目的只是记住那些定理和公式，考个好分数。与大学学习数学不一样的是，你在计算机图形学的学习和研究过程中会感受到数学的用处和美妙，这时你学习数学的目的将更加明确，兴趣将更加浓厚，学习方法将更加有效。因为你是在使用数学的过程中在学习数学！想想看你是如何学会中文说话的？以上提到的常用的数学课程你不必都要熟悉，许多研究工作者从不需要考虑其中提到的某些数学知识，成功的研究者总是将某一方面的数学知识和数学工具用到极致！</strong></p>
+<p>总之，关于计算机图形学与数学的关系，归纳起来就是以下几个原则：</p>
+<ul>
+<li>计算机图形学的研究需要用到较多的数学知识，有较好数学功底的学生从事计算机图形学有一定优势；</li>
+<li>即使没有学太多的数学也不要紧。数学的知识不需要都学会了再去做问题，在解决问题的过程中去学习数学是最快的学习方法。即，研究过程中若遇到什么数学知识再去学相关的知识，学习起来会更有兴趣，掌握起来会更快更扎实；</li>
+<li>学习数学要结合图形，即“数形结合”，需要有图形的想象能力；数学公式不重要，是“纸老虎”，重要的是背后的思想及其所表达的概念，公式只是它们的一个抽象表达；</li>
+<li>活到老，学到老。要不断学习新的知识和技术，使自己不断进步和增长功力，才是王道。</li>
+</ul>
+<h3 id="3-2-编程"><strong>3.2 编程</strong></h3>
+<p>在计算机图形学中，大部分的想法都要通过实际例子来验证的，再好的理论也要拿实际例子来得到验证和应用。因此，利用编程语言来实现想法或算法是必须要有的能力。C/C++是计算机图形学最常用的编程语言。</p>
+<p>笔者要求学生必须掌握C++编程语言和面向对象编程思想，这是大家通用的“语言”。网上的大部分的资源、类库、算法代码基本上都是C++写的，因此，你若需要利用这些资源，必须掌握甚至精通C++语言。</p>
+<p>关于计算机图形学所需要的编程能力的几点看法：</p>
+<ul>
+<li>从事计算机图形学和图像处理的研究需要有较强的编程能力，要对编程有极大的兴趣和热情；</li>
+<li>如果你对编程比较“感冒”或“厌恶”，则建议你不要选择计算机图形学方向；</li>
+<li>不太会编程不要紧，任何人都是从不会到会的！只要你对编程有兴趣，觉得编程“好玩”，您完全可以在很短的时间内极大地提高您的编程水平。笔者在长期的教学实验和科研过程中，摸索和发展出一套有效的方法，能够在最短的时间内，帮助学生（包括数学专业的学生）快速提高编程的能力。</li>
+</ul>
+<hr>
+<p>以上内容采摘自论文:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://staff.ustc.edu.cn/~lgliu/Resources/CG/What_is_CG.htm">什么是计算机图形学?</a></li>
+</ul>
+<p>刘利刚<br>
+中国科学技术大学图形与几何计算实验室(<a target="_blank" rel="noopener" href="http://gcl.ustc.edu.cn/">http://gcl.ustc.edu.cn</a>)</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/二、如何理解OpenGL/" data-toggle="tooltip" data-placement="top" title="二、如何理解OpenGL">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/设计模式-迭代器模式/" data-toggle="tooltip" data-placement="top" title="【设计模式】迭代器模式">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%9F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1、什么是计算机图形学？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9A%84%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2、计算机图形学的主要内容</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E5%BB%BA%E6%A8%A1-Modeling"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">2.1 建模(Modeling)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E6%B8%B2%E6%9F%93-Rendering"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2.2 渲染(Rendering)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-3-%E5%8A%A8%E7%94%BB-Animation"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">2.3 动画(Animation)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-4-%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">2.4 人机交互</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-5-%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">2.5 其他内容</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3%E3%80%81%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E9%9C%80%E8%A6%81%E5%93%AA%E4%BA%9B%E5%9F%BA%E7%A1%80%EF%BC%9F"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3、学习计算机图形学需要哪些基础？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-1-%E6%95%B0%E5%AD%A6"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">3.1 数学</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-%E7%BC%96%E7%A8%8B"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">3.2 编程</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#c++" title="c++">c++</a>
+            
+            <a class="tag" href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+            
+            <a class="tag" href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/xluu233">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          卢小胖
+          2023
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://xluu233.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

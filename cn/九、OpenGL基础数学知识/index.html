@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="bugmaker,xlu233,Android"/>
+  <link rel="shortcut icon" href="/img/icon.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://xluu233.github.io/cn/九、OpenGL基础数学知识/">
+  <title>
+    
+      九、OpenGL基础数学知识 - 卢小胖的开发日志
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">BugMaker</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/home.jpg');
+      --intro-header-background-image-url-post: url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: url('//img/common_back.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/home.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/common_back.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/common_back.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/common_back.jpg'); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#c++" title="c++">c++</a>
+              
+              <a class="tag" href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+              
+              <a class="tag" href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
+              
+            </div>
+            <h1>九、OpenGL基础数学知识</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 卢小胖 on
+              2023-10-10
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">10</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.8k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>1、向量</h1>
+<h3 id="1-1-向量概念">1.1 向量概念</h3>
+<p>向量最基本的定义就是一个方向，每个向量在2D图像中都用一个箭头(x, y)表示。我们在2D图片中展示这些向量，因为这样子会更直观一点。你可以把这些2D向量当做z坐标为0的3D向量。由于向量表示的是方向，起始于何处并不会改变它的值。下图我们可以看到向量v¯和w¯是相等的，尽管他们的起始点不同：</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e83c21be34d04e469dc5497916313012~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=300&h=300&s=18822&e=png&a=1&b=dcdbdb" width="60%" />
+</div>
+<p>如果用公式表示：</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1caa9ff606aa40728076980c93f9a2c3~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=280&h=201&s=6464&e=png&b=ffffff" width="30%" />
+</div>
+<p>如果在三维空间中，就是（x,y,z）表示，箭头的方向表示向量方向：</p>
+<div align=center>
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2493fa1c8b94693b1741dbe265a19cb~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=667&h=597&s=48649&e=png&b=fefefe" width="60%" />
+</div>
+<blockquote>
+<p>一般在OpenGL中用（x,y,z,w）来表示向量，这个w分量在后面会用到</p>
+</blockquote>
+<h3 id="1-2-单位向量">1.2 单位向量</h3>
+<p>大小为1的向量，就是单位向量，如：</p>
+<ul>
+<li>(1,0,0)</li>
+<li>(0,1,0)</li>
+<li>(0,0,1)</li>
+</ul>
+<p><strong>如果一个向量不是单位向量，我们把它变成单位向量，该过程称为归一化，例如</strong></p>
+<ul>
+<li>(15,0,0) ——&gt; (1,0,0)</li>
+</ul>
+<p><strong>归一化的向量只有方向和原来是相同的，大小变成了1</strong></p>
+<h3 id="1-3-向量点乘（向量点积）">1.3 向量点乘（向量点积）</h3>
+<p>两个向量a = [a1, a2,…, an]和b = [b1, b2,…, bn]的点积定义为：</p>
+<p><strong>a·b=a1b1+a2b2+……+anbn。</strong></p>
+<p>两个向量a和bb的数量积称为点乘（又叫内积、点积）,计算方式如下图所示</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/713dbb23ce2244ad8044a69e84dea12e~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=433&h=175&s=20270&e=png&b=fefefe" width="60%" />
+</div>
+<p>实例如下：</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a684cdfcfc1d4a2090a5b060acc80e88~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=995&h=202&s=21141&e=png&b=ffffff" width="90%" />
+</div>
+<p><strong>几何意义</strong></p>
+<p>两个向量a和b，夹角为θ，点乘计算方式如下</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e55b483730584855b0b99917e8646329~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=252&h=73&s=6943&e=png&b=fdfdfd" width="50%" />
+</div>
+<p>如图所示：</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/13674fc1461a4ec18103b1aa5ec3979a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=424&h=339&s=28879&e=png&b=fefefe" width="60%" />
+</div>
+<h3 id="1-4-向量叉乘（向量叉积）">1.4 向量叉乘（向量叉积）</h3>
+<p>百度百科截取：</p>
+<blockquote>
+<p>向量积，数学中又称外积、叉积，物理中称矢积、叉乘，是一种在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/5936597?fromModule=lemma_inlink">向量空间</a>中向量的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%8C%E5%85%83%E8%BF%90%E7%AE%97/748189?fromModule=lemma_inlink">二元运算</a>。与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%82%B9%E7%A7%AF/9648528?fromModule=lemma_inlink">点积</a>不同，它的运算结果是一个向量而不是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%87%E9%87%8F/1530843?fromModule=lemma_inlink">标量</a>。并且两个向量的叉积与这两个向量和垂直。其应用也十分广泛，通常应用于物理学光学和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/279486?fromModule=lemma_inlink">计算机图形学</a>中。</p>
+</blockquote>
+<p>两个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%90%91%E9%87%8F/0?fromModule=lemma_inlink">向量</a>a和b的叉积写作a×b（有时也被写成a∧b，避免和字母x混淆）。</p>
+<p>a和b向量的向量积的方向与这两个向量所在平面垂直，且遵守右手定则</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9f63ffee28ef40afbdc6a2c55b1e4d08~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=361&h=456&s=52416&e=png&b=fafafa" width="50%" />
+</div>
+<blockquote>
+<p>在OpenGL中可以用来求法向量</p>
+</blockquote>
+<h3 id="1-5-向量取反">1.5 向量取反</h3>
+<p><strong>对一个向量取反会将其方向逆转</strong>。我们在一个向量的每个分量前加负号就可以实现取反了（或者说用-1数乘该向量）:</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51b96151e5c84a8aa303c7a1ad2591fc~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=510&h=207&s=11175&e=png&b=ffffff" width="50%" />
+</div>
+<h3 id="1-6-向量加减">1.6 向量加减</h3>
+<p><strong>向量的加减可以被定义为是分量的加减，即将一个向量中的每一个分量加上另一个向量的对应分量：</strong></p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a87abba7fb654f96b0ee4b5a40cdc3bc~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=855&h=191&s=18868&e=png&b=ffffff" width="90%" />
+</div>
+<p>向量<code>v = (4, 2)</code>和<code>k = (1, 2)</code>可以直观地表示为：</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cb32ba705aff43a2aa9f3f6f3fd8b1dd~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=300&h=300&s=21150&e=png&a=1&b=dcdbdb" width="70%" />
+</div>
+<p>向量相减也是一样的：</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2b7ec3e32c1c43b0b29ce5f07f18ea34~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=996&h=201&s=23510&e=png&b=ffffff" width="100%" />
+</div>
+<p><strong>两个向量的相减会得到这两个向量指向位置的差。这在我们想要获取两点的差会非常有用：</strong></p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dcc6f1c88ec343ed8bd96c299c048a79~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=300&h=300&s=19454&e=png&a=1&b=dcdbdb" width="70%" />
+</div>
+<h3 id="1-6-向量与标量运算">1.6 向量与标量运算</h3>
+<p>标量只是一个数字（或者说是仅有一个分量的向量）。当把一个向量加/减/乘/除一个标量，我们可以简单的把向量的每个分量分别进行该运算。对于加法来说会像这样:</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6681020347a7407cb0871309d2fc610c~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=457&h=196&s=11515&e=png&b=ffffff" width="50%" />
+</div>
+其中的+可以是+，-，·或÷，其中·是乘号。注意－和÷运算时不能颠倒（标量-/÷向量），因为颠倒的运算是没有定义的。
+<blockquote>
+<p>数学中没有向量与标量的运算，但是在代码库中很多都支持这种操作。</p>
+</blockquote>
+<h1>2、矩阵</h1>
+<h3 id="2-1-矩阵概念">2.1 矩阵概念</h3>
+<p>简单来说矩阵就是一个矩形的数字、符号或表达式数组。矩阵中每一项叫做矩阵的元素(Element)。下面是一个2×3矩阵的例子：</p>
+<div align=center>
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/127d5275346449bca7b5caf26e88b19a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=253&h=124&s=3886&e=png&b=ffffff" width="50%" />
+</div>
+<p><strong>为什么使用矩阵，简单来说：矩阵可以方便的表示向量在空间的变化，比如：旋转，平移，缩放等操作。</strong></p>
+<p>和向量一样，矩阵也有非常漂亮的数学属性。矩阵有几个运算，分别是：矩阵加法、减法和乘法。</p>
+<h3 id="2-2-矩阵的加减">2.2 矩阵的加减</h3>
+<p>矩阵与标量之间的加减定义如下：</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a5413830d5c74dde9c2e2d60fbabb7d5~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=726&h=130&s=11904&e=png&b=ffffff" width="70%" />
+</div>
+标量值要加到矩阵的每一个元素上。矩阵与标量的减法也相似：
+<div align=center>
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8c6e6e65c634a86bd0d436633f4df94~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=759&h=147&s=11415&e=png&b=ffffff" width="70%" />
+</div>
+<p>矩阵相加：</p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ddd46c1eea146b9a25f26ea8d7700c1~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=846&h=160&s=13987&e=png&b=ffffff" width="80%" />
+</div>
+减法：
+<div align=center>
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25675632837b4383a348cd32ffac0660~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=790\&h=138\&s=10962\&e=png\&b=ffffff" width="80%" />
+</div>
+<p>矩阵数乘：</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d5c85565a7f44f7882ea0215e7f4cae4~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=697&h=160&s=12179&e=png&b=ffffff" width="80%" />
+</div>
+<h3 id="2-3-矩阵相乘">2.3 矩阵相乘</h3>
+<blockquote>
+<p>如果你学过线性代数，对矩阵乘法应该有一些映像，因为它看起来有一些反人类</p>
+</blockquote>
+<p><strong>矩阵相乘有一些规则：</strong></p>
+<ul>
+<li>只有当左侧矩阵的列数与右侧矩阵的行数相等，两个矩阵才能相乘</li>
+<li>矩阵相乘不遵守交换律(Commutative)，也就是说A⋅B≠B⋅A</li>
+</ul>
+<p>我们先看一个两个2×2矩阵相乘的例子：</p>
+<div align=center>
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cbe2f9dfaec84b59a96db33990be4b38~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=989&h=137&s=18775&e=png&b=ffffff" width="90%" />
+</div>
+<p>你是否发现了规则?</p>
+<div align=center>
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33b2bfaaeae94d7385c6f9f244d7f8a5~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1010&h=153&s=48871&e=png&b=fefdfd" width="90%" />
+</div>
+<p>没错，记住就行了~<br>
+对于一些复杂矩阵，计算很容易出错：</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3f785eb12dab416f870c36f0c237f9fd~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1404&amp;h=345&amp;s=42757&amp;e=png&amp;b=ffffff" alt="image.png"></p>
+<p>好在我们是在编程中使用，不用手动算哈哈哈哈</p>
+<h1>3、矩阵与向量</h1>
+<p>让我们更深入了解一下向量，它其实就是一个<strong>N×1</strong>矩阵，如果我们有一个<strong>M×N</strong>矩阵，我们可以用这个矩阵乘以我们的<strong>N×1</strong>向量，因为这个矩阵的列数等于向量的行数，所以它们就能相乘。</p>
+<h3 id="3-1-单位矩阵">3.1 单位矩阵</h3>
+<p>在OpenGL中，由于某些原因我们通常使用<strong>4×4</strong>的变换矩阵，而其中最重要的原因就是大部分的向量都是4分量的。我们能想到的最简单的变换矩阵就是单位矩阵(Identity Matrix)。单位矩阵是一个除了对角线以外都是0的<strong>N×N</strong>矩阵。在下式中可以看到，这种变换矩阵使一个向量完全不变：</p>
+<div align=center>
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/216a32cd3f5442f9aa19f45f7fc1a50e~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=690&h=231&s=18045&e=png&b=fffefe" width="70%" />
+</div>
+<h3 id="3-2-缩放">3.2 缩放</h3>
+<p>我们先来尝试缩放向量v¯=(3,2)。我们可以把向量沿着x轴缩放0.5，使它的宽度缩小为原来的二分之一；我们将沿着y轴把向量的高度缩放为原来的两倍。我们看看把向量缩放(0.5, 2)倍所获得的s¯是什么样的：</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aafa194fd9f94d71a8fa2c734026a5a3~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=300&h=300&s=17784&e=png&a=1&b=dcdbdb" width="60%" />
+</div>
+<p>OpenGL在3D空间中操作，每个分量的缩放系数可能都不一样，<strong>如果我们把缩放变量表示为(S1,S2,S3)我们可以为任意向量(x,y,z)定义一个缩放矩阵：</strong></p>
+<div align=center>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c20c49adfdc6465f9b9a80a70a87078a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=703&h=244&s=21442&e=png&b=ffffff" width="80%" />
+</div>
+<blockquote>
+<p>第四个缩放向量仍然是1，因为在3D空间中缩放w分量是无意义的。w分量另有其他用途，在后面我们会看到。</p>
+</blockquote>
+<h3 id="3-3-位移">3.3 位移</h3>
+<p>和缩放矩阵一样，<strong>在4×4矩阵上有几个特别的位置用来执行特定的操作，对于位移来说它们是第四列最上面的3个值。如果我们把位移向量表示为(Tx,Ty,Tz)，我们就能把位移矩阵定义为：</strong></p>
+<div align=center>
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8db8f87765843d2998fcb10f67a2f02~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=678&h=253&s=22089&e=png&b=ffffff" width="80%" />
+</div>
+<h3 id="3-4-旋转">3.4 旋转</h3>
+<p>首先我们来定义一个向量的旋转到底是什么。2D或3D空间中的旋转用角(Angle)来表示。角可以是角度制或弧度制的，周角是360角度或2 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pi">PI</a>弧度。我个人更喜欢用角度，因为它们看起来更直观。</p>
+<blockquote>
+<p>大多数旋转函数需要用弧度制的角，但幸运的是角度制的角也可以很容易地转化为弧度制的：<code>PI</code>约等于3.14159265359。</p>
+</blockquote>
+<ul>
+<li>弧度转角度：<code>角度 = 弧度 * (180.0f / PI)</code></li>
+<li>角度转弧度：<code>弧度 = 角度 * (PI / 180.0f)</code></li>
+</ul>
+<p>旋转矩阵在3D空间中每个单位轴都有不同定义，旋转角度用θ表示：</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/468509d1515f4ea2b52463f3834d3417~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1169&amp;h=893&amp;s=108213&amp;e=png&amp;b=ffffff" alt="image.png"></p>
+<blockquote>
+<p>利用旋转矩阵我们可以把任意位置向量沿一个单位旋转轴进行旋转。也可以将多个矩阵复合，比如先沿着x轴旋转再沿着y轴旋转。但是这会很快导致一个问题——万向节死锁（Gimbal Lock)。<strong>避免万向节死锁的真正解决方案是使用四元数(Quaternion)，它不仅更安全，而且计算会更有效率。四元数可能会在后面的教程中讨论。</strong></p>
+</blockquote>
+<h3 id="组合">组合</h3>
+<p>假设我们有一个顶点(x, y, z)，我们希望将其缩放2倍，然后位移(1, 2, 3)个单位。我们需要一个位移和缩放矩阵来完成这些变换。结果的变换矩阵看起来像这样：</p>
+<div align=center>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c0ebb0cc344d4254a16dbb9ba0cd41f4~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1160&h=251&s=24508&e=png&b=ffffff" width="90%" />
+</div>
+<p><strong>注意，当矩阵相乘时我们先写位移再写缩放变换的。矩阵乘法是不遵守交换律的，这意味着它们的顺序很重要。当矩阵相乘时，在最右边的矩阵是第一个与向量相乘的，所以你应该从右向左读这个乘法。建议您在组合矩阵时，先进行缩放操作，然后是旋转，最后才是位移，否则它们会（消极地）互相影响。比如，如果你先位移再缩放，位移的向量也会同样被缩放（译注：比如向某方向移动2米，2米也许会被缩放成1米）！</strong></p>
+<blockquote>
+<p>很重要，主要矩阵相乘顺序！</p>
+</blockquote>
+<p>上述结果为：向量先缩放2倍，然后位移了(1, 2, 3)个单位。</p>
+<div align=center>
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eb948d1e7229428fb618215bfe542650~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=585&h=231&s=16719&e=png&b=fffefe" width="70%" />
+</div>
+<h1>4、OpenGL实践</h1>
+<p>我们以glm这个库为例，需要的GLM的大多数功能都可以从下面这3个头文件中找到：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;glm/glm.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;glm/gtc/matrix_transform.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;glm/gtc/type_ptr.hpp&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>把一个向量(1, 0, 0)位移(1, 1, 0)个单位（注意，我们把它定义为一个<code>glm::vec4</code>类型的值，齐次坐标设定为1.0）：</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义初始向量</span></span><br><span class="line"><span class="keyword">glm</span>::vec4 <span class="built_in">vec</span>(1.0f, 0.0f, 0.0f, 1.0f);</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义矩阵</span></span><br><span class="line"><span class="keyword">glm</span>::mat4 trans; </span><br><span class="line"></span><br><span class="line"><span class="comment">//translate这个函数一般用于将物体进行位移，这里将向量(1, 1, 0)与单位矩阵相乘</span></span><br><span class="line">trans = <span class="keyword">glm</span>::<span class="keyword">translate</span>(trans, <span class="keyword">glm</span>::vec3(1.0f, 1.0f, 0.0f)); </span><br><span class="line"></span><br><span class="line"><span class="comment">//将结果再与最初的向量相乘，来对其进行位移改变</span></span><br><span class="line"><span class="keyword">vec</span> = trans * <span class="keyword">vec</span>; </span><br><span class="line"></span><br><span class="line">std::cout &lt;&lt; <span class="keyword">vec</span>.x &lt;&lt; <span class="keyword">vec</span>.y &lt;&lt; <span class="keyword">vec</span>.z &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<p>关于GLM库中更多操作，参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36301420/article/details/89372482"># 总结GLM库中glm::transform（位移）, glm:scale（缩放）, glm::rotate（旋转）</a></p>
+<p>将结果矩阵传递给着色器，GLSL里也有一个<code>mat4</code>类型，我们将修改顶点着色器让其接收一个<code>mat4</code>的uniform变量，然后再用矩阵uniform乘以位置向量：</p>
+<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="meta">#version 330 core </span></span><br><span class="line"><span class="keyword">layout</span> (<span class="keyword">location</span> = <span class="number">0</span>) <span class="keyword">in</span> <span class="type">vec3</span> aPos; </span><br><span class="line"><span class="keyword">layout</span> (<span class="keyword">location</span> = <span class="number">1</span>) <span class="keyword">in</span> <span class="type">vec2</span> aTexCoord; </span><br><span class="line"></span><br><span class="line"><span class="keyword">out</span> <span class="type">vec2</span> TexCoord; </span><br><span class="line"><span class="keyword">uniform</span> <span class="type">mat4</span> transform; </span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main() &#123; </span><br><span class="line">    <span class="built_in">gl_Position</span> = transform * <span class="type">vec4</span>(aPos, <span class="number">1.0</span>f); </span><br><span class="line">    TexCoord = <span class="type">vec2</span>(aTexCoord.x, <span class="number">1.0</span> - aTexCoord.y); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>传递值给着色器，首先查询uniform变量的地址，然后用有<code>Matrix4fv</code>后缀的glUniform函数把矩阵数据发送给着色器。</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">unsigned <span class="built_in">int</span> transformLoc = gl<span class="constructor">GetUniformLocation(<span class="params">ourShader</span>.ID, <span class="string">&quot;transform&quot;</span>)</span>; </span><br><span class="line">gl<span class="constructor">UniformMatrix4fv(<span class="params">transformLoc</span>, 1, GL_FALSE, <span class="params">glm</span>::<span class="params">value_ptr</span>(<span class="params">trans</span>)</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一个参数你现在应该很熟悉了，它是uniform的位置值。</li>
+<li>第二个参数告诉OpenGL我们将要发送多少个矩阵，这里是1。</li>
+<li>第三个参数询问我们是否希望对我们的矩阵进行转置(Transpose)，也就是说交换我们矩阵的行和列。OpenGL开发者通常使用一种内部矩阵布局，叫做列主序(Column-major Ordering)布局。GLM的默认布局就是列主序，所以并不需要转置矩阵，我们填<code>GL_FALSE</code>。</li>
+<li>最后一个参数是真正的矩阵数据，但是GLM并不是把它们的矩阵储存为OpenGL所希望接受的那种，因此我们要先用GLM的自带的函数value_ptr来变换这些数据。</li>
+</ul>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/十、OpenGL坐标系统-空间转换-摄像机/" data-toggle="tooltip" data-placement="top" title="十、OpenGL坐标系统 & 空间转换 & 摄像机">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/八、Qt-OpenGL-的一些问题记录/" data-toggle="tooltip" data-placement="top" title="八、Qt+OpenGL 的一些问题记录">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1、向量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E5%90%91%E9%87%8F%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">1.1 向量概念</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">1.2 单位向量</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-3-%E5%90%91%E9%87%8F%E7%82%B9%E4%B9%98%EF%BC%88%E5%90%91%E9%87%8F%E7%82%B9%E7%A7%AF%EF%BC%89"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">1.3 向量点乘（向量点积）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-4-%E5%90%91%E9%87%8F%E5%8F%89%E4%B9%98%EF%BC%88%E5%90%91%E9%87%8F%E5%8F%89%E7%A7%AF%EF%BC%89"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">1.4 向量叉乘（向量叉积）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-5-%E5%90%91%E9%87%8F%E5%8F%96%E5%8F%8D"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">1.5 向量取反</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-6-%E5%90%91%E9%87%8F%E5%8A%A0%E5%87%8F"><span class="toc-nav-number">1.0.6.</span> <span class="toc-nav-text">1.6 向量加减</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-6-%E5%90%91%E9%87%8F%E4%B8%8E%E6%A0%87%E9%87%8F%E8%BF%90%E7%AE%97"><span class="toc-nav-number">1.0.7.</span> <span class="toc-nav-text">1.6 向量与标量运算</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2、矩阵</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E7%9F%A9%E9%98%B5%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">2.0.1.</span> <span class="toc-nav-text">2.1 矩阵概念</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8A%A0%E5%87%8F"><span class="toc-nav-number">2.0.2.</span> <span class="toc-nav-text">2.2 矩阵的加减</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-3-%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98"><span class="toc-nav-number">2.0.3.</span> <span class="toc-nav-text">2.3 矩阵相乘</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3、矩阵与向量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-1-%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5"><span class="toc-nav-number">3.0.1.</span> <span class="toc-nav-text">3.1 单位矩阵</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-%E7%BC%A9%E6%94%BE"><span class="toc-nav-number">3.0.2.</span> <span class="toc-nav-text">3.2 缩放</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-3-%E4%BD%8D%E7%A7%BB"><span class="toc-nav-number">3.0.3.</span> <span class="toc-nav-text">3.3 位移</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-4-%E6%97%8B%E8%BD%AC"><span class="toc-nav-number">3.0.4.</span> <span class="toc-nav-text">3.4 旋转</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BB%84%E5%90%88"><span class="toc-nav-number">3.0.5.</span> <span class="toc-nav-text">组合</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4、OpenGL实践</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#c++" title="c++">c++</a>
+            
+            <a class="tag" href="/tags/#OpenGL" title="OpenGL">OpenGL</a>
+            
+            <a class="tag" href="/tags/#计算机图形学" title="计算机图形学">计算机图形学</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/xluu233">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          卢小胖
+          2023
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://xluu233.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
